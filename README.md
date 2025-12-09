@@ -158,10 +158,10 @@ website/
 
 | Name | Position | LinkedIn |
 |------|----------|----------|
-| Sebastian Małyska | Prezes (President) | [Profile](https://www.linkedin.com/in/sebastian-ma%C5%82yska/) |
+| Sebastian Małyska | Prezes (President) | [Profile](https://www.linkedin.com/in/malyska/) |
 | Adam Roman | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/adam-roman-qb/) |
-| Anna Miazek-Bereźnicka | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/anna-miazek-berezniska/) |
-| Wojciech Jaszcz | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/wojciech-jaszcz/) |
+| Anna Miazek-Bereźnicka | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/annamiazek/) |
+| Wojciech Jaszcz | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/wojtek-jaszcz-5111421/) |
 
 ## Development
 
