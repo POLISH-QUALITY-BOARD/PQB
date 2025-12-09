@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Polska Rada Jakości - organizacja zajmująca się certyfikacją ISTQB i testowaniem oprogramowania">
+    <title>PQB - Polska Rada Jakości</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/PQB-logo.png" alt="PQB Logo" class="logo">
+                <span class="org-name">Polska Rada Jakości</span>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">O nas</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#kim-jestesmy">Kim jesteśmy, co robimy jako rada krajowa</a></li>
+                        <li><a href="#sklad-osobowy">Skład osobowy zarządu i KR</a></li>
+                        <li><a href="#wizja-misja">Wizja, Misja</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Certyfikacja ISTQB</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="#" class="nav-link">Materiały ISTQB</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#sylabusy">Sylabusy</a></li>
+                                <li><a href="#slownik">Słownik</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#scr">SCR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#dolacz" class="nav-link">Dołącz do nas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#kontakt" class="nav-link">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Polska Rada Jakości</h1>
+                <p>Profesjonalne certyfikacje i szkolenia z testowania oprogramowania</p>
+                <a href="#dolacz" class="btn btn-primary">Dołącz do nas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- O nas Section -->
+        <section id="onas" class="section">
+            <h2>O nas</h2>
+            
+            <article id="kim-jestesmy">
+                <h3>Kim jesteśmy, co robimy jako rada krajowa</h3>
+                <p>
+                    Polska Rada Jakości (PQB - Polish Quality Board) jest krajową organizacją zajmującą się promocją 
+                    testowania oprogramowania i osób zainteresowanych jakością oprogramowania w Polsce.
+                </p>
+                <p>
+                    <a href="documents/Statut_PQB.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" download>
+                        📄 Pobierz Statut PQB
+                    </a>
+                </p>
+            </article>
+
+            <article id="sklad-osobowy">
+                <h3>Skład osobowy zarządu i KR</h3>
+                <p>
+                    Polska Rada Jakości kierowana jest przez doświadczonych profesjonalistów z branży testowania 
+                    oprogramowania. Nasz zarząd i członkowie komisji reprezentują różne sektory przemysłu IT, 
+                    od startupów po duże korporacje międzynarodowe.
+                </p>
+                <p>
+                    Każdy z naszych członków wnosi unikalne perspektywy i doświadczenie, co pozwala nam na 
+                    holistyczne podejście do wszystkich aspektów testowania oprogramowania i zapewniania jakości.
+                </p>
+
+                <div class="board-members">
+                    <h4>Zarząd</h4>
+                    <div class="members-grid">
+                        <div class="member-card">
+                            <div class="member-name">Sebastian Małyska</div>
+                            <div class="member-role">Prezes</div>
+                            <a href="https://www.linkedin.com/in/sebastian-ma%C5%82yska/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                Profil LinkedIn
+                            </a>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-name">Adam Roman</div>
+                            <div class="member-role">Wiceprezes</div>
+                            <a href="https://www.linkedin.com/in/adam-roman-qb/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                Profil LinkedIn
+                            </a>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-name">Anna Miazek-Bereźnicka</div>
+                            <div class="member-role">Wiceprezes</div>
+                            <a href="https://www.linkedin.com/in/anna-miazek-berezniska/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                Profil LinkedIn
+                            </a>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-name">Wojciech Jaszcz</div>
+                            <div class="member-role">Wiceprezes</div>
+                            <a href="https://www.linkedin.com/in/wojciech-jaszcz/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                Profil LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article id="wizja-misja">
+                <h3>Wartości, Misja i Wizja</h3>
+                
+                <div class="values-section">
+                    <h4>Wartości</h4>
+                    <p class="section-description">Co jest dla nas najważniejsze</p>
+                    <ul class="values-list">
+                        <li>Nowoczesność</li>
+                        <li>Zaagażowanie</li>
+                        <li>Inkluzywność</li>
+                        <li>Transparentność działań</li>
+                        <li>Etyka</li>
+                    </ul>
+                </div>
+
+                <div class="vision-mission">
+                    <div class="box">
+                        <h4>Misja</h4>
+                        <p class="section-description">Po co istniejemy</p>
+                        <ul class="mission-list">
+                            <li>Lokalizować, współtworzyć standardy i certyfikację w obszarach dot. jakości w IT</li>
+                            <li>Edukować, promować jakość, prowadzić działalność ekspercką w tym zakresie</li>
+                            <li>Nawiązywać i rozwijać międzynarodowe relacje z organizacjami jak i jednostkami m.in. w celu promocji polskiego IT</li>
+                            <li>Udostępnienie i współpraca dot. Technologii i jej trendów, szczególnie tej, która niesie jakościowe ryzyka</li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <h4>Wizja</h4>
+                        <p class="section-description">Co chcemy osiągnąć</p>
+                        <ul class="vision-list">
+                            <li>Zdecentralizowana zdrowa polska organizacja wspierająca twórcze i aktywne jednostki</li>
+                            <li>Etyka nie na papierze a działaniu</li>
+                            <li>Proste procedury i zwinna organizacja</li>
+                            <li>ISO certyfikowana w obszarach, który się zajmuje</li>
+                            <li>PQB jako synonim rzetelnej, merytorycznej, profesjonalnej, nowoczesnej wiedzy w zakresie jakości w IT</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Certyfikacja ISTQB Section -->
+        <section id="certyfikacja" class="section">
+            <h2>Certyfikacja ISTQB</h2>
+            
+            <p>
+                ISTQB (International Software Testing Qualifications Board) to międzynarodowy standard certyfikacji 
+                dla profesjonalistów zajmujących się testowaniem oprogramowania. Polska Rada Jakości jest autoryzowanym 
+                partnerem ISTQB w Polsce.
+            </p>
+
+            <article id="materialy-istqb">
+                <h3>Materiały ISTQB</h3>
+                
+                <div id="sylabusy" class="subsection">
+                    <h4>Sylabusy</h4>
+                    <p>
+                        Sylabusy ISTQB definiują obszary wiedzy i umiejętności, które powinni posiadać testerzy 
+                        na poszczególnych poziomach certyfikacji:
+                    </p>
+                    <div class="istqb-portfolio-container">
+                        <a href="https://www.istqb.org/" target="_blank" rel="noopener noreferrer" title="Przejdź do strony ISTQB">
+                            <img src="images/ISTQB_portfolio.png" alt="ISTQB Portfolio - Certification Levels" class="istqb-portfolio">
+                        </a>
+                    </div>
+                    <p>
+                        Wszystkie sylabusy są regularnie aktualizowane, aby odzwierciedlać najnowsze trendy 
+                        i praktyki w testowaniu oprogramowania.
+                    </p>
+                </div>
+
+                <div id="slownik" class="subsection">
+                    <h4>Słownik ISTQB</h4>
+                    <p>
+                        Słownik ISTQB zawiera terminologię i definicje stosowane w testowaniu oprogramowania. 
+                        Jest to niezbędne narzędzie dla każdego testera, zapewniające jednolitą terminologię 
+                        w międzynarodowej społeczności testowania.
+                    </p>
+                    <p>
+                        Słownik jest dostępny w wielu językach, w tym w polszczyźnie, co ułatwia zrozumienie 
+                        koncepcji i standardów testowania dla polskich specjalistów.
+                    </p>
+                    <p>
+                        <a href="https://glossary.istqb.org/en_US/search?term=&exact_matches_first=true" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            Przejdź do Słownika ISTQB
+                        </a>
+                    </p>
+                </div>
+            </article>
+
+            <article id="scr">
+                <h3>SCR - Software Certification Register</h3>
+                <p>
+                    SCR (Software Certification Register) to rejestr publiczny certyfikowanych profesjonalistów. 
+                    Pozwala on sprawdzić ważność certyfikacji ISTQB każdego testera lub specjalisty QA.
+                </p>
+                <p>
+                    Każdy certyfikat wydany przez ISTQB jest rejestrowany w SCR z datą wydania i ważności, 
+                    co zapewnia przejrzystość i uczciwość procesu certyfikacji.
+                </p>
+                <p>
+                    <a href="https://scr.istqb.org/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        Przejdź do rejestru SCR
+                    </a>
+                </p>
+            </article>
+        </section>
+
+        <!-- Dołącz do nas Section -->
+        <section id="dolacz" class="section">
+            <h2>Dołącz do nas</h2>
+            
+            <p>
+                Zapraszamy Cię do dołączenia do Polskiej Rady Jakości! Bez względu na to, czy jesteś początkującym 
+                testerem, czy doświadczonym specjalistą QA, mamy dla Ciebie wiele możliwości rozwoju.
+            </p>
+
+            <div class="benefits">
+                <div class="benefit-card">
+                    <h3>Szkolenia</h3>
+                    <p>Dostęp do wysokiej jakości szkoleń ISTQB prowadzonych przez doświadczonych instruktorów.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Społeczność Profesjonalistów</h3>
+                    <p>Poznaj innych testerów, wymieniaj się doświadczeniami i buduj sieć zawodowych kontaktów.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Najnowsze Trendy</h3>
+                    <p>Bądź na bieżąco z najnowszymi trendami i praktykami w testowaniu oprogramowania.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Wsparcie Zawodowe</h3>
+                    <p>Otrzymuj wsparcie w rozwijaniu Twojej kariery w branży testowania oprogramowania.</p>
+                </div>
+            </div>
+
+            <div class="join-section">
+                <h3>Jak dołączyć?</h3>
+                <p>
+                    Aby dołączyć do nas, wypełnij formularz kontaktowy lub skontaktuj się z nami bezpośrednio. 
+                    Nasz zespół będzie szczęśliwy, aby odpowiedzieć na wszystkie Twoje pytania.
+                </p>
+                <a href="#kontakt" class="btn btn-primary">Skontaktuj się z nami</a>
+            </div>
+        </section>
+
+        <!-- Kontakt Section -->
+        <section id="kontakt" class="section">
+            <h2>Kontakt</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informacje kontaktowe</h3>
+                    <p>
+                        <strong>Polska Rada Jakości (PQB)</strong><br>
+                        www.pqb.org.pl
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:info@pqb.org.pl">info@pqb.org.pl</a>
+                    </p>
+                    <p>
+                        <strong>Wirtualne Biuro:</strong><br>
+                        Bydgoszcz, Polska
+                    </p>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Wyślij nam wiadomość</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Imię i nazwisko:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Temat:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Wiadomość:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Wyślij</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Polska Rada Jakości (PQB). Wszystkie prawa zastrzeżone.</p>
+            <p>
+                <a href="#">Polityka prywatności</a> | 
+                <a href="#">Warunki użytkowania</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
