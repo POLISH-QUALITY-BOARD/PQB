@@ -291,58 +291,120 @@ article h3 {
 /* Vision and Mission Boxes */
 .vision-mission {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
 }
 
 .box {
-    background-color: var(--light-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent-color);
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--accent-color);
+}
+
+.box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-color: rgba(255, 107, 53, 0.2);
+}
+
+.mission-box {
+    border-top-color: var(--primary-color);
+}
+
+.vision-box {
+    border-top-color: var(--secondary-color);
 }
 
 .box h4 {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
 }
 
 /* Values Section */
 .values-section {
-    background-color: var(--light-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 3rem;
-    border-top: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%);
+    padding: 3rem;
+    border-radius: 12px;
+    margin-bottom: 3.5rem;
+    border: 2px solid rgba(0, 102, 204, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.values-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
 }
 
 .section-description {
     font-style: italic;
-    color: #666;
+    color: #888;
     margin-bottom: 1.5rem;
     font-size: 0.95em;
+    font-weight: 500;
+}
+
+.article-intro {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .values-list {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
 .values-list li {
-    padding: 0.8rem 0 0.8rem 2rem;
+    padding: 1.2rem 1rem 1.2rem 2.5rem;
     position: relative;
     margin: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.values-list li:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.15);
 }
 
 .values-list li::before {
     content: "✓";
     position: absolute;
-    left: 0;
+    left: 0.7rem;
     color: var(--accent-color);
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .mission-list,
@@ -354,19 +416,28 @@ article h3 {
 
 .mission-list li,
 .vision-list li {
-    padding: 0.8rem 0 0.8rem 2rem;
+    padding: 0.9rem 0 0.9rem 1.8rem;
     position: relative;
-    margin: 0;
+    margin: 0.6rem 0;
+    line-height: 1.6;
+    color: #444;
+    transition: all 0.2s ease;
+}
+
+.mission-list li:hover,
+.vision-list li:hover {
+    color: var(--secondary-color);
+    transform: translateX(4px);
 }
 
 .mission-list li::before,
 .vision-list li::before {
-    content: "•";
+    content: "→";
     position: absolute;
     left: 0;
     color: var(--accent-color);
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 /* Benefits Section */
@@ -406,11 +477,155 @@ article h3 {
 }
 
 /* Contact Section */
+.section-intro {
+    font-size: 1.1em;
+    color: #555;
+    text-align: center;
+    max-width: 600px;
+    margin: 1.5rem auto 2.5rem;
+}
+
 .contact-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2.5rem 0 3rem;
+}
+
+.contact-card {
+    background: linear-gradient(135deg, var(--light-bg) 0%, #f9f9f9 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.contact-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.contact-card p {
+    margin-bottom: 0;
+}
+
+.contact-card a {
+    font-weight: 600;
+    color: var(--primary-color);
+    word-break: break-word;
+}
+
+/* Social Section */
+.social-section {
+    background-color: var(--light-bg);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin: 2.5rem 0;
+    text-align: center;
+}
+
+.social-section h3 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.social-card:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
+
+.social-card svg {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.social-card:hover svg {
+    color: var(--accent-color);
+}
+
+/* Registration Info */
+.registration-info {
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.05), rgba(255, 107, 53, 0.05));
+    padding: 2.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+    margin: 2.5rem 0 0;
+}
+
+.registration-info h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.registration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.registration-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.reg-label {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.reg-value {
+    font-size: 1.3em;
+    color: var(--secondary-color);
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
 }
 
 .contact-info, .contact-form {
@@ -476,6 +691,99 @@ article h3 {
 
 .footer p {
     margin-bottom: 0.5rem;
+}
+
+/* Certification Section Styles */
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Sylabus card - full width above the grid */
+#materialy-istqb {
+    margin-bottom: 2rem;
+}
+
+.certification-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.certification-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 2rem 1.5rem;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.card-header h3 {
+    color: var(--white);
+    margin: 0;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.certification-subsection {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.certification-subsection:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.certification-subsection h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.certification-subsection p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.certification-subsection p:last-of-type {
+    margin-bottom: 0;
+}
+
+.text-muted {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.subsection-action {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
 }
 
 /* Subsection Styles */
@@ -595,8 +903,64 @@ article h3 {
     height: 20px;
 }
 
+/* Statut Section */
+.statut-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.statut-card {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.statut-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-left-color: var(--accent-color);
+}
+
+.language-badge {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+
+.statut-card h4 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.statut-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.statut-card .btn {
+    align-self: flex-start;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .certification-grid {
+        grid-template-columns: 1fr;
+    }
+
     .navbar .container {
         flex-wrap: wrap;
         padding: 1rem 10px;
