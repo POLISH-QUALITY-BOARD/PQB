@@ -809,10 +809,16 @@ article h3 {
 .istqb-portfolio-container {
     margin: 2rem 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
 }
 
 .istqb-portfolio-container a {
-    display: inline-block;
+    display: block;
+    width: 100%;
+    max-width: 700px; /* desktop cap */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -822,10 +828,37 @@ article h3 {
 }
 
 .istqb-portfolio {
-    max-width: 500px;
+    width: 100%;
     height: auto;
+    max-width: 700px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: block;
+    object-fit: contain;
+}
+
+/* Fine-tune responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .istqb-portfolio-container {
+        padding: 0 0.5rem;
+    }
+
+    .istqb-portfolio-container a {
+        max-width: 100%;
+    }
+
+    .istqb-portfolio {
+        max-width: 100%;
+        border-radius: 6px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Allow larger display on very wide screens */
+    .istqb-portfolio-container a,
+    .istqb-portfolio {
+        max-width: 900px;
+    }
 }
 
 /* Board Members Styles */
