@@ -599,7 +599,7 @@ article h3 {
 
 .registration-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
@@ -610,6 +610,21 @@ article h3 {
     background: var(--white);
     border-radius: 8px;
     border: 1px solid var(--border-color);
+}
+
+/* Make any registration item with .full-row span across the grid */
+.registration-item.full-row {
+    grid-column: 1 / -1;
+}
+
+.registration-item.full-row .reg-label {
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.registration-item.full-row .reg-value {
+    text-align: left;
+    word-break: break-word;
 }
 
 .reg-label {
