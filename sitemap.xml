@@ -98,6 +98,14 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Recommended White Papers -->
+    <url>
+        <loc>https://www.pqb.org.pl/#whitepapers</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Join Us Section -->
     <url>
         <loc>https://www.pqb.org.pl/#dolacz</loc>
