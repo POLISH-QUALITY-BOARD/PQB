@@ -28,11 +28,11 @@ website/
 │   └── main.js                     # JavaScript for navigation and interactivity (115 lines)
 │
 ├── images/
-│   ├── PQB-logo.png                # PQB organization logo
-│   ├── PQB-pieczec.png             # PQB seal/emblem
-│   ├── ISTQB_portfolio.png         # ISTQB certification levels portfolio
-│   ├── favicon.svg                 # Website favicon (SVG)
-│   └── favicon_pieczec.svg         # Alternative favicon (SVG)
+│   ├── PQB-logo.png                                          # PQB organization logo
+│   ├── PQB-pieczec.png                                       # PQB seal/emblem
+│   ├── istqb-02-12-26-full-name-portfolio-graphic.svg        # ISTQB certification latest portfolio
+│   ├── favicon.svg                                           # Website favicon (SVG)
+│   └── favicon_pieczec.svg                                   # Alternative favicon (SVG)
 │
 └── documents/
     ├── Statut_PQB.pdf              # PQB Constitution/Statute (Polish)

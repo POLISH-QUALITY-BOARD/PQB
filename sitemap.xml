@@ -65,11 +65,11 @@
     <!-- ISTQB Materials -->
     <url>
         <loc>https://www.pqb.org.pl/#materialy-istqb</loc>
-        <lastmod>2026-01-03</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://www.pqb.org.pl/images/ISTQB_portfolio.png</image:loc>
+            <image:loc>https://www.pqb.org.pl/images/istqb-02-12-26-full-name-portfolio-graphic.svg</image:loc>
             <image:title>ISTQB Portfolio - Certification Levels</image:title>
         </image:image>
     </url>
