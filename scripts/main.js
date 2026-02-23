@@ -69,6 +69,12 @@ if (contactForm) {
         
         // Log the form data (in a real application, you'd send this to a server)
         console.log('Form submitted:', data);
+		
+		// GA event for measuring conversions
+		gtag('event', 'contact_form_submit', {
+		  event_category: 'engagement',
+		  event_label: 'contact_form'
+		});
         
         // Show success message
         alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
