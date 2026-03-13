@@ -29,7 +29,8 @@
         <ul class="footer-list">
           <li>
             <a
-              href="https://pqb.org.pl/documents/Statut_PQB.pdf"
+              // eslint-disable-next-line svelte/no-navigation-without-resolve
+              href="/documents/Statut_PQB.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -39,7 +40,8 @@
           </li>
           <li>
             <a
-              href="https://pqb.org.pl/documents/Statut_PQB_en-US.pdf"
+              // eslint-disable-next-line svelte/no-navigation-without-resolve
+              href="/documents/Statut_PQB_en-US.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
