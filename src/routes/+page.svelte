@@ -1,14 +1,14 @@
 <script>
-  import AboutSection from '$lib/components/AboutSection.svelte';
-  import CertificationSection from '$lib/components/CertificationSection.svelte';
-  import JoinSection from '$lib/components/JoinSection.svelte';
-  import ContactSection from '$lib/components/ContactSection.svelte';
+  import About from '$lib/components/sections/About.svelte';
+  import Certification from '$lib/components/sections/Certification.svelte';
+  import Join from '$lib/components/sections/Join.svelte';
+  import Contact from '$lib/components/sections/Contact.svelte';
 </script>
 
 <!-- Main Content -->
 <main class="container">
-  <AboutSection />
-  <CertificationSection />
-  <JoinSection />
-  <ContactSection />
+  <About />
+  <Certification />
+  <Join />
+  <Contact />
 </main>
