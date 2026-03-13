@@ -9,6 +9,7 @@
   --primary-color: #0066cc;
   --secondary-color: #003d7a;
   --accent-color: #ff6b35;
+  --accent-dark: #c0460e;
   --text-color: #333;
   --light-bg: #f5f5f5;
   --white: #ffffff;
@@ -30,7 +31,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 /* Typography */
@@ -43,6 +44,7 @@ h6 {
   margin-top: 1em;
   margin-bottom: 0.5em;
   font-weight: 600;
+  line-height: 1.25;
 }
 
 h1 {
@@ -81,6 +83,13 @@ a:hover {
   color: var(--accent-color);
 }
 
+:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+
 /* Navigation Bar */
 .navbar {
   background-color: var(--white);
@@ -100,7 +109,7 @@ a:hover {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
   font-weight: 700;
   font-size: 1.3em;
   color: var(--secondary-color);
@@ -129,7 +138,7 @@ a:hover {
 .nav-link {
   color: var(--text-color);
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 4px;
   transition: all 0.3s ease;
 }
@@ -221,7 +230,9 @@ a:hover {
   background: none;
   border: none;
   cursor: pointer;
-  gap: 5px;
+  gap: 4px;
+  padding: 12px;
+  margin: -12px;
 }
 
 .hamburger span {
@@ -248,7 +259,7 @@ a:hover {
 .hero {
   background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
   color: var(--white);
-  padding: 6rem 0;
+  padding: 4rem 0;
   text-align: center;
 }
 
@@ -276,14 +287,14 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: var(--accent-color);
+  background-color: var(--accent-dark);
   color: var(--white);
 }
 
 .btn-primary:hover {
-  background-color: #e85a2a;
+  background-color: #a33a09;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 12px rgba(192, 70, 14, 0.3);
 }
 
 .btn-secondary {
@@ -299,7 +310,7 @@ a:hover {
 
 /* Sections */
 .section {
-  padding: 2.5rem 0;
+  padding: 4rem 0;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -309,8 +320,8 @@ a:hover {
 
 /* Article Styles */
 article {
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 
 article h3 {
@@ -321,8 +332,8 @@ article h3 {
 .vision-mission {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  margin-top: 3rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .box {
@@ -370,9 +381,9 @@ article h3 {
 /* Values Section */
 .values-section {
   background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%);
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 12px;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
   border: 2px solid rgba(0, 102, 204, 0.2);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
@@ -384,7 +395,7 @@ article h3 {
 
 .section-description {
   font-style: italic;
-  color: #888;
+  color: #666;
   margin-bottom: 1.5rem;
   font-size: 0.95em;
   font-weight: 500;
@@ -542,7 +553,7 @@ article h3 {
 
 .contact-icon {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   display: block;
 }
 
@@ -733,8 +744,8 @@ article h3 {
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -854,7 +865,7 @@ article h3 {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: #666;
   margin-left: auto;
 }
@@ -868,7 +879,7 @@ article h3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 /* Sylabus card - full width above the grid */
@@ -1182,7 +1193,7 @@ article h3 {
 
   .navbar .container {
     flex-wrap: wrap;
-    padding: 1rem 10px;
+    padding: 1rem 16px;
   }
 
   .org-name {
@@ -1267,7 +1278,7 @@ article h3 {
   }
 
   .section {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
   }
 
   .vision-mission,
@@ -1283,7 +1294,7 @@ article h3 {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 10px;
+    padding: 0 16px;
   }
 
   h1 {
