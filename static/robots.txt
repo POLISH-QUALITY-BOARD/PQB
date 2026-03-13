@@ -18,8 +18,6 @@ Disallow: /.git/
 Disallow: /node_modules/
 
 # Allow crawling of important assets
-Allow: /styles/
-Allow: /scripts/
 Allow: /images/
 Allow: /documents/
 
