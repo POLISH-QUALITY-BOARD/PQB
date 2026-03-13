@@ -104,7 +104,7 @@ Displays board member cards with:
 **Values (Wartości):**
 
 - Nowoczesność (Modernity)
-- Zaagażowanie (Engagement)
+- Zaangażowanie (Engagement)
 - Inkluzywność (Inclusivity)
 - Transparentność działań (Transparency)
 - Etyka (Ethics)
