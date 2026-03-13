@@ -5,7 +5,6 @@
   import Contact from '$lib/components/sections/Contact.svelte';
 </script>
 
-<!-- Main Content -->
 <main class="container">
   <About />
   <Certification />

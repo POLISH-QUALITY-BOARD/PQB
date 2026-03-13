@@ -54,12 +54,12 @@
         </ul>
       </li>
       <!-- <li class="nav-item dropdown">
-                  <a href="#certyfikacja" class="nav-link">Certyfikacja ISTQB</a>
-                  <ul class="dropdown-menu">
-                      <li><a href="#materialy-istqb">Materiały ISTQB</a></li>
-                      <li><a href="#scr">SCR</a></li>
-                  </ul>
-              </li> -->
+        <a href="#certyfikacja" class="nav-link">Certyfikacja ISTQB</a>
+        <ul class="dropdown-menu">
+          <li><a href="#materialy-istqb">Materiały ISTQB</a></li>
+          <li><a href="#scr">SCR</a></li>
+        </ul>
+      </li> -->
       <li class="nav-item">
         <a href="#certyfikacja" class="nav-link" onclick={closeMenu}>Certyfikacja ISTQB</a>
       </li>
