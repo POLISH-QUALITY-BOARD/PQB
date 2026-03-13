@@ -4,6 +4,8 @@
   let menuOpen = $state(false);
   let dropdownOpen = $state(false);
 
+  let nav: HTMLElement;
+
   function toggleMenu() {
     menuOpen = !menuOpen;
   }
@@ -13,23 +15,19 @@
     dropdownOpen = false;
   }
 
-  function handleDropdownClick(e: MouseEvent) {
+  function toggleDropdown(e: MouseEvent) {
     e.preventDefault();
-    if (window.innerWidth <= 768) {
-      dropdownOpen = !dropdownOpen;
-    }
+    if (window.innerWidth <= 768) dropdownOpen = !dropdownOpen;
   }
 
   function handleOutsideClick(e: MouseEvent) {
-    if (!(e.target as Element)?.closest('.navbar')) {
-      closeMenu();
-    }
+    if (!nav.contains(e.target as Node)) closeMenu();
   }
 </script>
 
 <svelte:window onclick={handleOutsideClick} />
 
-<nav class="navbar">
+<nav class="navbar" bind:this={nav}>
   <div class="container">
     <a href={resolve('/')} class="nav-brand">
       <img src="images/PQB-logo.png" alt="PQB Logo" class="logo" />
@@ -47,7 +45,7 @@
     </button>
     <ul class="nav-menu" class:active={menuOpen}>
       <li class="nav-item dropdown" class:active={dropdownOpen}>
-        <a href="#onas" class="nav-link" onclick={handleDropdownClick}>O nas</a>
+        <a href="#onas" class="nav-link" onclick={toggleDropdown}>O nas</a>
         <ul class="dropdown-menu">
           <li><a href="#kim-jestesmy" onclick={closeMenu}>Kim jesteśmy, co robimy</a></li>
           <li><a href="#sklad-osobowy" onclick={closeMenu}>Skład osobowy zarządu</a></li>
