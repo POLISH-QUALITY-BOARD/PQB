@@ -19,7 +19,7 @@
   }
 
   function handleOutsideClick(e: MouseEvent) {
-    if (!e.target?.closest('.navbar')) {
+    if (!(e.target as Element)?.closest('.navbar')) {
       closeMenu();
     }
   }
