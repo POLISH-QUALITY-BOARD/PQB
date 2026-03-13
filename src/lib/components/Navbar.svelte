@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   let menuOpen = $state(false);
   let dropdownOpen = $state(false);
 
@@ -11,15 +11,15 @@
     dropdownOpen = false;
   }
 
-  function handleDropdownClick(e) {
+  function handleDropdownClick(e: MouseEvent) {
     e.preventDefault();
     if (window.innerWidth <= 768) {
       dropdownOpen = !dropdownOpen;
     }
   }
 
-  function handleOutsideClick(e) {
-    if (!e.target.closest('.navbar')) {
+  function handleOutsideClick(e: MouseEvent) {
+    if (!e.target?.closest('.navbar')) {
       closeMenu();
     }
   }
