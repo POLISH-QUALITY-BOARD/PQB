@@ -153,7 +153,7 @@ Features four benefit cards:
 Contact information:
 
 - **Organization:** Polish Quality Board (PQB)
-- **Website:** www.pqb.org.pl
+- **Website:** pqb.org.pl
 - **Email:** [info@pqb.org.pl](mailto:info@pqb.org.pl)
 - **Location:** Bydgoszcz, Polska (Virtual Office)
 - **KRS:** 0001200368
@@ -240,39 +240,19 @@ Contact information:
 
 ## Development
 
-### Local Setup
+```bash
+# Install dependencies
+npm install
 
-1. Clone the repository:
+# Start development server
+npm run dev
 
-   ```bash
-   git clone https://github.com/POLISH-QUALITY-BOARD/website.git
-   cd website
-   ```
+# Build for production
+npm run build
 
-2. No build process required - it's a static website
-3. Open `index.html` in a web browser or serve with a local server:
-
-   ```bash
-   # Using Python 3
-   python3 -m http.server 8000
-
-   # Using Python 2
-   python -m SimpleHTTPServer 8000
-   ```
-
-### Browser Support
-
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-- Minimum CSS Grid and Flexbox support
-
-### File Information
-
-- **HTML File Size:** 365 lines
-- **CSS File Size:** 731 lines
-- **JavaScript File Size:** 115 lines
-- **No external dependencies** - Pure HTML/CSS/JS
-- **Fast load times** - Static files only
+# Preview production build
+npm run preview
+```
 
 ## Contact & Information
 
