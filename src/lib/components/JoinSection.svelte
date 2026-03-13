@@ -39,6 +39,7 @@
     </p>
     <p>
       <a
+        // eslint-disable-next-line svelte/no-navigation-without-resolve
         href="documents/deklaracjaCzlonkowska_PQB.docx"
         target="_blank"
         rel="noopener noreferrer"
@@ -50,6 +51,7 @@
     </p>
     <p>
       <a
+        // eslint-disable-next-line svelte/no-navigation-without-resolve
         href="documents/deklaracjaNDA_PQB.docx"
         target="_blank"
         rel="noopener noreferrer"

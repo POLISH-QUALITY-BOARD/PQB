@@ -151,6 +151,7 @@
         <h4>Statut PQB</h4>
         <p>Wersja polska statutu Polish Quality Board.</p>
         <a
+          // eslint-disable-next-line svelte/no-navigation-without-resolve
           href="documents/Statut_PQB.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -165,6 +166,7 @@
         <h4>Constitution of PQB</h4>
         <p>English version of the Statutes of the Polish Quality Board.</p>
         <a
+          // eslint-disable-next-line svelte/no-navigation-without-resolve
           href="documents/Statut_PQB_en-US.pdf"
           target="_blank"
           rel="noopener noreferrer"
