@@ -5,7 +5,7 @@ export default defineConfig({
   webServer: { command: 'npm run build && npm run preview', port: 4173 },
   testMatch: '**/*.spec.ts',
   reporter: [['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }]],
-  use: { screenshot: 'only-on-failure' },
+  use: { baseURL: 'http://localhost:4173', screenshot: 'only-on-failure' },
   projects: [
     {
       name: 'chromium-desktop',
