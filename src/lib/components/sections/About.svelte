@@ -156,6 +156,7 @@
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-secondary"
+          data-testid="download-statut-pl"
           download
         >
           📄 Pobierz statut PQB
@@ -171,6 +172,7 @@
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-secondary"
+          data-testid="download-statut-en"
           download
         >
           📄 Download Statutes of PQB

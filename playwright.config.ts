@@ -1,6 +1,15 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
+  testDir: 'tests',
   webServer: { command: 'npm run build && npm run preview', port: 4173 },
-  testMatch: '**/*.e2e.{ts,js}'
+  testMatch: '**/*.spec.ts',
+  reporter: [['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }]],
+  use: { screenshot: 'only-on-failure' },
+  projects: [
+    {
+      name: 'chromium-desktop',
+      use: { ...devices['Desktop Chrome'] }
+    }
+  ]
 });

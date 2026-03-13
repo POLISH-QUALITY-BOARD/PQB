@@ -44,6 +44,7 @@
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-primary"
+        data-testid="download-membership-declaration"
         download
       >
         📄 Pobierz i wypełnij deklarację członkowską
@@ -56,6 +57,7 @@
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-primary"
+        data-testid="download-nda-declaration"
         download
       >
         📄 Pobierz i wypełnij deklarację o zachowaniu poufności (NDA)
