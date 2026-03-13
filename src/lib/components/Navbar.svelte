@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
+
   let menuOpen = $state(false);
   let dropdownOpen = $state(false);
 
@@ -29,10 +31,10 @@
 
 <nav class="navbar">
   <div class="container">
-    <div class="nav-brand">
+    <a href={resolve('/')} class="nav-brand">
       <img src="images/PQB-logo.png" alt="PQB Logo" class="logo" />
       <span class="org-name">Polish Quality Board</span>
-    </div>
+    </a>
     <button
       class="hamburger"
       class:active={menuOpen}
