@@ -40,6 +40,8 @@
     "vitest-browser-svelte": "^2.0.2"
   },
   "dependencies": {
-    "@iconify/svelte": "^5.2.1"
+    "@iconify/svelte": "^5.2.1",
+    "@tailwindcss/vite": "^4.2.1",
+    "tailwindcss": "^4.2.1"
   }
 }

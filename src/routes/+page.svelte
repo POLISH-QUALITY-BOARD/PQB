@@ -6,7 +6,7 @@
   import Contact from '$lib/components/sections/Contact.svelte';
 </script>
 
-<main class="container">
+<main class="max-w-300 mx-auto px-4">
   <About />
   <Portfolio />
   <Syllabi />

@@ -8,9 +8,11 @@
   let { children } = $props();
 </script>
 
-<Navbar />
-<Hero />
+<div class="text-gray-800 leading-relaxed bg-white">
+  <Navbar />
+  <Hero />
 
-{@render children()}
+  {@render children()}
 
-<Footer />
+  <Footer />
+</div>
