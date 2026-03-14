@@ -21,7 +21,7 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          BASE_PATH: /preview/pr-${{ github.event.number }}
+          BASE_PATH: /PQB/preview/pr-${{ github.event.number }}
       - if: github.event.action != 'closed'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
