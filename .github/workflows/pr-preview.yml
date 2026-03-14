@@ -43,6 +43,9 @@ jobs:
           folder: build
           target-folder: pr-preview/pr-${{ github.event.number }}
           clean: false
+          header: preview
+          message: |
+            Preview: https://polish-quality-board.github.io/PQB/pr-preview/pr-${{ github.event.number }}/
 
       - name: Delete PR Preview
         if: github.event.action == 'closed'
