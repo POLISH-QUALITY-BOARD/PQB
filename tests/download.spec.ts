@@ -1,45 +1,33 @@
 import { test, expect } from '@playwright/test';
 
-test('I can download PQB statut (Polish)', async ({ page }) => {
-  await page.goto('/');
+const testParameters = [
+  {
+    filename: 'Statut_PQB.pdf',
+    testId: 'download-statute-pl'
+  },
+  {
+    filename: 'Statut_PQB_en-US.pdf',
+    testId: 'download-statute-en'
+  },
+  {
+    filename: 'deklaracjaCzlonkowska_PQB.docx',
+    testId: 'download-membership-declaration'
+  },
+  {
+    filename: 'deklaracjaNDA_PQB.docx',
+    testId: 'download-nda-declaration'
+  }
+];
 
-  const [download] = await Promise.all([
-    page.waitForEvent('download'),
-    page.getByTestId('download-statut-pl').click()
-  ]);
+for (const { filename, testId } of testParameters) {
+  test(`I can download ${filename}`, async ({ page }) => {
+    await page.goto('/');
 
-  expect(download.suggestedFilename()).toBe('Statut_PQB.pdf');
-});
+    const [download] = await Promise.all([
+      page.waitForEvent('download'),
+      page.getByTestId(testId).click()
+    ]);
 
-test('I can download PQB statut (English)', async ({ page }) => {
-  await page.goto('/');
-
-  const [download] = await Promise.all([
-    page.waitForEvent('download'),
-    page.getByTestId('download-statut-en').click()
-  ]);
-
-  expect(download.suggestedFilename()).toBe('Statut_PQB_en-US.pdf');
-});
-
-test('I can download membership declaration', async ({ page }) => {
-  await page.goto('/');
-
-  const [download] = await Promise.all([
-    page.waitForEvent('download'),
-    page.getByTestId('download-membership-declaration').click()
-  ]);
-
-  expect(download.suggestedFilename()).toBe('deklaracjaCzlonkowska_PQB.docx');
-});
-
-test('I can download NDA declaration', async ({ page }) => {
-  await page.goto('/');
-
-  const [download] = await Promise.all([
-    page.waitForEvent('download'),
-    page.getByTestId('download-nda-declaration').click()
-  ]);
-
-  expect(download.suggestedFilename()).toBe('deklaracjaNDA_PQB.docx');
-});
+    expect(download.suggestedFilename()).toBe(filename);
+  });
+}
