@@ -15,28 +15,25 @@ Polska Rada Jakości (Polish Quality Board) provides:
 ## Repository Structure
 
 ```text
-website/
-├── index.html                      # Main website page
-├── CNAME                           # Domain configuration (pqb.org.pl)
-├── LICENSE                         # Repository license
-├── README.md                        # This file
-│
-├── styles/
-│   └── main.css                    # Main stylesheet with responsive design (731 lines)
-│
-├── scripts/
-│   └── main.js                     # JavaScript for navigation and interactivity (115 lines)
-│
-├── images/
-│   ├── PQB-logo.png                                          # PQB organization logo
-│   ├── PQB-pieczec.png                                       # PQB seal/emblem
-│   ├── istqb-02-12-26-full-name-portfolio-graphic.svg        # ISTQB certification latest portfolio
-│   ├── favicon.svg                                           # Website favicon (SVG)
-│   └── favicon_pieczec.svg                                   # Alternative favicon (SVG)
-│
-└── documents/
-    ├── Statut_PQB.pdf              # PQB Constitution/Statute (Polish)
-    └── Statut_PQB_en-US.pdf        # PQB Constitution/Statute (English)
+PQB/
+├── src/
+│   ├── app.html                # HTML shell (SvelteKit entry point)
+│   ├── app.css                 # Global styles
+│   ├── app.d.ts                # Global TypeScript declarations
+│   ├── lib/components/
+│   │   └── sections/           # One-pager sections
+│   └── routes/
+│       ├── +layout.svelte      # Root layout (wraps all pages)
+│       ├── +layout.ts          # Layout load function
+│       └── +page.svelte        # Main (and only) page
+├── static/
+│   ├── CNAME                   # Custom domain for GitHub Pages (pqb.org.pl)
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   ├── documents/
+│   └── images/
+│       └── people/
+└── tests/
 ```
 
 ## Website Content
@@ -64,19 +61,23 @@ website/
 ### Main Sections
 
 #### 1. Hero Section
+
 - Organization headline: "Polish Quality Board"
 - Tagline: "Profesjonalne certyfikacje i szkolenia z testowania oprogramowania"
 - Call-to-action button linking to Join Us section
 
 #### 2. About Us (O nas)
+
 Covers four main topics:
 
 **Kim jesteśmy** (Who We Are)
+
 - Description of PQB as Poland's ISTQB national partner
 - Focus on software testing and quality assurance promotion
 
 **Skład osobowy zarządu** (Board Members)
 Displays board member cards with:
+
 - Member name
 - Position (Prezes/Wiceprezes)
 - LinkedIn profile link
@@ -90,6 +91,7 @@ Displays board member cards with:
 | Wojciech Jaszcz | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/wojtek-jaszcz-5111421/) |
 
 **Statut** (Constitution)
+
 - Download links for both Polish and English versions:
   - Statut_PQB.pdf (Polish)
   - Statut_PQB_en-US.pdf (English)
@@ -97,19 +99,22 @@ Displays board member cards with:
 **Wartości, Misja i Wizja** (Values, Mission & Vision)
 
 **Values (Wartości):**
+
 - Nowoczesność (Modernity)
-- Zaagażowanie (Engagement)
+- Zaangażowanie (Engagement)
 - Inkluzywność (Inclusivity)
 - Transparentność działań (Transparency)
 - Etyka (Ethics)
 
 **Mission (Misja):**
+
 - Lokalizować, współtworzyć standardy i certyfikację w obszarach dotyczących jakości w IT
 - Edukować, promować jakość, prowadzić działalność ekspercką
 - Nawiązywać i rozwijać międzynarodowe relacje z organizacjami i jednostkami
 - Udostępnianie i współpraca dotycząca Technologii i jej trendów
 
 **Vision (Wizja):**
+
 - Zdecentralizowana zdrowa polska organizacja wspierająca twórcze i aktywne jednostki
 - Etyka nie na papierze a w działaniu
 - Proste procedury i zwinna organizacja
@@ -119,17 +124,20 @@ Displays board member cards with:
 #### 3. ISTQB Certification (Certyfikacja ISTQB)
 
 **ISTQB Materials (Materiały ISTQB)**
+
 - Description of ISTQB as international standard for software testing
 - Syllabuses section with ISTQB Portfolio image (clickable link to istqb.org)
 - ISTQB Glossary section with link to [https://glossary.istqb.org/](https://glossary.istqb.org/)
 
 **SCR Registry (Rejestr SCR)**
+
 - Description of Software Certification Register
 - Link to [https://scr.istqb.org/](https://scr.istqb.org/)
 
 #### 4. Join Us (Dołącz do nas)
 
 Features four benefit cards:
+
 - **Szkolenia** (Training) - Access to ISTQB training
 - **Społeczność Profesjonalistów** (Professional Community) - Network with other professionals
 - **Najnowsze Trendy** (Latest Trends) - Stay current with testing practices
@@ -140,14 +148,16 @@ Features four benefit cards:
 #### 5. Contact (Kontakt)
 
 Contact information:
+
 - **Organization:** Polish Quality Board (PQB)
-- **Website:** www.pqb.org.pl
+- **Website:** pqb.org.pl
 - **Email:** [info@pqb.org.pl](mailto:info@pqb.org.pl)
 - **Location:** Bydgoszcz, Polska (Virtual Office)
 - **KRS:** 0001200368
 - **NIP:** 5543040791
 
 #### 6. Footer
+
 - Copyright notice for Polish Quality Board (2025)
 - Privacy policy link
 
@@ -159,7 +169,6 @@ Contact information:
   - CSS Custom Properties (variables) for theming
   - Smooth animations and transitions
   - Mobile-first responsive design
-  
 - **JavaScript (ES6+)** (115 lines) - Interactive features:
   - Hamburger menu toggle for mobile
   - Multi-level dropdown navigation
@@ -171,6 +180,7 @@ Contact information:
 ## Design System
 
 ### Color Scheme
+
 - **Primary Color:** #0066cc (Blue)
 - **Secondary Color:** #003d7a (Dark Blue)
 - **Accent Color:** #ff6b35 (Orange)
@@ -180,6 +190,7 @@ Contact information:
 - **Border Color:** #ddd
 
 ### Typography
+
 - **Font Family:** Segoe UI, Tahoma, Geneva, Verdana, sans-serif
 - **Line Height:** 1.6
 - Responsive heading sizes (H1: 2.5em, H2: 2em, H3: 1.5em, H4: 1.2em)
@@ -187,12 +198,14 @@ Contact information:
 ### Key Features
 
 **Responsive Design**
+
 - ✅ Fully responsive (mobile, tablet, desktop)
 - ✅ Mobile hamburger menu (breakpoint: 768px)
 - ✅ Flexible grid layouts
 - ✅ Touch-friendly navigation
 
 **Navigation**
+
 - ✅ Sticky header
 - ✅ Multi-level dropdown menus
 - ✅ Active dropdown toggle
@@ -200,6 +213,7 @@ Contact information:
 - ✅ Auto-closing menu on link click
 
 **Interactive Elements**
+
 - ✅ Board member cards with LinkedIn links (SVG icons)
 - ✅ Clickable ISTQB portfolio image linking to istqb.org
 - ✅ External resource links (ISTQB Glossary, SCR Registry)
@@ -208,6 +222,7 @@ Contact information:
 - ✅ Smooth transitions and hover effects
 
 **Accessibility**
+
 - ✅ Semantic HTML structure
 - ✅ Proper heading hierarchy
 - ✅ Link target attributes for external links
@@ -222,37 +237,19 @@ Contact information:
 
 ## Development
 
-### Local Setup
+```bash
+# Install dependencies
+npm install
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/POLISH-QUALITY-BOARD/website.git
-   cd website
-   ```
+# Start development server
+npm run dev
 
-2. No build process required - it's a static website
-3. Open `index.html` in a web browser or serve with a local server:
-   ```bash
-   # Using Python 3
-   python3 -m http.server 8000
-   
-   # Using Python 2
-   python -m SimpleHTTPServer 8000
-   ```
+# Build for production
+npm run build
 
-### Browser Support
-
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-- Minimum CSS Grid and Flexbox support
-
-### File Information
-
-- **HTML File Size:** 365 lines
-- **CSS File Size:** 731 lines
-- **JavaScript File Size:** 115 lines
-- **No external dependencies** - Pure HTML/CSS/JS
-- **Fast load times** - Static files only
+# Preview production build
+npm run preview
+```
 
 ## Contact & Information
 
@@ -272,4 +269,4 @@ See LICENSE file for details
 
 ---
 
-**Last Updated:** February 22, 2026
+**Last Updated:** March 14, 2026

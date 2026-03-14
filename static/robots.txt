@@ -1,5 +1,5 @@
 # robots.txt for Polish Quality Board (PQB)
-# https://www.pqb.org.pl/robots.txt
+# https://pqb.org.pl/robots.txt
 
 # Allow all search engine crawlers
 User-agent: *
@@ -18,13 +18,11 @@ Disallow: /.git/
 Disallow: /node_modules/
 
 # Allow crawling of important assets
-Allow: /styles/
-Allow: /scripts/
 Allow: /images/
 Allow: /documents/
 
 # Sitemap reference (update with actual sitemap URL when created)
-Sitemap: https://www.pqb.org.pl/sitemap.xml
+Sitemap: https://pqb.org.pl/sitemap.xml
 
 # Crawl-delay: Allow crawlers time between requests (in seconds)
 # This is optional; most crawlers respect this, but not all
