@@ -13,6 +13,7 @@ export default defineConfig({
     ['list'],
     ['html', { outputFolder: 'playwright-report', open: process.env.CI ? 'never' : 'on-failure' }]
   ],
+  workers: process.env.CI ? '100%' : 1,
   use: {
     baseURL: `http://localhost:${PORT}`,
     screenshot: 'only-on-failure'
