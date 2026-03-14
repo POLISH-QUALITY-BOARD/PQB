@@ -1,5 +1,6 @@
 <script>
   import Icon from '@iconify/svelte';
+  import { base } from '$app/paths';
 </script>
 
 <footer class="footer">
@@ -7,7 +8,7 @@
     <div class="footer-grid">
       <div class="footer-section footer-main">
         <div class="footer-logo">
-          <img src="images/PQB-logo.png" alt="PQB Logo" class="logo" />
+          <img src="{base}/images/PQB-logo.png" alt="PQB Logo" class="logo" />
           <span class="org-name">Polish Quality Board</span>
         </div>
         <p class="footer-description">
@@ -30,7 +31,7 @@
           <li>
             <a
               // eslint-disable-next-line svelte/no-navigation-without-resolve
-              href="/documents/Statut_PQB.pdf"
+              href="{base}/documents/Statut_PQB.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -41,7 +42,7 @@
           <li>
             <a
               // eslint-disable-next-line svelte/no-navigation-without-resolve
-              href="/documents/Statut_PQB_en-US.pdf"
+              href="{base}/documents/Statut_PQB_en-US.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
