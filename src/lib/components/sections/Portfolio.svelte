@@ -1,5 +1,5 @@
-<section id="certyfikacja" class="section">
-  <h2>Certyfikacja ISTQB</h2>
+<section id="portfolio" class="section">
+  <h2>Portfolio ISTQB</h2>
 
   <p class="section-intro">
     ISTQB (International Software Testing Qualifications Board) to międzynarodowy standard
@@ -11,7 +11,7 @@
       <h3>📚 Sylabusy ISTQB</h3>
     </div>
     <div class="card-content">
-      <div id="sylabusy" class="certification-subsection">
+      <div class="certification-subsection">
         <p>
           Sylabusy ISTQB definiują obszary wiedzy i umiejętności, które powinni posiadać testerzy na
           poszczególnych poziomach certyfikacji:

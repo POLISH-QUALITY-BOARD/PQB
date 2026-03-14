@@ -20,7 +20,7 @@
         <h4 class="footer-title">Nawigacja</h4>
         <ul class="footer-list">
           <li><a href="#onas">O nas</a></li>
-          <li><a href="#certyfikacja">Certyfikacja ISTQB</a></li>
+          <li><a href="#portfolio">Portfolio ISTQB</a></li>
           <li><a href="#dolacz">Dołącz do nas</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
