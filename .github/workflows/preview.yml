@@ -36,5 +36,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: empty-dir
-          target-folder: pr-preview/pr-${{ github.event.number }}
+          target-folder: preview/pr-${{ github.event.number }}
           clean: true
