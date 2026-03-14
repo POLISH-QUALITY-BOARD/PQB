@@ -31,6 +31,8 @@ jobs:
           target-folder: preview/pr-${{ github.event.number }}
           clean: false
       - if: github.event.action == 'closed'
+        run: mkdir empty-dir
+      - if: github.event.action == 'closed'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
