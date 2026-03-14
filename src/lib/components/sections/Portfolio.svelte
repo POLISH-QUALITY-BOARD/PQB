@@ -28,8 +28,8 @@
     <div class="p-8 grow flex flex-col">
       <div class="mb-8 pb-6 border-b border-gray-300">
         <p class="mb-4">
-          Sylabusy ISTQB definiują obszary wiedzy i umiejętności, które powinni posiadać testerzy
-          na poszczególnych poziomach certyfikacji:
+          Sylabusy ISTQB definiują obszary wiedzy i umiejętności, które powinni posiadać testerzy na
+          poszczególnych poziomach certyfikacji:
         </p>
         <div class="my-8 text-center flex justify-center items-center px-4">
           <a
@@ -100,8 +100,8 @@
           specjalisty QA.
         </p>
         <p class="mb-4">
-          Każdy certyfikat wydany przez ISTQB jest rejestrowany w SCR z datą wydania i ważności,
-          co zapewnia przejrzystość i uczciwość procesu certyfikacji.
+          Każdy certyfikat wydany przez ISTQB jest rejestrowany w SCR z datą wydania i ważności, co
+          zapewnia przejrzystość i uczciwość procesu certyfikacji.
         </p>
         <div class="flex gap-4 justify-start mt-6">
           <a

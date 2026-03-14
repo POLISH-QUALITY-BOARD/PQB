@@ -1,9 +1,7 @@
 <section class="bg-linear-to-br from-blue-900 to-blue-600 text-white py-16 text-center">
   <div class="max-w-300 mx-auto px-4">
     <div>
-      <h1
-        class="text-white text-2xl sm:text-3xl md:text-5xl mb-4 mt-4 font-semibold leading-tight"
-      >
+      <h1 class="text-white text-2xl sm:text-3xl md:text-5xl mb-4 mt-4 font-semibold leading-tight">
         Polish Quality Board
       </h1>
       <p class="text-base sm:text-lg md:text-xl mb-8">

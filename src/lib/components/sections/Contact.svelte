@@ -18,9 +18,7 @@
     Skontaktuj się z nami! Poniżej znajdziesz wszystkie sposoby dotarcia do nas.
   </p>
 
-  <div
-    class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 mt-10 mb-12"
-  >
+  <div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 mt-10 mb-12">
     <div class={contactCardClass}>
       <span class="text-5xl mb-6 block">📧</span>
       <h3 class="text-2xl font-semibold text-blue-900 mt-0 mb-4">Email</h3>

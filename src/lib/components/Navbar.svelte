@@ -29,7 +29,10 @@
 
 <nav class="bg-white shadow-md sticky top-0 z-100" bind:this={nav}>
   <div class="max-w-300 mx-auto flex justify-between items-center px-5 py-4 flex-wrap relative">
-    <a href={resolve('/')} class="flex items-center gap-4 font-bold text-xl text-blue-900 no-underline">
+    <a
+      href={resolve('/')}
+      class="flex items-center gap-4 font-bold text-xl text-blue-900 no-underline"
+    >
       <img src="images/PQB-logo.png" alt="PQB Logo" class="h-10 md:h-12.5 w-auto" />
       <span class="md:hidden inline text-sm">Polish Quality Board</span>
     </a>
@@ -59,8 +62,8 @@
         <a
           href="#onas"
           class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={toggleDropdown}
-        >O nas</a>
+          onclick={toggleDropdown}>O nas</a
+        >
         <ul
           class={`${dropdownOpen ? 'block' : 'hidden'} md:block md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:transition-all md:duration-300 md:absolute md:top-full md:left-0 bg-gray-50 md:bg-white md:shadow-md md:rounded md:py-2 md:min-w-62.5 z-1000 list-none m-0 p-0`}
         >
@@ -68,29 +71,29 @@
             <a
               href="#kim-jestesmy"
               class="block px-6 py-3 text-gray-800 transition-all duration-300 hover:bg-gray-100 hover:pl-8 no-underline"
-              onclick={closeMenu}
-            >Kim jesteśmy, co robimy</a>
+              onclick={closeMenu}>Kim jesteśmy, co robimy</a
+            >
           </li>
           <li>
             <a
               href="#sklad-osobowy"
               class="block px-6 py-3 text-gray-800 transition-all duration-300 hover:bg-gray-100 hover:pl-8 no-underline"
-              onclick={closeMenu}
-            >Skład osobowy zarządu</a>
+              onclick={closeMenu}>Skład osobowy zarządu</a
+            >
           </li>
           <li>
             <a
               href="#statut"
               class="block px-6 py-3 text-gray-800 transition-all duration-300 hover:bg-gray-100 hover:pl-8 no-underline"
-              onclick={closeMenu}
-            >Statut</a>
+              onclick={closeMenu}>Statut</a
+            >
           </li>
           <li>
             <a
               href="#wizja-misja"
               class="block px-6 py-3 text-gray-800 transition-all duration-300 hover:bg-gray-100 hover:pl-8 no-underline"
-              onclick={closeMenu}
-            >Wizja, Misja</a>
+              onclick={closeMenu}>Wizja, Misja</a
+            >
           </li>
         </ul>
       </li>
@@ -99,29 +102,29 @@
         <a
           href="#portfolio"
           class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={closeMenu}
-        >Portfolio ISTQB</a>
+          onclick={closeMenu}>Portfolio ISTQB</a
+        >
       </li>
       <li class="w-full md:w-auto border-b md:border-b-0 border-gray-200">
         <a
           href="#sylabusy"
           class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={closeMenu}
-        >Sylabusy</a>
+          onclick={closeMenu}>Sylabusy</a
+        >
       </li>
       <li class="w-full md:w-auto border-b md:border-b-0 border-gray-200">
         <a
           href="#dolacz"
           class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={closeMenu}
-        >Dołącz do nas</a>
+          onclick={closeMenu}>Dołącz do nas</a
+        >
       </li>
       <li class="w-full md:w-auto">
         <a
           href="#kontakt"
           class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={closeMenu}
-        >Kontakt</a>
+          onclick={closeMenu}>Kontakt</a
+        >
       </li>
     </ul>
   </div>

@@ -24,25 +24,29 @@
             <a
               href="#onas"
               class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-            >O nas</a>
+              >O nas</a
+            >
           </li>
           <li>
             <a
               href="#portfolio"
               class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-            >Portfolio ISTQB</a>
+              >Portfolio ISTQB</a
+            >
           </li>
           <li>
             <a
               href="#dolacz"
               class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-            >Dołącz do nas</a>
+              >Dołącz do nas</a
+            >
           </li>
           <li>
             <a
               href="#kontakt"
               class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-            >Kontakt</a>
+              >Kontakt</a
+            >
           </li>
         </ul>
       </div>
@@ -88,9 +92,7 @@
     </div>
 
     <div class="pt-8 border-t border-gray-300/50 flex flex-col gap-4 items-center text-center">
-      <p
-        class="text-sm text-gray-500 flex flex-wrap justify-between items-center gap-4 m-0 w-full"
-      >
+      <p class="text-sm text-gray-500 flex flex-wrap justify-between items-center gap-4 m-0 w-full">
         &copy; 2026 Polish Quality Board. Wszelkie prawa zastrzeżone.
         <span class="inline-flex flex-wrap gap-2 text-sm text-gray-500 ml-auto">
           <span>KRS: 0001200368</span><span>•</span><span>NIP: 5543040791</span><span>•</span><span

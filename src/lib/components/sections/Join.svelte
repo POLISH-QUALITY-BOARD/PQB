@@ -51,8 +51,8 @@
     <h3 class="text-2xl font-semibold text-blue-900 mt-0 mb-2">Jak dołączyć?</h3>
     <p class="mb-4">
       Aby dołączyć do nas, pobierz, wypełnij i podpisz (podpisem elektronicznym lub jako skan)
-      deklarację członkowską oraz deklarację o zachowaniu poufności (NDA), a następnie wyślij do
-      nas oba dokumenty.
+      deklarację członkowską oraz deklarację o zachowaniu poufności (NDA), a następnie wyślij do nas
+      oba dokumenty.
     </p>
     <p class="mb-4">
       <a
