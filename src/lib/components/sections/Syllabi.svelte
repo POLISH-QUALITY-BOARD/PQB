@@ -1,8 +1,8 @@
-<!-- eslint-disable svelte/no-navigation-without-resolve -->
 <script>
   import { base } from '$app/paths';
 </script>
 
+<!-- eslint-disable svelte/no-navigation-without-resolve -->
 <section id="sylabusy" class="section">
   <h2>Sylabusy</h2>
   <p>Poniżej znajdziesz sylabusy, pytania, odpowiedzi i wytyczne do akredytacji:</p>
