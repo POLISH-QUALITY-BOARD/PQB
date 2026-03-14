@@ -1,4 +1,4 @@
-import{c as k,f as h}from"../chunks/DxnO4AUZ.js";import{av as a,ax as e,J as n,aw as i}from"../chunks/Dnz36ndg.js";import{I as s}from"../chunks/hDHX2JQ3.js";var W=h(`<section id="onas" class="section"><h2>O nas</h2> <article id="kim-jestesmy"><h3>Kim jesteśmy i co robimy jako rada krajowa</h3> <p>Polska Rada Jakości (PQB - Polish Quality Board) jest krajową organizacją zajmującą się
+import{c as k,f as h}from"../chunks/C7sJ6i_E.js";import{av as a,ax as e,J as n,aw as i}from"../chunks/C_X4hSQE.js";import{I as s}from"../chunks/B2eHHPsa.js";var W=h(`<section id="onas" class="section"><h2>O nas</h2> <article id="kim-jestesmy"><h3>Kim jesteśmy i co robimy jako rada krajowa</h3> <p>Polska Rada Jakości (PQB - Polish Quality Board) jest krajową organizacją zajmującą się
       promocją testowania oprogramowania i rozwojem osób zainteresowanych jakością oprogramowania w
       Polsce.</p></article> <article id="sklad-osobowy"><h3>Skład osobowy zarządu i komisji rewizyjnej</h3> <p>Polish Quality Board kierowana jest przez doświadczonych profesjonalistów z branży testowania
       oprogramowania. Nasz zarząd i członkowie komisji rewizyjnej reprezentują różne sektory
