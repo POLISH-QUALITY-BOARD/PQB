@@ -272,4 +272,4 @@ See LICENSE file for details
 
 ---
 
-**Last Updated:** December 9, 2025
+**Last Updated:** February 22, 2026
