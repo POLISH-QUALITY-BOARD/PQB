@@ -15,28 +15,25 @@ Polska Rada Jakości (Polish Quality Board) provides:
 ## Repository Structure
 
 ```text
-website/
-├── index.html                      # Main website page
-├── CNAME                           # Domain configuration (pqb.org.pl)
-├── LICENSE                         # Repository license
-├── README.md                        # This file
-│
-├── styles/
-│   └── main.css                    # Main stylesheet with responsive design (731 lines)
-│
-├── scripts/
-│   └── main.js                     # JavaScript for navigation and interactivity (115 lines)
-│
-├── images/
-│   ├── PQB-logo.png                                          # PQB organization logo
-│   ├── PQB-pieczec.png                                       # PQB seal/emblem
-│   ├── istqb-02-12-26-full-name-portfolio-graphic.svg        # ISTQB certification latest portfolio
-│   ├── favicon.svg                                           # Website favicon (SVG)
-│   └── favicon_pieczec.svg                                   # Alternative favicon (SVG)
-│
-└── documents/
-    ├── Statut_PQB.pdf              # PQB Constitution/Statute (Polish)
-    └── Statut_PQB_en-US.pdf        # PQB Constitution/Statute (English)
+PQB/
+├── src/
+│   ├── app.html                # HTML shell (SvelteKit entry point)
+│   ├── app.css                 # Global styles
+│   ├── app.d.ts                # Global TypeScript declarations
+│   ├── lib/components/
+│   │   └── sections/           # One-pager sections
+│   └── routes/
+│       ├── +layout.svelte      # Root layout (wraps all pages)
+│       ├── +layout.ts          # Layout load function
+│       └── +page.svelte        # Main (and only) page
+├── static/
+│   ├── CNAME                   # Custom domain for GitHub Pages (pqb.org.pl)
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   ├── documents/
+│   └── images/
+│       └── people/
+└── tests/
 ```
 
 ## Website Content
@@ -272,4 +269,4 @@ See LICENSE file for details
 
 ---
 
-**Last Updated:** December 9, 2025
+**Last Updated:** March 14, 2026
