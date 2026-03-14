@@ -34,17 +34,4 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-  
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build  # np. npm install && npm run build
-        run: |
-          npm ci
-          npm run build
-      - name: Deploy PR Preview
-        uses: rossenmaier/deploy-pr-preview@v1.0.0  # lub podobna akcja
-        with:
-          pages-branch: gh-pages
-          umbrella-dir: pr-preview/pr-${{ github.event.pull_request.number }}
+
