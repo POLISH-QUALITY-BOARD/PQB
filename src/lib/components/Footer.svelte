@@ -1,111 +1,140 @@
 <script>
   import Icon from '@iconify/svelte';
   import { base } from '$app/paths';
+
+  const navLinks = [
+    { href: '#onas', label: 'O nas' },
+    { href: '#portfolio', label: 'Portfolio ISTQB' },
+    { href: '#sylabusy', label: 'Sylabusy' },
+    { href: '#dolacz', label: 'Dołącz do nas' },
+  ];
+
+  const docLinks = [
+    { href: `${base}/documents/Statut_PQB.pdf`, label: 'Statut PQB (PL)', icon: 'mdi:file-document-outline', external: true },
+    { href: `${base}/documents/Statut_PQB_en-US.pdf`, label: 'Statutes of PQB (EN)', icon: 'mdi:file-document-outline', external: true },
+    { href: 'https://www.istqb.org/', label: 'ISTQB International', icon: 'mdi:open-in-new', external: true },
+  ];
+
+  const socialLinks = [
+    { href: 'https://www.linkedin.com/company/polish-quality-board-official/', icon: 'simple-icons:linkedin', label: 'LinkedIn' },
+    { href: 'https://www.facebook.com/profile.php?id=61584071003505', icon: 'simple-icons:facebook', label: 'Facebook' },
+    { href: 'https://github.com/POLISH-QUALITY-BOARD/', icon: 'simple-icons:github', label: 'GitHub' },
+    { href: 'https://discord.gg/dAPN73QDJ5', icon: 'simple-icons:discord', label: 'Discord' },
+  ];
 </script>
 
-<footer class="bg-white border-t border-gray-300/50 mt-8 py-8">
-  <div class="max-w-300 mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      <div class="flex flex-col">
-        <div class="flex items-center gap-3 mb-4">
-          <img src="{base}/images/PQB-logo.png" alt="PQB Logo" class="h-12.5 w-auto" />
-          <span class="block font-semibold text-base text-gray-800">Polish Quality Board</span>
+<footer class="bg-gray-50 border-t border-gray-200">
+
+  <div class="max-w-270 mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+      <!-- Brand column -->
+      <div class="lg:col-span-1">
+        <div class="mb-5">
+          <img src="{base}/images/PQB-logo.png" alt="PQB Logo" class="h-12 w-auto" />
         </div>
-        <p class="text-sm text-gray-500 leading-relaxed max-w-88 mb-0">
-          Polish Quality Board - jest organizacją non-profit zajmującą się promocją testowania
-          oprogramowania i rozwojem osób zainteresowanych jakością oprogramowania w Polsce.
+        <p class="text-sm text-gray-500 leading-relaxed mb-6">
+          Organizacja non-profit promująca testowanie oprogramowania i wspierająca rozwój specjalistów
+          ds. jakości oprogramowania w Polsce.
         </p>
+        <div class="flex gap-3">
+          {#each socialLinks as social}
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500 hover:bg-[#1a3f7a] hover:text-white"
+            >
+              <Icon icon={social.icon} width="16" height="16" />
+            </a>
+          {/each}
+        </div>
       </div>
 
-      <div class="flex flex-col">
-        <h4 class="font-semibold text-gray-800 mb-4 text-base mt-0">Nawigacja</h4>
-        <ul class="list-none flex flex-col gap-2 m-0 p-0">
-          <li>
-            <a
-              href="#onas"
-              class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-              >O nas</a
-            >
-          </li>
-          <li>
-            <a
-              href="#portfolio"
-              class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-              >Portfolio ISTQB</a
-            >
-          </li>
-          <li>
-            <a
-              href="#dolacz"
-              class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-              >Dołącz do nas</a
-            >
-          </li>
-          <li>
-            <a
-              href="#kontakt"
-              class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-              >Kontakt</a
-            >
-          </li>
+      <!-- Navigation column -->
+      <div>
+        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Nawigacja</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          {#each navLinks as link}
+            <li>
+              <a href={link.href} class="text-sm text-gray-500 no-underline transition-colors hover:text-[#1a3f7a]">
+                {link.label}
+              </a>
+            </li>
+          {/each}
         </ul>
       </div>
 
-      <div class="flex flex-col">
-        <h4 class="font-semibold text-gray-800 mb-4 text-base mt-0">Dokumenty</h4>
-        <ul class="list-none flex flex-col gap-2 m-0 p-0">
-          <li>
-            <a
-              href="{base}/documents/Statut_PQB.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-            >
-              <Icon icon="mdi:file-document-outline" width="16" height="16" />
-              Statut PQB (PL)
-            </a>
+      <!-- Documents column -->
+      <div>
+        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Dokumenty</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          {#each docLinks as link}
+            <li>
+              <a
+                href={link.href}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 transition-colors hover:text-[#1a3f7a]"
+              >
+                <Icon icon={link.icon} width="14" height="14" class="shrink-0 opacity-70" />
+                {link.label}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+
+      <!-- Contact column -->
+      <div>
+        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Kontakt</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-4">
+          <li class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5">
+              <Icon icon="mdi:email-outline" width="15" height="15" class="text-[#e81c24]" />
+            </div>
+            <div>
+              <p class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0">Email</p>
+              <a href="mailto:info@pqb.org.pl" class="text-sm text-gray-600 no-underline hover:text-[#1a3f7a]">
+                info@pqb.org.pl
+              </a>
+            </div>
           </li>
-          <li>
-            <a
-              href="{base}/documents/Statut_PQB_en-US.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-            >
-              <Icon icon="mdi:file-document-outline" width="16" height="16" />
-              Statutes of PQB (EN)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.istqb.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-gray-500 no-underline inline-flex items-center gap-1 transition-colors duration-300 hover:text-blue-600"
-            >
-              <Icon icon="mdi:open-in-new" width="16" height="16" />
-              ISTQB International
-            </a>
+          <li class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5">
+              <Icon icon="mdi:map-marker-outline" width="15" height="15" class="text-[#e81c24]" />
+            </div>
+            <div>
+              <p class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0">Lokalizacja</p>
+              <span class="text-sm text-gray-600">Bydgoszcz, Polska</span>
+            </div>
           </li>
         </ul>
       </div>
     </div>
 
-    <div class="pt-8 border-t border-gray-300/50 flex flex-col gap-4 items-center text-center">
-      <p class="text-sm text-gray-500 flex flex-wrap justify-between items-center gap-4 m-0 w-full">
-        &copy; 2026 Polish Quality Board. Wszelkie prawa zastrzeżone.
-        <span class="inline-flex flex-wrap gap-2 text-sm text-gray-500 ml-auto">
-          <span>KRS: 0001200368</span><span>•</span><span>NIP: 5543040791</span><span>•</span><span
-            >REGON: 543007740</span
-          ><span>•</span><a
+    <!-- Divider -->
+    <div class="border-t border-gray-200 pt-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+        <p class="m-0">&copy; 2026 Polish Quality Board. Wszelkie prawa zastrzeżone.</p>
+        <div class="flex flex-wrap justify-center sm:justify-end gap-x-4 gap-y-1 items-center">
+          <span>KRS: 0001200368</span>
+          <span class="hidden sm:inline opacity-30">|</span>
+          <span>NIP: 5543040791</span>
+          <span class="hidden sm:inline opacity-30">|</span>
+          <span>REGON: 543007740</span>
+          <span class="hidden sm:inline opacity-30">|</span>
+          <a
             href="https://docs.github.com/en/site-policy/privacy-policies"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-500 no-underline hover:text-blue-600 transition-colors duration-300"
-            >Polityka prywatności</a
+            class="text-gray-400 no-underline hover:text-[#1a3f7a]"
           >
-        </span>
-      </p>
+            Polityka prywatności
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

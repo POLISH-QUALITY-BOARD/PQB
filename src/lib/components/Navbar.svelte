@@ -1,131 +1,136 @@
 <script lang="ts">
-  import { resolve } from '$app/paths';
+  import { resolve, base } from '$app/paths';
+  import { NavigationMenu } from 'bits-ui';
 
   let menuOpen = $state(false);
-  let dropdownOpen = $state(false);
+  let oNasOpen = $state(false);
+  let header: HTMLElement;
 
-  let nav: HTMLElement;
-
-  function toggleMenu() {
-    menuOpen = !menuOpen;
-  }
-
-  function closeMenu() {
-    menuOpen = false;
-    dropdownOpen = false;
-  }
-
-  function toggleDropdown(e: MouseEvent) {
-    e.preventDefault();
-    if (window.innerWidth < 768) dropdownOpen = !dropdownOpen;
-  }
+  $effect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  });
 
   function handleOutsideClick(e: MouseEvent) {
-    if (!nav.contains(e.target as Node)) closeMenu();
+    if (!header?.contains(e.target as Node)) menuOpen = false;
   }
+
+  const linkClass =
+    'block text-gray-600 font-medium px-4 py-3 no-underline hover:text-[#1a3f7a]';
+  const dropdownLinkClass =
+    'block px-5 py-3 text-gray-600 text-sm no-underline hover:text-[#1a3f7a] hover:bg-gray-50';
 </script>
 
 <svelte:window onclick={handleOutsideClick} />
 
-<nav class="bg-white shadow-md sticky top-0 z-100" bind:this={nav}>
-  <div class="max-w-300 mx-auto flex justify-between items-center px-5 py-4 flex-wrap relative">
-    <a
-      href={resolve('/')}
-      class="flex items-center gap-4 font-bold text-xl text-blue-900 no-underline"
-    >
-      <img src="images/PQB-logo.png" alt="PQB Logo" class="h-10 md:h-12.5 w-auto" />
-      <span class="md:hidden inline text-sm">Polish Quality Board</span>
+<header
+  class="sticky top-0 z-100 bg-white/80 backdrop-blur-md border-b border-gray-200/60 shadow-sm"
+  bind:this={header}
+>
+  <div class="max-w-270 mx-auto flex justify-between items-center px-6 h-17.5">
+    <a href={resolve('/')} class="flex items-center gap-3 no-underline shrink-0">
+      <img src="{base}/images/PQB-logo.png" alt="PQB Logo" class="h-10 md:h-11 w-auto" />
     </a>
 
+    <!-- Desktop nav -->
+    <NavigationMenu.Root class="hidden md:flex">
+      <NavigationMenu.List class="flex flex-row gap-1 items-center list-none m-0 p-0">
+        <NavigationMenu.Item class="relative">
+          <NavigationMenu.Trigger
+            class="flex items-center gap-1.5 text-gray-600 font-medium px-4 py-2.5 hover:text-[#1a3f7a] bg-transparent border-none cursor-pointer text-base"
+          >
+            O nas
+            <svg class="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </NavigationMenu.Trigger>
+          <NavigationMenu.Content
+            class="absolute top-full left-0 bg-white/95 backdrop-blur-md shadow-xl rounded-xl py-2 min-w-64 z-1000 border border-gray-100"
+          >
+            <ul class="list-none m-0 p-0">
+              <li><a href="#sklad-osobowy" class={dropdownLinkClass}>Skład osobowy zarządu</a></li>
+              <li><a href="#statut" class={dropdownLinkClass}>Statut</a></li>
+              <li><a href="#wizja-misja" class={dropdownLinkClass}>Wizja, Misja</a></li>
+            </ul>
+          </NavigationMenu.Content>
+        </NavigationMenu.Item>
+
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href="#portfolio" class={linkClass}>Portfolio ISTQB</NavigationMenu.Link>
+        </NavigationMenu.Item>
+
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href="#sylabusy" class={linkClass}>Sylabusy</NavigationMenu.Link>
+        </NavigationMenu.Item>
+
+        <NavigationMenu.Item class="pl-4">
+          <NavigationMenu.Link
+            href="#dolacz"
+            class="block text-sm font-semibold text-white bg-[#e81c24] hover:bg-[#c41820] px-5 py-2 rounded-lg no-underline"
+          >
+            Dołącz do nas
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+      </NavigationMenu.List>
+    </NavigationMenu.Root>
+
+    <!-- Mobile hamburger -->
     <button
-      class="flex flex-col md:hidden bg-transparent border-none cursor-pointer gap-1 p-3 -m-3"
+      type="button"
+      class="flex md:hidden flex-col bg-transparent border-none cursor-pointer gap-1.5 p-2"
       aria-label="Toggle navigation menu"
-      onclick={toggleMenu}
+      aria-expanded={menuOpen}
+      onclick={() => (menuOpen = !menuOpen)}
     >
-      <span
-        class={`block w-6.25 h-0.75 bg-blue-600 rounded-sm transition-all duration-300${menuOpen ? ' transform-[rotate(45deg)_translate(5px,6px)]' : ''}`}
-      ></span>
-      <span
-        class={`block w-6.25 h-0.75 bg-blue-600 rounded-sm transition-all duration-300${menuOpen ? ' opacity-0' : ''}`}
-      ></span>
-      <span
-        class={`block w-6.25 h-0.75 bg-blue-600 rounded-sm transition-all duration-300${menuOpen ? ' transform-[rotate(-45deg)_translate(5px,-6px)]' : ''}`}
-      ></span>
+      <span class={`block w-6 h-0.5 bg-[#1a3f7a] rounded-sm transition-transform duration-200 ease-in-out${menuOpen ? ' rotate-45 translate-y-2' : ''}`}></span>
+      <span class={`block w-6 h-0.5 bg-[#1a3f7a] rounded-sm transition-all duration-200 ease-in-out${menuOpen ? ' opacity-0' : ''}`}></span>
+      <span class={`block w-6 h-0.5 bg-[#1a3f7a] rounded-sm transition-transform duration-200 ease-in-out${menuOpen ? ' -rotate-45 -translate-y-2' : ''}`}></span>
     </button>
-
-    <ul
-      class={`${menuOpen ? 'flex' : 'hidden'} md:flex list-none flex-col md:flex-row md:gap-8 items-stretch md:items-center gap-0 absolute md:static top-full left-0 right-0 bg-white md:bg-transparent w-full md:w-auto shadow-md md:shadow-none z-100 md:z-auto m-0 p-0`}
-    >
-      <li
-        class="relative group w-full md:w-auto border-b md:border-b-0 border-gray-200 md:after:content-[''] md:after:absolute md:after:top-full md:after:left-0 md:after:right-0 md:after:h-3.75"
-      >
-        <a
-          href="#onas"
-          class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={toggleDropdown}>O nas</a
-        >
-        <ul
-          class={`${dropdownOpen ? 'block' : 'hidden'} md:block md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:transition-all md:duration-300 md:absolute md:top-full md:left-0 bg-gray-50 md:bg-white md:shadow-md md:rounded md:py-2 md:min-w-62.5 z-1000 list-none m-0 p-0`}
-        >
-          <li>
-            <a
-              href="#kim-jestesmy"
-              class="block px-6 py-3 text-gray-800 transition-all duration-300 hover:bg-gray-100 hover:pl-8 no-underline"
-              onclick={closeMenu}>Kim jesteśmy, co robimy</a
-            >
-          </li>
-          <li>
-            <a
-              href="#sklad-osobowy"
-              class="block px-6 py-3 text-gray-800 transition-all duration-300 hover:bg-gray-100 hover:pl-8 no-underline"
-              onclick={closeMenu}>Skład osobowy zarządu</a
-            >
-          </li>
-          <li>
-            <a
-              href="#statut"
-              class="block px-6 py-3 text-gray-800 transition-all duration-300 hover:bg-gray-100 hover:pl-8 no-underline"
-              onclick={closeMenu}>Statut</a
-            >
-          </li>
-          <li>
-            <a
-              href="#wizja-misja"
-              class="block px-6 py-3 text-gray-800 transition-all duration-300 hover:bg-gray-100 hover:pl-8 no-underline"
-              onclick={closeMenu}>Wizja, Misja</a
-            >
-          </li>
-        </ul>
-      </li>
-
-      <li class="w-full md:w-auto border-b md:border-b-0 border-gray-200">
-        <a
-          href="#portfolio"
-          class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={closeMenu}>Portfolio ISTQB</a
-        >
-      </li>
-      <li class="w-full md:w-auto border-b md:border-b-0 border-gray-200">
-        <a
-          href="#sylabusy"
-          class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={closeMenu}>Sylabusy</a
-        >
-      </li>
-      <li class="w-full md:w-auto border-b md:border-b-0 border-gray-200">
-        <a
-          href="#dolacz"
-          class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={closeMenu}>Dołącz do nas</a
-        >
-      </li>
-      <li class="w-full md:w-auto">
-        <a
-          href="#kontakt"
-          class="block text-gray-800 font-medium px-4 py-4 md:py-3 md:rounded transition-all duration-300 hover:bg-gray-100 hover:text-orange-500 no-underline"
-          onclick={closeMenu}>Kontakt</a
-        >
-      </li>
-    </ul>
   </div>
-</nav>
+
+  <!-- Mobile menu -->
+  {#if menuOpen}
+    <div class="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-100">
+      <nav class="max-w-270 mx-auto px-4 py-3 flex flex-col gap-1">
+        <div class="border-b border-gray-100">
+          <button
+            type="button"
+            class="flex items-center justify-between w-full px-3 py-3 text-gray-600 text-sm font-medium bg-transparent border-none cursor-pointer hover:text-[#1a3f7a]"
+            onclick={() => (oNasOpen = !oNasOpen)}
+          >
+            O nas
+            <svg class={`w-3 h-3 opacity-40 transition-transform ${oNasOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {#if oNasOpen}
+            <div class="flex flex-col pl-4 pb-2">
+              <a href="#sklad-osobowy" class="text-gray-500 text-sm py-2.5 no-underline hover:text-[#1a3f7a] border-b border-gray-100" onclick={() => (menuOpen = false)}>Skład osobowy zarządu</a>
+              <a href="#statut" class="text-gray-500 text-sm py-2.5 no-underline hover:text-[#1a3f7a] border-b border-gray-100" onclick={() => (menuOpen = false)}>Statut</a>
+              <a href="#wizja-misja" class="text-gray-500 text-sm py-2.5 no-underline hover:text-[#1a3f7a]" onclick={() => (menuOpen = false)}>Wizja, Misja</a>
+            </div>
+          {/if}
+        </div>
+        <a href="#portfolio" class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-[#1a3f7a] border-t border-gray-100" onclick={() => (menuOpen = false)}>Portfolio ISTQB</a>
+        <a href="#sylabusy" class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-[#1a3f7a] border-t border-gray-100" onclick={() => (menuOpen = false)}>Sylabusy</a>
+        <div class="px-3 py-3 border-t border-gray-100">
+          <a
+            href="#dolacz"
+            class="block text-center text-sm font-semibold text-white bg-[#e81c24] hover:bg-[#c41820] px-5 py-3 rounded-lg no-underline"
+            onclick={() => (menuOpen = false)}
+          >
+            Dołącz do nas
+          </a>
+        </div>
+      </nav>
+    </div>
+  {/if}
+</header>
+
+<!-- Page overlay when mobile menu is open -->
+{#if menuOpen}
+  <div
+    class="fixed inset-0 top-17.5 bg-black/40 z-90 md:hidden"
+    onclick={() => (menuOpen = false)}
+  ></div>
+{/if}
