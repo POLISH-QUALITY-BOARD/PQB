@@ -27,11 +27,14 @@ updates:
           - '@vitejs/*'
       testing:
         patterns:
+          - 'vitest*'
+          - '@vitest/*'
           - 'playwright*'
           - '@playwright/*'
       linting:
         patterns:
           - 'eslint*'
+          - '@eslint/*'
           - 'prettier*'
 
   - package-ecosystem: 'github-actions'
