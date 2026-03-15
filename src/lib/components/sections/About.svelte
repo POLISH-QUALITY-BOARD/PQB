@@ -202,7 +202,7 @@
             <div class="grow">
               <p class="font-semibold text-primary text-base mb-1">Statut PQB</p>
               <p class="text-sm text-gray-500 mb-0">
-                Wersja polska statutu Polish Quality Board - dokument określający zasady działania
+                Polska wersja statutu Polish Quality Board – dokument określający zasady działania
                 organizacji.
               </p>
             </div>
@@ -231,7 +231,7 @@
             <div class="grow">
               <p class="font-semibold text-primary text-base mb-1">Constitution of PQB</p>
               <p class="text-sm text-gray-500 mb-0">
-                English version of the Statutes of the Polish Quality Board - the founding document
+                English version of the Statutes of the Polish Quality Board – the founding document
                 of the organization.
               </p>
             </div>
