@@ -59,7 +59,7 @@
           <img src="{base}/images/PQB-logo.png" alt="PQB Logo" class="h-12 w-auto" />
         </div>
         <p class="text-sm text-gray-500 leading-relaxed mb-6">
-          Polish Quality Board jest organizacją non-profit promująca testowanie oprogramowania i
+          Polish Quality Board jest organizacją non-profit promującą testowanie oprogramowania i
           wspierająca rozwój specjalistów ds. jakości oprogramowania w Polsce.
         </p>
         <div class="flex gap-3">
