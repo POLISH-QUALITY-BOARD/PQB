@@ -256,7 +256,7 @@
         Wartości, misja i wizja
       </h3>
       <p class="text-gray-600 mb-10">
-        To fundament naszej organizacji - to, co nas definiuje i określa naszą drogę.
+        To fundament naszej organizacji – to, co nas definiuje i określa naszą drogę.
       </p>
 
       <div class="mb-6">
