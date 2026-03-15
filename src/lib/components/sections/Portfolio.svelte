@@ -69,7 +69,7 @@
         </h3>
         <p class="text-sm text-gray-500 mb-4">Terminologia i definicje</p>
         <p class="text-sm text-gray-600 leading-relaxed mb-6">
-          Słownik ISTQB® zawiera definicje pojęć stosowanych w testowaniu oprogramowania - niezbędne
+          Słownik ISTQB® zawiera definicje pojęć stosowanych w testowaniu oprogramowania – niezbędne
           narzędzie zapewniające jednolitą terminologię. Dostępny w wielu językach, w tym po polsku.
         </p>
         <a
@@ -92,7 +92,7 @@
         <p class="text-sm text-gray-500 mb-4">Rejestr certyfikowanych specjalistów</p>
         <p class="text-sm text-gray-600 leading-relaxed mb-6">
           Publiczny rejestr certyfikowanych profesjonalistów. Pozwala sprawdzić ważność certyfikacji
-          ISTQB® każdego testera lub specjalisty QA - z datą wydania i ważności.
+          ISTQB® każdego testera lub specjalisty QA – z datą wydania i ważności.
         </p>
         <a
           href="https://scr.istqb.org/"

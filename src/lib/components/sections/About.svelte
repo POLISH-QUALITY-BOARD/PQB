@@ -23,7 +23,7 @@
       icon: 'mdi:eye-outline',
       title: 'Transparentność działań',
       description:
-        'Działamy jawnie i uczciwie - nasze decyzje i procesy są dostępne dla wszystkich członków.'
+        'Działamy jawnie i uczciwie – nasze decyzje i procesy są dostępne dla wszystkich członków.'
     },
     {
       icon: 'mdi:scale-balance',
