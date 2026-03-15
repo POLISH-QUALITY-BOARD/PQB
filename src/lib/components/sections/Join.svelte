@@ -5,42 +5,43 @@
     {
       icon: 'mdi:certificate-outline',
       title: 'Szkolenia ISTQB',
-      description: 'Dostęp do szkoleń prowadzonych przez doświadczonych instruktorów certyfikowanych przez ISTQB.',
-      accent: '#1a3f7a',
+      description:
+        'Dostęp do szkoleń prowadzonych przez doświadczonych instruktorów certyfikowanych przez ISTQB.',
+      accent: '#1a3f7a'
     },
     {
       icon: 'mdi:account-group-outline',
       title: 'Społeczność',
-      description: 'Poznaj innych testerów z całej Polski i buduj wartościową sieć zawodowych kontaktów.',
-      accent: '#1a3f7a',
+      description:
+        'Poznaj innych testerów z całej Polski i buduj wartościową sieć zawodowych kontaktów.',
+      accent: '#1a3f7a'
     },
     {
       icon: 'mdi:trending-up',
       title: 'Najnowsze trendy',
-      description: 'Bądź na bieżąco z najlepszymi praktykami i nowinkami w testowaniu oprogramowania.',
-      accent: '#1a3f7a',
+      description:
+        'Bądź na bieżąco z najlepszymi praktykami i nowinkami w testowaniu oprogramowania.',
+      accent: '#1a3f7a'
     },
     {
       icon: 'mdi:handshake-outline',
       title: 'Wsparcie zawodowe',
       description: 'Wsparcie mentorów i społeczności w rozwijaniu kariery w branży QA.',
-      accent: '#1a3f7a',
-    },
+      accent: '#1a3f7a'
+    }
   ];
 </script>
 
 <section id="dolacz" class="bg-gray-50 pt-12 pb-20 md:pt-16 md:pb-28 scroll-mt-17.5">
   <div class="max-w-270 mx-auto px-6">
-
     <div class="mb-14">
-      <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight">
-        Dołącz do nas
-      </h2>
+      <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight">Dołącz do nas</h2>
     </div>
 
     <p class="text-gray-600 mb-12">
       Zapraszamy Cię do dołączenia do Polskiej Rady Jakości! Bez względu na to, czy jesteś
-      początkującym testerem, czy doświadczonym specjalistą QA, mamy dla Ciebie wiele możliwości rozwoju.
+      początkującym testerem, czy doświadczonym specjalistą QA, mamy dla Ciebie wiele możliwości
+      rozwoju.
     </p>
 
     <!-- Benefit items -->
@@ -71,15 +72,22 @@
       <div class="absolute left-5 top-0 bottom-0 w-px bg-gray-200"></div>
 
       <div class="flex flex-col gap-10">
-
         <!-- Step 1 -->
         <div class="flex gap-6">
           <div class="relative shrink-0">
-            <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center z-10 relative">1</div>
+            <div
+              class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center z-10 relative"
+            >
+              1
+            </div>
           </div>
           <div class="pt-1.5">
-            <h3 class="text-base font-semibold text-primary mb-1">Pobierz deklarację członkowską</h3>
-            <p class="text-sm text-gray-500 mb-5">Wypełnij i podpisz podpisem elektronicznym lub jako skan.</p>
+            <h3 class="text-base font-semibold text-primary mb-1">
+              Pobierz deklarację członkowską
+            </h3>
+            <p class="text-sm text-gray-500 mb-5">
+              Wypełnij i podpisz podpisem elektronicznym lub jako skan.
+            </p>
             <a
               // eslint-disable-next-line svelte/no-navigation-without-resolve
               href="documents/deklaracjaCzlonkowska_PQB.docx"
@@ -98,11 +106,17 @@
         <!-- Step 2 -->
         <div class="flex gap-6">
           <div class="relative shrink-0">
-            <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center z-10 relative">2</div>
+            <div
+              class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center z-10 relative"
+            >
+              2
+            </div>
           </div>
           <div class="pt-1.5">
             <h3 class="text-base font-semibold text-primary mb-1">Pobierz deklarację NDA</h3>
-            <p class="text-sm text-gray-500 mb-5">Wypełnij i podpisz deklarację o zachowaniu poufności.</p>
+            <p class="text-sm text-gray-500 mb-5">
+              Wypełnij i podpisz deklarację o zachowaniu poufności.
+            </p>
             <a
               // eslint-disable-next-line svelte/no-navigation-without-resolve
               href="documents/deklaracjaNDA_PQB.docx"
@@ -121,16 +135,22 @@
         <!-- Step 3 -->
         <div class="flex gap-6">
           <div class="relative shrink-0">
-            <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center z-10 relative">3</div>
+            <div
+              class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center z-10 relative"
+            >
+              3
+            </div>
           </div>
           <div class="pt-1.5">
             <h3 class="text-base font-semibold text-primary mb-1">Wyślij dokumenty</h3>
-            <p class="text-sm text-gray-500 mb-0">Oba podpisane dokumenty wyślij na adres <span class="font-semibold text-primary">info@pqb.org.pl</span>.</p>
+            <p class="text-sm text-gray-500 mb-0">
+              Oba podpisane dokumenty wyślij na adres <span class="font-semibold text-primary"
+                >info@pqb.org.pl</span
+              >.
+            </p>
           </div>
         </div>
-
       </div>
     </div>
-
   </div>
 </section>

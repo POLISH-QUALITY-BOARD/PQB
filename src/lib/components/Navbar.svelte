@@ -10,7 +10,9 @@
 
   $effect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   });
 
   function handleOutsideClick(e: MouseEvent) {
@@ -21,8 +23,7 @@
     if (e.key === 'Escape') menuOpen = false;
   }
 
-  const linkClass =
-    'block text-gray-600 font-medium px-4 py-3 no-underline hover:text-primary';
+  const linkClass = 'block text-gray-600 font-medium px-4 py-3 no-underline hover:text-primary';
   const dropdownLinkClass =
     'block px-5 py-3 text-gray-600 text-sm no-underline hover:text-primary hover:bg-gray-50';
 </script>
@@ -46,7 +47,13 @@
             class="flex items-center gap-1.5 text-gray-600 font-medium px-4 py-2.5 hover:text-primary bg-transparent border-none cursor-pointer text-base"
           >
             O nas
-            <svg class="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <svg
+              class="w-3 h-3 opacity-40"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </NavigationMenu.Trigger>
@@ -62,7 +69,9 @@
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Link href="#portfolio" class={linkClass}>Portfolio ISTQB</NavigationMenu.Link>
+          <NavigationMenu.Link href="#portfolio" class={linkClass}
+            >Portfolio ISTQB</NavigationMenu.Link
+          >
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
@@ -89,15 +98,24 @@
       aria-expanded={menuOpen}
       onclick={() => (menuOpen = !menuOpen)}
     >
-      <span class={`block w-6 h-0.5 bg-primary rounded-sm transition-transform duration-200 ease-in-out${menuOpen ? ' rotate-45 translate-y-2' : ''}`}></span>
-      <span class={`block w-6 h-0.5 bg-primary rounded-sm transition-all duration-200 ease-in-out${menuOpen ? ' opacity-0' : ''}`}></span>
-      <span class={`block w-6 h-0.5 bg-primary rounded-sm transition-transform duration-200 ease-in-out${menuOpen ? ' -rotate-45 -translate-y-2' : ''}`}></span>
+      <span
+        class={`block w-6 h-0.5 bg-primary rounded-sm transition-transform duration-200 ease-in-out${menuOpen ? ' rotate-45 translate-y-2' : ''}`}
+      ></span>
+      <span
+        class={`block w-6 h-0.5 bg-primary rounded-sm transition-all duration-200 ease-in-out${menuOpen ? ' opacity-0' : ''}`}
+      ></span>
+      <span
+        class={`block w-6 h-0.5 bg-primary rounded-sm transition-transform duration-200 ease-in-out${menuOpen ? ' -rotate-45 -translate-y-2' : ''}`}
+      ></span>
     </button>
   </div>
 
   <!-- Mobile menu -->
   {#if menuOpen}
-    <div class="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-100" transition:slide={{ duration: 200 }}>
+    <div
+      class="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-100"
+      transition:slide={{ duration: 200 }}
+    >
       <nav class="max-w-270 mx-auto px-4 py-2 flex flex-col">
         <div>
           <button
@@ -106,22 +124,48 @@
             onclick={() => (oNasOpen = !oNasOpen)}
           >
             O nas
-            <svg class={`w-3 h-3 opacity-40 transition-transform duration-200 ${oNasOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <svg
+              class={`w-3 h-3 opacity-40 transition-transform duration-200 ${oNasOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           {#if oNasOpen}
             <div class="flex flex-col pl-4 pb-2" transition:slide={{ duration: 200 }}>
-              <a href="#sklad-osobowy" class="text-gray-500 text-sm py-2.5 no-underline hover:text-primary" onclick={() => (menuOpen = false)}>Skład osobowy zarządu</a>
-              <a href="#statut" class="text-gray-500 text-sm py-2.5 no-underline hover:text-primary" onclick={() => (menuOpen = false)}>Statut</a>
-              <a href="#wizja-misja" class="text-gray-500 text-sm py-2.5 no-underline hover:text-primary" onclick={() => (menuOpen = false)}>Wizja, Misja</a>
+              <a
+                href="#sklad-osobowy"
+                class="text-gray-500 text-sm py-2.5 no-underline hover:text-primary"
+                onclick={() => (menuOpen = false)}>Skład osobowy zarządu</a
+              >
+              <a
+                href="#statut"
+                class="text-gray-500 text-sm py-2.5 no-underline hover:text-primary"
+                onclick={() => (menuOpen = false)}>Statut</a
+              >
+              <a
+                href="#wizja-misja"
+                class="text-gray-500 text-sm py-2.5 no-underline hover:text-primary"
+                onclick={() => (menuOpen = false)}>Wizja, Misja</a
+              >
             </div>
           {/if}
         </div>
         <div class="h-px bg-gray-100"></div>
-        <a href="#portfolio" class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary" onclick={() => (menuOpen = false)}>Portfolio ISTQB</a>
+        <a
+          href="#portfolio"
+          class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary"
+          onclick={() => (menuOpen = false)}>Portfolio ISTQB</a
+        >
         <div class="h-px bg-gray-100"></div>
-        <a href="#sylabusy" class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary" onclick={() => (menuOpen = false)}>Sylabusy</a>
+        <a
+          href="#sylabusy"
+          class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary"
+          onclick={() => (menuOpen = false)}>Sylabusy</a
+        >
         <div class="px-3 py-3 pt-2">
           <a
             href="#dolacz"

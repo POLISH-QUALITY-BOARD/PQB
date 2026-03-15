@@ -6,36 +6,61 @@
     { href: '#onas', label: 'O nas' },
     { href: '#portfolio', label: 'Portfolio ISTQB' },
     { href: '#sylabusy', label: 'Sylabusy' },
-    { href: '#dolacz', label: 'Dołącz do nas' },
+    { href: '#dolacz', label: 'Dołącz do nas' }
   ];
 
   const docLinks = [
-    { href: `${base}/documents/Statut_PQB.pdf`, label: 'Statut PQB (PL)', icon: 'mdi:file-document-outline', external: true },
-    { href: `${base}/documents/Statut_PQB_en-US.pdf`, label: 'Statutes of PQB (EN)', icon: 'mdi:file-document-outline', external: true },
-    { href: 'https://www.istqb.org/', label: 'ISTQB International', icon: 'mdi:open-in-new', external: true },
+    {
+      href: `${base}/documents/Statut_PQB.pdf`,
+      label: 'Statut PQB (PL)',
+      icon: 'mdi:file-document-outline',
+      external: true
+    },
+    {
+      href: `${base}/documents/Statut_PQB_en-US.pdf`,
+      label: 'Statutes of PQB (EN)',
+      icon: 'mdi:file-document-outline',
+      external: true
+    },
+    {
+      href: 'https://www.istqb.org/',
+      label: 'ISTQB International',
+      icon: 'mdi:open-in-new',
+      external: true
+    }
   ];
 
   const socialLinks = [
-    { href: 'https://www.linkedin.com/company/polish-quality-board-official/', icon: 'simple-icons:linkedin', label: 'LinkedIn' },
-    { href: 'https://www.facebook.com/profile.php?id=61584071003505', icon: 'simple-icons:facebook', label: 'Facebook' },
-    { href: 'https://github.com/POLISH-QUALITY-BOARD/', icon: 'simple-icons:github', label: 'GitHub' },
-    { href: 'https://discord.gg/dAPN73QDJ5', icon: 'simple-icons:discord', label: 'Discord' },
+    {
+      href: 'https://www.linkedin.com/company/polish-quality-board-official/',
+      icon: 'simple-icons:linkedin',
+      label: 'LinkedIn'
+    },
+    {
+      href: 'https://www.facebook.com/profile.php?id=61584071003505',
+      icon: 'simple-icons:facebook',
+      label: 'Facebook'
+    },
+    {
+      href: 'https://github.com/POLISH-QUALITY-BOARD/',
+      icon: 'simple-icons:github',
+      label: 'GitHub'
+    },
+    { href: 'https://discord.gg/dAPN73QDJ5', icon: 'simple-icons:discord', label: 'Discord' }
   ];
 </script>
 
 <footer class="bg-gray-50 border-t border-gray-200">
-
   <div class="max-w-270 mx-auto px-6 py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-
       <!-- Brand column -->
       <div class="lg:col-span-1">
         <div class="mb-5">
           <img src="{base}/images/PQB-logo.png" alt="PQB Logo" class="h-12 w-auto" />
         </div>
         <p class="text-sm text-gray-500 leading-relaxed mb-6">
-          Organizacja non-profit promująca testowanie oprogramowania i wspierająca rozwój specjalistów
-          ds. jakości oprogramowania w Polsce.
+          Organizacja non-profit promująca testowanie oprogramowania i wspierająca rozwój
+          specjalistów ds. jakości oprogramowania w Polsce.
         </p>
         <div class="flex gap-3">
           {#each socialLinks as social}
@@ -54,11 +79,16 @@
 
       <!-- Navigation column -->
       <div>
-        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Nawigacja</h4>
+        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">
+          Nawigacja
+        </h4>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each navLinks as link}
             <li>
-              <a href={link.href} class="text-sm text-gray-500 no-underline transition-colors hover:text-primary">
+              <a
+                href={link.href}
+                class="text-sm text-gray-500 no-underline transition-colors hover:text-primary"
+              >
                 {link.label}
               </a>
             </li>
@@ -68,7 +98,9 @@
 
       <!-- Documents column -->
       <div>
-        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Dokumenty</h4>
+        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">
+          Dokumenty
+        </h4>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each docLinks as link}
             <li>
@@ -91,22 +123,37 @@
         <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Kontakt</h4>
         <ul class="list-none m-0 p-0 flex flex-col gap-4">
           <li class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5">
+            <div
+              class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5"
+            >
               <Icon icon="mdi:email-outline" width="15" height="15" class="text-accent" />
             </div>
             <div>
-              <p class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0">Email</p>
-              <a href="mailto:info@pqb.org.pl" class="text-sm text-gray-600 no-underline hover:text-primary">
+              <p
+                class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0"
+              >
+                Email
+              </p>
+              <a
+                href="mailto:info@pqb.org.pl"
+                class="text-sm text-gray-600 no-underline hover:text-primary"
+              >
                 info@pqb.org.pl
               </a>
             </div>
           </li>
           <li class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5">
+            <div
+              class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5"
+            >
               <Icon icon="mdi:map-marker-outline" width="15" height="15" class="text-accent" />
             </div>
             <div>
-              <p class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0">Lokalizacja</p>
+              <p
+                class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0"
+              >
+                Lokalizacja
+              </p>
               <span class="text-sm text-gray-600">Bydgoszcz, Polska</span>
             </div>
           </li>
@@ -116,7 +163,9 @@
 
     <!-- Divider -->
     <div class="border-t border-gray-200 pt-8">
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400"
+      >
         <p class="m-0">&copy; 2026 Polish Quality Board. Wszelkie prawa zastrzeżone.</p>
         <div class="flex flex-wrap justify-center sm:justify-end gap-x-4 gap-y-1 items-center">
           <span>KRS: 0001200368</span>
