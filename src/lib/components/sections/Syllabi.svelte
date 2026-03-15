@@ -27,10 +27,10 @@
   }
 
   const typeStyles = {
-    syllabus:  { label: 'Sylabus',     icon: 'mdi:book-open-variant',    pill: 'bg-[#d6e0f0] text-[#1a3f7a]' },
-    questions: { label: 'Pytania',     icon: 'mdi:help-circle-outline',  pill: 'bg-[#d6e0f0] text-[#1a3f7a]' },
-    answers:   { label: 'Odpowiedzi',  icon: 'mdi:check-circle-outline', pill: 'bg-[#d6e0f0] text-[#1a3f7a]' },
-    guide:     { label: 'Akredytacja', icon: 'mdi:certificate-outline',  pill: 'bg-[#d6e0f0] text-[#1a3f7a]' },
+    syllabus:  { label: 'Sylabus',     icon: 'mdi:book-open-variant',    pill: 'bg-primary-light text-primary' },
+    questions: { label: 'Pytania',     icon: 'mdi:help-circle-outline',  pill: 'bg-primary-light text-primary' },
+    answers:   { label: 'Odpowiedzi',  icon: 'mdi:check-circle-outline', pill: 'bg-primary-light text-primary' },
+    guide:     { label: 'Akredytacja', icon: 'mdi:certificate-outline',  pill: 'bg-primary-light text-primary' },
   };
 
   const certifications = [
@@ -83,7 +83,7 @@
   <div class="max-w-270 mx-auto px-6">
 
     <div class="mb-14">
-      <h2 class="text-4xl md:text-5xl font-bold text-[#1a3f7a] leading-tight">
+      <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight">
         Sylabusy
       </h2>
     </div>
@@ -111,21 +111,21 @@
             <table class="w-full text-sm min-w-xl">
               <thead>
                 <tr class="bg-gray-50 border-b border-gray-200">
-                  <th class="text-left px-6 py-3 w-auto">
-                    <button type="button" onclick={() => setSort(cert.code, 'name')} class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[cert.code].key === 'name' ? 'text-[#1a3f7a]' : 'text-gray-400'}">
+                  <th class="text-left px-6 py-3 w-auto" aria-sort={sorts[cert.code].key === 'name' ? (sorts[cert.code].dir === 'asc' ? 'ascending' : 'descending') : 'none'}>
+                    <button type="button" onclick={() => setSort(cert.code, 'name')} class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[cert.code].key === 'name' ? 'text-primary' : 'text-gray-400'}">
                       Dokument
                       <Icon icon={sorts[cert.code].key === 'name' ? (sorts[cert.code].dir === 'asc' ? 'mdi:arrow-up' : 'mdi:arrow-down') : 'mdi:unfold-more-horizontal'} width="12" height="12" />
                     </button>
                   </th>
-                  <th class="text-center px-4 py-3 w-36">
-                    <button type="button" onclick={() => setSort(cert.code, 'type')} class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[cert.code].key === 'type' ? 'text-[#1a3f7a]' : 'text-gray-400'}">
+                  <th class="text-center px-4 py-3 w-36" aria-sort={sorts[cert.code].key === 'type' ? (sorts[cert.code].dir === 'asc' ? 'ascending' : 'descending') : 'none'}>
+                    <button type="button" onclick={() => setSort(cert.code, 'type')} class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[cert.code].key === 'type' ? 'text-primary' : 'text-gray-400'}">
                       Typ
                       <Icon icon={sorts[cert.code].key === 'type' ? (sorts[cert.code].dir === 'asc' ? 'mdi:arrow-up' : 'mdi:arrow-down') : 'mdi:unfold-more-horizontal'} width="12" height="12" />
                     </button>
                   </th>
                   <th class="text-center text-[10px] font-bold uppercase tracking-wider text-gray-400 px-4 py-3 w-20">Język</th>
                   <th class="w-32 py-3 px-6 text-right">
-                    <button type="button" onclick={() => setSort(cert.code, 'default')} class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[cert.code].key === 'default' ? 'text-[#1a3f7a]' : 'text-gray-400'}">
+                    <button type="button" onclick={() => setSort(cert.code, 'default')} class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[cert.code].key === 'default' ? 'text-primary' : 'text-gray-400'}">
                       Reset
                     </button>
                   </th>
@@ -136,7 +136,7 @@
                   <tr class="border-b border-gray-100 last:border-b-0 {i % 2 !== 0 ? 'bg-gray-50/50' : 'bg-white'}">
                     <td class="px-6 py-3.5">
                       <div class="flex items-center gap-2.5">
-                        <Icon icon="mdi:file-document-outline" width="15" height="15" class="text-[#e81c24] shrink-0 opacity-70" />
+                        <Icon icon="mdi:file-document-outline" width="15" height="15" class="text-accent shrink-0 opacity-70" />
                         <span class="font-mono text-xs text-gray-600">{doc.file.split('/').pop()}</span>
                       </div>
                     </td>
@@ -152,7 +152,7 @@
                       <a
                         href="{base}/documents/syllabi/{doc.file}"
                         download
-                        class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#1a3f7a] hover:bg-[#142f5c] pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
+                        class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                       >
                         <Icon icon="mdi:download" width="13" height="13" />
                         Pobierz

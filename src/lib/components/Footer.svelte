@@ -44,7 +44,7 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500 hover:bg-[#1a3f7a] hover:text-white"
+              class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white"
             >
               <Icon icon={social.icon} width="16" height="16" />
             </a>
@@ -58,7 +58,7 @@
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each navLinks as link}
             <li>
-              <a href={link.href} class="text-sm text-gray-500 no-underline transition-colors hover:text-[#1a3f7a]">
+              <a href={link.href} class="text-sm text-gray-500 no-underline transition-colors hover:text-primary">
                 {link.label}
               </a>
             </li>
@@ -76,9 +76,9 @@
                 href={link.href}
                 target={link.external ? '_blank' : undefined}
                 rel={link.external ? 'noopener noreferrer' : undefined}
-                class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 transition-colors hover:text-[#1a3f7a]"
+                class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 transition-colors hover:text-primary"
               >
-                <Icon icon={link.icon} width="14" height="14" class="shrink-0 opacity-70" />
+                <Icon icon={link.icon} width="14" height="14" class="shrink-0 text-accent" />
                 {link.label}
               </a>
             </li>
@@ -92,18 +92,18 @@
         <ul class="list-none m-0 p-0 flex flex-col gap-4">
           <li class="flex items-start gap-3">
             <div class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5">
-              <Icon icon="mdi:email-outline" width="15" height="15" class="text-[#e81c24]" />
+              <Icon icon="mdi:email-outline" width="15" height="15" class="text-accent" />
             </div>
             <div>
               <p class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0">Email</p>
-              <a href="mailto:info@pqb.org.pl" class="text-sm text-gray-600 no-underline hover:text-[#1a3f7a]">
+              <a href="mailto:info@pqb.org.pl" class="text-sm text-gray-600 no-underline hover:text-primary">
                 info@pqb.org.pl
               </a>
             </div>
           </li>
           <li class="flex items-start gap-3">
             <div class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5">
-              <Icon icon="mdi:map-marker-outline" width="15" height="15" class="text-[#e81c24]" />
+              <Icon icon="mdi:map-marker-outline" width="15" height="15" class="text-accent" />
             </div>
             <div>
               <p class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0">Lokalizacja</p>
@@ -129,7 +129,7 @@
             href="https://docs.github.com/en/site-policy/privacy-policies"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-400 no-underline hover:text-[#1a3f7a]"
+            class="text-gray-400 no-underline hover:text-primary"
           >
             Polityka prywatności
           </a>
