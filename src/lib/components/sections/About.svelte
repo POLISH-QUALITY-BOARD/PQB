@@ -95,12 +95,11 @@
       <p class="mb-4 text-gray-600">
         Polish Quality Board kierowana jest przez doświadczonych profesjonalistów z branży
         testowania oprogramowania. Nasz zarząd i członkowie komisji rewizyjnej reprezentują różne
-        sektory przemysłu - IT, od startupów po duże korporacje międzynarodowe.
+        obszary sektora IT i pracują w organizacjach od startupów po duże międzynarodowe korporacje.
       </p>
       <p class="mb-4 text-gray-600">
-        Każdy z naszych członków wnosi unikalną perspektywę i doświadczenie, co pozwala nam na
-        holistyczne podejście do wszystkich aspektów testowania oprogramowania i zapewniania
-        jakości.
+        Każdy z naszych członków wnosi unikalną perspektywę i doświadczenie, co pozwala nam spojrzeć
+        kompleksowo na wszystkie aspekty testowania oprogramowania i zapewniania jakości.
       </p>
 
       <div class="mt-8">
@@ -253,7 +252,9 @@
     </article>
 
     <article id="wizja-misja" class="mb-8 pb-6">
-      <h3 class="text-2xl font-semibold leading-tight text-primary mt-0 mb-2">Wizja, Misja</h3>
+      <h3 class="text-2xl font-semibold leading-tight text-primary mt-0 mb-2">
+        Wartości, misja i wizja
+      </h3>
       <p class="text-gray-600 mb-10">
         To fundament naszej organizacji - to, co nas definiuje i określa naszą drogę.
       </p>
@@ -289,7 +290,7 @@
           </h4>
           <p class="text-sm text-gray-500 mb-4">Po co istniejemy</p>
           <ul class="list-none m-0 p-0 flex flex-col gap-3">
-            {#each ['Lokalizować, współtworzyć standardy i certyfikację w obszarach dot. jakości w IT.', 'Edukować, promować jakość, prowadzić działalność ekspercką w tym zakresie.', 'Nawiązywać i rozwijać międzynarodowe relacje z innymi organizacjami i osobami w celu promocji polskiego IT.', 'Udostępniać i współpracować nad technologiami, szczególnie tymi, które niosą jakościowe ryzyka.'] as item, i (i)}
+            {#each ['Lokalizować, współtworzyć standardy i certyfikację w obszarach dot. jakości w IT.', 'Edukować, promować jakość, prowadzić działalność ekspercką w tym zakresie.', 'Nawiązywać i rozwijać międzynarodowe relacje z innymi organizacjami i osobami w celu promocji polskiego IT.', 'Udostępniać i współpracować nad technologiami, szczególnie tymi, które niosą ryzyka jakościowe.'] as item, i (i)}
               <li class="flex items-start gap-3">
                 <span class="relative flex w-2.5 h-2.5 shrink-0 mt-1 items-center justify-center">
                   <span

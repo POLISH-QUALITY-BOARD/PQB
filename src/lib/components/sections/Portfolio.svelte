@@ -30,16 +30,16 @@
 <section id="portfolio" class="bg-gray-50 pt-12 pb-20 md:pt-16 md:pb-28 scroll-mt-17.5">
   <div class="max-w-270 mx-auto px-6">
     <div class="mb-14">
-      <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight">Portfolio ISTQB</h2>
+      <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight">Portfolio ISTQB®</h2>
     </div>
 
     <p class="text-gray-600 mb-10">
-      ISTQB (International Software Testing Qualifications Board) to międzynarodowy standard
+      ISTQB® (International Software Testing Qualifications Board) to międzynarodowy standard
       certyfikacji dla profesjonalistów zajmujących się testowaniem oprogramowania. PQB natomiast to
-      jedyna reprezentacja Rady Krajowej ISTQB w Polsce, odpowiedzialna za organizację egzaminów i
+      jedyna reprezentacja Rady Krajowej ISTQB® w Polsce, odpowiedzialna za organizację egzaminów i
       akredytację szkoleń w naszym kraju. W ramach naszego portfolio znajdziesz wszystkie niezbędne
       materiały, takie jak sylabusy, pytania egzaminacyjne, odpowiedzi oraz wytyczne do akredytacji,
-      które pomogą Ci przygotować się do certyfikacji ISTQB i rozwijać swoją karierę w testowaniu
+      które pomogą Ci przygotować się do certyfikacji ISTQB® i rozwijać swoją karierę w testowaniu
       oprogramowania. Zapraszamy do zapoznania się z naszymi zasobami i korzystania z nich w swojej
       drodze do sukcesu w branży testowania oprogramowania!
     </p>
@@ -49,12 +49,12 @@
     href="https://www.istqb.org/"
     target="_blank"
     rel="noopener noreferrer"
-    title="Przejdź do strony ISTQB"
+    title="Przejdź do strony ISTQB®"
     class="block w-full mb-12"
   >
     <img
       src="images/istqb-02-12-26-full-name-portfolio-graphic.svg"
-      alt="ISTQB Portfolio - Certification Options"
+      alt="ISTQB® Portfolio - Certification Options"
       class="w-full h-auto block object-contain max-h-96"
     />
   </a>
@@ -65,11 +65,11 @@
       <div>
         <h3 class="text-lg font-semibold text-primary mb-1 flex items-center gap-2">
           <Icon icon="mdi:book-open-variant" width="16" height="16" />
-          Słownik ISTQB
+          Słownik ISTQB®
         </h3>
         <p class="text-sm text-gray-500 mb-4">Terminologia i definicje</p>
         <p class="text-sm text-gray-600 leading-relaxed mb-6">
-          Słownik ISTQB zawiera definicje pojęć stosowanych w testowaniu oprogramowania — niezbędne
+          Słownik ISTQB® zawiera definicje pojęć stosowanych w testowaniu oprogramowania — niezbędne
           narzędzie zapewniające jednolitą terminologię. Dostępny w wielu językach, w tym po polsku.
         </p>
         <a
@@ -92,7 +92,7 @@
         <p class="text-sm text-gray-500 mb-4">Rejestr certyfikowanych specjalistów</p>
         <p class="text-sm text-gray-600 leading-relaxed mb-6">
           Publiczny rejestr certyfikowanych profesjonalistów. Pozwala sprawdzić ważność certyfikacji
-          ISTQB każdego testera lub specjalisty QA — z datą wydania i ważności.
+          ISTQB® każdego testera lub specjalisty QA — z datą wydania i ważności.
         </p>
         <a
           href="https://scr.istqb.org/"
@@ -114,7 +114,7 @@
           <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
             <Icon icon="mdi:newspaper-variant-outline" width="16" height="16" color="white" />
           </div>
-          <h3 class="text-sm font-semibold text-white mb-0">Polecane White Papers</h3>
+          <h3 class="text-sm font-semibold text-white mb-0">Polecane White papers</h3>
         </div>
         <div class="overflow-x-auto">
           <table class="w-full text-sm">

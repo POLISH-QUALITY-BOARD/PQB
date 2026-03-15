@@ -70,7 +70,7 @@
 
         <NavigationMenu.Item>
           <NavigationMenu.Link href="#portfolio" class={linkClass}
-            >Portfolio ISTQB</NavigationMenu.Link
+            >Portfolio ISTQB®</NavigationMenu.Link
           >
         </NavigationMenu.Item>
 
@@ -158,7 +158,7 @@
         <a
           href="#portfolio"
           class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary"
-          onclick={() => (menuOpen = false)}>Portfolio ISTQB</a
+          onclick={() => (menuOpen = false)}>Portfolio ISTQB®</a
         >
         <div class="h-px bg-gray-100"></div>
         <a

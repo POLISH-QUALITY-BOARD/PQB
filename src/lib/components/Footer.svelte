@@ -4,7 +4,7 @@
 
   const navLinks = [
     { href: '#onas', label: 'O nas' },
-    { href: '#portfolio', label: 'Portfolio ISTQB' },
+    { href: '#portfolio', label: 'Portfolio ISTQB®' },
     { href: '#sylabusy', label: 'Sylabusy' },
     { href: '#dolacz', label: 'Dołącz do nas' }
   ];
@@ -59,8 +59,8 @@
           <img src="{base}/images/PQB-logo.png" alt="PQB Logo" class="h-12 w-auto" />
         </div>
         <p class="text-sm text-gray-500 leading-relaxed mb-6">
-          Organizacja non-profit promująca testowanie oprogramowania i wspierająca rozwój
-          specjalistów ds. jakości oprogramowania w Polsce.
+          Polish Quality Board jest organizacją non-profit promująca testowanie oprogramowania i
+          wspierająca rozwój specjalistów ds. jakości oprogramowania w Polsce.
         </p>
         <div class="flex gap-3">
           {#each socialLinks as social}
@@ -132,7 +132,7 @@
               <p
                 class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0"
               >
-                Email
+                E-mail
               </p>
               <a
                 href="mailto:info@pqb.org.pl"
@@ -152,7 +152,7 @@
               <p
                 class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0"
               >
-                Lokalizacja
+                Wirtualne biuro
               </p>
               <span class="text-sm text-gray-600">Bydgoszcz, Polska</span>
             </div>
