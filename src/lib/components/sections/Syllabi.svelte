@@ -57,7 +57,7 @@
     {
       code: 'FL',
       badge: 'Poziom Podstawowy',
-      title: 'Certyfikowany Tester - Poziom Podstawowy v4.0.1',
+      title: 'Certyfikowany Tester Poziom Podstawowy v4.0.1',
       version: 'v4.0.1',
       documents: [
         { name: 'Sylabus', lang: 'PL', type: 'syllabus', file: 'fl-4.0.1/FL-4.0.1-PL-sylabus.pdf' },
