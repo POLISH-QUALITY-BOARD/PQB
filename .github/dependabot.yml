@@ -5,39 +5,39 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
     open-pull-requests-limit: 5
     labels:
-      - "dependencies"
-      - "npm"
+      - 'dependencies'
+      - 'npm'
     reviewers:
-      - "gskierk"
-      - "SebaM"
+      - 'gskierk'
+      - 'SebaM'
     groups:
       svelte:
         patterns:
-          - "svelte*"
-          - "@sveltejs/*"
+          - 'svelte*'
+          - '@sveltejs/*'
       vite-and-build:
         patterns:
-          - "vite*"
-          - "@vitejs/*"
+          - 'vite*'
+          - '@vitejs/*'
       testing:
         patterns:
-          - "playwright*"
-          - "@playwright/*"
+          - 'playwright*'
+          - '@playwright/*'
       linting:
         patterns:
-          - "eslint*"
-          - "prettier*"
+          - 'eslint*'
+          - 'prettier*'
 
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
     labels:
-      - "dependencies"
-      - "github-actions"
+      - 'dependencies'
+      - 'github-actions'
