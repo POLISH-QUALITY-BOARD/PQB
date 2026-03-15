@@ -177,12 +177,14 @@
         <!-- Tab bar -->
         <Tabs.List class="flex border-b border-gray-200 bg-gray-50">
           <Tabs.Trigger
+            data-testid="statute-tab-pl"
             value="pl"
             class="flex items-center gap-2 px-6 py-4 text-sm font-semibold text-gray-400 border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:text-primary data-[state=active]:bg-white cursor-pointer"
           >
             Polski
           </Tabs.Trigger>
           <Tabs.Trigger
+            data-testid="statute-tab-en"
             value="en"
             class="flex items-center gap-2 px-6 py-4 text-sm font-semibold text-gray-400 border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:text-primary data-[state=active]:bg-white cursor-pointer"
           >
