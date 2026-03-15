@@ -57,7 +57,7 @@
     {
       code: 'FL',
       badge: 'Poziom Podstawowy',
-      title: 'Certyfikowany Tester / Poziom Podstawowy / 4.0',
+      title: 'Certyfikowany Tester - Poziom Podstawowy v4.0.1',
       version: 'v4.0.1',
       documents: [
         { name: 'Sylabus', lang: 'PL', type: 'syllabus', file: 'fl-4.0.1/FL-4.0.1-PL-sylabus.pdf' },
@@ -120,7 +120,7 @@
     {
       code: 'TA',
       badge: 'Poziom Zaawansowany',
-      title: 'Certyfikowany Tester / Poziom Zaawansowany / Analityk Testów / 4.0',
+      title: 'Certyfikowany Tester Poziom Zaawansowany Analityk Testów v4.0',
       version: 'v4.0',
       documents: [
         { name: 'Sylabus', lang: 'PL', type: 'syllabus', file: 'ta-4.0/TA-4.0-PL-sylabus.pdf' },
@@ -131,7 +131,7 @@
     {
       code: 'TM',
       badge: 'Poziom Zaawansowany',
-      title: 'Certyfikowany Tester / Poziom Zaawansowany / Zarządzanie Testami / 3.0',
+      title: 'Certyfikowany Tester Poziom Zaawansowany Zarządzanie Testami v3.0',
       version: 'v3.0',
       documents: [
         { name: 'Sylabus', lang: 'PL', type: 'syllabus', file: 'tm-3.0/TM-3.0-PL-sylabus.pdf' },

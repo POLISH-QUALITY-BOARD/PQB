@@ -4,7 +4,7 @@
   const benefits = [
     {
       icon: 'mdi:certificate-outline',
-      title: 'Szkolenia ISTQB',
+      title: 'Szkolenia ISTQB®',
       description:
         'Dostęp do szkoleń prowadzonych przez doświadczonych instruktorów certyfikowanych przez ISTQB.',
       accent: '#1a3f7a'
