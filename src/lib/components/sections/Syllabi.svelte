@@ -283,8 +283,11 @@
                           height="15"
                           class="text-accent shrink-0 opacity-70"
                         />
-                        <span class="font-mono text-xs text-gray-600"
-                          >{doc.file.split('/').pop()}</span
+                        <a
+                          href="{base}/documents/syllabi/{doc.file}"
+                          download
+                          class="font-mono text-xs text-primary hover:underline no-underline"
+                          >{doc.file.split('/').pop()}</a
                         >
                       </div>
                     </td>

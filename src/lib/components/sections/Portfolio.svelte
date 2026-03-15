@@ -177,7 +177,13 @@
                         height="15"
                         class="text-accent shrink-0 opacity-70"
                       />
-                      <span class="text-sm text-gray-700">{paper.title}</span>
+                      <a
+                        href={paper.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm text-primary hover:underline no-underline font-medium"
+                        >{paper.title}</a
+                      >
                     </div>
                   </td>
                   <td class="px-6 py-3.5 text-right">
