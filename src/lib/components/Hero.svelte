@@ -22,7 +22,7 @@
         ></span>
         <span class="relative inline-flex w-1.5 h-1.5 rounded-full bg-accent"></span>
       </span>
-      Oficjalny członek ISTQB® International
+      Oficjalny członek ISTQB®
     </div>
 
     <img

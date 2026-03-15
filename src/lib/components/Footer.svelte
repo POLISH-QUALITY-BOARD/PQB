@@ -24,7 +24,7 @@
     },
     {
       href: 'https://www.istqb.org/',
-      label: 'ISTQB International',
+      label: 'ISTQB®',
       icon: 'mdi:open-in-new',
       external: true
     }
