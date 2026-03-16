@@ -2,14 +2,6 @@
   import { base } from '$app/paths';
   import Icon from '@iconify/svelte';
 
-  function trackDownload(file: string) {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'file_download', {
-        file_name: file.split('/').pop()
-      });
-    }
-  }
-
   const typeOrder = { syllabus: 0, questions: 1, answers: 2, guide: 3 };
 
   let sorts = $state({
@@ -314,7 +306,6 @@
                       <a
                         href="{base}/documents/syllabi/{doc.file}"
                         download
-                        onclick={() => trackDownload(doc.file)}
                         class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                       >
                         <Icon icon="mdi:download" width="13" height="13" />
