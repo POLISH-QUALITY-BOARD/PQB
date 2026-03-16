@@ -3,13 +3,11 @@
   import Portfolio from '$lib/components/sections/Portfolio.svelte';
   import Syllabi from '$lib/components/sections/Syllabi.svelte';
   import Join from '$lib/components/sections/Join.svelte';
-  import Contact from '$lib/components/sections/Contact.svelte';
 </script>
 
-<main class="container">
+<main>
   <About />
   <Portfolio />
   <Syllabi />
   <Join />
-  <Contact />
 </main>

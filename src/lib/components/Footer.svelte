@@ -1,79 +1,189 @@
 <script>
   import Icon from '@iconify/svelte';
   import { base } from '$app/paths';
+
+  const navLinks = [
+    { href: '#onas', label: 'O nas' },
+    { href: '#portfolio', label: 'Portfolio ISTQB®' },
+    { href: '#sylabusy', label: 'Sylabusy' },
+    { href: '#dolacz', label: 'Dołącz do nas' }
+  ];
+
+  const docLinks = [
+    {
+      href: `${base}/documents/Statut_PQB.pdf`,
+      label: 'Statut PQB (PL)',
+      icon: 'mdi:file-document-outline',
+      external: true
+    },
+    {
+      href: `${base}/documents/Statut_PQB_en-US.pdf`,
+      label: 'Statutes of PQB (EN)',
+      icon: 'mdi:file-document-outline',
+      external: true
+    },
+    {
+      href: 'https://www.istqb.org/',
+      label: 'ISTQB®',
+      icon: 'mdi:open-in-new',
+      external: true
+    }
+  ];
+
+  const socialLinks = [
+    {
+      href: 'https://www.linkedin.com/company/polish-quality-board-official/',
+      icon: 'simple-icons:linkedin',
+      label: 'LinkedIn'
+    },
+    {
+      href: 'https://www.facebook.com/profile.php?id=61584071003505',
+      icon: 'simple-icons:facebook',
+      label: 'Facebook'
+    },
+    {
+      href: 'https://github.com/POLISH-QUALITY-BOARD/',
+      icon: 'simple-icons:github',
+      label: 'GitHub'
+    },
+    { href: 'https://discord.gg/dAPN73QDJ5', icon: 'simple-icons:discord', label: 'Discord' }
+  ];
 </script>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-section footer-main">
-        <div class="footer-logo">
-          <img src="{base}/images/PQB-logo.png" alt="PQB Logo" class="logo" />
-          <span class="org-name">Polish Quality Board</span>
+<footer class="bg-gray-50 border-t border-gray-200">
+  <div class="max-w-270 mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <!-- Brand column -->
+      <div class="lg:col-span-1">
+        <div class="mb-5">
+          <img src="{base}/images/PQB-logo.png" alt="PQB Logo" class="h-12 w-auto" />
         </div>
-        <p class="footer-description">
-          Polish Quality Board - jest organizacją non-profit zajmującą się promocją testowania
-          oprogramowania i rozwojem osób zainteresowanych jakością oprogramowania w Polsce.
+        <p class="text-sm text-gray-500 leading-relaxed mb-6">
+          Polish Quality Board jest organizacją non-profit promującą testowanie oprogramowania i
+          wspierająca rozwój specjalistów ds. jakości oprogramowania w Polsce.
         </p>
+        <div class="flex gap-3">
+          {#each socialLinks as social}
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white"
+            >
+              <Icon icon={social.icon} width="16" height="16" />
+            </a>
+          {/each}
+        </div>
       </div>
-      <div class="footer-section">
-        <h4 class="footer-title">Nawigacja</h4>
-        <ul class="footer-list">
-          <li><a href="#onas">O nas</a></li>
-          <li><a href="#portfolio">Portfolio ISTQB</a></li>
-          <li><a href="#dolacz">Dołącz do nas</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+
+      <!-- Navigation column -->
+      <div>
+        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">
+          Nawigacja
+        </h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          {#each navLinks as link}
+            <li>
+              <a
+                href={link.href}
+                class="text-sm text-gray-500 no-underline transition-colors hover:text-primary"
+              >
+                {link.label}
+              </a>
+            </li>
+          {/each}
         </ul>
       </div>
-      <div class="footer-section">
-        <h4 class="footer-title">Dokumenty</h4>
-        <ul class="footer-list">
-          <li>
-            <a
-              // eslint-disable-next-line svelte/no-navigation-without-resolve
-              href="{base}/documents/Statut_PQB.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+
+      <!-- Documents column -->
+      <div>
+        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">
+          Dokumenty
+        </h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-3">
+          {#each docLinks as link}
+            <li>
+              <a
+                href={link.href}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 transition-colors hover:text-primary"
+              >
+                <Icon icon={link.icon} width="14" height="14" class="shrink-0 text-accent" />
+                {link.label}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+
+      <!-- Contact column -->
+      <div>
+        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Kontakt</h4>
+        <ul class="list-none m-0 p-0 flex flex-col gap-4">
+          <li class="flex items-start gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5"
             >
-              <Icon icon="mdi:file-document-outline" width="16" height="16" />
-              Statut PQB (PL)
-            </a>
+              <Icon icon="mdi:email-outline" width="15" height="15" class="text-accent" />
+            </div>
+            <div>
+              <p
+                class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0"
+              >
+                E-mail
+              </p>
+              <a
+                href="mailto:info@pqb.org.pl"
+                class="text-sm text-gray-600 no-underline hover:text-primary"
+              >
+                info@pqb.org.pl
+              </a>
+            </div>
           </li>
-          <li>
-            <a
-              // eslint-disable-next-line svelte/no-navigation-without-resolve
-              href="{base}/documents/Statut_PQB_en-US.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+          <li class="flex items-start gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5"
             >
-              <Icon icon="mdi:file-document-outline" width="16" height="16" />
-              Statutes of PQB (EN)
-            </a>
-          </li>
-          <li>
-            <a href="https://www.istqb.org/" target="_blank" rel="noopener noreferrer">
-              <Icon icon="mdi:open-in-new" width="16" height="16" />
-              ISTQB International
-            </a>
+              <Icon icon="mdi:map-marker-outline" width="15" height="15" class="text-accent" />
+            </div>
+            <div>
+              <p
+                class="font-semibold text-gray-500 text-[10px] uppercase tracking-widest mb-0.5 mt-0"
+              >
+                Wirtualne biuro
+              </p>
+              <span class="text-sm text-gray-600">Bydgoszcz, Polska</span>
+            </div>
           </li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copyright">
-        &copy; 2026 Polish Quality Board. Wszelkie prawa zastrzeżone.
-        <span class="footer-meta"
-          ><span>KRS: 0001200368</span><span class="meta-separator">•</span><span
-            >NIP: 5543040791</span
-          ><span class="meta-separator">•</span><span>REGON: 543007740</span><span
-            class="meta-separator">•</span
-          ><a
+
+    <!-- Divider -->
+    <div class="border-t border-gray-200 pt-8">
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400"
+      >
+        <p class="m-0">&copy; 2026 Polish Quality Board. Wszelkie prawa zastrzeżone.</p>
+        <div class="flex flex-wrap justify-center sm:justify-end gap-x-4 gap-y-1 items-center">
+          <span>KRS: 0001200368</span>
+          <span class="hidden sm:inline opacity-30">|</span>
+          <span>NIP: 5543040791</span>
+          <span class="hidden sm:inline opacity-30">|</span>
+          <span>REGON: 543007740</span>
+          <span class="hidden sm:inline opacity-30">|</span>
+          <a
             href="https://docs.github.com/en/site-policy/privacy-policies"
             target="_blank"
-            rel="noopener noreferrer">Polityka prywatności</a
-          ></span
-        >
-      </p>
+            rel="noopener noreferrer"
+            class="text-gray-400 no-underline hover:text-primary"
+          >
+            Polityka prywatności
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
