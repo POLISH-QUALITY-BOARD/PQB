@@ -3,6 +3,7 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import Hero from '$lib/components/Hero.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import CookieConsent from '$lib/components/CookieConsent.svelte';
 
   import '../app.css';
 
@@ -38,4 +39,5 @@
   {@render children()}
 
   <Footer />
+  <CookieConsent />
 </div>
