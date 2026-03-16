@@ -1,13 +1,21 @@
-<script>
+<script lang="ts">
   import { base } from '$app/paths';
   import Icon from '@iconify/svelte';
+
+  function trackDownload(file: string) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'file_download', {
+        file_name: file.split('/').pop()
+      });
+    }
+  }
 
   const typeOrder = { syllabus: 0, questions: 1, answers: 2, guide: 3 };
 
   let sorts = $state({
-    FL: { key: 'default', dir: 'asc' },
-    TA: { key: 'default', dir: 'asc' },
-    TM: { key: 'default', dir: 'asc' }
+    CTFL: { key: 'default', dir: 'asc' },
+    'CTAL-TA': { key: 'default', dir: 'asc' },
+    'CTAL-TM': { key: 'default', dir: 'asc' }
   });
 
   function setSort(code, key) {
@@ -55,7 +63,7 @@
 
   const certifications = [
     {
-      code: 'FL',
+      code: 'CTFL',
       badge: 'Poziom Podstawowy',
       title: 'Certyfikowany Tester Poziom Podstawowy v4.0.1',
       version: 'v4.0.1',
@@ -118,7 +126,7 @@
       ]
     },
     {
-      code: 'TA',
+      code: 'CTAL-TA',
       badge: 'Poziom Zaawansowany',
       title: 'Certyfikowany Tester Poziom Zaawansowany Analityk Testów v4.0',
       version: 'v4.0',
@@ -129,7 +137,7 @@
       ]
     },
     {
-      code: 'TM',
+      code: 'CTAL-TM',
       badge: 'Poziom Zaawansowany',
       title: 'Certyfikowany Tester Poziom Zaawansowany Zarządzanie Testami v3.0',
       version: 'v3.0',
@@ -306,6 +314,7 @@
                       <a
                         href="{base}/documents/syllabi/{doc.file}"
                         download
+                        onclick={() => trackDownload(doc.file)}
                         class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                       >
                         <Icon icon="mdi:download" width="13" height="13" />
