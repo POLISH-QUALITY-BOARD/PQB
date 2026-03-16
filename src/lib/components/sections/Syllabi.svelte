@@ -186,8 +186,8 @@
             class="flex items-center gap-3 px-6 py-4"
             style="background: linear-gradient(135deg, #1a3f7a 0%, #0c1f40 100%);"
           >
-            <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-              <span class="text-[11px] font-bold text-white">{cert.code}</span>
+            <div class="inline-flex items-center bg-white/10 rounded-lg px-2.5 py-1 shrink-0">
+              <span class="text-xs font-bold text-white tracking-wide">{cert.code}</span>
             </div>
             <div>
               <h3 class="text-sm font-semibold text-white mb-0">{cert.title}</h3>
