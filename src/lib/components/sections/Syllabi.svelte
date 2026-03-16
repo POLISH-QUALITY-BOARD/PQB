@@ -285,7 +285,6 @@
                         />
                         <a
                           href="{base}/documents/syllabi/{doc.file}"
-                          download
                           class="font-mono text-xs text-primary hover:underline no-underline"
                           >{doc.file.split('/').pop()}</a
                         >
