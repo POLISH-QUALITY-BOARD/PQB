@@ -3,13 +3,6 @@
   import { fade } from 'svelte/transition';
   import Icon from '@iconify/svelte';
 
-  declare global {
-    interface Window {
-      gtag: (...args: unknown[]) => void;
-      dataLayer: unknown[];
-    }
-  }
-
   let visible = $state(false);
   let acceptBtn: HTMLButtonElement;
   let declineBtn: HTMLButtonElement;
@@ -82,6 +75,7 @@
   <div
     transition:fade={{ duration: 300 }}
     role="dialog"
+    tabindex="0"
     aria-modal="true"
     aria-labelledby="cookie-title"
     aria-describedby="cookie-desc"
