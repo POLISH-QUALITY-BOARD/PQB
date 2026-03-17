@@ -1,7 +1,7 @@
 <script>
-  import Dictionary from './Dictionary.svelte';
-  import Register from './Register.svelte';
-  import FeaturedWhitePapers from './FeaturedWhitePapers.svelte';
+  import Dictionary from './Portfolio/Dictionary.svelte';
+  import Register from './Portfolio/Register.svelte';
+  import FeaturedWhitePapers from './Portfolio/FeaturedWhitePapers.svelte';
 </script>
 
 <section id="portfolio" class="bg-gray-50 pt-12 pb-20 md:pt-16 md:pb-28 scroll-mt-17.5">
