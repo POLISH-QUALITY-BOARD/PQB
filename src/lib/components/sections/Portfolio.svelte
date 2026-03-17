@@ -1,7 +1,7 @@
 <script>
   import Dictionary from './Portfolio/Dictionary.svelte';
   import Register from './Portfolio/Register.svelte';
-  import FeaturedWhitePapers from './Portfolio/FeaturedWhitePapers.svelte';
+  import WhitePapers from './Portfolio/WhitePapers.svelte';
 </script>
 
 <section id="portfolio" class="bg-gray-50 pt-12 pb-20 md:pt-16 md:pb-28 scroll-mt-17.5">
@@ -40,7 +40,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-14">
       <Dictionary />
       <Register />
-      <FeaturedWhitePapers />
+      <WhitePapers />
     </div>
   </div>
 </section>
