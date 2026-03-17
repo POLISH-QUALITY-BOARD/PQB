@@ -167,7 +167,7 @@
 
     <p class="text-gray-600 mb-12">
       Poniżej znajdziesz sylabusy, zestawy pytań i odpowiedzi oraz wytyczne do akredytacji dla
-      poszczególnych certyfikatów ISTQB.
+      poszczególnych certyfikatów ISTQB®.
     </p>
 
     <div class="flex flex-col gap-6">
