@@ -16,12 +16,10 @@ cookieConsentStore.subscribe((value) => {
   if (!browser) return;
 
   if (value === null) {
-    localStorage.removeItem(STORAGE_KEY);
-  } else {
+    localStorage.setItem(STORAGE_KEY, DENIED);
+    window.gtag('consent', 'update', { analytics_storage: DENIED });
+  } else if (value === GRANTED || value === DENIED) {
     localStorage.setItem(STORAGE_KEY, value);
-  }
-
-  if (value === GRANTED || value === DENIED) {
     window.gtag('consent', 'update', { analytics_storage: value });
   }
 });
