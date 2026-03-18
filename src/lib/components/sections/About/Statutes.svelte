@@ -6,7 +6,6 @@
 <article id="statut" class="mb-12 pb-8 border-b border-gray-100">
   <h3 class="text-2xl font-semibold leading-tight text-primary mt-0 mb-6">Statut</h3>
 
-  <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
   <Tabs.Root value="pl" class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
     <!-- Tab bar -->
     <Tabs.List class="flex border-b border-gray-200 bg-gray-50">
@@ -42,6 +41,7 @@
           </p>
         </div>
         <a
+          // eslint-disable-next-line svelte/no-navigation-without-resolve
           href="documents/Statut_PQB.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -56,7 +56,7 @@
     </Tabs.Content>
 
     <Tabs.Content value="en">
-      <div class="p-8 flex flex-col sm:flex-row sm:items-center gap-6">
+      <div lang="en" class="p-8 flex flex-col sm:flex-row sm:items-center gap-6">
         <div
           class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
           style="background: linear-gradient(135deg, #1a3f7a 0%, #0c1f40 100%);"
@@ -71,6 +71,7 @@
           </p>
         </div>
         <a
+          // eslint-disable-next-line svelte/no-navigation-without-resolve
           href="documents/Statut_PQB_en-US.pdf"
           target="_blank"
           rel="noopener noreferrer"

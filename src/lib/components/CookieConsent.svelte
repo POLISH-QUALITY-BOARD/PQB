@@ -43,14 +43,14 @@
       </div>
       <div class="flex gap-3 shrink-0 ml-8.5 sm:ml-0">
         <button
-          onclick={() => grantCookieConsent()}
+          onclick={grantCookieConsent}
           aria-label="Zaakceptuj pliki cookie"
           class="flex-1 sm:flex-none px-5 py-2 text-sm font-medium rounded-lg text-white bg-accent hover:bg-accent-dark transition-colors cursor-pointer"
         >
           Akceptuj
         </button>
         <button
-          onclick={() => denyCookieConsent()}
+          onclick={denyCookieConsent}
           aria-label="Odrzuć pliki cookie"
           class="flex-1 sm:flex-none px-5 py-2 text-sm font-medium rounded-lg text-white/80 hover:text-white transition-colors cursor-pointer"
         >
