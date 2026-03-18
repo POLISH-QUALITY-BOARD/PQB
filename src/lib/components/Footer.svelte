@@ -1,6 +1,7 @@
 <script>
   import Icon from '@iconify/svelte';
   import { base } from '$app/paths';
+  import { resetCookieConsent } from '$lib/stores/cookieConsent';
 
   const navLinks = [
     { href: '#onas', label: 'O nas' },
@@ -182,6 +183,13 @@
           >
             Polityka prywatności
           </a>
+          <span class="hidden sm:inline opacity-30">|</span>
+          <button
+            onclick={resetCookieConsent}
+            class="text-gray-400 hover:text-primary cursor-pointer bg-transparent border-0 p-0 text-xs"
+          >
+            Ustawienia cookies
+          </button>
         </div>
       </div>
     </div>
