@@ -6,7 +6,7 @@ Official website for the Polish Quality Board - a national organization dedicate
 
 ## About Polish Quality Board
 
-Polska Rada Jakości (Polish Quality Board) provides:
+Polish Quality Board provides:
 
 - Software testing knowledge and expertise
 - International collaboration on IT quality standards
