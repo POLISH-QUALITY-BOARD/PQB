@@ -5,7 +5,7 @@
 
   const tabs = [
     {
-      trigger: { value: 'pl', title: 'Polski' },
+      trigger: { value: 'pl', title: 'Polski', testId: 'statutes-tab-pl' },
       content: {
         title: 'Statut PQB',
         description:
@@ -14,12 +14,12 @@
         download: {
           href: 'documents/Statut_PQB.pdf',
           text: 'Pobierz',
-          testId: 'download-statute-pl'
+          testId: 'statutes-download-pl'
         }
       }
     },
     {
-      trigger: { value: 'en', title: 'English' },
+      trigger: { value: 'en', title: 'English', testId: 'statutes-tab-en' },
       content: {
         title: 'Constitution of PQB',
         description:
@@ -28,7 +28,7 @@
         download: {
           href: 'documents/Statut_PQB_en-US.pdf',
           text: 'Download',
-          testId: 'download-statute-en'
+          testId: 'statutes-download-en'
         }
       }
     }
@@ -47,7 +47,7 @@
     <Tabs.List class="flex border-b border-gray-200 bg-gray-50">
       {#each tabs as { trigger } (trigger.value)}
         <Tabs.Trigger
-          data-testid="statute-tab-{trigger.value}"
+          data-testid={trigger.testId}
           value={trigger.value}
           class="flex items-center gap-2 px-6 py-4 text-sm font-semibold text-gray-400 border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:text-primary data-[state=active]:bg-white cursor-pointer transition-all duration-200"
         >
