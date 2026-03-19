@@ -60,60 +60,84 @@
       title: 'Certyfikowany Tester Poziom Podstawowy v4.0.1',
       version: 'v4.0.1',
       documents: [
-        { name: 'Sylabus', lang: 'PL', type: 'syllabus', file: 'fl-4.0.1/FL-4.0.1-PL-sylabus.pdf' },
+        {
+          name: 'Sylabus',
+          lang: 'PL',
+          type: 'syllabus',
+          file: 'fl-4.0.1/FL-4.0.1-PL-sylabus.pdf',
+          github: 'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/tree/main/syllabus-pl'
+        },
         {
           name: 'Pytania – zestaw A',
           lang: 'PL',
           type: 'questions',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-A-pytania-v1.7.pdf'
+          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-A-pytania-v1.7.pdf',
+          github:
+            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-A-pytania-v1.7.md'
         },
         {
           name: 'Odpowiedzi – zestaw A',
           lang: 'PL',
           type: 'answers',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-A-odpowiedzi-v1.7.pdf'
+          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-A-odpowiedzi-v1.7.pdf',
+          github:
+            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-A-odpowiedzi-v1.7.md'
         },
         {
           name: 'Pytania – zestaw B',
           lang: 'PL',
           type: 'questions',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-B-pytania-v1.7.pdf'
+          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-B-pytania-v1.7.pdf',
+          github:
+            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-B-pytania-v1.7.md'
         },
         {
           name: 'Odpowiedzi – zestaw B',
           lang: 'PL',
           type: 'answers',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-B-odpowiedzi-v1.7.pdf'
+          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-B-odpowiedzi-v1.7.pdf',
+          github:
+            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-B-odpowiedzi-v1.7.md'
         },
         {
           name: 'Pytania – zestaw C',
           lang: 'PL',
           type: 'questions',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-C-pytania-v1.6.pdf'
+          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-C-pytania-v1.6.pdf',
+          github:
+            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-C-pytania-v1.6.md'
         },
         {
           name: 'Odpowiedzi – zestaw C',
           lang: 'PL',
           type: 'answers',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-C-odpowiedzi-v1.6.pdf'
+          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-C-odpowiedzi-v1.6.pdf',
+          github:
+            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-C-odpowiedzi-v1.6.md'
         },
         {
           name: 'Pytania – zestaw D',
           lang: 'PL',
           type: 'questions',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-D-pytania-v1.5.pdf'
+          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-D-pytania-v1.5.pdf',
+          github:
+            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-D-pytania-v1.5.md'
         },
         {
           name: 'Odpowiedzi – zestaw D',
           lang: 'PL',
           type: 'answers',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-D-odpowiedzi-v1.5.pdf'
+          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-D-odpowiedzi-v1.5.pdf',
+          github:
+            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-D-odpowiedzi-v1.5.md'
         },
         {
           name: 'Wytyczne do akredytacji',
           lang: 'PL',
           type: 'guide',
-          file: 'fl-4.0.1/FL-4.0.1-PL-wytyczne-do-akredytacji-v0.3.pdf'
+          file: 'fl-4.0.1/FL-4.0.1-PL-wytyczne-do-akredytacji-v0.3.pdf',
+          github:
+            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/tree/main/accreditation-guidelines-pl'
         }
       ]
     },
@@ -123,9 +147,27 @@
       title: 'Certyfikowany Tester Poziom Zaawansowany Analityk Testów v4.0',
       version: 'v4.0',
       documents: [
-        { name: 'Sylabus', lang: 'PL', type: 'syllabus', file: 'ta-4.0/TA-4.0-PL-sylabus.pdf' },
-        { name: 'Pytania', lang: 'PL', type: 'questions', file: 'ta-4.0/TA-4.0-PL-pytania.pdf' },
-        { name: 'Odpowiedzi', lang: 'PL', type: 'answers', file: 'ta-4.0/TA-4.0-PL-odpowiedzi.pdf' }
+        {
+          name: 'Sylabus',
+          lang: 'PL',
+          type: 'syllabus',
+          file: 'ta-4.0/TA-4.0-PL-sylabus.pdf',
+          github: ''
+        },
+        {
+          name: 'Pytania',
+          lang: 'PL',
+          type: 'questions',
+          file: 'ta-4.0/TA-4.0-PL-pytania.pdf',
+          github: ''
+        },
+        {
+          name: 'Odpowiedzi',
+          lang: 'PL',
+          type: 'answers',
+          file: 'ta-4.0/TA-4.0-PL-odpowiedzi.pdf',
+          github: ''
+        }
       ]
     },
     {
@@ -134,24 +176,33 @@
       title: 'Certyfikowany Tester Poziom Zaawansowany Zarządzanie Testami v3.0',
       version: 'v3.0',
       documents: [
-        { name: 'Sylabus', lang: 'PL', type: 'syllabus', file: 'tm-3.0/TM-3.0-PL-sylabus.pdf' },
+        {
+          name: 'Sylabus',
+          lang: 'PL',
+          type: 'syllabus',
+          file: 'tm-3.0/TM-3.0-PL-sylabus.pdf',
+          github: ''
+        },
         {
           name: 'Pytania',
           lang: 'PL',
           type: 'questions',
-          file: 'tm-3.0/TM-3.0-PL-pytania-v1.3.3.pdf'
+          file: 'tm-3.0/TM-3.0-PL-pytania-v1.3.3.pdf',
+          github: ''
         },
         {
           name: 'Odpowiedzi',
           lang: 'PL',
           type: 'answers',
-          file: 'tm-3.0/TM-3.0-PL-odpowiedzi-v1.3.3.pdf'
+          file: 'tm-3.0/TM-3.0-PL-odpowiedzi-v1.3.3.pdf',
+          github: ''
         },
         {
           name: 'Wytyczne do akredytacji',
           lang: 'PL',
           type: 'guide',
-          file: 'tm-3.0/TM-3.0-PL-wytyczne-do-akredytacji-v1.0.pdf'
+          file: 'tm-3.0/TM-3.0-PL-wytyczne-do-akredytacji-v1.0.pdf',
+          github: ''
         }
       ]
     }
@@ -253,7 +304,7 @@
                     class="text-center text-[10px] font-bold uppercase tracking-wider text-gray-400 px-4 py-3 w-20"
                     >Język</th
                   >
-                  <th class="w-32 py-3 px-6 text-right">
+                  <th class="w-52 py-3 px-6 text-right">
                     <button
                       type="button"
                       onclick={() => setSort(cert.code, 'default')}
@@ -303,14 +354,27 @@
                       <span class="text-xs font-medium text-gray-400">{doc.lang}</span>
                     </td>
                     <td class="px-6 py-3.5 text-right">
-                      <a
-                        href="{base}/documents/syllabi/{doc.file}"
-                        download
-                        class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
-                      >
-                        <Icon icon="mdi:download" width="13" height="13" />
-                        Pobierz
-                      </a>
+                      <div class="inline-flex items-center gap-2">
+                        {#if doc.github}
+                          <a
+                            href={doc.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
+                          >
+                            <Icon icon="mdi:github" width="13" height="13" />
+                            Kontrybuuj
+                          </a>
+                        {/if}
+                        <a
+                          href="{base}/documents/syllabi/{doc.file}"
+                          download
+                          class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
+                        >
+                          <Icon icon="mdi:download" width="13" height="13" />
+                          Pobierz
+                        </a>
+                      </div>
                     </td>
                   </tr>
                 {/each}
