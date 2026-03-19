@@ -1,31 +1,37 @@
 <script>
-  import Icon from '@iconify/svelte';
+  import IconLightningBoltOutline from '~icons/mdi/lightning-bolt-outline';
+  import IconHandHeartOutline from '~icons/mdi/hand-heart-outline';
+  import IconAccountMultipleOutline from '~icons/mdi/account-multiple-outline';
+  import IconEyeOutline from '~icons/mdi/eye-outline';
+  import IconScaleBalance from '~icons/mdi/scale-balance';
+  import IconFlagOutline from '~icons/mdi/flag-outline';
+  import IconTelescope from '~icons/mdi/telescope';
 
   const values = [
     {
-      icon: 'mdi:lightning-bolt-outline',
+      icon: IconLightningBoltOutline,
       title: 'Nowoczesność',
       description:
         'Stosujemy aktualne standardy i narzędzia, nadążając za dynamicznie rozwijającą się branżą IT.'
     },
     {
-      icon: 'mdi:hand-heart-outline',
+      icon: IconHandHeartOutline,
       title: 'Zaangażowanie',
       description: 'Działamy z pasją i pełnym oddaniem na rzecz społeczności testerów w Polsce.'
     },
     {
-      icon: 'mdi:account-multiple-outline',
+      icon: IconAccountMultipleOutline,
       title: 'Inkluzywność',
       description: 'Tworzymy otwarte środowisko dla każdego, niezależnie od poziomu doświadczenia.'
     },
     {
-      icon: 'mdi:eye-outline',
+      icon: IconEyeOutline,
       title: 'Transparentność działań',
       description:
         'Działamy jawnie i uczciwie – nasze decyzje i procesy są dostępne dla wszystkich członków.'
     },
     {
-      icon: 'mdi:scale-balance',
+      icon: IconScaleBalance,
       title: 'Etyka',
       description:
         'Kierujemy się zasadami etyki zawodowej we wszystkich aspektach naszej działalności.'
@@ -48,12 +54,13 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
     {#each values as value (value.title)}
+      {@const ValueIcon = value.icon}
       <div class="flex gap-5 items-start">
         <div
           class="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm"
           style="background: linear-gradient(135deg, #1a3f7a 0%, #0c1f40 100%);"
         >
-          <Icon icon={value.icon} width="22" height="22" color="white" />
+          <ValueIcon width="22" height="22" color="white" />
         </div>
         <div>
           <h3 class="text-base font-semibold text-primary mb-1">{value.title}</h3>
@@ -67,7 +74,7 @@
     <!-- Misja -->
     <div>
       <h4 class="text-lg font-semibold text-primary mb-1 flex items-center gap-2">
-        <Icon icon="mdi:flag-outline" width="16" height="16" />
+        <IconFlagOutline width="16" height="16" />
         Misja
       </h4>
       <p class="text-sm text-gray-500 mb-4">Po co istniejemy</p>
@@ -89,7 +96,7 @@
     <!-- Wizja -->
     <div>
       <h4 class="text-lg font-semibold text-primary mb-1 flex items-center gap-2">
-        <Icon icon="mdi:telescope" width="16" height="16" />
+        <IconTelescope width="16" height="16" />
         Wizja
       </h4>
       <p class="text-sm text-gray-500 mb-4">Co chcemy osiągnąć</p>

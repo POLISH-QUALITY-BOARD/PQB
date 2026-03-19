@@ -1,6 +1,11 @@
 <script lang="ts">
   import { base } from '$app/paths';
-  import Icon from '@iconify/svelte';
+  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
+  import IconArrowUp from '~icons/mdi/arrow-up';
+  import IconArrowDown from '~icons/mdi/arrow-down';
+  import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
+  import IconGithub from '~icons/mdi/github';
+  import IconDownload from '~icons/mdi/download';
 
   const typeOrder = { syllabus: 0, questions: 1, answers: 2, guide: 3 };
 
@@ -260,15 +265,15 @@
                         : 'text-gray-400'}"
                     >
                       Dokument
-                      <Icon
-                        icon={sorts[cert.code].key === 'name'
-                          ? sorts[cert.code].dir === 'asc'
-                            ? 'mdi:arrow-up'
-                            : 'mdi:arrow-down'
-                          : 'mdi:unfold-more-horizontal'}
-                        width="12"
-                        height="12"
-                      />
+                      {#if sorts[cert.code].key === 'name'}
+                        {#if sorts[cert.code].dir === 'asc'}
+                          <IconArrowUp width="12" height="12" />
+                        {:else}
+                          <IconArrowDown width="12" height="12" />
+                        {/if}
+                      {:else}
+                        <IconUnfoldMoreHorizontal width="12" height="12" />
+                      {/if}
                     </button>
                   </th>
                   <th
@@ -289,15 +294,15 @@
                         : 'text-gray-400'}"
                     >
                       Typ
-                      <Icon
-                        icon={sorts[cert.code].key === 'type'
-                          ? sorts[cert.code].dir === 'asc'
-                            ? 'mdi:arrow-up'
-                            : 'mdi:arrow-down'
-                          : 'mdi:unfold-more-horizontal'}
-                        width="12"
-                        height="12"
-                      />
+                      {#if sorts[cert.code].key === 'type'}
+                        {#if sorts[cert.code].dir === 'asc'}
+                          <IconArrowUp width="12" height="12" />
+                        {:else}
+                          <IconArrowDown width="12" height="12" />
+                        {/if}
+                      {:else}
+                        <IconUnfoldMoreHorizontal width="12" height="12" />
+                      {/if}
                     </button>
                   </th>
                   <th
@@ -328,8 +333,7 @@
                   >
                     <td class="px-6 py-3.5">
                       <div class="flex items-center gap-2.5">
-                        <Icon
-                          icon="mdi:file-document-outline"
+                        <IconFileDocumentOutline
                           width="15"
                           height="15"
                           class="text-accent shrink-0 opacity-70"
@@ -362,7 +366,7 @@
                             rel="noopener noreferrer"
                             class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                           >
-                            <Icon icon="mdi:github" width="13" height="13" />
+                            <IconGithub width="13" height="13" />
                             Kontrybuuj
                           </a>
                         {/if}
@@ -371,7 +375,7 @@
                           download
                           class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                         >
-                          <Icon icon="mdi:download" width="13" height="13" />
+                          <IconDownload width="13" height="13" />
                           Pobierz
                         </a>
                       </div>

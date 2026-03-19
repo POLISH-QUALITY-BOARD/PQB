@@ -2,7 +2,7 @@
   import { resolve, base } from '$app/paths';
   import { NavigationMenu } from 'bits-ui';
   import { slide } from 'svelte/transition';
-  import Icon from '@iconify/svelte';
+  import IconAccountPlusOutline from '~icons/mdi/account-plus-outline';
 
   let menuOpen = $state(false);
   let oNasOpen = $state(false);
@@ -83,7 +83,7 @@
             href="#dolacz"
             class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-accent hover:bg-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
           >
-            <Icon icon="mdi:account-plus-outline" width="16" height="16" />
+            <IconAccountPlusOutline width="16" height="16" />
             Dołącz do nas
           </NavigationMenu.Link>
         </NavigationMenu.Item>
@@ -172,7 +172,7 @@
             class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-accent hover:bg-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
             onclick={() => (menuOpen = false)}
           >
-            <Icon icon="mdi:account-plus-outline" width="16" height="16" />
+            <IconAccountPlusOutline width="16" height="16" />
             Dołącz do nas
           </a>
         </div>
