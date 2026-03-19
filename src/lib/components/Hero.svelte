@@ -32,7 +32,7 @@
     />
 
     <p class="text-base text-white/75 max-w-xl mx-auto leading-relaxed font-light">
-      Polska Rada Jakości (PQB) jest krajową organizacją zajmującą się promocją testowania
+      Polish Quality Board (PQB) jest krajową organizacją zajmującą się promocją testowania
       oprogramowania i rozwojem osób zainteresowanych jakością oprogramowania w Polsce.
     </p>
 
