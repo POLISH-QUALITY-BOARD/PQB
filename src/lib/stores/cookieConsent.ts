@@ -16,7 +16,7 @@ cookieConsentStore.subscribe((value) => {
   if (!browser) return;
 
   if (value === null) {
-    localStorage.setItem(STORAGE_KEY, DENIED);
+    localStorage.removeItem(STORAGE_KEY);
     window.gtag('consent', 'update', { analytics_storage: DENIED });
   } else if (value === GRANTED || value === DENIED) {
     localStorage.setItem(STORAGE_KEY, value);

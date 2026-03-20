@@ -262,7 +262,7 @@
                         cert.code
                       ].key === 'name'
                         ? 'text-primary'
-                        : 'text-gray-400'}"
+                        : 'text-gray-500'}"
                     >
                       Dokument
                       {#if sorts[cert.code].key === 'name'}
@@ -291,7 +291,7 @@
                         cert.code
                       ].key === 'type'
                         ? 'text-primary'
-                        : 'text-gray-400'}"
+                        : 'text-gray-500'}"
                     >
                       Typ
                       {#if sorts[cert.code].key === 'type'}
@@ -306,7 +306,7 @@
                     </button>
                   </th>
                   <th
-                    class="text-center text-[10px] font-bold uppercase tracking-wider text-gray-400 px-4 py-3 w-20"
+                    class="text-center text-[10px] font-bold uppercase tracking-wider text-gray-500 px-4 py-3 w-20"
                     >Język</th
                   >
                   <th class="w-52 py-3 px-6 text-right">
@@ -317,7 +317,7 @@
                         cert.code
                       ].key === 'default'
                         ? 'text-primary'
-                        : 'text-gray-400'}"
+                        : 'text-gray-500'}"
                     >
                       Reset
                     </button>
@@ -355,7 +355,7 @@
                       </span>
                     </td>
                     <td class="px-4 py-3.5 text-center">
-                      <span class="text-xs font-medium text-gray-400">{doc.lang}</span>
+                      <span class="text-xs font-medium text-gray-500">{doc.lang}</span>
                     </td>
                     <td class="px-6 py-3.5 text-right">
                       <div class="inline-flex items-center gap-2">
