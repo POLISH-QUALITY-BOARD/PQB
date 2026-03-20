@@ -65,7 +65,7 @@
     <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight mb-14">Dołącz do nas</h2>
 
     <p class="text-gray-600 mb-12">
-      Zapraszamy Cię do dołączenia do Polskiej Rady Jakości! Bez względu na to, czy jesteś
+      Zapraszamy Cię do dołączenia do Polish Quality Board! Bez względu na to, czy jesteś
       początkującym testerem, czy doświadczonym specjalistą QA, mamy dla Ciebie wiele możliwości
       rozwoju.
     </p>
