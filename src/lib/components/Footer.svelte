@@ -173,7 +173,7 @@
 
     <div class="border-t border-gray-200 pt-8">
       <div
-        class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400"
+        class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500"
       >
         <p class="m-0">
           &copy; {new Date().getFullYear()} Polish Quality Board. Wszelkie prawa zastrzeżone.
@@ -189,14 +189,14 @@
             href="https://docs.github.com/en/site-policy/privacy-policies"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-400 no-underline hover:text-primary"
+            class="text-gray-500 no-underline hover:text-primary"
           >
             Polityka prywatności
           </a>
           <span class="hidden sm:inline text-gray-300">|</span>
           <button
             onclick={resetCookieConsent}
-            class="text-gray-400 hover:text-primary cursor-pointer bg-transparent border-0 p-0 text-xs"
+            class="text-gray-500 hover:text-primary cursor-pointer bg-transparent border-0 p-0 text-xs"
           >
             Ustawienia cookies
           </button>

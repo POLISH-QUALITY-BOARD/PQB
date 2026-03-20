@@ -66,7 +66,7 @@
     <!-- eslint-disable svelte/no-navigation-without-resolve -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 mb-12">
       <div>
-        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-4">Zarząd</p>
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-4">Zarząd</p>
         {#each board as person (person.name)}
           <div class="flex items-center gap-4 py-4 border-b border-gray-100 last:border-b-0">
             <img
@@ -78,7 +78,7 @@
               <p class="font-semibold text-primary text-base mb-0 leading-snug">
                 {person.name}
               </p>
-              <p class="text-sm text-gray-400 mb-0">{person.role}</p>
+              <p class="text-sm text-gray-500 mb-0">{person.role}</p>
             </div>
             <a
               href={person.linkedin}
@@ -94,7 +94,7 @@
       </div>
 
       <div>
-        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-4">
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-4">
           Komisja Rewizyjna
         </p>
         {#each committee as person (person.name)}
@@ -108,7 +108,7 @@
               <p class="font-semibold text-primary text-base mb-0 leading-snug">
                 {person.name}
               </p>
-              <p class="text-sm text-gray-400 mb-0">{person.role}</p>
+              <p class="text-sm text-gray-500 mb-0">{person.role}</p>
             </div>
             <a
               href={person.linkedin}
