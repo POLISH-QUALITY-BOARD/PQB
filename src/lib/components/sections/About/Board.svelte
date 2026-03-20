@@ -1,5 +1,5 @@
 <script>
-  import Icon from '@iconify/svelte';
+  import IconLinkedin from '~icons/simple-icons/linkedin';
 
   const board = [
     {
@@ -87,7 +87,7 @@
               aria-label="LinkedIn"
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <Icon icon="simple-icons:linkedin" width="18" height="18" />
+              <IconLinkedin width="18" height="18" />
             </a>
           </div>
         {/each}
@@ -117,7 +117,7 @@
               aria-label="LinkedIn"
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <Icon icon="simple-icons:linkedin" width="18" height="18" />
+              <IconLinkedin width="18" height="18" />
             </a>
           </div>
         {/each}

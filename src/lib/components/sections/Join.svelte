@@ -1,27 +1,32 @@
 <script lang="ts">
-  import Icon from '@iconify/svelte';
+  import IconCertificateOutline from '~icons/mdi/certificate-outline';
+  import IconAccountGroupOutline from '~icons/mdi/account-group-outline';
+  import IconTrendingUp from '~icons/mdi/trending-up';
+  import IconHandshakeOutline from '~icons/mdi/handshake-outline';
+  import IconCheck from '~icons/mdi/check';
+  import IconDownload from '~icons/mdi/download';
 
   const benefits = [
     {
-      icon: 'mdi:certificate-outline',
+      icon: IconCertificateOutline,
       title: 'Szkolenia ISTQB®',
       description:
         'Dostęp do szkoleń prowadzonych przez doświadczonych instruktorów certyfikowanych przez ISTQB®.'
     },
     {
-      icon: 'mdi:account-group-outline',
+      icon: IconAccountGroupOutline,
       title: 'Społeczność',
       description:
         'Poznaj innych testerów z całej Polski i buduj wartościową sieć zawodowych kontaktów.'
     },
     {
-      icon: 'mdi:trending-up',
+      icon: IconTrendingUp,
       title: 'Najnowsze trendy',
       description:
         'Bądź na bieżąco z najlepszymi praktykami i nowinkami w testowaniu oprogramowania.'
     },
     {
-      icon: 'mdi:handshake-outline',
+      icon: IconHandshakeOutline,
       title: 'Wsparcie zawodowe',
       description: 'Wsparcie mentorów i społeczności w rozwijaniu kariery w branży QA.'
     }
@@ -65,18 +70,18 @@
     <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight mb-14">Dołącz do nas</h2>
 
     <p class="text-gray-600 mb-12">
-      Zapraszamy Cię do dołączenia do Polskiej Rady Jakości! Bez względu na to, czy jesteś
+      Zapraszamy Cię do dołączenia do Polish Quality Board! Bez względu na to, czy jesteś
       początkującym testerem, czy doświadczonym specjalistą QA, mamy dla Ciebie wiele możliwości
       rozwoju.
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-      {#each benefits as { icon, title, description } (title)}
+      {#each benefits as { icon: BenefitIcon, title, description } (title)}
         <div class="flex gap-5 items-start">
           <div
             class="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm bg-linear-to-br from-primary to-primary-dark"
           >
-            <Icon {icon} width="22" height="22" color="white" />
+            <BenefitIcon width="22" height="22" color="white" />
           </div>
           <div>
             <h3 class="text-base font-semibold text-primary mb-1">{title}</h3>
@@ -104,7 +109,7 @@
                 class="absolute transition-opacity duration-300 opacity-0"
                 class:opacity-100={completed[i]}
               >
-                <Icon icon="mdi:check" width="20" height="20" />
+                <IconCheck width="20" height="20" />
               </span>
             </div>
             <div class="pt-1.5">
@@ -130,7 +135,7 @@
                   download
                   onclick={() => complete(i)}
                 >
-                  <Icon icon="mdi:download" width="16" height="16" />
+                  <IconDownload width="16" height="16" />
                   Pobierz
                 </a>
               {/if}

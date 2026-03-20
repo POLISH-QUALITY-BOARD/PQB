@@ -1,5 +1,10 @@
 <script>
-  import Icon from '@iconify/svelte';
+  import IconNewspaperVariantOutline from '~icons/mdi/newspaper-variant-outline';
+  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
+  import IconOpenInNew from '~icons/mdi/open-in-new';
+  import IconArrowUp from '~icons/mdi/arrow-up';
+  import IconArrowDown from '~icons/mdi/arrow-down';
+  import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
   const whitepapers = [
     {
@@ -33,7 +38,7 @@
     style="background: linear-gradient(135deg, #1a3f7a 0%, #0c1f40 100%);"
   >
     <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-      <Icon icon="mdi:newspaper-variant-outline" width="16" height="16" color="white" />
+      <IconNewspaperVariantOutline width="16" height="16" color="white" />
     </div>
     <h3 class="text-sm font-semibold text-white mb-0">Polecane White papers</h3>
   </div>
@@ -58,15 +63,15 @@
                 : 'text-gray-400'}"
             >
               Tytuł
-              <Icon
-                icon={wpSort.key === 'title'
-                  ? wpSort.dir === 'asc'
-                    ? 'mdi:arrow-up'
-                    : 'mdi:arrow-down'
-                  : 'mdi:unfold-more-horizontal'}
-                width="12"
-                height="12"
-              />
+              {#if wpSort.key === 'title'}
+                {#if wpSort.dir === 'asc'}
+                  <IconArrowUp width="12" height="12" />
+                {:else}
+                  <IconArrowDown width="12" height="12" />
+                {/if}
+              {:else}
+                <IconUnfoldMoreHorizontal width="12" height="12" />
+              {/if}
             </button>
           </th>
           <th class="w-32 py-3 px-6 text-right">
@@ -92,8 +97,7 @@
           >
             <td class="px-6 py-3.5">
               <div class="flex items-center gap-2.5">
-                <Icon
-                  icon="mdi:file-document-outline"
+                <IconFileDocumentOutline
                   width="15"
                   height="15"
                   class="text-accent shrink-0 opacity-70"
@@ -114,7 +118,7 @@
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
               >
-                <Icon icon="mdi:open-in-new" width="13" height="13" />
+                <IconOpenInNew width="13" height="13" />
                 Otwórz
               </a>
             </td>

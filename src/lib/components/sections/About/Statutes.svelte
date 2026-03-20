@@ -1,6 +1,7 @@
 <script>
-  import Icon from '@iconify/svelte';
   import { Tabs } from 'bits-ui';
+  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
+  import IconDownload from '~icons/mdi/download';
 </script>
 
 <article id="statut" class="mb-12 pb-8 border-b border-gray-100">
@@ -31,7 +32,7 @@
           class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
           style="background: linear-gradient(135deg, #1a3f7a 0%, #0c1f40 100%);"
         >
-          <Icon icon="mdi:file-document-outline" width="26" height="26" color="white" />
+          <IconFileDocumentOutline width="26" height="26" color="white" />
         </div>
         <div class="grow">
           <p class="font-semibold text-primary text-base mb-1">Statut PQB</p>
@@ -49,7 +50,7 @@
           data-testid="download-statute-pl"
           download
         >
-          <Icon icon="mdi:download" width="16" height="16" />
+          <IconDownload width="16" height="16" />
           Pobierz
         </a>
       </div>
@@ -61,7 +62,7 @@
           class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
           style="background: linear-gradient(135deg, #1a3f7a 0%, #0c1f40 100%);"
         >
-          <Icon icon="mdi:file-document-outline" width="26" height="26" color="white" />
+          <IconFileDocumentOutline width="26" height="26" color="white" />
         </div>
         <div class="grow">
           <p class="font-semibold text-primary text-base mb-1">Constitution of PQB</p>
@@ -79,7 +80,7 @@
           data-testid="download-statute-en"
           download
         >
-          <Icon icon="mdi:download" width="16" height="16" />
+          <IconDownload width="16" height="16" />
           Download
         </a>
       </div>

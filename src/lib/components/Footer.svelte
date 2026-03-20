@@ -1,7 +1,14 @@
 <script>
-  import Icon from '@iconify/svelte';
   import { base } from '$app/paths';
   import { resetCookieConsent } from '$lib/stores/cookieConsent';
+  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
+  import IconOpenInNew from '~icons/mdi/open-in-new';
+  import IconEmailOutline from '~icons/mdi/email-outline';
+  import IconMapMarkerOutline from '~icons/mdi/map-marker-outline';
+  import IconLinkedin from '~icons/simple-icons/linkedin';
+  import IconFacebook from '~icons/simple-icons/facebook';
+  import IconGithub from '~icons/simple-icons/github';
+  import IconDiscord from '~icons/simple-icons/discord';
 
   const navigationLinks = [
     { href: '#onas', label: 'O nas' },
@@ -14,29 +21,29 @@
     {
       href: `${base}/documents/Statut_PQB.pdf`,
       label: 'Statut PQB (PL)',
-      icon: 'mdi:file-document-outline'
+      icon: IconFileDocumentOutline
     },
     {
       href: `${base}/documents/Statut_PQB_en-US.pdf`,
       label: 'Statutes of PQB (EN)',
-      icon: 'mdi:file-document-outline'
+      icon: IconFileDocumentOutline
     },
     {
       href: 'https://www.istqb.org/',
       label: 'ISTQB®',
-      icon: 'mdi:open-in-new'
+      icon: IconOpenInNew
     }
   ];
 
   const contactItems = [
     {
-      icon: 'mdi:email-outline',
+      icon: IconEmailOutline,
       label: 'E-mail',
       content: 'info@pqb.org.pl',
       email: 'info@pqb.org.pl'
     },
     {
-      icon: 'mdi:map-marker-outline',
+      icon: IconMapMarkerOutline,
       label: 'Wirtualne biuro',
       content: 'Bydgoszcz, Polska'
     }
@@ -45,20 +52,20 @@
   const socialLinks = [
     {
       href: 'https://www.linkedin.com/company/polish-quality-board-official/',
-      icon: 'simple-icons:linkedin',
+      icon: IconLinkedin,
       label: 'LinkedIn'
     },
     {
       href: 'https://www.facebook.com/profile.php?id=61584071003505',
-      icon: 'simple-icons:facebook',
+      icon: IconFacebook,
       label: 'Facebook'
     },
     {
       href: 'https://github.com/POLISH-QUALITY-BOARD/',
-      icon: 'simple-icons:github',
+      icon: IconGithub,
       label: 'GitHub'
     },
-    { href: 'https://discord.gg/dAPN73QDJ5', icon: 'simple-icons:discord', label: 'Discord' }
+    { href: 'https://discord.gg/dAPN73QDJ5', icon: IconDiscord, label: 'Discord' }
   ];
 </script>
 
@@ -75,7 +82,8 @@
           wspierająca rozwój specjalistów ds. jakości oprogramowania w Polsce.
         </p>
         <div class="flex gap-3">
-          {#each socialLinks as social (social.href)}
+          {#each socialLinks as social, index (index)}
+            {@const SocialIcon = social.icon}
             <a
               href={social.href}
               target="_blank"
@@ -83,7 +91,7 @@
               aria-label={social.label}
               class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white"
             >
-              <Icon icon={social.icon} width="16" height="16" />
+              <SocialIcon width="16" height="16" />
             </a>
           {/each}
         </div>
@@ -94,7 +102,7 @@
           Nawigacja
         </h4>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
-          {#each navigationLinks as link (link.href)}
+          {#each navigationLinks as link, index (index)}
             <li>
               <a
                 href={link.href}
@@ -112,7 +120,8 @@
           Dokumenty
         </h4>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
-          {#each documentLinks as link (link.href)}
+          {#each documentLinks as link, index (index)}
+            {@const LinkIcon = link.icon}
             <li>
               <a
                 href={link.href}
@@ -120,7 +129,7 @@
                 rel="noopener noreferrer"
                 class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 transition-colors hover:text-primary"
               >
-                <Icon icon={link.icon} width="14" height="14" class="shrink-0 text-accent" />
+                <LinkIcon width="14" height="14" class="shrink-0 text-accent" />
                 {link.label}
               </a>
             </li>
@@ -131,12 +140,13 @@
       <div>
         <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Kontakt</h4>
         <ul class="list-none m-0 p-0 flex flex-col gap-4">
-          {#each contactItems as item (item.label)}
+          {#each contactItems as item, index (index)}
+            {@const ContactIcon = item.icon}
             <li class="flex items-start gap-3">
               <div
                 class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5"
               >
-                <Icon icon={item.icon} width="15" height="15" class="text-accent" />
+                <ContactIcon width="14" height="14" class="shrink-0 text-accent" />
               </div>
               <div>
                 <p
