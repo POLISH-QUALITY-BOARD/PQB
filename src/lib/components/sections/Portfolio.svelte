@@ -1,6 +1,6 @@
 <script>
   import Dictionary from './Portfolio/Dictionary.svelte';
-  import Register from './Portfolio/Register.svelte';
+  import Register from './Portfolio/SCR.svelte';
   import WhitePapers from './Portfolio/WhitePapers.svelte';
 </script>
 
