@@ -6,7 +6,7 @@
 <div>
   <h3 class="text-lg font-semibold text-primary mb-1 flex items-center gap-2">
     <IconCertificateOutline width="16" height="16" />
-    SCR Register
+    SCR
   </h3>
   <p class="text-sm text-gray-500 mb-4">Rejestr certyfikowanych specjalistów</p>
   <p class="text-sm text-gray-600 leading-relaxed mb-6">
