@@ -81,7 +81,7 @@
         <NavigationMenu.Item class="pl-4">
           <NavigationMenu.Link
             href="#dolacz"
-            class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-accent hover:bg-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
           >
             <IconAccountPlusOutline width="16" height="16" />
             Dołącz do nas
@@ -169,7 +169,7 @@
         <div class="px-3 py-3 pt-2">
           <a
             href="#dolacz"
-            class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-accent hover:bg-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
+            class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
             onclick={() => (menuOpen = false)}
           >
             <IconAccountPlusOutline width="16" height="16" />
