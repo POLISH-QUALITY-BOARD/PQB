@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import Announcement from '$lib/components/Announcement.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
   import Hero from '$lib/components/Hero.svelte';
   import Footer from '$lib/components/Footer.svelte';
@@ -28,6 +29,7 @@
 </script>
 
 <div class="text-gray-800 leading-relaxed bg-white">
+  <Announcement />
   <Navbar />
   <Hero />
 

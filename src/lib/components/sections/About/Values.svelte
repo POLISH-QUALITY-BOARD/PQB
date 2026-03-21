@@ -81,12 +81,7 @@
       <ul class="list-none m-0 p-0 flex flex-col gap-3">
         {#each ['Lokalizować, współtworzyć standardy i certyfikację w obszarach dot. jakości w IT.', 'Edukować, promować jakość, prowadzić działalność ekspercką w tym zakresie.', 'Nawiązywać i rozwijać międzynarodowe relacje z innymi organizacjami i osobami w celu promocji polskiego IT.', 'Udostępniać i współpracować nad technologiami, szczególnie tymi, które niosą ryzyka jakościowe.'] as item, i (i)}
           <li class="flex items-start gap-3">
-            <span class="relative flex w-2.5 h-2.5 shrink-0 mt-1 items-center justify-center">
-              <span
-                class="ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"
-              ></span>
-              <span class="relative inline-flex w-1.5 h-1.5 rounded-full bg-accent"></span>
-            </span>
+            <span class="inline-flex w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-2"></span>
             <span class="text-sm text-gray-600 leading-relaxed">{item}</span>
           </li>
         {/each}
@@ -103,12 +98,7 @@
       <ul class="list-none m-0 p-0 flex flex-col gap-3">
         {#each ['Zdecentralizowana zdrowa polska organizacja wspierająca twórcze i aktywne jednostki.', 'Etyka nie na papierze, a w działaniu.', 'Proste procedury i zwinna organizacja.', 'Certyfikacja ISO w obszarach, którymi się zajmujemy.', 'PQB jako synonim rzetelnej, merytorycznej, profesjonalnej i nowoczesnej wiedzy w zakresie jakości w IT.'] as item, i (i)}
           <li class="flex items-start gap-3">
-            <span class="relative flex w-2.5 h-2.5 shrink-0 mt-1 items-center justify-center">
-              <span
-                class="ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"
-              ></span>
-              <span class="relative inline-flex w-1.5 h-1.5 rounded-full bg-accent"></span>
-            </span>
+            <span class="inline-flex w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-2"></span>
             <span class="text-sm text-gray-600 leading-relaxed">{item}</span>
           </li>
         {/each}
