@@ -12,6 +12,10 @@ jobs:
   preview:
     runs-on: ubuntu-latest
 
+    environment:
+      name: preview-pr-${{ github.event.number }}
+      url: https://pqb.org.pl/preview/pr-${{ github.event.number }}
+
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
