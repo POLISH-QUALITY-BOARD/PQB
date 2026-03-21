@@ -12,19 +12,6 @@
     class="relative z-10 max-w-270 mx-auto px-6 text-center flex flex-col items-center justify-center"
     style="min-height: calc(100vh - 70px)"
   >
-    <!-- Badge -->
-    <div
-      class="inline-flex items-center gap-2 border border-white/20 bg-white/10 rounded-full px-4 py-1.5 text-xs font-medium text-white/80 mb-8"
-    >
-      <span class="relative flex w-2.5 h-2.5 shrink-0 items-center justify-center">
-        <span
-          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"
-        ></span>
-        <span class="relative inline-flex w-1.5 h-1.5 rounded-full bg-accent"></span>
-      </span>
-      Oficjalny członek ISTQB®
-    </div>
-
     <img
       src="images/PQB-logo.png"
       alt="Polish Quality Board"
