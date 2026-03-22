@@ -10,6 +10,10 @@
     {
       title: 'Black-Box Testing for Practitioners: A Case of the New ISTQB Test Analyst Syllabus',
       href: 'https://ww2.ii.uj.edu.pl/~roman/icst25-preprint.pdf'
+    },
+    {
+      title: 'ISTQB Certifications Under the Lens: Their Contributions to the Software-Testing Profession; and AI-assisted Synthesis of Practitioners\’ Endorsements and Criticisms',
+      href: 'https://arxiv.org/pdf/2603.14572'
     }
   ];
 
