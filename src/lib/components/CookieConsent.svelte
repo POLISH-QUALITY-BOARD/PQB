@@ -39,7 +39,7 @@
         <button
           onclick={grantCookieConsent}
           aria-label="Zaakceptuj pliki cookie"
-          class="flex-1 sm:flex-none px-5 py-2 text-sm font-medium rounded-lg text-white bg-accent hover:bg-accent-dark transition-colors cursor-pointer"
+          class="flex-1 sm:flex-none px-5 py-2 text-sm font-medium rounded-lg text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark transition-colors cursor-pointer"
         >
           Akceptuj
         </button>
