@@ -22,6 +22,7 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: /preview/pr-${{ github.event.number }}
+          PUBLIC_GA_ID: ${{ vars.GA_ID }}
       - if: github.event.action != 'closed'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
