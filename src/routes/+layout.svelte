@@ -5,6 +5,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import CookieConsent from '$lib/components/CookieConsent.svelte';
+  import GoogleAnalytics from '$lib/components/GoogleAnalytics.svelte';
 
   import '../app.css';
 
@@ -37,4 +38,5 @@
 
   <Footer />
   <CookieConsent />
+  <GoogleAnalytics />
 </div>
