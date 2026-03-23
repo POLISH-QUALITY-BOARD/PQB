@@ -1,3 +1,7 @@
+<script>
+  import logo from '$lib/assets/logo.webp';
+</script>
+
 <section
   class="relative overflow-hidden text-white"
   style="
@@ -12,11 +16,7 @@
     class="relative z-10 max-w-270 mx-auto px-6 text-center flex flex-col items-center justify-center"
     style="min-height: calc(100vh - 70px)"
   >
-    <img
-      src="images/PQB-logo.png"
-      alt="Polish Quality Board"
-      class="mx-auto mb-6 h-32 sm:h-40 md:h-52 w-auto"
-    />
+    <img src={logo} alt="Polish Quality Board" class="mx-auto mb-6 h-32 sm:h-40 md:h-52 w-auto" />
 
     <p class="text-base text-white/75 max-w-xl mx-auto leading-relaxed font-light">
       Polish Quality Board (PQB) jest krajową organizacją zajmującą się promocją testowania

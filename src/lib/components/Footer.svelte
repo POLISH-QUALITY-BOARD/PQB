@@ -1,6 +1,6 @@
 <script>
   import { base } from '$app/paths';
-  import brand from '$lib/assets/brand.png';
+  import brand from '$lib/assets/brand.webp';
   import { resetCookieConsent } from '$lib/stores/cookieConsent';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
   import IconOpenInNew from '~icons/mdi/open-in-new';
