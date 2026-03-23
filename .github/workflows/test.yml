@@ -28,6 +28,8 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e -- --project chromium-desktop
+        env:
+          PUBLIC_GA_ID: ${{ vars.GA_ID }}
       - uses: actions/upload-artifact@v7
         if: always()
         with:
