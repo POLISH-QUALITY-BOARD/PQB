@@ -1,6 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
-  import brand from '$lib/assets/brand.png';
+  import brand from '$lib/assets/brand.webp';
   import { NavigationMenu } from 'bits-ui';
   import { slide } from 'svelte/transition';
   import IconAccountPlusOutline from '~icons/mdi/account-plus-outline';
