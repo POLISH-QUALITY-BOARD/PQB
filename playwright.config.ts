@@ -1,6 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
 
 const PORT = 4173;
+
+dotenv.config();
 
 export default defineConfig({
   testDir: './tests',
