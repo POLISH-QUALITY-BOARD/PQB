@@ -79,6 +79,12 @@
           <NavigationMenu.Link href="#sylabusy" class={linkClass}>Sylabusy</NavigationMenu.Link>
         </NavigationMenu.Item>
 
+        <NavigationMenu.Item>
+          <NavigationMenu.Link href="#akredytacja" class={linkClass}
+            >Akredytacja</NavigationMenu.Link
+          >
+        </NavigationMenu.Item>
+
         <NavigationMenu.Item class="pl-4">
           <NavigationMenu.Link
             href="#dolacz"
@@ -166,6 +172,12 @@
           href="#sylabusy"
           class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary"
           onclick={() => (menuOpen = false)}>Sylabusy</a
+        >
+        <div class="h-px bg-gray-100"></div>
+        <a
+          href="#akredytacja"
+          class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary"
+          onclick={() => (menuOpen = false)}>Akredytacja</a
         >
         <div class="px-3 py-3 pt-2">
           <a

@@ -65,7 +65,7 @@
   };
 </script>
 
-<section id="dolacz" class="bg-gray-50 pt-12 pb-20 md:pt-16 md:pb-28 scroll-mt-17.5">
+<section id="dolacz" class="bg-white pt-12 pb-20 md:pt-16 md:pb-28 scroll-mt-17.5">
   <div class="max-w-270 mx-auto px-6">
     <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight mb-14">Dołącz do nas</h2>
 
