@@ -238,7 +238,7 @@
               <span class="text-xs font-bold text-white tracking-wide">{cert.code}</span>
             </div>
             <div>
-              <h3 class="text-sm font-semibold text-white mb-0">{cert.title}</h3>
+              <span class="text-sm font-semibold text-white mb-0">{cert.title}</span>
             </div>
           </div>
 

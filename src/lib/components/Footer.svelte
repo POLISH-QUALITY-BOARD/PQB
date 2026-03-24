@@ -99,9 +99,7 @@
       </div>
 
       <div>
-        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">
-          Nawigacja
-        </h4>
+        <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Nawigacja</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each navigationLinks as link, index (index)}
             <li>
@@ -117,9 +115,7 @@
       </div>
 
       <div>
-        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">
-          Dokumenty
-        </h4>
+        <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Dokumenty</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each documentLinks as link, index (index)}
             {@const LinkIcon = link.icon}
@@ -139,7 +135,7 @@
       </div>
 
       <div>
-        <h4 class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Kontakt</h4>
+        <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Kontakt</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-4">
           {#each contactItems as item, index (index)}
             {@const ContactIcon = item.icon}
