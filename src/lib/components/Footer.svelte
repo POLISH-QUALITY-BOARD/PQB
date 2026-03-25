@@ -105,10 +105,7 @@
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each navigationLinks as link, index (index)}
             <li>
-              <a
-                href={link.href}
-                class="text-sm text-gray-500 no-underline transition-colors hover:text-primary"
-              >
+              <a href={link.href} class="text-sm text-gray-500 no-underline hover:text-primary">
                 {link.label}
               </a>
             </li>
@@ -128,7 +125,7 @@
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 transition-colors hover:text-primary"
+                class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 hover:text-primary"
               >
                 <LinkIcon width="14" height="14" class="shrink-0 text-accent" />
                 {link.label}
