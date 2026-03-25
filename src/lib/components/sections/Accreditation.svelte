@@ -92,9 +92,9 @@
             <p class="text-sm text-gray-500">
               Wypełniony i podpisany wniosek wyślij na adres
               <a
-                href="mailto:info@pqb.org.pl"
+                href="mailto:akredytacja@pqb.org.pl"
                 class="font-semibold text-primary"
-                onclick={() => (step2completed = true)}>info@pqb.org.pl</a
+                onclick={() => (step2completed = true)}>akredytacja@pqb.org.pl</a
               >.
             </p>
           </div>
