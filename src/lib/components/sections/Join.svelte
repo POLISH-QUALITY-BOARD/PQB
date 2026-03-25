@@ -84,7 +84,7 @@
             <BenefitIcon width="22" height="22" color="white" />
           </div>
           <div>
-            <h3 class="text-base font-semibold text-primary mb-1">{title}</h3>
+            <p class="text-base font-semibold text-primary mb-1">{title}</p>
             <p class="text-sm text-gray-500 leading-relaxed">{description}</p>
           </div>
         </div>
@@ -113,7 +113,7 @@
               </span>
             </div>
             <div class="pt-1.5">
-              <h3 class="text-base font-semibold text-primary mb-1">{title}</h3>
+              <p class="text-base font-semibold text-primary mb-1">{title}</p>
               <p class="text-sm text-gray-500" class:mb-5={action.type === 'download'}>
                 {description}
                 {#if action.type === 'email'}
