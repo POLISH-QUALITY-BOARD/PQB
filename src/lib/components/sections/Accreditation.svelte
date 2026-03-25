@@ -48,9 +48,9 @@
             </span>
           </div>
           <div class="pt-1.5">
-            <h3 class="text-base font-semibold text-primary mb-1">
+            <p class="text-base font-semibold text-primary mb-1">
               Pobierz szablon wniosku o akredytację
-            </h3>
+            </p>
             <p class="text-sm text-gray-500 mb-5">
               Wybierz odpowiedni szablon w zależności od rodzaju akredytacji.
             </p>
@@ -88,7 +88,7 @@
             </span>
           </div>
           <div class="pt-1.5">
-            <h3 class="text-base font-semibold text-primary mb-1">Wyślij wniosek</h3>
+            <p class="text-base font-semibold text-primary mb-1">Wyślij wniosek</p>
             <p class="text-sm text-gray-500">
               Wypełniony i podpisany wniosek wyślij na adres
               <a
