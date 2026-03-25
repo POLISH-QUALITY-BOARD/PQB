@@ -63,7 +63,7 @@
           <ValueIcon width="22" height="22" color="white" />
         </div>
         <div>
-          <h3 class="text-base font-semibold text-primary mb-1">{value.title}</h3>
+          <p class="text-base font-semibold text-primary mb-1">{value.title}</p>
           <p class="text-sm text-gray-500 leading-relaxed mb-0">{value.description}</p>
         </div>
       </div>
