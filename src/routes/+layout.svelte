@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import OpenGraph from '$lib/components/OpenGraph.svelte';
+  import TwitterCard from '$lib/components/TwitterCard.svelte';
   import Announcement from '$lib/components/Announcement.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
   import Hero from '$lib/components/Hero.svelte';
@@ -8,7 +10,7 @@
 
   import '../app.css';
 
-  let { children } = $props();
+  let { children, data } = $props();
 
   onMount(() => {
     const observer = new IntersectionObserver(
@@ -28,9 +30,13 @@
   });
 </script>
 
-<Announcement />
-<Navbar />
-<Hero />
+<OpenGraph image={data.image} />
+<TwitterCard />
+
+<div class="text-gray-800 leading-relaxed bg-white">
+  <Announcement />
+  <Navbar />
+  <Hero />
 
 <main>
   {@render children()}
