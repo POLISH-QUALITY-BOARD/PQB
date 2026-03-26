@@ -6,10 +6,8 @@
   import Accreditation from '$lib/components/sections/Accreditation.svelte';
 </script>
 
-<main>
-  <About />
-  <Portfolio />
-  <Syllabi />
-  <Accreditation />
-  <Join />
-</main>
+<About />
+<Portfolio />
+<Syllabi />
+<Accreditation />
+<Join />

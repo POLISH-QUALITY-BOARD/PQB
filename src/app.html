@@ -15,31 +15,6 @@
       content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
     />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="PQB - Polish Quality Board" />
-    <meta
-      property="og:description"
-      content="Polish Quality Board - certyfikacje ISTQB, szkolenia i rozwój jakości oprogramowania w Polsce."
-    />
-    <meta property="og:site_name" content="Polish Quality Board" />
-    <meta property="og:locale" content="pl_PL" />
-    <meta property="og:url" content="https://pqb.org.pl/" />
-    <meta property="og:image" content="https://pqb.org.pl/images/PQB-logo.png" />
-    <meta property="og:image:secure_url" content="https://pqb.org.pl/images/PQB-logo.png" />
-    <meta property="og:image:width" content="640" />
-    <meta property="og:image:height" content="360" />
-    <meta property="og:image:type" content="image/png" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PQB - Polish Quality Board" />
-    <meta
-      name="twitter:description"
-      content="Polish Quality Board - certyfikacje ISTQB, szkolenia i rozwój jakości oprogramowania w Polsce."
-    />
-    <meta name="twitter:image" content="https://pqb.org.pl/images/PQB-logo.png" />
-
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
@@ -76,7 +51,9 @@
         wait_for_update: 500
       });
       gtag('js', new Date());
-      gtag('config', '%sveltekit.env.PUBLIC_GA_ID%');
+      gtag('config', '%sveltekit.env.PUBLIC_GA_ID%', {
+        debug_mode: '%sveltekit.env.PUBLIC_GA_DEBUG_MODE%' === 'true'
+      });
     </script>
     <script
       async
