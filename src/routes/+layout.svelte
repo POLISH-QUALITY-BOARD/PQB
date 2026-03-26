@@ -37,6 +37,7 @@
   <Announcement />
   <Navbar />
   <Hero />
+</div>
 
 <main>
   {@render children()}
