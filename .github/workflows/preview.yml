@@ -22,6 +22,7 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: /preview/pr-${{ github.event.number }}
+          ORIGIN: ${{ vars.ORIGIN }}
           PUBLIC_GA_DEBUG_MODE: true
       - if: github.event.action != 'closed'
         uses: JamesIves/github-pages-deploy-action@v4
