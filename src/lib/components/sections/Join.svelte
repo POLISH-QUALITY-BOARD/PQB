@@ -53,7 +53,7 @@
     },
     {
       title: 'Wyślij dokumenty',
-      description: 'Oba podpisane dokumenty wyślij na adres',
+      description: 'Oba podpisane dokumenty wyślij na adres e-mail:',
       action: { type: 'email', address: 'info@pqb.org.pl' }
     }
   ];
@@ -121,7 +121,7 @@
                     href="mailto:{action.address}"
                     class="font-semibold text-primary"
                     onclick={() => complete(i)}>{action.address}</a
-                  >.
+                  >
                 {/if}
               </p>
               {#if action.type === 'download'}
