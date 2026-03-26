@@ -19,7 +19,7 @@
           }
         }
       },
-      { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+      { rootMargin: '-40% 0px -40% 0px' }
     );
 
     document.querySelectorAll('section[id]').forEach((el) => observer.observe(el));
@@ -28,13 +28,13 @@
   });
 </script>
 
-<div class="text-gray-800 leading-relaxed bg-white">
-  <Announcement />
-  <Navbar />
-  <Hero />
+<Announcement />
+<Navbar />
+<Hero />
 
+<main>
   {@render children()}
+</main>
 
-  <Footer />
-  <CookieConsent />
-</div>
+<Footer />
+<CookieConsent />

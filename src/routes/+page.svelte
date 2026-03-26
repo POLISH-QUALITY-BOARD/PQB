@@ -5,9 +5,7 @@
   import Join from '$lib/components/sections/Join.svelte';
 </script>
 
-<main>
-  <About />
-  <Portfolio />
-  <Syllabi />
-  <Join />
-</main>
+<About />
+<Portfolio />
+<Syllabi />
+<Join />

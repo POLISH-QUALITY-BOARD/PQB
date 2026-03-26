@@ -17,14 +17,14 @@
 </script>
 
 {#if mounted && !$cookieConsentGranted && !$cookieConsentDenied}
-  <div
+  <dialog
+    open
     transition:fade={{ duration: 200 }}
-    role="dialog"
     tabindex="0"
     aria-modal="true"
     aria-labelledby="cookie-title"
     aria-describedby="cookie-desc"
-    class="fixed bottom-0 left-0 right-0 z-50 bg-primary text-white shadow-2xl"
+    class="fixed bottom-0 left-0 right-0 z-50 w-full bg-primary text-white shadow-2xl"
   >
     <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
       <div class="flex items-center gap-3 flex-1">
@@ -52,5 +52,5 @@
         </button>
       </div>
     </div>
-  </div>
+  </dialog>
 {/if}
