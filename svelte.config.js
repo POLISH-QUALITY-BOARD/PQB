@@ -10,7 +10,7 @@ const config = {
       pages: 'build',
       assets: 'build'
     }),
-    ...(base && { paths: { base, relative: false } }),
+    paths: { ...(base && { base }), relative: false },
     ...(origin && { prerender: { origin } })
   },
   vitePlugin: {
