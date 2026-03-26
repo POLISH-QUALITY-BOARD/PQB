@@ -80,7 +80,7 @@
         </div>
         <p class="text-sm text-gray-500 leading-relaxed mb-6">
           Polish Quality Board jest organizacją non-profit promującą testowanie oprogramowania i
-          wspierająca rozwój specjalistów ds. jakości oprogramowania w Polsce.
+          wspierającą rozwój specjalistów ds. jakości oprogramowania w Polsce.
         </p>
         <div class="flex gap-3">
           {#each socialLinks as social, index (index)}
