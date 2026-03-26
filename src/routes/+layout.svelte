@@ -21,7 +21,7 @@
           }
         }
       },
-      { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+      { rootMargin: '-40% 0px -40% 0px' }
     );
 
     document.querySelectorAll('section[id]').forEach((el) => observer.observe(el));
@@ -37,9 +37,11 @@
   <Announcement />
   <Navbar />
   <Hero />
-
-  {@render children()}
-
-  <Footer />
-  <CookieConsent />
 </div>
+
+<main>
+  {@render children()}
+</main>
+
+<Footer />
+<CookieConsent />
