@@ -9,7 +9,7 @@ const config = {
       pages: 'build',
       assets: 'build'
     }),
-    paths: { base }
+    paths: { base, relative: false }
   },
   vitePlugin: {
     dynamicCompileOptions: ({ filename }) =>
