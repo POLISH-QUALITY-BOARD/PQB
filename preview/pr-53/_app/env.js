@@ -1,1 +1,1 @@
-export const env={}
+export const env={"PUBLIC_GA_DEBUG_MODE":"true"}
