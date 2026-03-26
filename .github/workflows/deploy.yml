@@ -26,6 +26,7 @@ jobs:
       - run: npm run build
         env:
           PUBLIC_GA_ID: ${{ vars.GA_ID }}
+          PUBLIC_GA_DEBUG_MODE: false
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

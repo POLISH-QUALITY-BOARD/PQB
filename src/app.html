@@ -76,7 +76,9 @@
         wait_for_update: 500
       });
       gtag('js', new Date());
-      gtag('config', '%sveltekit.env.PUBLIC_GA_ID%');
+      gtag('config', '%sveltekit.env.PUBLIC_GA_ID%', {
+        debug_mode: '%sveltekit.env.PUBLIC_GA_DEBUG_MODE%' === 'true'
+      });
     </script>
     <script
       async
