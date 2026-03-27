@@ -23,6 +23,7 @@
     "@iconify-json/simple-icons": "^1.2.74",
     "@playwright/test": "^1.58.2",
     "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/enhanced-img": "^0.10.4",
     "@sveltejs/kit": "^2.50.2",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@types/node": "^25",

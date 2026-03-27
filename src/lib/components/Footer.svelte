@@ -76,7 +76,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
       <div class="lg:col-span-1">
         <div class="mb-5">
-          <img src={brand} alt="PQB Logo" class="h-12 w-auto" />
+          <enhanced:img src={brand} alt="PQB Logo" class="h-12 w-auto" />
         </div>
         <p class="text-sm text-gray-500 leading-relaxed mb-6">
           Polish Quality Board jest organizacją non-profit promującą testowanie oprogramowania i

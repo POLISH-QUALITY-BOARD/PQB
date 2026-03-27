@@ -7,7 +7,11 @@
   <div
     class="hero-body max-w-270 mx-auto px-6 text-center flex flex-col items-center justify-center"
   >
-    <img src={logo} alt="Polish Quality Board" class="mx-auto mb-6 h-32 sm:h-40 md:h-52 w-auto" />
+    <enhanced:img
+      src={logo}
+      alt="Polish Quality Board"
+      class="mx-auto mb-6 h-32 sm:h-40 md:h-52 w-auto"
+    />
 
     <h1 class="text-base text-white/75 max-w-xl mx-auto leading-relaxed font-light">
       Polish Quality Board (PQB) jest krajową organizacją zajmującą się promocją testowania

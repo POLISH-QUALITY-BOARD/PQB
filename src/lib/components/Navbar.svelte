@@ -37,7 +37,7 @@
 >
   <div class="max-w-270 mx-auto flex justify-between items-center px-6 h-17.5">
     <a href={resolve('/')} class="flex items-center gap-3 no-underline shrink-0">
-      <img src={brand} alt="PQB Logo" class="h-12 w-auto" />
+      <enhanced:img src={brand} alt="PQB Logo" class="h-12 w-auto" />
     </a>
 
     <!-- Desktop nav -->
