@@ -1,6 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 
-const base = process.env.BASE_PATH ?? '';
+const base = process.env.BASE_PATH;
+const origin = process.env.ORIGIN;
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,7 +10,8 @@ const config = {
       pages: 'build',
       assets: 'build'
     }),
-    paths: { base, relative: false }
+    paths: { ...(base && { base }), relative: false },
+    prerender: { origin }
   },
   vitePlugin: {
     dynamicCompileOptions: ({ filename }) =>
