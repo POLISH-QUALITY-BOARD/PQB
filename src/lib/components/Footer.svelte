@@ -1,6 +1,5 @@
 <script>
   import { base } from '$app/paths';
-  import brand from '$lib/assets/brand.webp';
   import { resetCookieConsent } from '$lib/stores/cookieConsent';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
   import IconOpenInNew from '~icons/mdi/open-in-new';
@@ -76,7 +75,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
       <div class="lg:col-span-1">
         <div class="mb-5">
-          <enhanced:img src={brand} alt="PQB Logo" class="h-12 w-auto" />
+          <enhanced:img src="$lib/assets/brand.webp" alt="PQB Logo" class="h-12 w-auto" />
         </div>
         <p class="text-sm text-gray-500 leading-relaxed mb-6">
           Polish Quality Board jest organizacją non-profit promującą testowanie oprogramowania i
