@@ -4,7 +4,7 @@
 
 <div class="bg-primary">
   <div class="max-w-270 mx-auto px-6 py-2 text-xs text-white/80 font-medium">
-    <span class="text-white">Rada krajowa ISTQB®</span> w Polsce —
+    <span class="text-white">Rada Krajowa ISTQB®</span> w Polsce —
     <a
       href="https://istqb.org/member-boards/"
       target="_blank"
