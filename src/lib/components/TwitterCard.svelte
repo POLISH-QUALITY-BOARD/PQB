@@ -3,7 +3,7 @@
   import { page } from '$app/state';
 
   const twitter = $derived.by(() => {
-    const { href: imageUrl } = new URL(asset('/images/PQB-logo.png'), page.url.origin);
+    const { href: imageUrl } = new URL(asset('/images/pqb-logo.png'), page.url.origin);
 
     return {
       card: 'summary_large_image',

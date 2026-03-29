@@ -157,21 +157,18 @@
           lang: 'PL',
           type: 'syllabus',
           file: 'ta-4.0/TA-4.0-PL-sylabus.pdf',
-          github: ''
         },
         {
           name: 'Pytania',
           lang: 'PL',
           type: 'questions',
           file: 'ta-4.0/TA-4.0-PL-pytania.pdf',
-          github: ''
         },
         {
           name: 'Odpowiedzi',
           lang: 'PL',
           type: 'answers',
           file: 'ta-4.0/TA-4.0-PL-odpowiedzi.pdf',
-          github: ''
         }
       ]
     },
@@ -186,28 +183,24 @@
           lang: 'PL',
           type: 'syllabus',
           file: 'tm-3.0/TM-3.0-PL-sylabus.pdf',
-          github: ''
         },
         {
           name: 'Pytania',
           lang: 'PL',
           type: 'questions',
           file: 'tm-3.0/TM-3.0-PL-pytania-v1.3.3.pdf',
-          github: ''
         },
         {
           name: 'Odpowiedzi',
           lang: 'PL',
           type: 'answers',
           file: 'tm-3.0/TM-3.0-PL-odpowiedzi-v1.3.3.pdf',
-          github: ''
         },
         {
           name: 'Wytyczne do akredytacji',
           lang: 'PL',
           type: 'guide',
           file: 'tm-3.0/TM-3.0-PL-wytyczne-do-akredytacji-v1.0.pdf',
-          github: ''
         }
       ]
     }
