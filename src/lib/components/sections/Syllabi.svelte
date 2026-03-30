@@ -210,7 +210,7 @@
 
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <Section id="sylabusy" class="bg-white">
-  {#snippet title()}Sylabusy{/snippet}
+  {#snippet heading()}Sylabusy{/snippet}
 
   <p class="text-gray-600 mb-12">
     Poniżej znajdziesz sylabusy, zestawy pytań i odpowiedzi oraz wytyczne do akredytacji dla

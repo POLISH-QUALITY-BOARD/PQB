@@ -8,19 +8,19 @@ import Section from '$lib/components/Section.svelte';
 const snippet = (html: string) => createRawSnippet(() => ({ render: () => html }));
 
 describe('Section.svelte', () => {
-  test('renders section with id, title and body', async () => {
+  test('renders section with id, heading and body', async () => {
     const id = faker.string.uuid();
-    const title = faker.lorem.words(3);
+    const heading = faker.lorem.words(3);
     const content = faker.lorem.sentence();
 
     await render(Section, {
       id,
-      title: snippet(`<span>${title}</span>`),
+      heading: snippet(`<span>${heading}</span>`),
       children: snippet(`<p>${content}</p>`)
     });
 
     await expect.element(page.getByTestId('section')).toHaveAttribute('id', id);
-    await expect.element(page.getByTestId('section-title')).toHaveTextContent(title);
+    await expect.element(page.getByTestId('section-heading')).toHaveTextContent(heading);
     await expect.element(page.getByTestId('section-body')).toHaveTextContent(content);
   });
 });

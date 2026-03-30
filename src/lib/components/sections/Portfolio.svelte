@@ -6,7 +6,7 @@
 </script>
 
 <Section id="portfolio" class="bg-gray-50">
-  {#snippet title()}Portfolio ISTQB®{/snippet}
+  {#snippet heading()}Portfolio ISTQB®{/snippet}
 
   <p class="text-gray-600 mb-10">
     ISTQB® (International Software Testing Qualifications Board) to międzynarodowy standard

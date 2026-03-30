@@ -1,13 +1,14 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
   import { cn } from '$lib';
 
   let {
     children,
     class: className,
-    title,
+    heading,
     ...restProps
-  }: { children: Snippet; class?: string; title: Snippet } & Record<string, unknown> = $props();
+  }: { children: Snippet; heading: Snippet } & HTMLAttributes<HTMLElement> = $props();
 </script>
 
 <section
@@ -18,9 +19,9 @@
   <div class="max-w-270 mx-auto px-6">
     <h2
       class="text-4xl md:text-5xl font-bold text-primary leading-tight mb-14"
-      data-testid="section-title"
+      data-testid="section-heading"
     >
-      {@render title()}
+      {@render heading()}
     </h2>
 
     <div data-testid="section-body">

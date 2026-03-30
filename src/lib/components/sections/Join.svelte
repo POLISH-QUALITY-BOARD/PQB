@@ -67,7 +67,7 @@
 </script>
 
 <Section id="dolacz" class="bg-gray-50">
-  {#snippet title()}Dołącz do nas{/snippet}
+  {#snippet heading()}Dołącz do nas{/snippet}
 
   <p class="text-gray-600 mb-12">
     Zapraszamy Cię do dołączenia do Polish Quality Board! Bez względu na to, czy jesteś

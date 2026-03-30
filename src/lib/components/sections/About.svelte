@@ -6,7 +6,7 @@
 </script>
 
 <Section id="onas" class="bg-white">
-  {#snippet title()}O nas{/snippet}
+  {#snippet heading()}O nas{/snippet}
 
   <Board />
   <Statutes />
