@@ -5,15 +5,13 @@ import { enhancedImages } from '@sveltejs/enhanced-img';
 import tailwindcss from '@tailwindcss/vite';
 import Icons from 'unplugin-icons/vite';
 
-const plugins = [tailwindcss(), enhancedImages(), sveltekit(), Icons({ compiler: 'svelte' })];
-
 export default defineConfig({
-  plugins,
+  plugins: [tailwindcss(), enhancedImages(), sveltekit(), Icons({ compiler: 'svelte' })],
   test: {
     expect: { requireAssertions: true },
     projects: [
       {
-        plugins,
+        extends: './vite.config.ts',
         test: {
           name: 'client',
           browser: {
