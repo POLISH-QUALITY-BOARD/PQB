@@ -39,7 +39,7 @@
   ];
 </script>
 
-<article id="wizja-misja" class="mb-8 pb-6">
+<article id="wizja-misja" class="mb-8 pb-6 scroll-mt-25">
   <h3 class="text-2xl font-semibold leading-tight text-primary mt-0 mb-2">
     Wartości, misja i wizja
   </h3>

@@ -38,7 +38,7 @@
   let activeTab = $state('pl');
 </script>
 
-<article id="statut" class="mb-12 pb-8 border-b border-gray-100">
+<article id="statut" class="mb-12 pb-8 border-b border-gray-100 scroll-mt-25">
   <h3 class="text-2xl font-semibold leading-tight text-primary mt-0 mb-6">Statut</h3>
 
   <Tabs.Root
