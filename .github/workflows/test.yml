@@ -15,7 +15,8 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run test:unit -- --passWithNoTests
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:unit
 
   test-e2e:
     runs-on: ubuntu-latest
