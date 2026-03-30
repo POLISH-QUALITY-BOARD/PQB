@@ -156,19 +156,19 @@
           name: 'Sylabus',
           lang: 'PL',
           type: 'syllabus',
-          file: 'ta-4.0/TA-4.0-PL-sylabus.pdf',
+          file: 'ta-4.0/TA-4.0-PL-sylabus.pdf'
         },
         {
           name: 'Pytania',
           lang: 'PL',
           type: 'questions',
-          file: 'ta-4.0/TA-4.0-PL-pytania.pdf',
+          file: 'ta-4.0/TA-4.0-PL-pytania.pdf'
         },
         {
           name: 'Odpowiedzi',
           lang: 'PL',
           type: 'answers',
-          file: 'ta-4.0/TA-4.0-PL-odpowiedzi.pdf',
+          file: 'ta-4.0/TA-4.0-PL-odpowiedzi.pdf'
         }
       ]
     },
@@ -182,25 +182,25 @@
           name: 'Sylabus',
           lang: 'PL',
           type: 'syllabus',
-          file: 'tm-3.0/TM-3.0-PL-sylabus.pdf',
+          file: 'tm-3.0/TM-3.0-PL-sylabus.pdf'
         },
         {
           name: 'Pytania',
           lang: 'PL',
           type: 'questions',
-          file: 'tm-3.0/TM-3.0-PL-pytania-v1.3.3.pdf',
+          file: 'tm-3.0/TM-3.0-PL-pytania-v1.3.3.pdf'
         },
         {
           name: 'Odpowiedzi',
           lang: 'PL',
           type: 'answers',
-          file: 'tm-3.0/TM-3.0-PL-odpowiedzi-v1.3.3.pdf',
+          file: 'tm-3.0/TM-3.0-PL-odpowiedzi-v1.3.3.pdf'
         },
         {
           name: 'Wytyczne do akredytacji',
           lang: 'PL',
           type: 'guide',
-          file: 'tm-3.0/TM-3.0-PL-wytyczne-do-akredytacji-v1.0.pdf',
+          file: 'tm-3.0/TM-3.0-PL-wytyczne-do-akredytacji-v1.0.pdf'
         }
       ]
     }
