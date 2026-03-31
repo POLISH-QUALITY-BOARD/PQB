@@ -26,7 +26,10 @@
     aria-describedby="cookie-desc"
     class="fixed bottom-0 left-0 right-0 z-50 w-full bg-primary text-white shadow-2xl"
   >
-    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
+    <div
+      class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center gap-3"
+      data-testid="cookie-consent"
+    >
       <div class="flex items-center gap-3 flex-1">
         <IconCookieOutline width="22" height="22" class="shrink-0" aria-hidden="true" />
         <p id="cookie-desc" class="text-sm leading-relaxed text-white/75">

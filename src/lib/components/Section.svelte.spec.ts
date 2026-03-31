@@ -1,5 +1,5 @@
 import { render } from 'vitest-browser-svelte';
-import { describe, expect, test } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { createRawSnippet } from 'svelte';
 import { page } from 'vitest/browser';
 import { faker } from '@faker-js/faker';
@@ -8,7 +8,7 @@ import Section from '$lib/components/Section.svelte';
 const snippet = (html: string) => createRawSnippet(() => ({ render: () => html }));
 
 describe('Section.svelte', () => {
-  test('renders section with class, id, heading and body', async () => {
+  it('renders section with class, id, heading and body', async () => {
     const className = 'bg-white';
     const id = faker.string.uuid();
     const heading = faker.lorem.words(3);

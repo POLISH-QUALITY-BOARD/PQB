@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [tailwindcss(), enhancedImages(), sveltekit(), Icons({ compiler: 'svelte' })],
   test: {
     expect: { requireAssertions: true },
+    clearMocks: true,
     projects: [
       {
         extends: './vite.config.ts',
@@ -24,6 +25,7 @@ export default defineConfig({
         }
       },
       {
+        extends: './vite.config.ts',
         test: {
           name: 'server',
           environment: 'node',
