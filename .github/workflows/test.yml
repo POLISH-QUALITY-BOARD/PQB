@@ -16,7 +16,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: npm run test:unit
+      - run: npm run test:unit:coverage
 
   test-e2e:
     runs-on: ubuntu-latest
