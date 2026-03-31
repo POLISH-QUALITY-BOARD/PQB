@@ -1,5 +1,5 @@
 import { render } from 'vitest-browser-svelte';
-import { beforeEach, describe, expect, test, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { page } from 'vitest/browser';
 import CookieConsent from '$lib/components/CookieConsent.svelte';
 import { grantCookieConsent, denyCookieConsent } from '$lib/stores/cookieConsent';
@@ -16,13 +16,13 @@ describe('CookieConsent.svelte', () => {
     await render(CookieConsent);
   });
 
-  test('clicking accept calls grantCookieConsent', async () => {
+  it('calls grantCookieConsent() when clicking accept button', async () => {
     await page.getByTestId('cookie-consent-accept-button').click();
 
     expect(grantCookieConsent).toHaveBeenCalled();
   });
 
-  test('clicking deny calls denyCookieConsent', async () => {
+  it('calls denyCookieConsent() when clicking deny button', async () => {
     await page.getByTestId('cookie-consent-deny-button').click();
 
     expect(denyCookieConsent).toHaveBeenCalled();
