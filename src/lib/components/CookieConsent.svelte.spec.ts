@@ -1,30 +1,40 @@
 import { render } from 'vitest-browser-svelte';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { get } from 'svelte/store';
 import { page } from 'vitest/browser';
 import CookieConsent from '$lib/components/CookieConsent.svelte';
-import { grantCookieConsent, denyCookieConsent } from '$lib/stores/cookieConsent';
+import {
+  cookieConsentGranted,
+  cookieConsentDenied,
+  resetCookieConsent
+} from '$lib/stores/cookieConsent';
 
-vi.mock('$lib/stores/cookieConsent', () => ({
-  cookieConsentGranted: { subscribe: (fn: (v: boolean) => void) => (fn(false), () => {}) },
-  cookieConsentDenied: { subscribe: (fn: (v: boolean) => void) => (fn(false), () => {}) },
-  grantCookieConsent: vi.fn(),
-  denyCookieConsent: vi.fn()
-}));
+vi.hoisted(() => {
+  Object.assign(globalThis, { gtag: () => {} });
+});
 
 describe('CookieConsent.svelte', () => {
   beforeEach(async () => {
+    resetCookieConsent();
+
     await render(CookieConsent);
+
+    await expect.element(page.getByTestId('cookie-consent')).toBeInTheDocument();
   });
 
-  it('calls grantCookieConsent() when clicking accept button', async () => {
+  it('grants consent and hides dialog after clicking accept button', async () => {
     await page.getByTestId('cookie-consent-accept-button').click();
 
-    expect(grantCookieConsent).toHaveBeenCalled();
+    expect(get(cookieConsentGranted)).toBe(true);
+
+    await expect.element(page.getByTestId('cookie-consent')).not.toBeInTheDocument();
   });
 
-  it('calls denyCookieConsent() when clicking deny button', async () => {
+  it('denies consent and hides dialog after clicking deny button', async () => {
     await page.getByTestId('cookie-consent-deny-button').click();
 
-    expect(denyCookieConsent).toHaveBeenCalled();
+    expect(get(cookieConsentDenied)).toBe(true);
+
+    await expect.element(page.getByTestId('cookie-consent')).not.toBeInTheDocument();
   });
 });
