@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Section from '$lib/components/Section.svelte';
   import IconCertificateOutline from '~icons/mdi/certificate-outline';
   import IconAccountGroupOutline from '~icons/mdi/account-group-outline';
   import IconTrendingUp from '~icons/mdi/trending-up';
@@ -65,84 +66,82 @@
   };
 </script>
 
-<section id="dolacz" class="bg-gray-50 pt-12 pb-20 md:pt-16 md:pb-28 scroll-mt-17.5">
-  <div class="max-w-270 mx-auto px-6">
-    <h2 class="text-4xl md:text-5xl font-bold text-primary leading-tight mb-14">Dołącz do nas</h2>
+<Section id="dolacz" class="bg-gray-50">
+  {#snippet heading()}Dołącz do nas{/snippet}
 
-    <p class="text-gray-600 mb-12">
-      Zapraszamy Cię do dołączenia do Polish Quality Board! Bez względu na to, czy jesteś
-      początkującym testerem, czy doświadczonym specjalistą QA, mamy dla Ciebie wiele możliwości
-      rozwoju.
-    </p>
+  <p class="text-gray-600 mb-12">
+    Zapraszamy Cię do dołączenia do Polish Quality Board! Bez względu na to, czy jesteś
+    początkującym testerem, czy doświadczonym specjalistą QA, mamy dla Ciebie wiele możliwości
+    rozwoju.
+  </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-      {#each benefits as { icon: BenefitIcon, title, description } (title)}
-        <div class="flex gap-5 items-start">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
+    {#each benefits as { icon: BenefitIcon, title, description } (title)}
+      <div class="flex gap-5 items-start">
+        <div
+          class="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm bg-linear-to-br from-primary to-primary-dark"
+        >
+          <BenefitIcon width="22" height="22" color="white" />
+        </div>
+        <div>
+          <p class="text-base font-semibold text-primary mb-1">{title}</p>
+          <p class="text-sm text-gray-500 leading-relaxed">{description}</p>
+        </div>
+      </div>
+    {/each}
+  </div>
+
+  <h3 class="text-2xl font-semibold text-primary leading-tight mb-8">Jak dołączyć</h3>
+
+  <div class="relative">
+    <div class="absolute left-5 top-0 bottom-0 w-px bg-gray-200"></div>
+
+    <div class="flex flex-col gap-10">
+      {#each steps as { title, description, action }, i (title)}
+        <div class="flex gap-6">
           <div
-            class="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm bg-linear-to-br from-primary to-primary-dark"
+            class="shrink-0 w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center relative z-10 overflow-hidden"
           >
-            <BenefitIcon width="22" height="22" color="white" />
+            <span class="transition-opacity duration-300" class:opacity-0={completed[i]}
+              >{i + 1}</span
+            >
+            <span
+              class="absolute transition-opacity duration-300 opacity-0"
+              class:opacity-100={completed[i]}
+            >
+              <IconCheck width="20" height="20" />
+            </span>
           </div>
-          <div>
+          <div class="pt-1.5">
             <p class="text-base font-semibold text-primary mb-1">{title}</p>
-            <p class="text-sm text-gray-500 leading-relaxed">{description}</p>
+            <p class="text-sm text-gray-500" class:mb-5={action.type === 'download'}>
+              {description}
+              {#if action.type === 'email'}
+                <a
+                  href="mailto:{action.address}"
+                  class="font-semibold text-primary"
+                  onclick={() => complete(i)}>{action.address}</a
+                >
+              {/if}
+            </p>
+            {#if action.type === 'download'}
+              <!-- eslint-disable svelte/no-navigation-without-resolve -->
+              <a
+                href={action.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark pl-3.5 pr-5 py-2.5 rounded-xl no-underline"
+                data-testid={action.testId}
+                download
+                onclick={() => complete(i)}
+              >
+                <IconDownload width="16" height="16" />
+                Pobierz
+              </a>
+            {/if}
           </div>
         </div>
       {/each}
     </div>
-
-    <h3 class="text-2xl font-semibold text-primary leading-tight mb-8">Jak dołączyć</h3>
-
-    <div class="relative">
-      <div class="absolute left-5 top-0 bottom-0 w-px bg-gray-200"></div>
-
-      <div class="flex flex-col gap-10">
-        {#each steps as { title, description, action }, i (title)}
-          <div class="flex gap-6">
-            <div
-              class="shrink-0 w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center relative z-10 overflow-hidden"
-            >
-              <span class="transition-opacity duration-300" class:opacity-0={completed[i]}
-                >{i + 1}</span
-              >
-              <span
-                class="absolute transition-opacity duration-300 opacity-0"
-                class:opacity-100={completed[i]}
-              >
-                <IconCheck width="20" height="20" />
-              </span>
-            </div>
-            <div class="pt-1.5">
-              <p class="text-base font-semibold text-primary mb-1">{title}</p>
-              <p class="text-sm text-gray-500" class:mb-5={action.type === 'download'}>
-                {description}
-                {#if action.type === 'email'}
-                  <a
-                    href="mailto:{action.address}"
-                    class="font-semibold text-primary"
-                    onclick={() => complete(i)}>{action.address}</a
-                  >
-                {/if}
-              </p>
-              {#if action.type === 'download'}
-                <!-- eslint-disable svelte/no-navigation-without-resolve -->
-                <a
-                  href={action.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark pl-3.5 pr-5 py-2.5 rounded-xl no-underline"
-                  data-testid={action.testId}
-                  download
-                  onclick={() => complete(i)}
-                >
-                  <IconDownload width="16" height="16" />
-                  Pobierz
-                </a>
-              {/if}
-            </div>
-          </div>
-        {/each}
-      </div>
-    </div>
   </div>
-</section>
+</Section>

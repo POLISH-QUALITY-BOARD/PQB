@@ -19,6 +19,7 @@
     "@axe-core/playwright": "^4.11.1",
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^10.0.1",
+    "@faker-js/faker": "^10.4.0",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.75",
     "@playwright/test": "^1.58.2",
@@ -49,6 +50,8 @@
     "@internationalized/date": "^3.8.2",
     "@tailwindcss/vite": "^4.2.2",
     "bits-ui": "^2.16.4",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.2"
   }
 }
