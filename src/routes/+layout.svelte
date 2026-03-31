@@ -33,11 +33,9 @@
 <OpenGraph image={data.image} />
 <TwitterCard />
 
-<div class="text-gray-800 leading-relaxed bg-white">
-  <Announcement />
-  <Navbar />
-  <Hero />
-</div>
+<Announcement />
+<Navbar />
+<Hero />
 
 <main>
   {@render children()}

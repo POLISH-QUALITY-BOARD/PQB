@@ -1,15 +1,17 @@
 import { defineConfig } from 'vitest/config';
 import { playwright } from '@vitest/browser-playwright';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 import tailwindcss from '@tailwindcss/vite';
 import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
-  plugins: [tailwindcss(), sveltekit(), Icons({ compiler: 'svelte' })],
+  plugins: [tailwindcss(), enhancedImages(), sveltekit(), Icons({ compiler: 'svelte' })],
   test: {
     expect: { requireAssertions: true },
     projects: [
       {
+        extends: './vite.config.ts',
         test: {
           name: 'client',
           browser: {

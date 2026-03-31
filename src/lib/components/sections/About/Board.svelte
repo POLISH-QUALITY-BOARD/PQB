@@ -1,29 +1,36 @@
 <script>
   import IconLinkedin from '~icons/simple-icons/linkedin';
+  import imgSeba from '$lib/assets/people/Seba.jpg?enhanced';
+  import imgAdam from '$lib/assets/people/Adam.jpg?enhanced';
+  import imgAnia from '$lib/assets/people/Ania.jpg?enhanced';
+  import imgWojtek from '$lib/assets/people/Wojtek.jpg?enhanced';
+  import imgJan from '$lib/assets/people/Jan.jpg?enhanced';
+  import imgAsia from '$lib/assets/people/Asia.jpg?enhanced';
+  import imgMonika from '$lib/assets/people/Monika.jpg?enhanced';
 
   const board = [
     {
       name: 'Sebastian Małyska',
       role: 'Prezes',
-      img: 'images/people/Seba.jpg',
+      img: imgSeba,
       linkedin: 'https://www.linkedin.com/in/malyska/'
     },
     {
       name: 'Adam Roman',
       role: 'Wiceprezes',
-      img: 'images/people/Adam.jpg',
+      img: imgAdam,
       linkedin: 'https://www.linkedin.com/in/adam-roman-3799723/'
     },
     {
       name: 'Anna Miazek-Bereźnicka',
       role: 'Wiceprezes',
-      img: 'images/people/Ania.jpg',
+      img: imgAnia,
       linkedin: 'https://www.linkedin.com/in/annamiazek/'
     },
     {
       name: 'Wojciech Jaszcz',
       role: 'Wiceprezes',
-      img: 'images/people/Wojtek.jpg',
+      img: imgWojtek,
       linkedin: 'https://www.linkedin.com/in/wojtek-jaszcz-5111421/'
     }
   ];
@@ -32,25 +39,25 @@
     {
       name: 'Jan Sabak',
       role: 'Członek',
-      img: 'images/people/Jan.jpg',
+      img: imgJan,
       linkedin: 'https://www.linkedin.com/in/jsabak/'
     },
     {
       name: 'Joanna Gajewska',
       role: 'Członek',
-      img: 'images/people/Asia.jpg',
+      img: imgAsia,
       linkedin: 'https://www.linkedin.com/in/joanna-gajewska-829623/'
     },
     {
       name: 'Monika Petri-Starego',
       role: 'Członek',
-      img: 'images/people/Monika.jpg',
+      img: imgMonika,
       linkedin: 'https://www.linkedin.com/in/monika-petri-starego/'
     }
   ];
 </script>
 
-<article id="sklad-osobowy" class="mb-12 pb-8 border-b border-gray-100">
+<article id="sklad-osobowy" class="mb-12 pb-8 border-b border-gray-100 scroll-mt-25">
   <h3 class="text-2xl font-semibold leading-tight text-primary mt-0 mb-2">Skład osobowy zarządu</h3>
   <p class="mb-4 text-gray-600">
     Polish Quality Board kierowana jest przez doświadczonych profesjonalistów z branży testowania
@@ -69,7 +76,7 @@
         <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-4">Zarząd</p>
         {#each board as person (person.name)}
           <div class="flex items-center gap-4 py-4 border-b border-gray-100 last:border-b-0">
-            <img
+            <enhanced:img
               src={person.img}
               alt={person.name}
               class="w-18 h-18 rounded-full object-cover shrink-0"
@@ -99,7 +106,7 @@
         </p>
         {#each committee as person (person.name)}
           <div class="flex items-center gap-4 py-4 border-b border-gray-100 last:border-b-0">
-            <img
+            <enhanced:img
               src={person.img}
               alt={person.name}
               class="w-18 h-18 rounded-full object-cover shrink-0"
