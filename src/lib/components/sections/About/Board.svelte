@@ -79,6 +79,7 @@
             <enhanced:img
               src={person.img}
               alt={person.name}
+              loading="lazy"
               class="w-18 h-18 rounded-full object-cover shrink-0"
             />
             <div class="min-w-0 grow">
@@ -109,6 +110,7 @@
             <enhanced:img
               src={person.img}
               alt={person.name}
+              loading="lazy"
               class="w-18 h-18 rounded-full object-cover shrink-0"
             />
             <div class="min-w-0 grow">
