@@ -128,7 +128,7 @@
     <button
       type="button"
       class="flex md:hidden flex-col bg-transparent border-none cursor-pointer gap-1.5 p-2"
-      aria-label="Toggle navigation menu"
+      aria-label={menuOpen ? 'Zamknij nawigację' : 'Otwórz nawigację'}
       aria-expanded={menuOpen}
       aria-controls="mobile-navigation"
       onclick={handleToggle}

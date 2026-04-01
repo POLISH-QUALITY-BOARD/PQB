@@ -109,7 +109,7 @@
               class="absolute transition-opacity duration-300 opacity-0"
               class:opacity-100={completed[i]}
             >
-              <IconCheck width="20" height="20" />
+              <IconCheck aria-hidden="true" width="20" height="20" />
             </span>
           </div>
           <div class="pt-1.5">
@@ -135,7 +135,7 @@
                 download
                 onclick={() => complete(i)}
               >
-                <IconDownload width="16" height="16" />
+                <IconDownload aria-hidden="true" width="16" height="16" />
                 Pobierz
               </a>
             {/if}

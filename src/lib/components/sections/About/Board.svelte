@@ -92,10 +92,10 @@
               href={person.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label={`Profil LinkedIn — ${person.name}`}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <IconLinkedin width="18" height="18" />
+              <IconLinkedin aria-hidden="true" width="18" height="18" />
             </a>
           </div>
         {/each}
@@ -123,10 +123,10 @@
               href={person.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label={`Profil LinkedIn — ${person.name}`}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <IconLinkedin width="18" height="18" />
+              <IconLinkedin aria-hidden="true" width="18" height="18" />
             </a>
           </div>
         {/each}
