@@ -74,7 +74,7 @@
                   <a
                     href={resolve(item.href)}
                     {...props}
-                    data-testid="navigation-item"
+                    data-testid="desktop-navigation-item"
                     class="group flex items-center gap-1.5 text-gray-600 font-medium px-4 py-2.5 hover:text-primary no-underline cursor-pointer text-base"
                   >
                     {text}
@@ -93,7 +93,7 @@
                     <li>
                       <a
                         href={resolve(href)}
-                        data-testid="navigation-item"
+                        data-testid="desktop-navigation-item"
                         class="block px-5 py-3 text-gray-600 text-sm no-underline hover:text-primary hover:bg-gray-50"
                         >{text}</a
                       >
@@ -106,7 +106,7 @@
             <NavigationMenu.Item class="pl-4">
               <NavigationMenu.Link
                 href={resolve(item.href)}
-                data-testid="navigation-item"
+                data-testid="desktop-navigation-item"
                 class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
               >
                 {@render ctaContent(item.cta.icon, text)}
@@ -116,7 +116,7 @@
             <NavigationMenu.Item>
               <NavigationMenu.Link
                 href={resolve(item.href)}
-                data-testid="navigation-item"
+                data-testid="desktop-navigation-item"
                 class="block text-gray-600 font-medium px-4 py-3 no-underline hover:text-primary"
                 >{text}</NavigationMenu.Link
               >
@@ -133,6 +133,7 @@
       aria-expanded={menuOpen}
       aria-controls="mobile-navigation"
       onclick={handleToggle}
+      data-testid="hamburger-button"
     >
       {#each ['rotate-45 translate-y-2', 'opacity-0', '-rotate-45 -translate-y-2'] as openClass, index (index)}
         <span
@@ -172,7 +173,7 @@
                   {#each item.children as { href, text }, index (index)}
                     <a
                       href={resolve(href)}
-                      data-testid="navigation-item"
+                      data-testid="mobile-navigation-item"
                       class="text-gray-600 text-sm py-2.5 no-underline hover:text-primary"
                       onclick={handleClose}>{text}</a
                     >
@@ -184,7 +185,7 @@
             <div class="px-3 py-3 pt-2">
               <a
                 href={resolve(item.href)}
-                data-testid="navigation-item"
+                data-testid="mobile-navigation-item"
                 class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
                 onclick={handleClose}
               >
@@ -195,7 +196,7 @@
             <div class="h-px bg-gray-100"></div>
             <a
               href={resolve(item.href)}
-              data-testid="navigation-item"
+              data-testid="mobile-navigation-item"
               class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary"
               onclick={handleClose}>{text}</a
             >
