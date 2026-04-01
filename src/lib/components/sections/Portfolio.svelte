@@ -29,6 +29,7 @@
     <img
       src="images/istqb-02-12-26-full-name-portfolio-graphic.svg"
       alt="ISTQB® Portfolio - Certification Options"
+      loading="lazy"
       class="w-full h-auto block object-contain max-h-96"
     />
   </a>

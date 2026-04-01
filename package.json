@@ -13,6 +13,7 @@
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
     "test:unit": "vitest --run",
+    "test:unit:coverage": "vitest --run --coverage",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
@@ -29,6 +30,7 @@
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@types/node": "^25",
     "@vitest/browser-playwright": "^4.1.2",
+    "@vitest/coverage-v8": "^4.1.2",
     "eslint": "^10.1.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.16.0",

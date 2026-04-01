@@ -2,7 +2,7 @@
   import IconChevronDown from '~icons/mdi/chevron-down';
 </script>
 
-<section class="hero overflow-hidden text-white">
+<section class="hero overflow-hidden text-white" data-testid="hero">
   <div
     class="hero-body max-w-270 mx-auto px-6 text-center flex flex-col items-center justify-center"
   >

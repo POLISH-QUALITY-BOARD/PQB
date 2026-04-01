@@ -2,7 +2,7 @@
   import IconOpenInNew from '~icons/mdi/open-in-new';
 </script>
 
-<div class="bg-primary">
+<div class="bg-primary" data-testid="announcement">
   <div class="max-w-270 mx-auto px-6 py-2 text-xs text-white/80 font-medium">
     <span class="text-white">Rada Krajowa ISTQB®</span> w Polsce —
     <a
