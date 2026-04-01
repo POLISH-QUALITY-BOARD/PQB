@@ -12,6 +12,8 @@ test('I can download documents', async ({ page }) => {
       await page.getByTestId('statutes-tab-en').click();
     }
 
+    await anchor.evaluate((element) => element.scrollIntoView({ block: 'center' }));
+
     const [download] = await Promise.all([page.waitForEvent('download'), anchor.click()]);
 
     expect(download).toBeDefined();
