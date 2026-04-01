@@ -18,6 +18,7 @@
     },
     { href: '/#portfolio', text: 'Portfolio ISTQB®' },
     { href: '/#sylabusy', text: 'Sylabusy' },
+    { href: '/#akredytacja', text: 'Akredytacja' },
     { href: '/#dolacz', text: 'Dołącz do nas', cta: { icon: IconAccountPlusOutline } }
   ] as const;
 
