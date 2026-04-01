@@ -66,7 +66,7 @@
   };
 </script>
 
-<Section id="dolacz" class="bg-gray-50">
+<Section id="dolacz" class="bg-white">
   {#snippet heading()}Dołącz do nas{/snippet}
 
   <p class="text-gray-600 mb-12">
