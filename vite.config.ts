@@ -10,6 +10,12 @@ export default defineConfig({
   test: {
     expect: { requireAssertions: true },
     clearMocks: true,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text'],
+      include: ['src/**/*.{ts,svelte}'],
+      exclude: ['src/**/*.{test,spec}.ts', 'src/**/*.d.ts', 'src/routes/**']
+    },
     projects: [
       {
         extends: './vite.config.ts',
