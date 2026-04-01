@@ -22,6 +22,14 @@ export default defineConfig({
     {
       name: 'chromium-desktop',
       use: { ...devices['Desktop Chrome'] }
+    },
+    {
+      name: 'chromium-tablet',
+      use: { ...devices['Galaxy Tab S9'] }
+    },
+    {
+      name: 'chromium-mobile',
+      use: { ...devices['Galaxy S9+'] }
     }
   ]
 });
