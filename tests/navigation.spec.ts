@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('I can navigate to section', async ({ isMobile, page }) => {
   const navigationItem = page
-    .getByTestId(isMobile ? 'mobile-navigation-item' : 'desktop-navigation-item')
+    .getByTestId(isMobile ? 'navbar-mobile-navigation-item' : 'navbar-desktop-navigation-item')
     .first();
 
   await page.goto('/');
