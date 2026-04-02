@@ -12,13 +12,13 @@ describe('Section.svelte', () => {
     const className = 'bg-white';
     const id = faker.string.uuid();
     const heading = faker.lorem.words(3);
-    const content = faker.lorem.sentence();
+    const body = faker.lorem.sentence();
 
     await render(Section, {
       class: className,
       id,
       heading: snippet(`<span>${heading}</span>`),
-      children: snippet(`<p>${content}</p>`)
+      children: snippet(`<p>${body}</p>`)
     });
 
     const expectSection = expect.element(page.getByTestId('section'));
@@ -27,6 +27,6 @@ describe('Section.svelte', () => {
     await expectSection.toHaveAttribute('id', id);
 
     await expect.element(page.getByTestId('section-heading')).toHaveTextContent(heading);
-    await expect.element(page.getByTestId('section-body')).toHaveTextContent(content);
+    await expect.element(page.getByTestId('section-body')).toHaveTextContent(body);
   });
 });
