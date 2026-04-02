@@ -18,10 +18,8 @@
   });
 </script>
 
-<svelte:head>
-  <meta name="twitter:card" content={twitter.card} />
-  <meta name="twitter:title" content={twitter.title} />
-  <meta name="twitter:description" content={twitter.description} />
-  <meta name="twitter:image" content={twitter.image.url} />
-  <meta name="twitter:image:alt" content={twitter.image.alt} />
-</svelte:head>
+<meta data-testid="twitter-card" name="twitter:card" content={twitter.card} />
+<meta data-testid="twitter-title" name="twitter:title" content={twitter.title} />
+<meta data-testid="twitter-description" name="twitter:description" content={twitter.description} />
+<meta data-testid="twitter-image" name="twitter:image" content={twitter.image.url} />
+<meta data-testid="twitter-image-alt" name="twitter:image:alt" content={twitter.image.alt} />

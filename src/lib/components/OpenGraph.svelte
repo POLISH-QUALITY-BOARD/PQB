@@ -1,44 +1,27 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import { resolve, asset } from '$app/paths';
+  import { resolve } from '$app/paths';
 
   let {
     image
   }: {
-    image: { width?: string; height?: string };
+    image: { url: string; width?: string; height?: string };
   } = $props();
 
-  const og = $derived.by(() => {
-    const { href: url } = new URL(resolve('/'), page.url.origin);
-    const { href: imageUrl } = new URL(asset('/images/pqb-logo.png'), page.url.origin);
-
-    return {
-      type: 'website',
-      title: 'PQB - Polish Quality Board',
-      description:
-        'Polish Quality Board - certyfikacje ISTQB, szkolenia i rozwój jakości oprogramowania w Polsce.',
-      siteName: 'Polish Quality Board',
-      locale: 'pl_PL',
-      url,
-      image: {
-        url: imageUrl,
-        width: image.width,
-        height: image.height,
-        alt: 'PQB Logo'
-      }
-    };
-  });
+  const url = $derived(new URL(resolve('/'), page.url.origin).href);
 </script>
 
-<svelte:head>
-  <meta property="og:type" content={og.type} />
-  <meta property="og:title" content={og.title} />
-  <meta property="og:description" content={og.description} />
-  <meta property="og:site_name" content={og.siteName} />
-  <meta property="og:locale" content={og.locale} />
-  <meta property="og:url" content={og.url} />
-  <meta property="og:image" content={og.image.url} />
-  <meta property="og:image:width" content={og.image.width} />
-  <meta property="og:image:height" content={og.image.height} />
-  <meta property="og:image:alt" content={og.image.alt} />
-</svelte:head>
+<meta data-testid="og-type" property="og:type" content="website" />
+<meta data-testid="og-title" property="og:title" content="PQB - Polish Quality Board" />
+<meta
+  data-testid="og-description"
+  property="og:description"
+  content="Polish Quality Board - certyfikacje ISTQB, szkolenia i rozwój jakości oprogramowania w Polsce."
+/>
+<meta data-testid="og-site-name" property="og:site_name" content="Polish Quality Board" />
+<meta data-testid="og-locale" property="og:locale" content="pl_PL" />
+<meta data-testid="og-url" property="og:url" content={url} />
+<meta data-testid="og-image" property="og:image" content={image.url} />
+<meta data-testid="og-image-width" property="og:image:width" content={image.width} />
+<meta data-testid="og-image-height" property="og:image:height" content={image.height} />
+<meta data-testid="og-image-alt" property="og:image:alt" content="PQB Logo" />
