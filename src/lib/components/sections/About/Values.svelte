@@ -42,6 +42,7 @@
 
 <Article id="wizja-misja">
   {#snippet heading()}Wartości, misja i wizja{/snippet}
+
   {#snippet subheading()}To fundament naszej organizacji – to, co nas definiuje i określa naszą
     drogę.{/snippet}
 
