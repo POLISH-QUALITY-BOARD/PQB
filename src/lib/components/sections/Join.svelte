@@ -41,7 +41,7 @@
       action: {
         type: 'download',
         href: 'documents/deklaracjaCzlonkowska_PQB.docx',
-        testId: 'download-membership-declaration'
+        testId: 'download-membership-declaration-button'
       }
     },
     {
@@ -50,7 +50,7 @@
       action: {
         type: 'download',
         href: 'documents/deklaracjaNDA_PQB.docx',
-        testId: 'download-nda-declaration'
+        testId: 'download-nda-declaration-button'
       }
     },
     {

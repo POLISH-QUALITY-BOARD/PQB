@@ -13,7 +13,7 @@
     },
     {
       title:
-        'ISTQB Certifications Under the Lens: Their Contributions to the Software-Testing Profession; and AI-assisted Synthesis of Practitioners\’ Endorsements and Criticisms',
+        'ISTQB Certifications Under the Lens: Their Contributions to the Software-Testing Profession; and AI-assisted Synthesis of Practitioners’ Endorsements and Criticisms',
       href: 'https://arxiv.org/pdf/2603.14572'
     }
   ];
@@ -108,6 +108,7 @@
                   height="15"
                   class="text-accent shrink-0 opacity-70"
                 />
+                <!-- eslint-disable svelte/no-navigation-without-resolve -->
                 <a
                   href={paper.href}
                   target="_blank"
@@ -115,9 +116,11 @@
                   class="text-sm text-primary hover:underline no-underline font-medium"
                   >{paper.title}</a
                 >
+                <!-- eslint-enable svelte/no-navigation-without-resolve -->
               </div>
             </td>
             <td class="px-6 py-3.5 text-right">
+              <!-- eslint-disable svelte/no-navigation-without-resolve -->
               <a
                 href={paper.href}
                 target="_blank"
@@ -127,6 +130,7 @@
                 <IconOpenInNew aria-hidden="true" width="13" height="13" />
                 Otwórz
               </a>
+              <!-- eslint-enable svelte/no-navigation-without-resolve -->
             </td>
           </tr>
         {/each}

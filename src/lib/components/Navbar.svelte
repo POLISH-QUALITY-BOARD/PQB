@@ -52,6 +52,7 @@
 
 <header
   class="sticky top-0 z-100 bg-white/80 backdrop-blur-md border-b border-gray-200/60 shadow-sm"
+  data-testid="navbar"
   bind:this={header}
 >
   <div class="max-w-270 mx-auto flex justify-between items-center px-6 h-17.5">
@@ -63,7 +64,11 @@
       <enhanced:img src="$lib/assets/brand.webp" alt="PQB Logo" class="h-12 w-auto" />
     </a>
 
-    <NavigationMenu.Root aria-label="Nawigacja główna" class="hidden md:flex">
+    <NavigationMenu.Root
+      aria-label="Nawigacja główna"
+      class="hidden md:flex"
+      data-testid="navbar-desktop-navigation"
+    >
       <NavigationMenu.List class="flex flex-row gap-1 items-center list-none m-0 p-0">
         {#each navbarItems as { text, ...item }, index (index)}
           {#if 'children' in item}
@@ -73,7 +78,7 @@
                   <a
                     href={resolve(item.href)}
                     {...props}
-                    data-testid="desktop-navigation-item"
+                    data-testid="navbar-desktop-navigation-item"
                     class="group flex items-center gap-1.5 text-gray-600 font-medium px-4 py-2.5 hover:text-primary no-underline cursor-pointer text-base"
                   >
                     {text}
@@ -92,7 +97,7 @@
                     <li>
                       <a
                         href={resolve(href)}
-                        data-testid="desktop-navigation-item"
+                        data-testid="navbar-desktop-navigation-item"
                         class="block px-5 py-3 text-gray-600 text-sm no-underline hover:text-primary hover:bg-gray-50"
                         >{text}</a
                       >
@@ -105,7 +110,7 @@
             <NavigationMenu.Item class="pl-4">
               <NavigationMenu.Link
                 href={resolve(item.href)}
-                data-testid="desktop-navigation-item"
+                data-testid="navbar-desktop-navigation-item"
                 class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
               >
                 {@render ctaContent(item.cta.icon, text)}
@@ -115,7 +120,7 @@
             <NavigationMenu.Item>
               <NavigationMenu.Link
                 href={resolve(item.href)}
-                data-testid="desktop-navigation-item"
+                data-testid="navbar-desktop-navigation-item"
                 class="block text-gray-600 font-medium px-4 py-3 no-underline hover:text-primary"
                 >{text}</NavigationMenu.Link
               >
@@ -132,7 +137,7 @@
       aria-expanded={menuOpen}
       aria-controls="mobile-navigation"
       onclick={handleToggle}
-      data-testid="hamburger-button"
+      data-testid="navbar-hamburger-button"
     >
       {#each ['rotate-45 translate-y-2', 'opacity-0', '-rotate-45 -translate-y-2'] as openClass, index (index)}
         <span
@@ -148,6 +153,7 @@
   {#if menuOpen}
     <div
       id="mobile-navigation"
+      data-testid="navbar-mobile-navigation"
       class="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-100"
       transition:slide={{ duration: 200 }}
     >
@@ -172,7 +178,7 @@
                   {#each item.children as { href, text }, index (index)}
                     <a
                       href={resolve(href)}
-                      data-testid="mobile-navigation-item"
+                      data-testid="navbar-mobile-navigation-item"
                       class="text-gray-600 text-sm py-2.5 no-underline hover:text-primary"
                       onclick={handleClose}>{text}</a
                     >
@@ -184,7 +190,7 @@
             <div class="px-3 py-3 pt-2">
               <a
                 href={resolve(item.href)}
-                data-testid="mobile-navigation-item"
+                data-testid="navbar-mobile-navigation-item"
                 class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
                 onclick={handleClose}
               >
@@ -195,7 +201,7 @@
             <div class="h-px bg-gray-100"></div>
             <a
               href={resolve(item.href)}
-              data-testid="mobile-navigation-item"
+              data-testid="navbar-mobile-navigation-item"
               class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary"
               onclick={handleClose}>{text}</a
             >

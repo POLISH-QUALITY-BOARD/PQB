@@ -1,5 +1,5 @@
-<script>
-  import { base } from '$app/paths';
+<script lang="ts">
+  import { base, resolve } from '$app/paths';
   import { resetCookieConsent } from '$lib/stores/cookieConsent';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
   import IconOpenInNew from '~icons/mdi/open-in-new';
@@ -11,11 +11,11 @@
   import IconDiscord from '~icons/simple-icons/discord';
 
   const navigationLinks = [
-    { href: '#onas', label: 'O nas' },
-    { href: '#portfolio', label: 'Portfolio ISTQB®' },
-    { href: '#sylabusy', label: 'Sylabusy' },
-    { href: '#dolacz', label: 'Dołącz do nas' }
-  ];
+    { href: '/#onas', label: 'O nas' },
+    { href: '/#portfolio', label: 'Portfolio ISTQB®' },
+    { href: '/#sylabusy', label: 'Sylabusy' },
+    { href: '/#dolacz', label: 'Dołącz do nas' }
+  ] as const;
 
   const documentLinks = [
     {
@@ -69,8 +69,7 @@
   ];
 </script>
 
-<!-- eslint-disable svelte/no-navigation-without-resolve -->
-<footer class="bg-gray-50 border-t border-gray-200">
+<footer class="bg-gray-50 border-t border-gray-200" data-testid="footer">
   <div class="max-w-270 mx-auto px-6 py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
       <div class="lg:col-span-1">
@@ -83,7 +82,8 @@
         </p>
         <div class="flex gap-3">
           {#each socialLinks as social, index (index)}
-            {@const SocialIcon = social.icon}
+            {@const IconSocial = social.icon}
+            <!-- eslint-disable svelte/no-navigation-without-resolve -->
             <a
               href={social.href}
               target="_blank"
@@ -91,8 +91,9 @@
               aria-label={social.label}
               class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white"
             >
-              <SocialIcon width="16" height="16" />
+              <IconSocial width="16" height="16" />
             </a>
+            <!-- eslint-enable svelte/no-navigation-without-resolve -->
           {/each}
         </div>
       </div>
@@ -102,7 +103,10 @@
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each navigationLinks as link, index (index)}
             <li>
-              <a href={link.href} class="text-sm text-gray-500 no-underline hover:text-primary">
+              <a
+                href={resolve(link.href)}
+                class="text-sm text-gray-500 no-underline hover:text-primary"
+              >
                 {link.label}
               </a>
             </li>
@@ -114,17 +118,19 @@
         <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Dokumenty</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each documentLinks as link, index (index)}
-            {@const LinkIcon = link.icon}
+            {@const IconLink = link.icon}
             <li>
+              <!-- eslint-disable svelte/no-navigation-without-resolve -->
               <a
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 hover:text-primary"
               >
-                <LinkIcon width="14" height="14" class="shrink-0 text-accent" />
+                <IconLink width="14" height="14" class="shrink-0 text-accent" />
                 {link.label}
               </a>
+              <!-- eslint-enable svelte/no-navigation-without-resolve -->
             </li>
           {/each}
         </ul>
@@ -134,12 +140,12 @@
         <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Kontakt</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-4">
           {#each contactItems as item, index (index)}
-            {@const ContactIcon = item.icon}
+            {@const IconContact = item.icon}
             <li class="flex items-start gap-3">
               <div
                 class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5"
               >
-                <ContactIcon width="14" height="14" class="shrink-0 text-accent" />
+                <IconContact width="14" height="14" class="shrink-0 text-accent" />
               </div>
               <div>
                 <p
@@ -190,6 +196,7 @@
           <button
             onclick={resetCookieConsent}
             class="text-gray-500 hover:text-primary cursor-pointer bg-transparent border-0 p-0 text-xs"
+            data-testid="footer-cookie-settings-button"
           >
             Ustawienia cookies
           </button>
