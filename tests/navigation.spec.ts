@@ -8,7 +8,7 @@ test('I can navigate to section', async ({ isMobile, page }) => {
   await page.goto('/');
 
   if (isMobile) {
-    await page.getByTestId('hamburger-button').click();
+    await page.getByTestId('navbar-hamburger-button').click();
   }
 
   const selector = await navigationItem
