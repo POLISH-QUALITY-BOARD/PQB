@@ -54,13 +54,13 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
     {#each values as value (value.title)}
-      {@const ValueIcon = value.icon}
+      {@const IconValue = value.icon}
       <div class="flex gap-5 items-start">
         <div
           class="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm"
           style="background: linear-gradient(135deg, #1a3f7a 0%, #0c1f40 100%);"
         >
-          <ValueIcon width="22" height="22" color="white" />
+          <IconValue width="22" height="22" color="white" />
         </div>
         <div>
           <p class="text-base font-semibold text-primary mb-1">{value.title}</p>
