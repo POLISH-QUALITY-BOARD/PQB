@@ -16,47 +16,47 @@ describe('Navbar.svelte', () => {
   });
 
   it('opens after clicking hamburger button', async () => {
-    const hamburgerButton = page.getByTestId('navbar-hamburger-button');
-    const mobileNavigation = page.getByTestId('navbar-mobile-navigation');
+    const navbarHamburgerButton = page.getByTestId('navbar-hamburger-button');
+    const navbarMobileNavigation = page.getByTestId('navbar-mobile-navigation');
 
-    await hamburgerButton.click();
+    await navbarHamburgerButton.click();
 
-    await expect.element(mobileNavigation).toBeInTheDocument();
+    await expect.element(navbarMobileNavigation).toBeInTheDocument();
   });
 
   it('closes clicking hamburger button', async () => {
-    const hamburgerButton = page.getByTestId('navbar-hamburger-button');
-    const mobileNavigation = page.getByTestId('navbar-mobile-navigation');
+    const navbarHamburgerButton = page.getByTestId('navbar-hamburger-button');
+    const navbarMobileNavigation = page.getByTestId('navbar-mobile-navigation');
 
-    await hamburgerButton.click();
-    await hamburgerButton.click();
+    await navbarHamburgerButton.click();
+    await navbarHamburgerButton.click();
 
-    await expect.element(mobileNavigation).not.toBeInTheDocument();
+    await expect.element(navbarMobileNavigation).not.toBeInTheDocument();
   });
 
   it('closes after clicking outside', async () => {
-    const hamburgerButton = page.getByTestId('navbar-hamburger-button');
-    const mobileNavigation = page.getByTestId('navbar-mobile-navigation');
+    const navbarHamburgerButton = page.getByTestId('navbar-hamburger-button');
+    const navbarMobileNavigation = page.getByTestId('navbar-mobile-navigation');
 
-    await hamburgerButton.click();
+    await navbarHamburgerButton.click();
 
-    await expect.element(mobileNavigation).toBeInTheDocument();
+    await expect.element(navbarMobileNavigation).toBeInTheDocument();
 
     await userEvent.click(document.body);
 
-    await expect.element(mobileNavigation).not.toBeInTheDocument();
+    await expect.element(navbarMobileNavigation).not.toBeInTheDocument();
   });
 
   it('closes after pressing escape', async () => {
-    const hamburgerButton = page.getByTestId('navbar-hamburger-button');
-    const mobileNavigation = page.getByTestId('navbar-mobile-navigation');
+    const navbarHamburgerButton = page.getByTestId('navbar-hamburger-button');
+    const navbarMobileNavigation = page.getByTestId('navbar-mobile-navigation');
 
-    await hamburgerButton.click();
+    await navbarHamburgerButton.click();
 
-    await expect.element(mobileNavigation).toBeInTheDocument();
+    await expect.element(navbarMobileNavigation).toBeInTheDocument();
 
     await userEvent.keyboard('{Escape}');
 
-    await expect.element(mobileNavigation).not.toBeInTheDocument();
+    await expect.element(navbarMobileNavigation).not.toBeInTheDocument();
   });
 });
