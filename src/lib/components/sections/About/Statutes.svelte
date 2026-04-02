@@ -63,7 +63,7 @@
           <div
             class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center bg-linear-to-br from-primary to-primary-deeper"
           >
-            <IconFileDocumentOutline width="26" height="26" color="white" />
+            <IconFileDocumentOutline aria-hidden="true" width="26" height="26" color="white" />
           </div>
           {#key activeTab}
             <div in:fly class="flex-1 flex flex-col sm:flex-row sm:items-center gap-6">
@@ -80,7 +80,7 @@
                 data-testid={content.download.testId}
                 download
               >
-                <IconDownload width="16" height="16" />
+                <IconDownload aria-hidden="true" width="16" height="16" />
                 {content.download.text}
               </a>
             </div>

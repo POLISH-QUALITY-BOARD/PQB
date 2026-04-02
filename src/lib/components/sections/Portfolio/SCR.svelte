@@ -5,7 +5,7 @@
 
 <div>
   <h3 class="text-lg font-semibold text-primary mb-1 flex items-center gap-2">
-    <IconCertificateOutline width="16" height="16" />
+    <IconCertificateOutline aria-hidden="true" width="16" height="16" />
     SCR
   </h3>
   <p class="text-sm text-gray-500 mb-4">Rejestr certyfikowanych specjalistów</p>
@@ -19,7 +19,7 @@
     rel="noopener noreferrer"
     class="self-start inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark no-underline hover:underline"
   >
-    <IconOpenInNew width="15" height="15" />
+    <IconOpenInNew aria-hidden="true" width="15" height="15" />
     Przejdź do rejestru
   </a>
 </div>

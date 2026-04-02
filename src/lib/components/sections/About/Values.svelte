@@ -74,7 +74,7 @@
     <!-- Misja -->
     <div>
       <h4 class="text-lg font-semibold text-primary mb-1 flex items-center gap-2">
-        <IconFlagOutline width="16" height="16" />
+        <IconFlagOutline aria-hidden="true" width="16" height="16" />
         Misja
       </h4>
       <p class="text-sm text-gray-500 mb-4">Po co istniejemy</p>
@@ -91,7 +91,7 @@
     <!-- Wizja -->
     <div>
       <h4 class="text-lg font-semibold text-primary mb-1 flex items-center gap-2">
-        <IconTelescope width="16" height="16" />
+        <IconTelescope aria-hidden="true" width="16" height="16" />
         Wizja
       </h4>
       <p class="text-sm text-gray-500 mb-4">Co chcemy osiągnąć</p>
