@@ -11,13 +11,12 @@ vi.mock('$app/state', () => ({
   }
 }));
 
-const imageUrl = 'https://example.com/images/pqb-logo.png';
 const width = '1200';
 const height = '630';
 
 describe('OpenGraph.svelte', () => {
   it('renders OpenGraph meta tags', async () => {
-    await render(OpenGraph, { props: { image: { url: imageUrl, width, height } } });
+    await render(OpenGraph, { props: { image: { width, height } } });
 
     const ogType = page.getByTestId('og-type');
     const ogTitle = page.getByTestId('og-title');
@@ -36,7 +35,7 @@ describe('OpenGraph.svelte', () => {
     await expect.element(ogSiteName).toHaveAttribute('content');
     await expect.element(ogLocale).toHaveAttribute('content');
     await expect.element(ogUrl).toHaveAttribute('content', `${origin}/`);
-    await expect.element(ogImage).toHaveAttribute('content', imageUrl);
+    await expect.element(ogImage).toHaveAttribute('content', `${origin}/images/pqb-logo.png`);
     await expect.element(ogImageWidth).toHaveAttribute('content', width);
     await expect.element(ogImageHeight).toHaveAttribute('content', height);
     await expect.element(ogImageAlt).toHaveAttribute('content');
