@@ -30,8 +30,10 @@
   });
 </script>
 
-<OpenGraph image={data.image} />
-<TwitterCard />
+<svelte:head>
+  <OpenGraph image={data.image} />
+  <TwitterCard />
+</svelte:head>
 
 <Announcement />
 <Navbar />

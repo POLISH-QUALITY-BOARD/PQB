@@ -1,4 +1,5 @@
 <script>
+  import Article from '$lib/components/Article.svelte';
   import { fly } from 'svelte/transition';
   import { Tabs } from 'bits-ui';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
@@ -38,8 +39,8 @@
   let activeTab = $state('pl');
 </script>
 
-<article id="statut" class="mb-12 pb-8 border-b border-gray-100 scroll-mt-25">
-  <h3 class="text-2xl font-semibold leading-tight text-primary mt-0 mb-6">Statut</h3>
+<Article id="statut" class="mb-12 pb-8 border-b border-gray-100">
+  {#snippet heading()}Statut{/snippet}
 
   <Tabs.Root
     bind:value={activeTab}
@@ -63,7 +64,7 @@
           <div
             class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center bg-linear-to-br from-primary to-primary-deeper"
           >
-            <IconFileDocumentOutline width="26" height="26" color="white" />
+            <IconFileDocumentOutline aria-hidden="true" width="26" height="26" color="white" />
           </div>
           {#key activeTab}
             <div in:fly class="flex-1 flex flex-col sm:flex-row sm:items-center gap-6">
@@ -80,7 +81,7 @@
                 data-testid={content.download.testId}
                 download
               >
-                <IconDownload width="16" height="16" />
+                <IconDownload aria-hidden="true" width="16" height="16" />
                 {content.download.text}
               </a>
             </div>
@@ -89,4 +90,4 @@
       </Tabs.Content>
     {/each}
   </Tabs.Root>
-</article>
+</Article>

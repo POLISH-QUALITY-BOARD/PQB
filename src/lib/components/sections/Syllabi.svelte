@@ -258,12 +258,12 @@
                     Dokument
                     {#if sorts[cert.code].key === 'name'}
                       {#if sorts[cert.code].dir === 'asc'}
-                        <IconArrowUp width="12" height="12" />
+                        <IconArrowUp aria-hidden="true" width="12" height="12" />
                       {:else}
-                        <IconArrowDown width="12" height="12" />
+                        <IconArrowDown aria-hidden="true" width="12" height="12" />
                       {/if}
                     {:else}
-                      <IconUnfoldMoreHorizontal width="12" height="12" />
+                      <IconUnfoldMoreHorizontal aria-hidden="true" width="12" height="12" />
                     {/if}
                   </button>
                 </th>
@@ -287,12 +287,12 @@
                     Typ
                     {#if sorts[cert.code].key === 'type'}
                       {#if sorts[cert.code].dir === 'asc'}
-                        <IconArrowUp width="12" height="12" />
+                        <IconArrowUp aria-hidden="true" width="12" height="12" />
                       {:else}
-                        <IconArrowDown width="12" height="12" />
+                        <IconArrowDown aria-hidden="true" width="12" height="12" />
                       {/if}
                     {:else}
-                      <IconUnfoldMoreHorizontal width="12" height="12" />
+                      <IconUnfoldMoreHorizontal aria-hidden="true" width="12" height="12" />
                     {/if}
                   </button>
                 </th>
@@ -325,6 +325,7 @@
                   <td class="px-6 py-3.5">
                     <div class="flex items-center gap-2.5">
                       <IconFileDocumentOutline
+                        aria-hidden="true"
                         width="15"
                         height="15"
                         class="text-accent shrink-0 opacity-70"
@@ -357,7 +358,7 @@
                           rel="noopener noreferrer"
                           class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                         >
-                          <IconGithub width="13" height="13" />
+                          <IconGithub aria-hidden="true" width="13" height="13" />
                           Kontrybuuj
                         </a>
                       {/if}
@@ -366,7 +367,7 @@
                         download
                         class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                       >
-                        <IconDownload width="13" height="13" />
+                        <IconDownload aria-hidden="true" width="13" height="13" />
                         Pobierz
                       </a>
                     </div>

@@ -11,7 +11,7 @@
       rel="noopener noreferrer"
       class="text-white/80 hover:text-white"
       ><span class="underline underline-offset-2">istqb.org</span>
-      <IconOpenInNew class="inline w-3 h-3 mb-0.5" /></a
+      <IconOpenInNew aria-hidden="true" class="inline w-3 h-3 mb-0.5" /></a
     >
   </div>
 </div>

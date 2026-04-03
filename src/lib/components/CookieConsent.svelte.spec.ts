@@ -10,7 +10,7 @@ import {
 } from '$lib/stores/cookieConsent';
 
 vi.hoisted(() => {
-  Object.assign(globalThis, { gtag: () => {} });
+  Object.assign(globalThis, { gtag: vi.fn() });
 });
 
 describe('CookieConsent.svelte', () => {

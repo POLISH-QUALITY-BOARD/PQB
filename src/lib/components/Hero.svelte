@@ -8,7 +8,7 @@
   >
     <enhanced:img
       src="$lib/assets/logo.webp"
-      alt="Polish Quality Board"
+      alt="Logo Polish Quality Board"
       class="mx-auto mb-6 h-32 sm:h-40 md:h-52 w-auto"
       fetchpriority="high"
     />
@@ -23,7 +23,7 @@
       class="mt-24 flex flex-col items-center gap-2 text-white/50 hover:text-white/70 no-underline"
     >
       <span class="learn-more-link uppercase">Odkryj więcej</span>
-      <IconChevronDown class="w-4 h-4 animate-bounce" />
+      <IconChevronDown aria-hidden="true" class="w-4 h-4 motion-safe:animate-bounce" />
     </a>
   </div>
 </section>

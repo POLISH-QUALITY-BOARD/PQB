@@ -13,7 +13,7 @@
     },
     {
       title:
-        'ISTQB Certifications Under the Lens: Their Contributions to the Software-Testing Profession; and AI-assisted Synthesis of Practitioners\’ Endorsements and Criticisms',
+        'ISTQB Certifications Under the Lens: Their Contributions to the Software-Testing Profession; and AI-assisted Synthesis of Practitioners’ Endorsements and Criticisms',
       href: 'https://arxiv.org/pdf/2603.14572'
     }
   ];
@@ -43,7 +43,7 @@
     style="background: linear-gradient(135deg, #1a3f7a 0%, #0c1f40 100%);"
   >
     <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-      <IconNewspaperVariantOutline width="16" height="16" color="white" />
+      <IconNewspaperVariantOutline aria-hidden="true" width="16" height="16" color="white" />
     </div>
     <h3 class="text-sm font-semibold text-white mb-0">Polecane White papers</h3>
   </div>
@@ -70,12 +70,12 @@
               Tytuł
               {#if wpSort.key === 'title'}
                 {#if wpSort.dir === 'asc'}
-                  <IconArrowUp width="12" height="12" />
+                  <IconArrowUp aria-hidden="true" width="12" height="12" />
                 {:else}
-                  <IconArrowDown width="12" height="12" />
+                  <IconArrowDown aria-hidden="true" width="12" height="12" />
                 {/if}
               {:else}
-                <IconUnfoldMoreHorizontal width="12" height="12" />
+                <IconUnfoldMoreHorizontal aria-hidden="true" width="12" height="12" />
               {/if}
             </button>
           </th>
@@ -103,10 +103,12 @@
             <td class="px-6 py-3.5">
               <div class="flex items-center gap-2.5">
                 <IconFileDocumentOutline
+                  aria-hidden="true"
                   width="15"
                   height="15"
                   class="text-accent shrink-0 opacity-70"
                 />
+                <!-- eslint-disable svelte/no-navigation-without-resolve -->
                 <a
                   href={paper.href}
                   target="_blank"
@@ -114,18 +116,21 @@
                   class="text-sm text-primary hover:underline no-underline font-medium"
                   >{paper.title}</a
                 >
+                <!-- eslint-enable svelte/no-navigation-without-resolve -->
               </div>
             </td>
             <td class="px-6 py-3.5 text-right">
+              <!-- eslint-disable svelte/no-navigation-without-resolve -->
               <a
                 href={paper.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
               >
-                <IconOpenInNew width="13" height="13" />
+                <IconOpenInNew aria-hidden="true" width="13" height="13" />
                 Otwórz
               </a>
+              <!-- eslint-enable svelte/no-navigation-without-resolve -->
             </td>
           </tr>
         {/each}

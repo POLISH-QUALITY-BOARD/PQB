@@ -1,4 +1,5 @@
 <script>
+  import Article from '$lib/components/Article.svelte';
   import IconLinkedin from '~icons/simple-icons/linkedin';
   import imgSeba from '$lib/assets/people/Seba.jpg?enhanced';
   import imgAdam from '$lib/assets/people/Adam.jpg?enhanced';
@@ -57,8 +58,9 @@
   ];
 </script>
 
-<article id="sklad-osobowy" class="mb-12 pb-8 border-b border-gray-100 scroll-mt-25">
-  <h3 class="text-2xl font-semibold leading-tight text-primary mt-0 mb-2">Skład osobowy zarządu</h3>
+<Article id="sklad-osobowy" class="mb-12 pb-8 border-b border-gray-100">
+  {#snippet heading()}Skład osobowy zarządu{/snippet}
+
   <p class="mb-4 text-gray-600">
     Polish Quality Board kierowana jest przez doświadczonych profesjonalistów z branży testowania
     oprogramowania. Nasz zarząd i członkowie komisji rewizyjnej reprezentują różne obszary sektora
@@ -92,10 +94,10 @@
               href={person.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label={`Profil LinkedIn — ${person.name}`}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <IconLinkedin width="18" height="18" />
+              <IconLinkedin aria-hidden="true" width="18" height="18" />
             </a>
           </div>
         {/each}
@@ -123,14 +125,14 @@
               href={person.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label={`Profil LinkedIn — ${person.name}`}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <IconLinkedin width="18" height="18" />
+              <IconLinkedin aria-hidden="true" width="18" height="18" />
             </a>
           </div>
         {/each}
       </div>
     </div>
   </div>
-</article>
+</Article>

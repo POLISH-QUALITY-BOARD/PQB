@@ -1,5 +1,6 @@
 <script lang="ts">
   import Section from '$lib/components/Section.svelte';
+  import Article from '$lib/components/Article.svelte';
   import IconCertificateOutline from '~icons/mdi/certificate-outline';
   import IconAccountGroupOutline from '~icons/mdi/account-group-outline';
   import IconTrendingUp from '~icons/mdi/trending-up';
@@ -40,7 +41,7 @@
       action: {
         type: 'download',
         href: 'documents/deklaracjaCzlonkowska_PQB.docx',
-        testId: 'download-membership-declaration'
+        testId: 'download-membership-declaration-button'
       }
     },
     {
@@ -49,7 +50,7 @@
       action: {
         type: 'download',
         href: 'documents/deklaracjaNDA_PQB.docx',
-        testId: 'download-nda-declaration'
+        testId: 'download-nda-declaration-button'
       }
     },
     {
@@ -91,57 +92,59 @@
     {/each}
   </div>
 
-  <h3 class="text-2xl font-semibold text-primary leading-tight mb-8">Jak dołączyć</h3>
+  <Article>
+    {#snippet heading()}Jak dołączyć{/snippet}
 
-  <div class="relative">
-    <div class="absolute left-5 top-0 bottom-0 w-px bg-gray-200"></div>
+    <div class="relative">
+      <div class="absolute left-5 top-0 bottom-0 w-px bg-gray-200"></div>
 
-    <div class="flex flex-col gap-10">
-      {#each steps as { title, description, action }, i (title)}
-        <div class="flex gap-6">
-          <div
-            class="shrink-0 w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center relative z-10 overflow-hidden"
-          >
-            <span class="transition-opacity duration-300" class:opacity-0={completed[i]}
-              >{i + 1}</span
+      <div class="flex flex-col gap-10">
+        {#each steps as { title, description, action }, i (title)}
+          <div class="flex gap-6">
+            <div
+              class="shrink-0 w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center relative z-10 overflow-hidden"
             >
-            <span
-              class="absolute transition-opacity duration-300 opacity-0"
-              class:opacity-100={completed[i]}
-            >
-              <IconCheck width="20" height="20" />
-            </span>
-          </div>
-          <div class="pt-1.5">
-            <p class="text-base font-semibold text-primary mb-1">{title}</p>
-            <p class="text-sm text-gray-500" class:mb-5={action.type === 'download'}>
-              {description}
-              {#if action.type === 'email'}
-                <a
-                  href="mailto:{action.address}"
-                  class="font-semibold text-primary"
-                  onclick={() => complete(i)}>{action.address}</a
-                >
-              {/if}
-            </p>
-            {#if action.type === 'download'}
-              <!-- eslint-disable svelte/no-navigation-without-resolve -->
-              <a
-                href={action.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark pl-3.5 pr-5 py-2.5 rounded-xl no-underline"
-                data-testid={action.testId}
-                download
-                onclick={() => complete(i)}
+              <span class="transition-opacity duration-300" class:opacity-0={completed[i]}
+                >{i + 1}</span
               >
-                <IconDownload width="16" height="16" />
-                Pobierz
-              </a>
-            {/if}
+              <span
+                class="absolute transition-opacity duration-300 opacity-0"
+                class:opacity-100={completed[i]}
+              >
+                <IconCheck aria-hidden="true" width="20" height="20" />
+              </span>
+            </div>
+            <div class="pt-1.5">
+              <p class="text-base font-semibold text-primary mb-1">{title}</p>
+              <p class="text-sm text-gray-500" class:mb-5={action.type === 'download'}>
+                {description}
+                {#if action.type === 'email'}
+                  <a
+                    href="mailto:{action.address}"
+                    class="font-semibold text-primary"
+                    onclick={() => complete(i)}>{action.address}</a
+                  >
+                {/if}
+              </p>
+              {#if action.type === 'download'}
+                <!-- eslint-disable svelte/no-navigation-without-resolve -->
+                <a
+                  href={action.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark pl-3.5 pr-5 py-2.5 rounded-xl no-underline"
+                  data-testid={action.testId}
+                  download
+                  onclick={() => complete(i)}
+                >
+                  <IconDownload aria-hidden="true" width="16" height="16" />
+                  Pobierz
+                </a>
+              {/if}
+            </div>
           </div>
-        </div>
-      {/each}
+        {/each}
+      </div>
     </div>
-  </div>
+  </Article>
 </Section>

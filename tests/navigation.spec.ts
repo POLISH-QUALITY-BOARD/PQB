@@ -2,13 +2,14 @@ import { test, expect } from '@playwright/test';
 
 test('I can navigate to section', async ({ isMobile, page }) => {
   const navigationItem = page
-    .getByTestId(isMobile ? 'mobile-navigation-item' : 'desktop-navigation-item')
+    .getByTestId(isMobile ? 'navbar-mobile-navigation-item' : 'navbar-desktop-navigation-item')
     .first();
+  const navbarHamburgerButton = page.getByTestId('navbar-hamburger-button');
 
   await page.goto('/');
 
   if (isMobile) {
-    await page.getByTestId('hamburger-button').click();
+    await navbarHamburgerButton.click();
   }
 
   const selector = await navigationItem
