@@ -81,17 +81,16 @@
           wspierającą rozwój specjalistów ds. jakości oprogramowania w Polsce.
         </p>
         <div class="flex gap-3">
-          {#each socialLinks as social, index (index)}
-            {@const IconSocial = social.icon}
+          {#each socialLinks as { icon: Icon, href, label }, index (index)}
             <!-- eslint-disable svelte/no-navigation-without-resolve -->
             <a
-              href={social.href}
+              {href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={social.label}
+              aria-label={label}
               class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white"
             >
-              <IconSocial width="16" height="16" />
+              <Icon width="16" height="16" />
             </a>
             <!-- eslint-enable svelte/no-navigation-without-resolve -->
           {/each}
@@ -117,18 +116,17 @@
       <div>
         <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Dokumenty</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
-          {#each documentLinks as link, index (index)}
-            {@const IconLink = link.icon}
+          {#each documentLinks as { icon: Icon, href, label }, index (index)}
             <li>
               <!-- eslint-disable svelte/no-navigation-without-resolve -->
               <a
-                href={link.href}
+                {href}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 hover:text-primary"
               >
-                <IconLink width="14" height="14" class="shrink-0 text-accent" />
-                {link.label}
+                <Icon width="14" height="14" class="shrink-0 text-accent" />
+                {label}
               </a>
               <!-- eslint-enable svelte/no-navigation-without-resolve -->
             </li>
@@ -139,29 +137,28 @@
       <div>
         <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Kontakt</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-4">
-          {#each contactItems as item, index (index)}
-            {@const IconContact = item.icon}
+          {#each contactItems as { icon: Icon, label, content, email }, index (index)}
             <li class="flex items-start gap-3">
               <div
                 class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center shrink-0 mt-0.5"
               >
-                <IconContact width="14" height="14" class="shrink-0 text-accent" />
+                <Icon width="14" height="14" class="shrink-0 text-accent" />
               </div>
               <div>
                 <p
                   class="font-semibold text-gray-500 text-xs uppercase tracking-widest mb-0.5 mt-0"
                 >
-                  {item.label}
+                  {label}
                 </p>
-                {#if item.email}
+                {#if email}
                   <a
-                    href="mailto:{item.email}"
+                    href="mailto:{email}"
                     class="text-sm text-gray-600 no-underline hover:text-primary"
                   >
-                    {item.content}
+                    {content}
                   </a>
                 {:else}
-                  <span class="text-sm text-gray-600">{item.content}</span>
+                  <span class="text-sm text-gray-600">{content}</span>
                 {/if}
               </div>
             </li>
