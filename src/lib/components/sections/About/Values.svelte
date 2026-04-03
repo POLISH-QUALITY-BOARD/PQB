@@ -1,5 +1,6 @@
 <script>
   import Article from '$lib/components/Article.svelte';
+  import Feature from '$lib/components/Feature.svelte';
   import IconLightningBoltOutline from '~icons/mdi/lightning-bolt-outline';
   import IconHandHeartOutline from '~icons/mdi/hand-heart-outline';
   import IconAccountMultipleOutline from '~icons/mdi/account-multiple-outline';
@@ -52,19 +53,11 @@
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-    {#each values as { icon, title, description }, index (index)}
-      {@const IconValue = icon}
-      <div class="flex gap-5 items-start">
-        <div
-          class="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm bg-linear-to-br from-primary to-primary-deeper"
-        >
-          <IconValue width="22" height="22" color="white" />
-        </div>
-        <div>
-          <p class="text-base font-semibold text-primary mb-1">{title}</p>
-          <p class="text-sm text-gray-500 leading-relaxed mb-0">{description}</p>
-        </div>
-      </div>
+    {#each values as { icon, title: valueTitle, description }, index (index)}
+      <Feature {icon}>
+        {#snippet heading()}{valueTitle}{/snippet}
+        {description}
+      </Feature>
     {/each}
   </div>
 
