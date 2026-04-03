@@ -28,8 +28,8 @@ export default defineConfig({
       use: { ...devices['Galaxy Tab S9'] }
     },
     {
-      name: 'webkit-mobile',
-      use: { ...devices['iPhone 15 Pro Max'] }
+      name: 'chromium-mobile',
+      use: { ...devices['Galaxy S9+'] }
     }
   ]
 });
