@@ -1,4 +1,5 @@
 <script>
+  import Article from '$lib/components/Article.svelte';
   import { fly } from 'svelte/transition';
   import { Tabs } from 'bits-ui';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
@@ -38,8 +39,8 @@
   let activeTab = $state('pl');
 </script>
 
-<article id="statut" class="mb-12 pb-8 border-b border-gray-100 scroll-mt-25">
-  <h3 class="text-2xl font-semibold leading-tight text-primary mt-0 mb-6">Statut</h3>
+<Article id="statut" class="mb-12 pb-8 border-b border-gray-100">
+  {#snippet heading()}Statut{/snippet}
 
   <Tabs.Root
     bind:value={activeTab}
@@ -89,4 +90,4 @@
       </Tabs.Content>
     {/each}
   </Tabs.Root>
-</article>
+</Article>
