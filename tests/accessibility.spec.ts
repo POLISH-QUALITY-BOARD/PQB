@@ -24,20 +24,20 @@ const declarations = [
 
 for (const { name, testId } of declarations) {
   test(`I can download ${name} using keyboard`, async ({ isMobile, page }) => {
-    const hamburgerButton = page.getByTestId('hamburger-button');
-    const joinButton = page
-      .getByTestId(isMobile ? 'mobile-navigation-item' : 'desktop-navigation-item')
+    const navbarHamburgerButton = page.getByTestId('navbar-hamburger-button');
+    const navbarJoinButton = page
+      .getByTestId(isMobile ? 'navbar-mobile-navigation-item' : 'navbar-desktop-navigation-item')
       .and(page.locator('[href*="#dolacz"]'));
     const downloadButton = page.getByTestId(testId);
 
     await page.goto('/');
 
     if (isMobile) {
-      await pressTabUntil(page, () => isFocused(hamburgerButton));
+      await pressTabUntil(page, () => isFocused(navbarHamburgerButton));
       await page.keyboard.press('Enter');
     }
 
-    await pressTabUntil(page, () => isFocused(joinButton));
+    await pressTabUntil(page, () => isFocused(navbarJoinButton));
     await page.keyboard.press('Enter');
 
     await pressTabUntil(page, () => isFocused(downloadButton));
