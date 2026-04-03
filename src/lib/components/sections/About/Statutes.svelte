@@ -68,7 +68,7 @@
               class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-6"
             >
               <Feature icon={IconFileDocumentOutline}>
-                {#snippet title()}{contentTitle}{/snippet}
+                {#snippet heading()}{contentTitle}{/snippet}
                 {description}
               </Feature>
               <!-- eslint-disable svelte/no-navigation-without-resolve -->

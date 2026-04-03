@@ -80,7 +80,7 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
     {#each benefits as { icon, title: benefitTitle, description } (benefitTitle)}
       <Feature {icon}>
-        {#snippet title()}{benefitTitle}{/snippet}
+        {#snippet heading()}{benefitTitle}{/snippet}
         {description}
       </Feature>
     {/each}

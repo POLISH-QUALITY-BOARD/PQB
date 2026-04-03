@@ -9,18 +9,18 @@ import IconStar from '~icons/mdi/star';
 const snippet = (html: string) => createRawSnippet(() => ({ render: () => html }));
 
 describe('Feature.svelte', () => {
-  it('renders with icon, title and description', async () => {
-    const title = faker.lorem.words(2);
+  it('renders with icon, heading and description', async () => {
+    const heading = faker.lorem.words(2);
     const description = faker.lorem.sentence();
 
     await render(Feature, {
       icon: IconStar,
-      title: snippet(`<span>${title}</span>`),
+      heading: snippet(`<span>${heading}</span>`),
       children: snippet(`<span>${description}</span>`)
     });
 
     await expect.element(page.getByTestId('feature-icon')).toBeVisible();
-    await expect.element(page.getByTestId('feature-title')).toHaveTextContent(title);
+    await expect.element(page.getByTestId('feature-heading')).toHaveTextContent(heading);
     await expect.element(page.getByTestId('feature-description')).toHaveTextContent(description);
   });
 });
