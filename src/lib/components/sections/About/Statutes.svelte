@@ -1,5 +1,6 @@
 <script>
   import Article from '$lib/components/Article.svelte';
+  import Feature from '$lib/components/Feature.svelte';
   import { fly } from 'svelte/transition';
   import { Tabs } from 'bits-ui';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
@@ -58,31 +59,29 @@
       {/each}
     </Tabs.List>
 
-    {#each tabs as { trigger, content } (trigger.value)}
+    {#each tabs as { trigger, content: { lang, title: contentTitle, description, download } } (trigger.value)}
       <Tabs.Content value={trigger.value}>
-        <div lang={content.lang} class="p-8 flex flex-col sm:flex-row sm:items-center gap-6">
-          <div
-            class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center bg-linear-to-br from-primary to-primary-deeper"
-          >
-            <IconFileDocumentOutline aria-hidden="true" width="26" height="26" color="white" />
-          </div>
+        <div {lang} class="p-8 flex flex-col sm:flex-row sm:items-center gap-6">
           {#key activeTab}
-            <div in:fly class="flex-1 flex flex-col sm:flex-row sm:items-center gap-6">
-              <div class="grow">
-                <p class="font-semibold text-primary text-base mb-1">{content.title}</p>
-                <p class="text-sm text-gray-500 mb-0">{content.description}</p>
-              </div>
+            <div
+              in:fly
+              class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-6"
+            >
+              <Feature icon={IconFileDocumentOutline}>
+                {#snippet title()}{contentTitle}{/snippet}
+                {description}
+              </Feature>
               <!-- eslint-disable svelte/no-navigation-without-resolve -->
               <a
-                href={content.download.href}
+                href={download.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="shrink-0 inline-flex items-center gap-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark pl-3.5 pr-5 py-3 rounded-xl no-underline"
-                data-testid={content.download.testId}
+                data-testid={download.testId}
                 download
               >
                 <IconDownload aria-hidden="true" width="16" height="16" />
-                {content.download.text}
+                {download.text}
               </a>
             </div>
           {/key}

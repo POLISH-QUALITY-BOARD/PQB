@@ -1,6 +1,7 @@
 <script lang="ts">
   import Section from '$lib/components/Section.svelte';
   import Article from '$lib/components/Article.svelte';
+  import Feature from '$lib/components/Feature.svelte';
   import IconCertificateOutline from '~icons/mdi/certificate-outline';
   import IconAccountGroupOutline from '~icons/mdi/account-group-outline';
   import IconTrendingUp from '~icons/mdi/trending-up';
@@ -77,18 +78,11 @@
   </p>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-    {#each benefits as { icon: BenefitIcon, title, description } (title)}
-      <div class="flex gap-5 items-start">
-        <div
-          class="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm bg-linear-to-br from-primary to-primary-dark"
-        >
-          <BenefitIcon width="22" height="22" color="white" />
-        </div>
-        <div>
-          <p class="text-base font-semibold text-primary mb-1">{title}</p>
-          <p class="text-sm text-gray-500 leading-relaxed">{description}</p>
-        </div>
-      </div>
+    {#each benefits as { icon, title: benefitTitle, description } (benefitTitle)}
+      <Feature {icon}>
+        {#snippet title()}{benefitTitle}{/snippet}
+        {description}
+      </Feature>
     {/each}
   </div>
 
