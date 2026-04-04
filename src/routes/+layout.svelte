@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import JsonLd from '$lib/components/JsonLd.svelte';
   import OpenGraph from '$lib/components/OpenGraph.svelte';
   import TwitterCard from '$lib/components/TwitterCard.svelte';
   import Announcement from '$lib/components/Announcement.svelte';
@@ -31,6 +32,7 @@
 </script>
 
 <svelte:head>
+  <JsonLd />
   <OpenGraph image={data.image} />
   <TwitterCard />
 </svelte:head>
