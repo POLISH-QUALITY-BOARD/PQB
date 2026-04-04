@@ -17,7 +17,7 @@
     denyButton
   }: {
     ariaLabel: string;
-    children?: Snippet;
+    children: Snippet;
     acceptButton: { text: string; ariaLabel: string };
     denyButton: { text: string; ariaLabel: string };
   } = $props();
@@ -46,7 +46,7 @@
       <div class="flex items-center gap-3 flex-1">
         <IconCookieOutline width="22" height="22" class="shrink-0" aria-hidden="true" />
         <p id="cookie-desc" class="text-sm leading-relaxed text-white/75">
-          {@render children?.()}
+          {@render children()}
         </p>
       </div>
       <div class="flex gap-3 shrink-0 ml-8.5 sm:ml-0">
