@@ -10,6 +10,7 @@
     return {
       '@context': 'https://schema.org',
       '@type': 'NGO',
+      memberOf: 'ISTQB',
       name: 'Polish Quality Board',
       url,
       logo,
