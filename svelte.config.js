@@ -11,7 +11,8 @@ const config = {
       assets: 'build'
     }),
     paths: { ...(base && { base }), relative: false },
-    prerender: { origin }
+    prerender: { origin },
+    alias: { $velite: '.velite' }
   },
   vitePlugin: {
     dynamicCompileOptions: ({ filename }) =>

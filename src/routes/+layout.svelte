@@ -8,6 +8,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import CookieConsent from '$lib/components/CookieConsent.svelte';
+  import { cookieConsent } from '$velite';
 
   import '../app.css';
 
@@ -46,4 +47,11 @@
 </main>
 
 <Footer />
-<CookieConsent />
+<CookieConsent
+  ariaLabel={cookieConsent.ariaLabel}
+  acceptButton={cookieConsent.acceptButton}
+  denyButton={cookieConsent.denyButton}
+>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html cookieConsent.body}
+</CookieConsent>

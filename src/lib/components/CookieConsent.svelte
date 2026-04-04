@@ -1,5 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
+  import type { Snippet } from 'svelte';
   import IconCookieOutline from '~icons/mdi/cookie-outline';
   import {
     grantCookieConsent,
@@ -8,6 +9,18 @@
     cookieConsentDenied
   } from '$lib/stores/cookieConsent';
   import { onMount } from 'svelte';
+
+  let {
+    ariaLabel,
+    children,
+    acceptButton,
+    denyButton
+  }: {
+    ariaLabel: string;
+    children?: Snippet;
+    acceptButton: { text: string; ariaLabel: string };
+    denyButton: { text: string; ariaLabel: string };
+  } = $props();
 
   let mounted = $state(false);
 
@@ -22,7 +35,7 @@
     transition:fade={{ duration: 200 }}
     tabindex="0"
     aria-modal="true"
-    aria-labelledby="cookie-title"
+    aria-label={ariaLabel}
     aria-describedby="cookie-desc"
     class="fixed bottom-0 left-0 right-0 z-50 w-full bg-primary text-white shadow-2xl"
   >
@@ -33,27 +46,25 @@
       <div class="flex items-center gap-3 flex-1">
         <IconCookieOutline width="22" height="22" class="shrink-0" aria-hidden="true" />
         <p id="cookie-desc" class="text-sm leading-relaxed text-white/75">
-          <span id="cookie-title" class="sr-only">Zgoda na pliki cookie</span>
-          Ta strona korzysta z plików cookie Google Analytics w celu analizy ruchu i poprawy jakości usług.
-          Możesz wyrazić zgodę lub odmówić ich użycia.
+          {@render children?.()}
         </p>
       </div>
       <div class="flex gap-3 shrink-0 ml-8.5 sm:ml-0">
         <button
           onclick={grantCookieConsent}
-          aria-label="Zaakceptuj pliki cookie"
+          aria-label={acceptButton.ariaLabel}
           class="flex-1 sm:flex-none px-5 py-2 text-sm font-medium rounded-lg text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark cursor-pointer"
           data-testid="cookie-consent-accept-button"
         >
-          Akceptuj
+          {acceptButton.text}
         </button>
         <button
           onclick={denyCookieConsent}
-          aria-label="Odrzuć pliki cookie"
+          aria-label={denyButton.ariaLabel}
           class="flex-1 sm:flex-none px-5 py-2 text-sm font-medium rounded-lg text-white/80 hover:text-white cursor-pointer"
           data-testid="cookie-consent-deny-button"
         >
-          Odmów
+          {denyButton.text}
         </button>
       </div>
     </div>
