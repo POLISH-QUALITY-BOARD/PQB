@@ -23,6 +23,15 @@ vi.hoisted(() => {
 });
 
 describe('cookieConsent', () => {
+  it('does not sync on server', async () => {
+    vi.resetModules().doMock('$app/environment', () => ({ browser: false }));
+
+    const { cookieConsentGranted } = await import('$lib/stores/cookieConsent');
+
+    expect(get(cookieConsentGranted)).toBe(false);
+    expect(localStorage.getItem).not.toHaveBeenCalled();
+  });
+
   it('grants consent and syncs with localStorage and gtag', () => {
     grantCookieConsent();
 

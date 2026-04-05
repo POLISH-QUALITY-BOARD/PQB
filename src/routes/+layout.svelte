@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import JsonLd from '$lib/components/JsonLd.svelte';
   import OpenGraph from '$lib/components/OpenGraph.svelte';
   import TwitterCard from '$lib/components/TwitterCard.svelte';
   import Announcement from '$lib/components/Announcement.svelte';
@@ -7,6 +8,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import CookieConsent from '$lib/components/CookieConsent.svelte';
+  import { cookieConsent } from '$velite';
 
   import '../app.css';
 
@@ -31,6 +33,7 @@
 </script>
 
 <svelte:head>
+  <JsonLd />
   <OpenGraph image={data.image} />
   <TwitterCard />
 </svelte:head>
@@ -44,4 +47,11 @@
 </main>
 
 <Footer />
-<CookieConsent />
+<CookieConsent
+  ariaLabel={cookieConsent.ariaLabel}
+  acceptButton={cookieConsent.acceptButton}
+  denyButton={cookieConsent.denyButton}
+>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html cookieConsent.body}
+</CookieConsent>
