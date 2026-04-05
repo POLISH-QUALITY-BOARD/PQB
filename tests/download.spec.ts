@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('I can download documents', async ({ page }) => {
   await page.goto('/');
+  await page.getByTestId('cookie-consent-accept-button').click();
 
   const anchors = await page.locator('a[download]').all();
 
