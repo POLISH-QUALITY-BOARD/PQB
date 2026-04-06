@@ -49,7 +49,7 @@
 
   <div class="mb-6">
     <h4 class="text-lg font-semibold text-primary mb-1">Wartości</h4>
-    <p class="text-sm text-gray-500">Co jest dla nas najważniejsze</p>
+    <p class="text-sm text-gray-600">Co jest dla nas najważniejsze</p>
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
@@ -67,7 +67,7 @@
         <IconFlagOutline aria-hidden="true" width="16" height="16" />
         Misja
       </h4>
-      <p class="text-sm text-gray-500 mb-4">Po co istniejemy</p>
+      <p class="text-sm text-gray-600 mb-4">Po co istniejemy</p>
       <ul class="list-none m-0 p-0 flex flex-col gap-3">
         {#each ['Lokalizować, współtworzyć standardy i certyfikację w obszarach dot. jakości w IT.', 'Edukować, promować jakość, prowadzić działalność ekspercką w tym zakresie.', 'Nawiązywać i rozwijać międzynarodowe relacje z innymi organizacjami i osobami w celu promocji polskiego IT.', 'Udostępniać i współpracować nad technologiami, szczególnie tymi, które niosą ryzyka jakościowe.'] as item, index (index)}
           <li class="flex items-start gap-3">
@@ -83,7 +83,7 @@
         <IconTelescope aria-hidden="true" width="16" height="16" />
         Wizja
       </h4>
-      <p class="text-sm text-gray-500 mb-4">Co chcemy osiągnąć</p>
+      <p class="text-sm text-gray-600 mb-4">Co chcemy osiągnąć</p>
       <ul class="list-none m-0 p-0 flex flex-col gap-3">
         {#each ['Zdecentralizowana zdrowa polska organizacja wspierająca twórcze i aktywne jednostki.', 'Etyka nie na papierze, a w działaniu.', 'Proste procedury i zwinna organizacja.', 'Certyfikacja ISO w obszarach, którymi się zajmujemy.', 'PQB jako synonim rzetelnej, merytorycznej, profesjonalnej i nowoczesnej wiedzy w zakresie jakości w IT.'] as item, index (index)}
           <li class="flex items-start gap-3">

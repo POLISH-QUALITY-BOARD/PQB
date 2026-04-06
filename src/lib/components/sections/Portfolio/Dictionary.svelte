@@ -8,7 +8,7 @@
     <IconBookOpenVariant aria-hidden="true" width="16" height="16" />
     Słownik ISTQB®
   </h3>
-  <p class="text-sm text-gray-500 mb-4">Terminologia i definicje</p>
+  <p class="text-sm text-gray-600 mb-4">Terminologia i definicje</p>
   <p class="text-sm text-gray-600 leading-relaxed mb-6">
     Słownik ISTQB® zawiera definicje pojęć stosowanych w testowaniu oprogramowania – niezbędne
     narzędzie zapewniające jednolitą terminologię. Dostępny w wielu językach, w tym po polsku.

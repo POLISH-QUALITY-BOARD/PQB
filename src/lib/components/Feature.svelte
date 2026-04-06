@@ -27,7 +27,7 @@
     <p class="text-base font-semibold text-primary mb-1" data-testid="feature-heading">
       {@render heading()}
     </p>
-    <p class="text-sm text-gray-500 leading-relaxed" data-testid="feature-description">
+    <p class="text-sm text-gray-600 leading-relaxed" data-testid="feature-description">
       {@render children()}
     </p>
   </div>
