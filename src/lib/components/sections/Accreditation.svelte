@@ -45,9 +45,15 @@
       }
     },
     {
-      title: 'Wyślij wniosek',
-      description: 'Wypełniony i podpisany wniosek wyślij na adres e-mail:',
+      title: 'Wykonaj przelew i wyślij wniosek',
+      description:
+        'Wypełniony i podpisany wniosek oraz potwierdzenie przelewu na konto 05 1240 4533 1111 0011 6237 5595 wyślij na adres e-mail:',
       action: { type: 'email', address: 'akredytacja@pqb.org.pl' }
+    },
+    {
+      title: 'Oczekuj na weryfikację i decyzję',
+      description:
+        'Daj nam chwilę na weryfikację wniosku oraz przegląd materiałów lub audyt trenerski.'
     }
   ];
 
