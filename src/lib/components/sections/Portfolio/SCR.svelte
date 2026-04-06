@@ -8,7 +8,7 @@
     <IconCertificateOutline aria-hidden="true" width="16" height="16" />
     SCR
   </h3>
-  <p class="text-sm text-gray-500 mb-4">Rejestr certyfikowanych specjalistów</p>
+  <p class="text-sm text-gray-600 mb-4">Rejestr certyfikowanych specjalistów</p>
   <p class="text-sm text-gray-600 leading-relaxed mb-6">
     Publiczny rejestr certyfikowanych profesjonalistów. Pozwala sprawdzić ważność certyfikacji
     ISTQB® każdego testera lub specjalisty QA – z datą wydania i ważności.

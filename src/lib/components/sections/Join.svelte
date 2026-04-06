@@ -68,7 +68,7 @@
   };
 </script>
 
-<Section id="dolacz" class="bg-gray-50">
+<Section id="dolacz" class="bg-white">
   {#snippet heading()}Dołącz do nas{/snippet}
 
   <p class="text-gray-600 mb-12">
@@ -110,7 +110,7 @@
             </div>
             <div class="pt-1.5">
               <p class="text-base font-semibold text-primary mb-1">{title}</p>
-              <p class="text-sm text-gray-500" class:mb-5={action.type === 'download'}>
+              <p class="text-sm text-gray-600" class:mb-5={action.type === 'download'}>
                 {description}
                 {#if action.type === 'email'}
                   <a

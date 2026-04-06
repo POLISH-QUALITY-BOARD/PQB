@@ -65,7 +65,7 @@
               class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {wpSort.key ===
               'title'
                 ? 'text-primary'
-                : 'text-gray-500'}"
+                : 'text-gray-600'}"
             >
               Tytuł
               {#if wpSort.key === 'title'}
@@ -86,7 +86,7 @@
               class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {wpSort.key ===
               'default'
                 ? 'text-primary'
-                : 'text-gray-500'}"
+                : 'text-gray-600'}"
             >
               Reset
             </button>

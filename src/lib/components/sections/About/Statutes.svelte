@@ -52,7 +52,7 @@
         <Tabs.Trigger
           data-testid={trigger.testId}
           value={trigger.value}
-          class="flex items-center gap-2 px-6 py-4 text-sm font-semibold text-gray-500 border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:text-primary data-[state=active]:bg-white cursor-pointer transition-all duration-200"
+          class="flex items-center gap-2 px-6 py-4 text-sm font-semibold text-gray-600 border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:text-primary data-[state=active]:bg-white cursor-pointer transition-all duration-200"
         >
           {trigger.title}
         </Tabs.Trigger>

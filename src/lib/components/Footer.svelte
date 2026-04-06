@@ -76,7 +76,7 @@
         <div class="mb-5">
           <enhanced:img src="$lib/assets/brand.webp" alt="PQB Logo" class="h-12 w-auto" />
         </div>
-        <p class="text-sm text-gray-500 leading-relaxed mb-6">
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">
           Polish Quality Board jest organizacją non-profit promującą testowanie oprogramowania i
           wspierającą rozwój specjalistów ds. jakości oprogramowania w Polsce.
         </p>
@@ -88,7 +88,7 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white"
+              class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"
             >
               <Icon width="16" height="16" />
             </a>
@@ -98,13 +98,13 @@
       </div>
 
       <div>
-        <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Nawigacja</p>
+        <p class="font-semibold text-gray-600 mb-5 text-xs uppercase tracking-widest">Nawigacja</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each navigationLinks as link, index (index)}
             <li>
               <a
                 href={resolve(link.href)}
-                class="text-sm text-gray-500 no-underline hover:text-primary"
+                class="text-sm text-gray-600 no-underline hover:text-primary"
               >
                 {link.label}
               </a>
@@ -114,7 +114,7 @@
       </div>
 
       <div>
-        <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Dokumenty</p>
+        <p class="font-semibold text-gray-600 mb-5 text-xs uppercase tracking-widest">Dokumenty</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-3">
           {#each documentLinks as { icon: Icon, href, label }, index (index)}
             <li>
@@ -123,7 +123,7 @@
                 {href}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-sm text-gray-500 no-underline inline-flex items-center gap-2 hover:text-primary"
+                class="text-sm text-gray-600 no-underline inline-flex items-center gap-2 hover:text-primary"
               >
                 <Icon width="14" height="14" class="shrink-0 text-accent" />
                 {label}
@@ -135,7 +135,7 @@
       </div>
 
       <div>
-        <p class="font-semibold text-gray-500 mb-5 text-xs uppercase tracking-widest">Kontakt</p>
+        <p class="font-semibold text-gray-600 mb-5 text-xs uppercase tracking-widest">Kontakt</p>
         <ul class="list-none m-0 p-0 flex flex-col gap-4">
           {#each contactItems as { icon: Icon, label, content, email }, index (index)}
             <li class="flex items-start gap-3">
@@ -146,7 +146,7 @@
               </div>
               <div>
                 <p
-                  class="font-semibold text-gray-500 text-xs uppercase tracking-widest mb-0.5 mt-0"
+                  class="font-semibold text-gray-600 text-xs uppercase tracking-widest mb-0.5 mt-0"
                 >
                   {label}
                 </p>
@@ -169,7 +169,7 @@
 
     <div class="border-t border-gray-200 pt-8">
       <div
-        class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500"
+        class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-600"
       >
         <p class="m-0">
           &copy; {new Date().getFullYear()} Polish Quality Board. Wszelkie prawa zastrzeżone.
@@ -185,14 +185,14 @@
             href="https://docs.github.com/en/site-policy/privacy-policies"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-500 no-underline hover:text-primary"
+            class="text-gray-600 no-underline hover:text-primary"
           >
             Polityka prywatności
           </a>
           <span class="hidden sm:inline text-gray-300">|</span>
           <button
             onclick={resetCookieConsent}
-            class="text-gray-500 hover:text-primary cursor-pointer bg-transparent border-0 p-0 text-xs"
+            class="text-gray-600 hover:text-primary cursor-pointer bg-transparent border-0 p-0 text-xs"
             data-testid="footer-cookie-settings-button"
           >
             Ustawienia cookies
