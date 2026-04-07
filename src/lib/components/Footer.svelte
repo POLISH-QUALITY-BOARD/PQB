@@ -14,6 +14,7 @@
     { href: '/#o-nas', label: 'O nas' },
     { href: '/#portfolio-istqb', label: 'Portfolio ISTQB®' },
     { href: '/#sylabusy', label: 'Sylabusy' },
+    { href: '/#akredytacja', label: 'Akredytacja' },
     { href: '/#dolacz-do-nas', label: 'Dołącz do nas' }
   ] as const;
 
