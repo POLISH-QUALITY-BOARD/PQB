@@ -11,10 +11,10 @@
   import IconDiscord from '~icons/simple-icons/discord';
 
   const navigationLinks = [
-    { href: '/#onas', label: 'O nas' },
-    { href: '/#portfolio', label: 'Portfolio ISTQB®' },
+    { href: '/#o-nas', label: 'O nas' },
+    { href: '/#portfolio-istqb', label: 'Portfolio ISTQB®' },
     { href: '/#sylabusy', label: 'Sylabusy' },
-    { href: '/#dolacz', label: 'Dołącz do nas' }
+    { href: '/#dolacz-do-nas', label: 'Dołącz do nas' }
   ] as const;
 
   const documentLinks = [

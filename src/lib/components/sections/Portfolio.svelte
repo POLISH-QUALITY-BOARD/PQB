@@ -5,7 +5,7 @@
   import WhitePapers from '$lib/components/sections/Portfolio/WhitePapers.svelte';
 </script>
 
-<Section id="portfolio" class="bg-gray-50">
+<Section id="portfolio-istqb" class="bg-gray-50">
   {#snippet heading()}Portfolio ISTQB®{/snippet}
 
   <p class="text-gray-600 mb-10">

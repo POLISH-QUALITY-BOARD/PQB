@@ -5,7 +5,7 @@
   import Values from '$lib/components/sections/About/Values.svelte';
 </script>
 
-<Section id="onas" class="bg-white">
+<Section id="o-nas" class="bg-white">
   {#snippet heading()}O nas{/snippet}
 
   <Board />
