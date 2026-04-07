@@ -58,7 +58,7 @@
   ];
 </script>
 
-<Article id="sklad-osobowy" class="mb-12 pb-8 border-b border-gray-100">
+<Article id="sklad-osobowy-zarzadu" class="mb-12 pb-8 border-b border-gray-100">
   {#snippet heading()}Skład osobowy zarządu{/snippet}
 
   <p class="mb-4 text-gray-600">

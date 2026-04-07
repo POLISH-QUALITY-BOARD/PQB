@@ -8,7 +8,9 @@
   import Hero from '$lib/components/Hero.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import CookieConsent from '$lib/components/CookieConsent.svelte';
-  import { cookieConsent } from '$velite';
+  import { navbar, cookieConsent } from '$velite';
+  import { replaceState } from '$app/navigation';
+  import { page } from '$app/state';
 
   import '../app.css';
 
@@ -19,7 +21,8 @@
       (entries) => {
         for (const { isIntersecting, target } of entries) {
           if (isIntersecting) {
-            history.replaceState(null, '', `#${target.id}`);
+            // eslint-disable-next-line svelte/no-navigation-without-resolve
+            replaceState(`#${target.id}`, page.state);
           }
         }
       },
@@ -39,7 +42,7 @@
 </svelte:head>
 
 <Announcement />
-<Navbar />
+<Navbar {...navbar} />
 <Hero />
 
 <main>

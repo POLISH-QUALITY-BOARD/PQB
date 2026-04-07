@@ -19,7 +19,7 @@
     </h1>
 
     <a
-      href="#onas"
+      href="#o-nas"
       class="mt-24 flex flex-col items-center gap-2 text-white/50 hover:text-white/70 no-underline"
     >
       <span class="learn-more-link uppercase">Odkryj więcej</span>

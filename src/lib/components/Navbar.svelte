@@ -1,26 +1,12 @@
 <script lang="ts">
-  import { resolve } from '$app/paths';
-  import type { Component } from 'svelte';
+  import { base, resolve } from '$app/paths';
   import { NavigationMenu } from 'bits-ui';
   import { slide } from 'svelte/transition';
   import IconAccountPlusOutline from '~icons/mdi/account-plus-outline';
   import IconChevronDown from '~icons/mdi/chevron-down';
+  import type { Navbar } from '$velite';
 
-  const navbarItems = [
-    {
-      href: '/#onas',
-      text: 'O nas',
-      children: [
-        { href: '/#sklad-osobowy', text: 'Skład osobowy zarządu' },
-        { href: '/#statut', text: 'Statut' },
-        { href: '/#wizja-misja', text: 'Wizja, Misja' }
-      ]
-    },
-    { href: '/#portfolio', text: 'Portfolio ISTQB®' },
-    { href: '/#sylabusy', text: 'Sylabusy' },
-    { href: '/#akredytacja', text: 'Akredytacja' },
-    { href: '/#dolacz', text: 'Dołącz do nas', cta: { icon: IconAccountPlusOutline } }
-  ] as const;
+  let { brand, navbarItems, joinUsButton }: Navbar = $props();
 
   let menuOpen = $state(false);
   let openGroup = $state<string | null>(null);
@@ -43,8 +29,8 @@
   };
 </script>
 
-{#snippet ctaContent(Icon: Component, text: string)}
-  <Icon aria-hidden="true" width="16" height="16" />
+{#snippet joinUsButtonContent(text: string)}
+  <IconAccountPlusOutline aria-hidden="true" width="16" height="16" />
   {text}
 {/snippet}
 
@@ -59,8 +45,9 @@
   <div class="max-w-270 mx-auto flex justify-between items-center px-6 h-17.5">
     <a
       href={resolve('/')}
-      aria-label="Strona główna PQB"
+      aria-label={brand.ariaLabel}
       class="flex items-center gap-3 no-underline shrink-0"
+      data-testid="navbar-brand-link"
     >
       <enhanced:img src="$lib/assets/brand.webp" alt="PQB Logo" class="h-12 w-auto" />
     </a>
@@ -76,10 +63,11 @@
             <NavigationMenu.Item class="relative">
               <NavigationMenu.Trigger>
                 {#snippet child({ props })}
+                  <!-- eslint-disable svelte/no-navigation-without-resolve -->
                   <a
-                    href={resolve(item.href)}
+                    href={base + item.href}
                     {...props}
-                    data-testid="navbar-desktop-navigation-item"
+                    data-testid="navbar-desktop-dropdown-navigation-item"
                     class="group flex items-center gap-1.5 text-gray-600 font-medium px-4 py-2.5 hover:text-primary no-underline cursor-pointer text-base"
                   >
                     {text}
@@ -88,6 +76,7 @@
                       class="w-4 h-4 opacity-40 transition-transform duration-200 group-data-[state=open]:rotate-180"
                     />
                   </a>
+                  <!-- eslint-enable svelte/no-navigation-without-resolve -->
                 {/snippet}
               </NavigationMenu.Trigger>
               <NavigationMenu.Content
@@ -96,38 +85,43 @@
                 <ul class="list-none m-0 p-0">
                   {#each item.children as { href, text }, index (index)}
                     <li>
+                      <!-- eslint-disable svelte/no-navigation-without-resolve -->
                       <a
-                        href={resolve(href)}
-                        data-testid="navbar-desktop-navigation-item"
+                        href={base + href}
+                        data-testid="navbar-desktop-child-navigation-item"
                         class="block px-5 py-3 text-gray-600 text-sm no-underline hover:text-primary hover:bg-gray-50"
                         >{text}</a
                       >
+                      <!-- eslint-enable svelte/no-navigation-without-resolve -->
                     </li>
                   {/each}
                 </ul>
               </NavigationMenu.Content>
             </NavigationMenu.Item>
-          {:else if 'cta' in item}
-            <NavigationMenu.Item class="pl-4">
-              <NavigationMenu.Link
-                href={resolve(item.href)}
-                data-testid="navbar-desktop-navigation-item"
-                class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
-              >
-                {@render ctaContent(item.cta.icon, text)}
-              </NavigationMenu.Link>
-            </NavigationMenu.Item>
           {:else}
             <NavigationMenu.Item>
+              <!-- eslint-disable svelte/no-navigation-without-resolve -->
               <NavigationMenu.Link
-                href={resolve(item.href)}
+                href={base + item.href}
                 data-testid="navbar-desktop-navigation-item"
                 class="block text-gray-600 font-medium px-4 py-3 no-underline hover:text-primary"
                 >{text}</NavigationMenu.Link
               >
+              <!-- eslint-enable svelte/no-navigation-without-resolve -->
             </NavigationMenu.Item>
           {/if}
         {/each}
+        <NavigationMenu.Item class="pl-4">
+          <!-- eslint-disable svelte/no-navigation-without-resolve -->
+          <NavigationMenu.Link
+            href={base + joinUsButton.href}
+            data-testid="navbar-desktop-join-us-button"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
+          >
+            {@render joinUsButtonContent(joinUsButton.text)}
+          </NavigationMenu.Link>
+          <!-- eslint-enable svelte/no-navigation-without-resolve -->
+        </NavigationMenu.Item>
       </NavigationMenu.List>
     </NavigationMenu.Root>
 
@@ -167,6 +161,7 @@
                 class="flex items-center justify-between w-full px-3 py-3 text-gray-600 text-sm font-medium bg-transparent border-none cursor-pointer hover:text-primary"
                 aria-expanded={openGroup === text}
                 onclick={() => (openGroup = openGroup === text ? null : text)}
+                data-testid="navbar-mobile-dropdown-navigation-item"
               >
                 {text}
                 <IconChevronDown
@@ -177,37 +172,42 @@
               {#if openGroup === text}
                 <div class="flex flex-col pl-4 pb-2" transition:slide={{ duration: 200 }}>
                   {#each item.children as { href, text }, index (index)}
+                    <!-- eslint-disable svelte/no-navigation-without-resolve -->
                     <a
-                      href={resolve(href)}
-                      data-testid="navbar-mobile-navigation-item"
+                      href={base + href}
+                      data-testid="navbar-mobile-child-navigation-item"
                       class="text-gray-600 text-sm py-2.5 no-underline hover:text-primary"
                       onclick={handleClose}>{text}</a
                     >
+                    <!-- eslint-enable svelte/no-navigation-without-resolve -->
                   {/each}
                 </div>
               {/if}
             </div>
-          {:else if 'cta' in item}
-            <div class="px-3 py-3 pt-2">
-              <a
-                href={resolve(item.href)}
-                data-testid="navbar-mobile-navigation-item"
-                class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
-                onclick={handleClose}
-              >
-                {@render ctaContent(item.cta.icon, text)}
-              </a>
-            </div>
           {:else}
             <div class="h-px bg-gray-100"></div>
+            <!-- eslint-disable svelte/no-navigation-without-resolve -->
             <a
-              href={resolve(item.href)}
+              href={base + item.href}
               data-testid="navbar-mobile-navigation-item"
               class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary"
               onclick={handleClose}>{text}</a
             >
+            <!-- eslint-enable svelte/no-navigation-without-resolve -->
           {/if}
         {/each}
+        <div class="px-3 py-3 pt-2">
+          <!-- eslint-disable svelte/no-navigation-without-resolve -->
+          <a
+            href={base + joinUsButton.href}
+            data-testid="navbar-mobile-join-us-button"
+            class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
+            onclick={handleClose}
+          >
+            {@render joinUsButtonContent(joinUsButton.text)}
+          </a>
+          <!-- eslint-enable svelte/no-navigation-without-resolve -->
+        </div>
       </nav>
     </div>
   {/if}
