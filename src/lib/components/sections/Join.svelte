@@ -1,13 +1,13 @@
 <script lang="ts">
-  import Section from '$lib/components/Section.svelte';
   import Article from '$lib/components/Article.svelte';
   import Feature from '$lib/components/Feature.svelte';
-  import IconCertificateOutline from '~icons/mdi/certificate-outline';
+  import Section from '$lib/components/Section.svelte';
   import IconAccountGroupOutline from '~icons/mdi/account-group-outline';
-  import IconTrendingUp from '~icons/mdi/trending-up';
-  import IconHandshakeOutline from '~icons/mdi/handshake-outline';
+  import IconCertificateOutline from '~icons/mdi/certificate-outline';
   import IconCheck from '~icons/mdi/check';
   import IconDownload from '~icons/mdi/download';
+  import IconHandshakeOutline from '~icons/mdi/handshake-outline';
+  import IconTrendingUp from '~icons/mdi/trending-up';
 
   const benefits = [
     {

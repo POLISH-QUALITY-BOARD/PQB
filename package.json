@@ -28,6 +28,7 @@
     "@sveltejs/enhanced-img": "^0.10.4",
     "@sveltejs/kit": "^2.56.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/node": "^25",
     "@vitest/browser-playwright": "^4.1.2",
     "@vitest/coverage-v8": "^4.1.2",

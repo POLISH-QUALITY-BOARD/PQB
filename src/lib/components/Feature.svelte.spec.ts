@@ -1,9 +1,9 @@
-import { render } from 'vitest-browser-svelte';
-import { describe, expect, it } from 'vitest';
-import { createRawSnippet } from 'svelte';
-import { page } from 'vitest/browser';
-import { faker } from '@faker-js/faker';
 import Feature from '$lib/components/Feature.svelte';
+import { faker } from '@faker-js/faker';
+import { createRawSnippet } from 'svelte';
+import { describe, expect, it } from 'vitest';
+import { render } from 'vitest-browser-svelte';
+import { page } from 'vitest/browser';
 import IconStar from '~icons/mdi/star';
 
 const snippet = (html: string) => createRawSnippet(() => ({ render: () => html }));

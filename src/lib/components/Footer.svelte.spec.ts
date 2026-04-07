@@ -1,8 +1,8 @@
-import { render } from 'vitest-browser-svelte';
-import { describe, expect, it, vi } from 'vitest';
-import { page } from 'vitest/browser';
 import Footer from '$lib/components/Footer.svelte';
 import { resetCookieConsent } from '$lib/stores/cookieConsent';
+import { describe, expect, it, vi } from 'vitest';
+import { render } from 'vitest-browser-svelte';
+import { page } from 'vitest/browser';
 
 vi.hoisted(() => {
   Object.assign(globalThis, { gtag: vi.fn() });

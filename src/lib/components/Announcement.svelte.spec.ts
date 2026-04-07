@@ -1,7 +1,7 @@
-import { render } from 'vitest-browser-svelte';
-import { describe, expect, it } from 'vitest';
-import { page } from 'vitest/browser';
 import Announcement from '$lib/components/Announcement.svelte';
+import { describe, expect, it } from 'vitest';
+import { render } from 'vitest-browser-svelte';
+import { page } from 'vitest/browser';
 
 describe('Announcement.svelte', () => {
   it('renders', async () => {

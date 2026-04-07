@@ -1,15 +1,15 @@
-import { render } from 'vitest-browser-svelte';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { get } from 'svelte/store';
-import { page } from 'vitest/browser';
-import { faker } from '@faker-js/faker';
-import { createRawSnippet } from 'svelte';
 import CookieConsent from '$lib/components/CookieConsent.svelte';
 import {
-  cookieConsentGranted,
   cookieConsentDenied,
+  cookieConsentGranted,
   resetCookieConsent
 } from '$lib/stores/cookieConsent';
+import { faker } from '@faker-js/faker';
+import { createRawSnippet } from 'svelte';
+import { get } from 'svelte/store';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { render } from 'vitest-browser-svelte';
+import { page } from 'vitest/browser';
 
 vi.hoisted(() => {
   Object.assign(globalThis, { gtag: vi.fn() });

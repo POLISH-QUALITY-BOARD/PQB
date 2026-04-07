@@ -1,10 +1,10 @@
 <script>
   import Article from '$lib/components/Article.svelte';
   import Feature from '$lib/components/Feature.svelte';
-  import { fly } from 'svelte/transition';
   import { Tabs } from 'bits-ui';
-  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
+  import { fly } from 'svelte/transition';
   import IconDownload from '~icons/mdi/download';
+  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
 
   const tabs = [
     {

@@ -1,4 +1,4 @@
-import { test, expect, type Response } from '@playwright/test';
+import { type Response, expect, test } from '@playwright/test';
 
 const isGoogleAnalytics = (response: Response, event: string) => {
   const { hostname, searchParams } = new URL(response.url());

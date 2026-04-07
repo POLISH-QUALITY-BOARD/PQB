@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
-  import type { Snippet } from 'svelte';
-  import IconCookieOutline from '~icons/mdi/cookie-outline';
   import {
-    grantCookieConsent,
-    denyCookieConsent,
+    cookieConsentDenied,
     cookieConsentGranted,
-    cookieConsentDenied
+    denyCookieConsent,
+    grantCookieConsent
   } from '$lib/stores/cookieConsent';
+  import type { Snippet } from 'svelte';
   import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
+  import IconCookieOutline from '~icons/mdi/cookie-outline';
 
   let {
     ariaLabel,

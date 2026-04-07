@@ -1,5 +1,5 @@
-import { imageSize } from 'image-size';
 import { readFileSync } from 'fs';
+import { imageSize } from 'image-size';
 
 export const load = () => {
   const { width, height } = imageSize(readFileSync('static/images/pqb-logo.png'));

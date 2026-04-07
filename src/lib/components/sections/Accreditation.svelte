@@ -1,8 +1,8 @@
 <script lang="ts">
+  import Article from '$lib/components/Article.svelte';
   import Section from '$lib/components/Section.svelte';
   import IconCheck from '~icons/mdi/check';
   import IconDownload from '~icons/mdi/download';
-  import Article from '$lib/components/Article.svelte';
 
   const steps = [
     {

@@ -1,5 +1,5 @@
-import { test, expect, type Page, type Locator } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { type Locator, type Page, expect, test } from '@playwright/test';
 
 const isFocused = (locator: Locator) =>
   locator

@@ -1,10 +1,10 @@
 <script lang="ts">
   import { base, resolve } from '$app/paths';
+  import type { Navbar } from '$velite';
   import { NavigationMenu } from 'bits-ui';
   import { slide } from 'svelte/transition';
   import IconAccountPlusOutline from '~icons/mdi/account-plus-outline';
   import IconChevronDown from '~icons/mdi/chevron-down';
-  import type { Navbar } from '$velite';
 
   let { brand, navbarItems, joinUsButton }: Navbar = $props();
 

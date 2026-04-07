@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { cn } from '$lib';
   import type { Component, Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { cn } from '$lib';
 
   let {
     icon: Icon,

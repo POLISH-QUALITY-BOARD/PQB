@@ -1,7 +1,7 @@
-import { render } from 'vitest-browser-svelte';
-import { describe, expect, it, vi } from 'vitest';
-import { page } from 'vitest/browser';
 import OpenGraph from '$lib/components/OpenGraph.svelte';
+import { describe, expect, it, vi } from 'vitest';
+import { render } from 'vitest-browser-svelte';
+import { page } from 'vitest/browser';
 
 const origin = vi.hoisted(() => 'https://example.com');
 

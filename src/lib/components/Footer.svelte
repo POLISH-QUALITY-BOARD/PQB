@@ -1,14 +1,14 @@
 <script lang="ts">
   import { base, resolve } from '$app/paths';
   import { resetCookieConsent } from '$lib/stores/cookieConsent';
-  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
-  import IconOpenInNew from '~icons/mdi/open-in-new';
   import IconEmailOutline from '~icons/mdi/email-outline';
+  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
   import IconMapMarkerOutline from '~icons/mdi/map-marker-outline';
-  import IconLinkedin from '~icons/simple-icons/linkedin';
+  import IconOpenInNew from '~icons/mdi/open-in-new';
+  import IconDiscord from '~icons/simple-icons/discord';
   import IconFacebook from '~icons/simple-icons/facebook';
   import IconGithub from '~icons/simple-icons/github';
-  import IconDiscord from '~icons/simple-icons/discord';
+  import IconLinkedin from '~icons/simple-icons/linkedin';
 
   const navigationLinks = [
     { href: '/#o-nas', label: 'O nas' },
