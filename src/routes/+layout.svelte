@@ -8,7 +8,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import CookieConsent from '$lib/components/CookieConsent.svelte';
-  import { navbar, cookieConsent } from '$velite';
+  import { navbar, hero, cookieConsent } from '$velite';
   import { replaceState } from '$app/navigation';
   import { page } from '$app/state';
 
@@ -43,7 +43,10 @@
 
 <Announcement />
 <Navbar {...navbar} />
-<Hero />
+<Hero logo={hero.logo} learnMoreLink={hero.learnMoreLink}>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html hero.body}
+</Hero>
 
 <main>
   {@render children()}
