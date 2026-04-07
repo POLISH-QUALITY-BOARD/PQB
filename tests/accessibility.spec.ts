@@ -25,9 +25,9 @@ const declarations = [
 for (const { name, testId } of declarations) {
   test(`I can download ${name} using keyboard`, async ({ isMobile, page }) => {
     const navbarHamburgerButton = page.getByTestId('navbar-hamburger-button');
-    const navbarJoinButton = page
-      .getByTestId(isMobile ? 'navbar-mobile-navigation-item' : 'navbar-desktop-navigation-item')
-      .and(page.locator('[href*="#dolacz"]'));
+    const navbarJoinButton = page.getByTestId(
+      isMobile ? 'navbar-mobile-join-us-button' : 'navbar-desktop-join-us-button'
+    );
     const downloadButton = page.getByTestId(testId);
 
     await page.goto('/');

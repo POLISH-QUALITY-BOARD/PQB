@@ -47,6 +47,7 @@
       href={resolve('/')}
       aria-label={brand.ariaLabel}
       class="flex items-center gap-3 no-underline shrink-0"
+      data-testid="navbar-brand-link"
     >
       <enhanced:img src="$lib/assets/brand.webp" alt="PQB Logo" class="h-12 w-auto" />
     </a>
@@ -66,7 +67,7 @@
                   <a
                     href={base + item.href}
                     {...props}
-                    data-testid="navbar-desktop-navigation-item"
+                    data-testid="navbar-desktop-dropdown-navigation-item"
                     class="group flex items-center gap-1.5 text-gray-600 font-medium px-4 py-2.5 hover:text-primary no-underline cursor-pointer text-base"
                   >
                     {text}
@@ -87,7 +88,7 @@
                       <!-- eslint-disable svelte/no-navigation-without-resolve -->
                       <a
                         href={base + href}
-                        data-testid="navbar-desktop-navigation-item"
+                        data-testid="navbar-desktop-child-navigation-item"
                         class="block px-5 py-3 text-gray-600 text-sm no-underline hover:text-primary hover:bg-gray-50"
                         >{text}</a
                       >
@@ -114,7 +115,7 @@
           <!-- eslint-disable svelte/no-navigation-without-resolve -->
           <NavigationMenu.Link
             href={base + joinUsButton.href}
-            data-testid="navbar-desktop-navigation-item"
+            data-testid="navbar-desktop-join-us-button"
             class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
           >
             {@render joinUsButtonContent(joinUsButton.text)}
@@ -160,6 +161,7 @@
                 class="flex items-center justify-between w-full px-3 py-3 text-gray-600 text-sm font-medium bg-transparent border-none cursor-pointer hover:text-primary"
                 aria-expanded={openGroup === text}
                 onclick={() => (openGroup = openGroup === text ? null : text)}
+                data-testid="navbar-mobile-dropdown-navigation-item"
               >
                 {text}
                 <IconChevronDown
@@ -173,7 +175,7 @@
                     <!-- eslint-disable svelte/no-navigation-without-resolve -->
                     <a
                       href={base + href}
-                      data-testid="navbar-mobile-navigation-item"
+                      data-testid="navbar-mobile-child-navigation-item"
                       class="text-gray-600 text-sm py-2.5 no-underline hover:text-primary"
                       onclick={handleClose}>{text}</a
                     >
@@ -198,7 +200,7 @@
           <!-- eslint-disable svelte/no-navigation-without-resolve -->
           <a
             href={base + joinUsButton.href}
-            data-testid="navbar-mobile-navigation-item"
+            data-testid="navbar-mobile-join-us-button"
             class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
             onclick={handleClose}
           >

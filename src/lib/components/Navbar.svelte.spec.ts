@@ -82,4 +82,17 @@ describe('Navbar.svelte', () => {
 
     await expect.element(navbarMobileNavigation).not.toBeInTheDocument();
   });
+
+  it('opens children after clicking dropdown navigation item', async () => {
+    const navbarHamburgerButton = page.getByTestId('navbar-hamburger-button');
+    const navbarMobileDropdownNavigationItem = page.getByTestId(
+      'navbar-mobile-dropdown-navigation-item'
+    );
+    const navbarMobileChildNavigationItem = page.getByTestId('navbar-mobile-child-navigation-item');
+
+    await navbarHamburgerButton.click();
+    await navbarMobileDropdownNavigationItem.click();
+
+    await expect.element(navbarMobileChildNavigationItem).toBeInTheDocument();
+  });
 });
