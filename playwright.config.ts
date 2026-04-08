@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 const PORT = 4173;
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: './e2e/specs',
   webServer: {
     command: `npm run build && npm run preview -- --port ${PORT}`,
     port: PORT,
