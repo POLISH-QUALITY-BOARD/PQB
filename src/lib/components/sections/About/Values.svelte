@@ -1,12 +1,12 @@
 <script>
   import Article from '$lib/components/Article.svelte';
   import Feature from '$lib/components/Feature.svelte';
-  import IconLightningBoltOutline from '~icons/mdi/lightning-bolt-outline';
-  import IconHandHeartOutline from '~icons/mdi/hand-heart-outline';
   import IconAccountMultipleOutline from '~icons/mdi/account-multiple-outline';
   import IconEyeOutline from '~icons/mdi/eye-outline';
-  import IconScaleBalance from '~icons/mdi/scale-balance';
   import IconFlagOutline from '~icons/mdi/flag-outline';
+  import IconHandHeartOutline from '~icons/mdi/hand-heart-outline';
+  import IconLightningBoltOutline from '~icons/mdi/lightning-bolt-outline';
+  import IconScaleBalance from '~icons/mdi/scale-balance';
   import IconTelescope from '~icons/mdi/telescope';
 
   const values = [

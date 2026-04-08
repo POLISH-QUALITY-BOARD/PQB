@@ -1,5 +1,5 @@
-import { derived, writable } from 'svelte/store';
 import { browser } from '$app/environment';
+import { derived, writable } from 'svelte/store';
 
 const STORAGE_KEY = 'cookie-consent';
 

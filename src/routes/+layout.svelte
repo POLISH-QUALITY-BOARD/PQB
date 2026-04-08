@@ -1,18 +1,17 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import JsonLd from '$lib/components/JsonLd.svelte';
-  import OpenGraph from '$lib/components/OpenGraph.svelte';
-  import TwitterCard from '$lib/components/TwitterCard.svelte';
-  import Announcement from '$lib/components/Announcement.svelte';
-  import Navbar from '$lib/components/Navbar.svelte';
-  import Hero from '$lib/components/Hero.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import CookieConsent from '$lib/components/CookieConsent.svelte';
-  import { navbar, hero, cookieConsent } from '$velite';
   import { replaceState } from '$app/navigation';
   import { page } from '$app/state';
-
+  import Announcement from '$lib/components/Announcement.svelte';
+  import CookieConsent from '$lib/components/CookieConsent.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import Hero from '$lib/components/Hero.svelte';
+  import JsonLd from '$lib/components/JsonLd.svelte';
+  import Navbar from '$lib/components/Navbar.svelte';
+  import OpenGraph from '$lib/components/OpenGraph.svelte';
+  import TwitterCard from '$lib/components/TwitterCard.svelte';
+  import { cookieConsent, hero, navbar } from '$velite';
   import '../app.css';
+  import { onMount } from 'svelte';
 
   let { children, data } = $props();
 

@@ -1,9 +1,9 @@
-import { defineConfig, type Plugin } from 'vitest/config';
-import { playwright } from '@vitest/browser-playwright';
-import { sveltekit } from '@sveltejs/kit/vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
+import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
+import { playwright } from '@vitest/browser-playwright';
 import Icons from 'unplugin-icons/vite';
+import { type Plugin, defineConfig } from 'vitest/config';
 
 const velite = (): Plugin => ({
   name: 'velite',

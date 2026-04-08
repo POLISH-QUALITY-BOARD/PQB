@@ -1,9 +1,9 @@
 <script>
-  import IconNewspaperVariantOutline from '~icons/mdi/newspaper-variant-outline';
-  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
-  import IconOpenInNew from '~icons/mdi/open-in-new';
-  import IconArrowUp from '~icons/mdi/arrow-up';
   import IconArrowDown from '~icons/mdi/arrow-down';
+  import IconArrowUp from '~icons/mdi/arrow-up';
+  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
+  import IconNewspaperVariantOutline from '~icons/mdi/newspaper-variant-outline';
+  import IconOpenInNew from '~icons/mdi/open-in-new';
   import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
   const whitepapers = [

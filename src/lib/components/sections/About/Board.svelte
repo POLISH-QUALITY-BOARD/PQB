@@ -1,13 +1,13 @@
 <script>
-  import Article from '$lib/components/Article.svelte';
-  import IconLinkedin from '~icons/simple-icons/linkedin';
-  import imgSeba from '$lib/assets/people/Seba.jpg?enhanced';
   import imgAdam from '$lib/assets/people/Adam.jpg?enhanced';
   import imgAnia from '$lib/assets/people/Ania.jpg?enhanced';
-  import imgWojtek from '$lib/assets/people/Wojtek.jpg?enhanced';
-  import imgJan from '$lib/assets/people/Jan.jpg?enhanced';
   import imgAsia from '$lib/assets/people/Asia.jpg?enhanced';
+  import imgJan from '$lib/assets/people/Jan.jpg?enhanced';
   import imgMonika from '$lib/assets/people/Monika.jpg?enhanced';
+  import imgSeba from '$lib/assets/people/Seba.jpg?enhanced';
+  import imgWojtek from '$lib/assets/people/Wojtek.jpg?enhanced';
+  import Article from '$lib/components/Article.svelte';
+  import IconLinkedin from '~icons/simple-icons/linkedin';
 
   const board = [
     {

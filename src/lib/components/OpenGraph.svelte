@@ -1,6 +1,6 @@
 <script lang="ts">
+  import { asset, resolve } from '$app/paths';
   import { page } from '$app/state';
-  import { resolve, asset } from '$app/paths';
 
   let {
     image

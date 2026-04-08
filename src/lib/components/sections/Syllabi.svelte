@@ -1,12 +1,12 @@
 <script lang="ts">
-  import Section from '$lib/components/Section.svelte';
   import { base } from '$app/paths';
-  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
-  import IconArrowUp from '~icons/mdi/arrow-up';
+  import Section from '$lib/components/Section.svelte';
   import IconArrowDown from '~icons/mdi/arrow-down';
-  import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
-  import IconGithub from '~icons/mdi/github';
+  import IconArrowUp from '~icons/mdi/arrow-up';
   import IconDownload from '~icons/mdi/download';
+  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
+  import IconGithub from '~icons/mdi/github';
+  import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
   const typeOrder = { syllabus: 0, questions: 1, answers: 2, guide: 3 };
 

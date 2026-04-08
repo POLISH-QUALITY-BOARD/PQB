@@ -1,12 +1,12 @@
-import { describe, it, expect, vi } from 'vitest';
-import { get } from 'svelte/store';
 import {
-  cookieConsentGranted,
   cookieConsentDenied,
-  grantCookieConsent,
+  cookieConsentGranted,
   denyCookieConsent,
+  grantCookieConsent,
   resetCookieConsent
 } from '$lib/stores/cookieConsent';
+import { get } from 'svelte/store';
+import { describe, expect, it, vi } from 'vitest';
 
 vi.mock('$app/environment', () => ({ browser: true }));
 
