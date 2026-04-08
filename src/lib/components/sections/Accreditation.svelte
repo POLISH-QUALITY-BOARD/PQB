@@ -73,8 +73,8 @@
     testerskiej ISTQB®, które posiadają akredytację.
   </p>
   <p class="text-gray-600 mb-4">
-    Celem akredytacji jest dostarczenie nawyższej możliwej jakości szkoleń, które w nalepszy możliwy
-    sposób przygotują kandydata do zdobycia certyfikatu Certyfikowanego Testera ISTQB®.
+    Celem akredytacji jest dostarczenie nawyższej możliwej jakości szkoleń, które w najlepszy
+    możliwy sposób przygotują kandydata do zdobycia certyfikatu Certyfikowanego Testera ISTQB®.
   </p>
   <p class="text-gray-600 mb-12 pb-8">
     Akredytowane szkolenia z zakresu wybranej certyfikacji testerskiej opracowanej przez ISTQB® mogą
