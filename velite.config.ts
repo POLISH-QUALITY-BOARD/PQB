@@ -45,6 +45,74 @@ const hero = defineCollection({
   })
 });
 
+const footer = defineCollection({
+  name: 'Footer',
+  pattern: 'footer.md',
+  single: true,
+  schema: s.object({
+    brand: s.object({
+      alt: s.string()
+    }),
+    body: s.markdown(),
+    navigation: s.object({
+      label: s.string(),
+      links: s.array(
+        s.object({
+          href: s.string(),
+          text: s.string()
+        })
+      )
+    }),
+    documents: s.object({
+      label: s.string(),
+      links: s.array(
+        s.object({
+          href: s.string(),
+          text: s.string()
+        })
+      )
+    }),
+    contact: s.object({
+      label: s.string(),
+      email: s.object({
+        label: s.string(),
+        address: s.string()
+      }),
+      office: s.object({
+        label: s.string(),
+        address: s.string()
+      })
+    }),
+    social: s.object({
+      linkedin: s.object({
+        ariaLabel: s.string(),
+        href: s.string()
+      }),
+      facebook: s.object({
+        ariaLabel: s.string(),
+        href: s.string()
+      }),
+      github: s.object({
+        ariaLabel: s.string(),
+        href: s.string()
+      }),
+      discord: s.object({
+        ariaLabel: s.string(),
+        href: s.string()
+      })
+    }),
+    additionalItems: s.array(s.string()),
+    copyright: s.string(),
+    privacyPolicy: s.object({
+      href: s.string(),
+      text: s.string()
+    }),
+    cookieSettings: s.object({
+      text: s.string()
+    })
+  })
+});
+
 const cookieConsent = defineCollection({
   name: 'CookieConsent',
   pattern: 'cookie-consent.md',
@@ -65,5 +133,5 @@ const cookieConsent = defineCollection({
 
 export default defineConfig({
   root: 'content',
-  collections: { navbar, hero, cookieConsent }
+  collections: { navbar, hero, footer, cookieConsent }
 });
