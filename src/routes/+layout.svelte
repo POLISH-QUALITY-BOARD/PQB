@@ -9,7 +9,7 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import OpenGraph from '$lib/components/OpenGraph.svelte';
   import TwitterCard from '$lib/components/TwitterCard.svelte';
-  import { cookieConsent, hero, navbar } from '$velite';
+  import { cookieConsent, footer, hero, navbar } from '$velite';
   import '../app.css';
   import { onMount } from 'svelte';
 
@@ -51,7 +51,20 @@
   {@render children()}
 </main>
 
-<Footer />
+<Footer
+  brand={footer.brand}
+  navigation={footer.navigation}
+  documents={footer.documents}
+  contact={footer.contact}
+  social={footer.social}
+  copyright={footer.copyright}
+  additionalItems={footer.additionalItems}
+  privacyPolicy={footer.privacyPolicy}
+  cookieSettings={footer.cookieSettings}
+>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html footer.body}
+</Footer>
 <CookieConsent
   ariaLabel={cookieConsent.ariaLabel}
   acceptButton={cookieConsent.acceptButton}
