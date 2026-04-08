@@ -9,7 +9,7 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import OpenGraph from '$lib/components/OpenGraph.svelte';
   import TwitterCard from '$lib/components/TwitterCard.svelte';
-  import { cookieConsent, navbar } from '$velite';
+  import { cookieConsent, hero, navbar } from '$velite';
   import '../app.css';
   import { onMount } from 'svelte';
 
@@ -42,7 +42,10 @@
 
 <Announcement />
 <Navbar {...navbar} />
-<Hero />
+<Hero logo={hero.logo} learnMoreLink={hero.learnMoreLink}>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html hero.body}
+</Hero>
 
 <main>
   {@render children()}
