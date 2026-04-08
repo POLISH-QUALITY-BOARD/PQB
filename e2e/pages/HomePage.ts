@@ -20,7 +20,8 @@ export class HomePage {
   getLocators() {
     return {
       navbarHamburgerButton: this.navbarHamburgerButton,
-      navbarNavigationItem: this.navbarNavigationItem,
+      navbarDesktopNavigationItem: this.navbarDesktopNavigationItem,
+      navbarMobileNavigationItem: this.navbarMobileNavigationItem,
       downloadLink: this.downloadLink,
       cookieConsent: this.cookieConsent,
       cookieConsentAcceptButton: this.cookieConsentAcceptButton,
@@ -36,8 +37,12 @@ export class HomePage {
     return this.navbarHamburgerButton.click();
   }
 
-  clickNavbarNavigationItem(n = 0) {
-    return this.navbarNavigationItem.nth(n).click();
+  clickNavbarDesktopNavigationItem(n = 0) {
+    return this.navbarDesktopNavigationItem.nth(n).click();
+  }
+
+  clickNavbarMobileNavigationItem(n = 0) {
+    return this.navbarMobileNavigationItem.nth(n).click();
   }
 
   clickDownloadLink(n = 0) {
@@ -56,13 +61,12 @@ export class HomePage {
     return this.page.getByTestId(NAVBAR_HAMBURGER_BUTTON_TEST_ID);
   }
 
-  private get navbarNavigationItem() {
-    const navbarDesktopNavigationItem = this.page.getByTestId(
-      NAVBAR_DESKTOP_NAVIGATION_ITEM_TEST_ID
-    );
-    const navbarMobileNavigationItem = this.page.getByTestId(NAVBAR_MOBILE_NAVIGATION_ITEM_TEST_ID);
+  private get navbarDesktopNavigationItem() {
+    return this.page.getByTestId(NAVBAR_DESKTOP_NAVIGATION_ITEM_TEST_ID);
+  }
 
-    return navbarDesktopNavigationItem.or(navbarMobileNavigationItem);
+  private get navbarMobileNavigationItem() {
+    return this.page.getByTestId(NAVBAR_MOBILE_NAVIGATION_ITEM_TEST_ID);
   }
 
   private get downloadLink() {
