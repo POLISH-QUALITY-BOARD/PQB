@@ -29,6 +29,22 @@ const navbar = defineCollection({
   })
 });
 
+const hero = defineCollection({
+  name: 'Hero',
+  pattern: 'hero.md',
+  single: true,
+  schema: s.object({
+    logo: s.object({
+      alt: s.string()
+    }),
+    learnMoreLink: s.object({
+      href: s.string(),
+      text: s.string()
+    }),
+    body: s.markdown()
+  })
+});
+
 const cookieConsent = defineCollection({
   name: 'CookieConsent',
   pattern: 'cookie-consent.md',
@@ -49,5 +65,5 @@ const cookieConsent = defineCollection({
 
 export default defineConfig({
   root: 'content',
-  collections: { navbar, cookieConsent }
+  collections: { navbar, hero, cookieConsent }
 });

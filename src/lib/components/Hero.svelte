@@ -1,5 +1,10 @@
-<script>
+<script lang="ts">
+  import { base } from '$app/paths';
+  import type { Hero } from '$velite';
+  import type { Snippet } from 'svelte';
   import IconChevronDown from '~icons/mdi/chevron-down';
+
+  let { logo, learnMoreLink, children }: Omit<Hero, 'body'> & { children: Snippet } = $props();
 </script>
 
 <section class="hero overflow-hidden text-white" data-testid="hero">
@@ -8,21 +13,21 @@
   >
     <enhanced:img
       src="$lib/assets/logo.webp"
-      alt="Logo Polish Quality Board"
+      alt={logo.alt}
       class="mx-auto mb-6 h-32 sm:h-40 md:h-52 w-auto"
       fetchpriority="high"
     />
 
     <h1 class="text-base text-white/75 max-w-xl mx-auto leading-relaxed font-light">
-      Polish Quality Board (PQB) jest krajową organizacją zajmującą się promocją testowania
-      oprogramowania i rozwojem osób zainteresowanych jakością oprogramowania w Polsce.
+      {@render children()}
     </h1>
 
     <a
-      href="#o-nas"
+      // eslint-disable-next-line svelte/no-navigation-without-resolve
+      href={base + learnMoreLink.href}
       class="mt-24 flex flex-col items-center gap-2 text-white/50 hover:text-white/70 no-underline"
     >
-      <span class="learn-more-link uppercase">Odkryj więcej</span>
+      <span class="learn-more-link uppercase">{learnMoreLink.text}</span>
       <IconChevronDown aria-hidden="true" class="w-4 h-4 motion-safe:animate-bounce" />
     </a>
   </div>
