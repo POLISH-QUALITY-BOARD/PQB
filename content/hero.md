@@ -1,6 +1,6 @@
 ---
 logo:
-  alt: Logo Polish Quality Board
+  alt: Logo PQB
 learnMoreLink:
   href: /#o-nas
   text: Odkryj więcej
