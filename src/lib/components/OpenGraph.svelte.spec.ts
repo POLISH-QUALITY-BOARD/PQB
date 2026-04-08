@@ -15,7 +15,7 @@ const width = '1200';
 const height = '630';
 
 describe('OpenGraph.svelte', () => {
-  it('renders OpenGraph meta tags', async () => {
+  it('renders', async () => {
     await render(OpenGraph, { props: { image: { width, height } } });
 
     const ogType = page.getByTestId('og-type');

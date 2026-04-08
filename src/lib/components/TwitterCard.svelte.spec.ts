@@ -1,4 +1,5 @@
 import TwitterCard from '$lib/components/TwitterCard.svelte';
+import { faker } from '@faker-js/faker';
 import { describe, expect, it, vi } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page } from 'vitest/browser';
@@ -12,8 +13,22 @@ vi.mock('$app/state', () => ({
 }));
 
 describe('TwitterCard.svelte', () => {
-  it('renders Twitter meta tags', async () => {
-    await render(TwitterCard);
+  it('renders', async () => {
+    const card = 'summary_large_image';
+    const title = faker.book.title();
+    const description = faker.lorem.paragraph();
+    const image = {
+      alt: faker.lorem.sentence()
+    };
+
+    await render(TwitterCard, {
+      props: {
+        card,
+        title,
+        description,
+        image
+      }
+    });
 
     const twitterCard = page.getByTestId('twitter-card');
     const twitterTitle = page.getByTestId('twitter-title');
@@ -21,10 +36,10 @@ describe('TwitterCard.svelte', () => {
     const twitterImageAlt = page.getByTestId('twitter-image-alt');
     const twitterImage = page.getByTestId('twitter-image');
 
-    await expect.element(twitterCard).toHaveAttribute('content');
-    await expect.element(twitterTitle).toHaveAttribute('content');
-    await expect.element(twitterDescription).toHaveAttribute('content');
-    await expect.element(twitterImageAlt).toHaveAttribute('content');
+    await expect.element(twitterCard).toHaveAttribute('content', card);
+    await expect.element(twitterTitle).toHaveAttribute('content', title);
+    await expect.element(twitterDescription).toHaveAttribute('content', description);
+    await expect.element(twitterImageAlt).toHaveAttribute('content', image.alt);
     await expect.element(twitterImage).toHaveAttribute('content', `${origin}/images/pqb-logo.png`);
   });
 });
