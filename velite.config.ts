@@ -153,7 +153,21 @@ const cookieConsent = defineCollection({
   })
 });
 
+const twitterCard = defineCollection({
+  name: 'TwitterCard',
+  pattern: 'twitter-card.md',
+  single: true,
+  schema: s.object({
+    card: s.string(),
+    title: s.string(),
+    description: s.string(),
+    image: s.object({
+      alt: s.string()
+    })
+  })
+});
+
 export default defineConfig({
   root: 'content',
-  collections: { navbar, hero, featuredContent, footer, cookieConsent }
+  collections: { navbar, hero, featuredContent, footer, cookieConsent, twitterCard }
 });
