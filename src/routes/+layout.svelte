@@ -1,5 +1,6 @@
 <script lang="ts">
   import { replaceState } from '$app/navigation';
+  import { resolve } from '$app/paths';
   import { page } from '$app/state';
   import Announcement from '$lib/components/Announcement.svelte';
   import CookieConsent from '$lib/components/CookieConsent.svelte';
@@ -20,8 +21,7 @@
       (entries) => {
         for (const { isIntersecting, target } of entries) {
           if (isIntersecting) {
-            // eslint-disable-next-line svelte/no-navigation-without-resolve
-            replaceState(`#${target.id}`, page.state);
+            replaceState(resolve(`/#${target.id}`), page.state);
           }
         }
       },

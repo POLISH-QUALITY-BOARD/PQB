@@ -2,7 +2,6 @@
   import Section from '$lib/components/Section.svelte';
   import Dictionary from '$lib/components/sections/Portfolio/Dictionary.svelte';
   import Register from '$lib/components/sections/Portfolio/SCR.svelte';
-  import WhitePapers from '$lib/components/sections/Portfolio/WhitePapers.svelte';
 </script>
 
 <Section id="portfolio-istqb" class="bg-gray-50">
@@ -36,6 +35,5 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-14">
     <Dictionary />
     <Register />
-    <WhitePapers />
   </div>
 </Section>
