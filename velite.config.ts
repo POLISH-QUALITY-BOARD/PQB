@@ -131,7 +131,23 @@ const cookieConsent = defineCollection({
   })
 });
 
+const openGraph = defineCollection({
+  name: 'OpenGraph',
+  pattern: 'open-graph.md',
+  single: true,
+  schema: s.object({
+    type: s.string(),
+    title: s.string(),
+    description: s.string(),
+    siteName: s.string(),
+    locale: s.string(),
+    image: s.object({
+      alt: s.string()
+    })
+  })
+});
+
 export default defineConfig({
   root: 'content',
-  collections: { navbar, hero, footer, cookieConsent }
+  collections: { navbar, hero, footer, cookieConsent, openGraph }
 });

@@ -1,4 +1,5 @@
 import OpenGraph from '$lib/components/OpenGraph.svelte';
+import { faker } from '@faker-js/faker';
 import { describe, expect, it, vi } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page } from 'vitest/browser';
@@ -15,8 +16,21 @@ const width = '1200';
 const height = '630';
 
 describe('OpenGraph.svelte', () => {
-  it('renders OpenGraph meta tags', async () => {
-    await render(OpenGraph, { props: { image: { width, height } } });
+  it('renders', async () => {
+    await render(OpenGraph, {
+      props: {
+        type: 'website',
+        title: faker.book.title(),
+        description: faker.lorem.sentence(),
+        siteName: faker.book.series(),
+        locale: faker.location.countryCode(),
+        image: {
+          width,
+          height,
+          alt: faker.lorem.sentence()
+        }
+      }
+    });
 
     const ogType = page.getByTestId('og-type');
     const ogTitle = page.getByTestId('og-title');

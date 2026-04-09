@@ -9,7 +9,7 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import OpenGraph from '$lib/components/OpenGraph.svelte';
   import TwitterCard from '$lib/components/TwitterCard.svelte';
-  import { cookieConsent, footer, hero, navbar } from '$velite';
+  import { cookieConsent, footer, hero, navbar, openGraph } from '$velite';
   import '../app.css';
   import { onMount } from 'svelte';
 
@@ -36,7 +36,7 @@
 
 <svelte:head>
   <JsonLd />
-  <OpenGraph image={data.image} />
+  <OpenGraph {...{ ...openGraph, ...{ image: { ...openGraph.image, ...data.image } } }} />
   <TwitterCard />
 </svelte:head>
 
