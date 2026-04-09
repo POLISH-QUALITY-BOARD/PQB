@@ -131,6 +131,22 @@ const cookieConsent = defineCollection({
   })
 });
 
+const openGraph = defineCollection({
+  name: 'OpenGraph',
+  pattern: 'open-graph.md',
+  single: true,
+  schema: s.object({
+    type: s.string(),
+    title: s.string(),
+    description: s.string(),
+    siteName: s.string(),
+    locale: s.string(),
+    image: s.object({
+      alt: s.string()
+    })
+  })
+});
+
 const twitterCard = defineCollection({
   name: 'TwitterCard',
   pattern: 'twitter-card.md',
@@ -167,5 +183,5 @@ const jsonLd = defineCollection({
 
 export default defineConfig({
   root: 'content',
-  collections: { navbar, hero, footer, cookieConsent, twitterCard, jsonLd }
+  collections: { navbar, hero, footer, cookieConsent, openGraph, twitterCard, jsonLd }
 });
