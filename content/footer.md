@@ -12,6 +12,8 @@ navigation:
       text: Sylabusy
     - href: /#akredytacja
       text: Akredytacja
+    - href: /#polecane
+      text: Polecane
     - href: /#dolacz-do-nas
       text: Dołącz do nas
 documents:
