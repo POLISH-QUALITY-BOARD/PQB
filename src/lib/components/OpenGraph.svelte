@@ -1,10 +1,16 @@
 <script lang="ts">
   import { asset, resolve } from '$app/paths';
   import { page } from '$app/state';
+  import type { OpenGraph } from '$velite';
 
   let {
+    type,
+    title,
+    description,
+    siteName,
+    locale,
     image
-  }: {
+  }: OpenGraph & {
     image: { width?: string; height?: string };
   } = $props();
 
@@ -13,18 +19,17 @@
     const { href: imageUrl } = new URL(asset('/images/pqb-logo.png'), page.url.origin);
 
     return {
-      type: 'website',
-      title: 'PQB - Polish Quality Board',
-      description:
-        'Polish Quality Board - certyfikacje ISTQB, szkolenia i rozwój jakości oprogramowania w Polsce.',
-      siteName: 'Polish Quality Board',
-      locale: 'pl_PL',
+      type,
+      title,
+      description,
+      siteName,
+      locale,
       url,
       image: {
         url: imageUrl,
         width: image.width,
         height: image.height,
-        alt: 'PQB Logo'
+        alt: image.alt
       }
     };
   });
