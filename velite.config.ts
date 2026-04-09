@@ -133,7 +133,7 @@ const cookieConsent = defineCollection({
 
 const jsonLd = defineCollection({
   name: 'JsonLd',
-  pattern: 'json-ld.json',
+  pattern: 'json-ld.md',
   single: true,
   schema: s.object({
     '@type': s.string(),
