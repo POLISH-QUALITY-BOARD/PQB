@@ -45,6 +45,28 @@ const hero = defineCollection({
   })
 });
 
+const featuredContent = defineCollection({
+  name: 'FeaturedContent',
+  pattern: 'sections/featured-content.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    openButton: s.object({
+      text: s.string()
+    }),
+    whitepapers: s.object({
+      label: s.string(),
+      links: s.array(
+        s.object({
+          href: s.string(),
+          title: s.string()
+        })
+      )
+    }),
+    body: s.markdown()
+  })
+});
+
 const footer = defineCollection({
   name: 'Footer',
   pattern: 'footer.md',
@@ -133,5 +155,5 @@ const cookieConsent = defineCollection({
 
 export default defineConfig({
   root: 'content',
-  collections: { navbar, hero, footer, cookieConsent }
+  collections: { navbar, hero, featuredContent, footer, cookieConsent }
 });
