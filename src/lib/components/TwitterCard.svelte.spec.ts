@@ -18,6 +18,7 @@ describe('TwitterCard.svelte', () => {
     const title = faker.book.title();
     const description = faker.lorem.paragraph();
     const image = {
+      src: `/${faker.lorem.word()}.png`,
       alt: faker.lorem.sentence()
     };
 
@@ -40,6 +41,6 @@ describe('TwitterCard.svelte', () => {
     await expect.element(twitterTitle).toHaveAttribute('content', title);
     await expect.element(twitterDescription).toHaveAttribute('content', description);
     await expect.element(twitterImageAlt).toHaveAttribute('content', image.alt);
-    await expect.element(twitterImage).toHaveAttribute('content', `${origin}/images/pqb-logo.png`);
+    await expect.element(twitterImage).toHaveAttribute('content', origin + image.src);
   });
 });

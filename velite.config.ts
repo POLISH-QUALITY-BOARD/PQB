@@ -140,6 +140,7 @@ const twitterCard = defineCollection({
     title: s.string(),
     description: s.string(),
     image: s.object({
+      src: s.string(),
       alt: s.string()
     })
   })
