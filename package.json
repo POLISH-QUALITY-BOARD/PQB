@@ -40,7 +40,6 @@
     "playwright": "^1.58.2",
     "prettier": "^3.8.1",
     "prettier-plugin-svelte": "^3.4.1",
-    "schema-dts": "^2.0.0",
     "svelte": "^5.55.1",
     "svelte-check": "^4.4.6",
     "typescript": "^6.0.2",

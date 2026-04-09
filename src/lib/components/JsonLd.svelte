@@ -1,7 +1,9 @@
 <script lang="ts">
   import { asset, resolve } from '$app/paths';
   import { page } from '$app/state';
-  import type { Organization, WithContext } from 'schema-dts';
+  import type { JsonLd } from '$velite';
+
+  let { '@type': type, memberOf, name, sameAs, contactPoint }: JsonLd = $props();
 
   const schema = $derived.by(() => {
     const { href: url } = new URL(resolve('/'), page.url.origin);
@@ -9,25 +11,14 @@
 
     return {
       '@context': 'https://schema.org',
-      '@type': 'NGO',
-      memberOf: 'ISTQB',
-      name: 'Polish Quality Board',
+      '@type': type,
+      memberOf,
+      name,
       url,
       logo,
-      sameAs: [
-        'https://www.linkedin.com/company/polish-quality-board-official/',
-        'https://www.facebook.com/profile.php?id=61584071003505',
-        'https://github.com/POLISH-QUALITY-BOARD/'
-      ],
-      contactPoint: [
-        {
-          '@type': 'ContactPoint',
-          email: 'info@pqb.org.pl',
-          contactType: 'customer support',
-          availableLanguage: ['Polish', 'English']
-        }
-      ]
-    } satisfies WithContext<Organization>;
+      sameAs,
+      contactPoint
+    };
   });
 </script>
 
