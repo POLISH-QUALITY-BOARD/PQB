@@ -161,7 +161,27 @@ const twitterCard = defineCollection({
   })
 });
 
+const jsonLd = defineCollection({
+  name: 'JsonLd',
+  pattern: 'json-ld.md',
+  single: true,
+  schema: s.object({
+    '@type': s.string(),
+    memberOf: s.string(),
+    name: s.string(),
+    sameAs: s.array(s.string()),
+    contactPoint: s.array(
+      s.object({
+        '@type': s.string(),
+        email: s.string(),
+        contactType: s.string(),
+        availableLanguage: s.array(s.string())
+      })
+    )
+  })
+});
+
 export default defineConfig({
   root: 'content',
-  collections: { navbar, hero, footer, cookieConsent, openGraph, twitterCard }
+  collections: { navbar, hero, footer, cookieConsent, openGraph, twitterCard, jsonLd }
 });
