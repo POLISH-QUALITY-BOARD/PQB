@@ -5,6 +5,7 @@
     denyCookieConsent,
     grantCookieConsent
   } from '$lib/stores/cookieConsent';
+  import type { CookieConsent } from '$velite';
   import type { Snippet } from 'svelte';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
@@ -15,12 +16,7 @@
     children,
     acceptButton,
     denyButton
-  }: {
-    ariaLabel: string;
-    children: Snippet;
-    acceptButton: { text: string; ariaLabel: string };
-    denyButton: { text: string; ariaLabel: string };
-  } = $props();
+  }: Omit<CookieConsent, 'body'> & { children: Snippet } = $props();
 
   let mounted = $state(false);
 
