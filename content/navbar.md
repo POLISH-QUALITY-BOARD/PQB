@@ -17,6 +17,8 @@ navbarItems:
     text: Sylabusy
   - href: /#akredytacja
     text: Akredytacja
+  - href: /#polecane
+    text: Polecane
 joinUsButton:
   href: /#dolacz-do-nas
   text: Dołącz do nas
