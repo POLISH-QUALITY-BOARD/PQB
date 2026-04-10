@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
   import Section from '$lib/components/Section.svelte';
+  import type { FeaturedContent } from '$velite';
+  import type { Snippet } from 'svelte';
   import IconArrowDown from '~icons/mdi/arrow-down';
   import IconArrowUp from '~icons/mdi/arrow-up';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
@@ -7,17 +9,12 @@
   import IconOpenInNew from '~icons/mdi/open-in-new';
   import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
-  const whitepapers = [
-    {
-      title: 'Black-Box Testing for Practitioners: A Case of the New ISTQB Test Analyst Syllabus',
-      href: 'https://ww2.ii.uj.edu.pl/~roman/icst25-preprint.pdf'
-    },
-    {
-      title:
-        'ISTQB Certifications Under the Lens: Their Contributions to the Software-Testing Profession; and AI-assisted Synthesis of Practitioners’ Endorsements and Criticisms',
-      href: 'https://arxiv.org/pdf/2603.14572'
-    }
-  ];
+  let {
+    heading: headingText,
+    openButton,
+    whitepapers,
+    children
+  }: Omit<FeaturedContent, 'body'> & { children: Snippet } = $props();
 
   let wpSort = $state({ key: 'default', dir: 'asc' });
 
@@ -30,8 +27,8 @@
   }
 
   function sortedWhitepapers() {
-    if (wpSort.key === 'default') return whitepapers;
-    return [...whitepapers].sort((a, b) => {
+    if (wpSort.key === 'default') return whitepapers.links;
+    return [...whitepapers.links].sort((a, b) => {
       const cmp = a.title.localeCompare(b.title);
       return wpSort.dir === 'asc' ? cmp : -cmp;
     });
@@ -39,12 +36,11 @@
 </script>
 
 <Section id="polecane" class="bg-white">
-  {#snippet heading()}Polecane{/snippet}
+  {#snippet heading()}{headingText}{/snippet}
 
-  <p class="text-gray-600 mb-10">
-    W niniejszej sekcji znajdują się artykuły, raporty i tzw. white papers związane z testowaniem
-    oprogramowania oraz programem certyfikacyjnym ISTQB®.
-  </p>
+  <div class="text-gray-600 mb-10 space-y-4">
+    {@render children()}
+  </div>
 
   <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm md:col-span-2 mt-6">
     <div
@@ -103,7 +99,7 @@
           </tr>
         </thead>
         <tbody>
-          {#each sortedWhitepapers() as paper, i (paper.href)}
+          {#each sortedWhitepapers() as { href, title }, i (i)}
             <tr
               class="border-b border-gray-100 last:border-b-0 {i % 2 !== 0
                 ? 'bg-gray-50/50'
@@ -119,11 +115,10 @@
                   />
                   <!-- eslint-disable svelte/no-navigation-without-resolve -->
                   <a
-                    href={paper.href}
+                    {href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-sm text-primary hover:underline no-underline font-medium"
-                    >{paper.title}</a
+                    class="text-sm text-primary hover:underline no-underline font-medium">{title}</a
                   >
                   <!-- eslint-enable svelte/no-navigation-without-resolve -->
                 </div>
@@ -131,13 +126,13 @@
               <td class="px-6 py-3.5 text-right">
                 <!-- eslint-disable svelte/no-navigation-without-resolve -->
                 <a
-                  href={paper.href}
+                  {href}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                 >
                   <IconOpenInNew aria-hidden="true" width="13" height="13" />
-                  Otwórz
+                  {openButton.text}
                 </a>
                 <!-- eslint-enable svelte/no-navigation-without-resolve -->
               </td>
