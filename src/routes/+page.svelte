@@ -12,12 +12,5 @@
 <Portfolio />
 <Syllabi />
 <Accreditation />
-<FeaturedContent
-  heading={featuredContent.heading}
-  openButton={featuredContent.openButton}
-  whitepapers={featuredContent.whitepapers}
->
-  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  {@html featuredContent.body}
-</FeaturedContent>
+<FeaturedContent {...featuredContent} />
 <Join />

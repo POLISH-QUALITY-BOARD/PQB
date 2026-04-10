@@ -1,7 +1,6 @@
 <script lang="ts">
   import Section from '$lib/components/Section.svelte';
   import type { FeaturedContent } from '$velite';
-  import type { Snippet } from 'svelte';
   import IconArrowDown from '~icons/mdi/arrow-down';
   import IconArrowUp from '~icons/mdi/arrow-up';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
@@ -9,12 +8,7 @@
   import IconOpenInNew from '~icons/mdi/open-in-new';
   import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
-  let {
-    heading: headingText,
-    openButton,
-    whitepapers,
-    children
-  }: Omit<FeaturedContent, 'body'> & { children: Snippet } = $props();
+  let { heading: headingText, openButton, whitepapers, body }: FeaturedContent = $props();
 
   let wpSort = $state({ key: 'default', dir: 'asc' });
 
@@ -39,7 +33,8 @@
   {#snippet heading()}{headingText}{/snippet}
 
   <div class="text-gray-600 mb-10 space-y-4">
-    {@render children()}
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+    {@html body}
   </div>
 
   <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm md:col-span-2 mt-6">
