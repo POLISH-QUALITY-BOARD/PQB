@@ -67,6 +67,60 @@ const featuredContent = defineCollection({
   })
 });
 
+const join = defineCollection({
+  name: 'Join',
+  pattern: 'sections/join.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    benefits: s.object({
+      trainings: s.object({
+        heading: s.string(),
+        description: s.string()
+      }),
+      community: s.object({
+        heading: s.string(),
+        description: s.string()
+      }),
+      trends: s.object({
+        heading: s.string(),
+        description: s.string()
+      }),
+      support: s.object({
+        heading: s.string(),
+        description: s.string()
+      })
+    }),
+    steps: s.object({
+      heading: s.string(),
+      downloadMembershipDeclaration: s.object({
+        heading: s.string(),
+        description: s.string(),
+        action: s.object({
+          href: s.string(),
+          text: s.string()
+        })
+      }),
+      downloadNdaDeclaration: s.object({
+        heading: s.string(),
+        description: s.string(),
+        action: s.object({
+          href: s.string(),
+          text: s.string()
+        })
+      }),
+      sendDocuments: s.object({
+        heading: s.string(),
+        description: s.string(),
+        action: s.object({
+          address: s.string()
+        })
+      })
+    }),
+    body: s.markdown()
+  })
+});
+
 const footer = defineCollection({
   name: 'Footer',
   pattern: 'footer.md',
@@ -209,6 +263,7 @@ export default defineConfig({
     navbar,
     hero,
     featuredContent,
+    join,
     footer,
     cookieConsent,
     openGraph,
