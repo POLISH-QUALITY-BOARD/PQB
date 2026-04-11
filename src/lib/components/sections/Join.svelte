@@ -1,7 +1,9 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import Article from '$lib/components/Article.svelte';
   import Feature from '$lib/components/Feature.svelte';
   import Section from '$lib/components/Section.svelte';
+  import type { Join } from '$velite';
   import IconAccountGroupOutline from '~icons/mdi/account-group-outline';
   import IconCertificateOutline from '~icons/mdi/certificate-outline';
   import IconCheck from '~icons/mdi/check';
@@ -9,59 +11,60 @@
   import IconHandshakeOutline from '~icons/mdi/handshake-outline';
   import IconTrendingUp from '~icons/mdi/trending-up';
 
-  const benefits = [
+  let { heading: headingTitle, benefits, steps, body }: Join = $props();
+
+  const richBenefits = $derived([
     {
       icon: IconCertificateOutline,
-      title: 'Szkolenia ISTQB®',
-      description:
-        'Dostęp do szkoleń prowadzonych przez doświadczonych instruktorów certyfikowanych przez ISTQB®.'
+      heading: benefits.trainings.heading,
+      description: benefits.trainings.description
     },
     {
       icon: IconAccountGroupOutline,
-      title: 'Społeczność',
-      description:
-        'Poznaj innych testerów z całej Polski i buduj wartościową sieć zawodowych kontaktów.'
+      heading: benefits.community.heading,
+      description: benefits.community.description
     },
     {
       icon: IconTrendingUp,
-      title: 'Najnowsze trendy',
-      description:
-        'Bądź na bieżąco z najlepszymi praktykami i nowinkami w testowaniu oprogramowania.'
+      heading: benefits.trends.heading,
+      description: benefits.trends.description
     },
     {
       icon: IconHandshakeOutline,
-      title: 'Wsparcie zawodowe',
-      description: 'Wsparcie mentorów i społeczności w rozwijaniu kariery w branży QA.'
+      heading: benefits.support.heading,
+      description: benefits.support.description
     }
-  ];
+  ]);
 
-  const steps = [
+  const richSteps = $derived([
     {
-      title: 'Pobierz deklarację członkowską',
-      description: 'Wypełnij i podpisz podpisem elektronicznym lub jako skan.',
+      heading: steps.downloadMembershipDeclaration.heading,
+      description: steps.downloadMembershipDeclaration.description,
       action: {
         type: 'download',
-        href: 'documents/deklaracjaCzlonkowska_PQB.docx',
+        href: steps.downloadMembershipDeclaration.action.href,
+        text: steps.downloadMembershipDeclaration.action.text,
         testId: 'download-membership-declaration-button'
       }
     },
     {
-      title: 'Pobierz deklarację NDA',
-      description: 'Wypełnij i podpisz deklarację o zachowaniu poufności.',
+      heading: steps.downloadNdaDeclaration.heading,
+      description: steps.downloadNdaDeclaration.description,
       action: {
         type: 'download',
-        href: 'documents/deklaracjaNDA_PQB.docx',
+        href: steps.downloadNdaDeclaration.action.href,
+        text: steps.downloadNdaDeclaration.action.text,
         testId: 'download-nda-declaration-button'
       }
     },
     {
-      title: 'Wyślij dokumenty',
-      description: 'Oba podpisane dokumenty wyślij na adres e-mail:',
-      action: { type: 'email', address: 'info@pqb.org.pl' }
+      heading: steps.sendDocuments.heading,
+      description: steps.sendDocuments.description,
+      action: { type: 'email', address: steps.sendDocuments.action.address }
     }
-  ];
+  ]);
 
-  let completed = $state(steps.map(() => false));
+  let completed = $derived(richSteps.map(() => false));
 
   const complete = (index: number) => {
     completed[index] = true;
@@ -69,16 +72,15 @@
 </script>
 
 <Section id="dolacz-do-nas" class="bg-gray-50">
-  {#snippet heading()}Dołącz do nas{/snippet}
+  {#snippet heading()}{headingTitle}{/snippet}
 
-  <p class="text-gray-600 mb-12">
-    Zapraszamy Cię do dołączenia do Polish Quality Board! Bez względu na to, czy jesteś
-    początkującym testerem, czy doświadczonym specjalistą QA, mamy dla Ciebie wiele możliwości
-    rozwoju.
-  </p>
+  <div class="text-gray-600 mb-10 space-y-4">
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+    {@html body}
+  </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-    {#each benefits as { icon, title: benefitTitle, description } (benefitTitle)}
+    {#each richBenefits as { icon, heading: benefitTitle, description }, i (i)}
       <Feature {icon}>
         {#snippet heading()}{benefitTitle}{/snippet}
         {description}
@@ -87,13 +89,13 @@
   </div>
 
   <Article>
-    {#snippet heading()}Jak dołączyć{/snippet}
+    {#snippet heading()}{steps.heading}{/snippet}
 
     <div class="relative">
       <div class="absolute left-5 top-0 bottom-0 w-px bg-gray-200"></div>
 
       <div class="flex flex-col gap-10">
-        {#each steps as { title, description, action }, i (title)}
+        {#each richSteps as { heading, description, action }, i (i)}
           <div class="flex gap-6">
             <div
               class="shrink-0 w-10 h-10 rounded-full bg-gray-200 text-gray-600 text-sm font-bold flex items-center justify-center relative z-10 overflow-hidden"
@@ -109,7 +111,7 @@
               </span>
             </div>
             <div class="pt-1.5">
-              <p class="text-base font-semibold text-primary mb-1">{title}</p>
+              <p class="text-base font-semibold text-primary mb-1">{heading}</p>
               <p class="text-sm text-gray-600" class:mb-5={action.type === 'download'}>
                 {description}
                 {#if action.type === 'email'}
@@ -123,7 +125,7 @@
               {#if action.type === 'download'}
                 <!-- eslint-disable svelte/no-navigation-without-resolve -->
                 <a
-                  href={action.href}
+                  href={base + action.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark pl-3.5 pr-5 py-2.5 rounded-xl no-underline"
@@ -132,7 +134,7 @@
                   onclick={() => complete(i)}
                 >
                   <IconDownload aria-hidden="true" width="16" height="16" />
-                  Pobierz
+                  {action.text}
                 </a>
               {/if}
             </div>
