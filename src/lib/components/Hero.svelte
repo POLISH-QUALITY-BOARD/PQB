@@ -1,10 +1,9 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import type { Hero } from '$velite';
-  import type { Snippet } from 'svelte';
   import IconChevronDown from '~icons/mdi/chevron-down';
 
-  let { logo, learnMoreLink, children }: Omit<Hero, 'body'> & { children: Snippet } = $props();
+  let { logo, learnMoreLink, body }: Hero = $props();
 </script>
 
 <section class="hero overflow-hidden text-white" data-testid="hero">
@@ -19,7 +18,8 @@
     />
 
     <h1 class="text-base text-white/75 max-w-xl mx-auto leading-relaxed font-light">
-      {@render children()}
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      {@html body}
     </h1>
 
     <a

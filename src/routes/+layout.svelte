@@ -42,34 +42,11 @@
 
 <Announcement />
 <Navbar {...navbar} />
-<Hero logo={hero.logo} learnMoreLink={hero.learnMoreLink}>
-  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  {@html hero.body}
-</Hero>
+<Hero {...hero} />
 
 <main>
   {@render children()}
 </main>
 
-<Footer
-  brand={footer.brand}
-  navigation={footer.navigation}
-  documents={footer.documents}
-  contact={footer.contact}
-  social={footer.social}
-  copyright={footer.copyright}
-  additionalItems={footer.additionalItems}
-  privacyPolicy={footer.privacyPolicy}
-  cookieSettings={footer.cookieSettings}
->
-  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  {@html footer.body}
-</Footer>
-<CookieConsent
-  ariaLabel={cookieConsent.ariaLabel}
-  acceptButton={cookieConsent.acceptButton}
-  denyButton={cookieConsent.denyButton}
->
-  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  {@html cookieConsent.body}
-</CookieConsent>
+<Footer {...footer} />
+<CookieConsent {...cookieConsent} />

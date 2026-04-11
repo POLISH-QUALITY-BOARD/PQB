@@ -6,17 +6,11 @@
     grantCookieConsent
   } from '$lib/stores/cookieConsent';
   import type { CookieConsent } from '$velite';
-  import type { Snippet } from 'svelte';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import IconCookieOutline from '~icons/mdi/cookie-outline';
 
-  let {
-    ariaLabel,
-    children,
-    acceptButton,
-    denyButton
-  }: Omit<CookieConsent, 'body'> & { children: Snippet } = $props();
+  let { ariaLabel, acceptButton, denyButton, body }: CookieConsent = $props();
 
   let mounted = $state(false);
 
@@ -42,7 +36,8 @@
       <div class="flex items-center gap-3 flex-1">
         <IconCookieOutline width="22" height="22" class="shrink-0" aria-hidden="true" />
         <p id="cookie-desc" class="text-sm leading-relaxed text-white/75">
-          {@render children()}
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+          {@html body}
         </p>
       </div>
       <div class="flex gap-3 shrink-0 ml-8.5 sm:ml-0">
