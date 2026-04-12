@@ -121,6 +121,22 @@ const join = defineCollection({
   })
 });
 
+const portfolio = defineCollection({
+  name: 'Portfolio',
+  pattern: 'sections/portfolio.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    anchor: s.object({
+      title: s.string(),
+      image: s.object({
+        alt: s.string()
+      })
+    }),
+    body: s.markdown()
+  })
+});
+
 const footer = defineCollection({
   name: 'Footer',
   pattern: 'footer.md',
@@ -264,6 +280,7 @@ export default defineConfig({
     hero,
     featuredContent,
     join,
+    portfolio,
     footer,
     cookieConsent,
     openGraph,
