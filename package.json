@@ -53,7 +53,7 @@
   "dependencies": {
     "@internationalized/date": "^3.8.2",
     "@tailwindcss/vite": "^4.2.2",
-    "bits-ui": "^2.16.4",
+    "bits-ui": "^2.17.3",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.2"
