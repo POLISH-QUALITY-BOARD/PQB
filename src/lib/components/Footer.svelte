@@ -31,10 +31,10 @@
         <div class="mb-5">
           <enhanced:img src="$lib/assets/brand.webp" alt={brand.alt} class="h-12 w-auto" />
         </div>
-        <p class="text-sm text-gray-600 leading-relaxed mb-6">
+        <div class="text-sm text-gray-600 leading-relaxed mb-6">
           <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html body}
-        </p>
+        </div>
         <div class="flex gap-3">
           <!-- eslint-disable svelte/no-navigation-without-resolve -->
           <a
