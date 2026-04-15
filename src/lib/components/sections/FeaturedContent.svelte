@@ -29,7 +29,7 @@
   }
 </script>
 
-<Section id="polecane" class="bg-white">
+<Section level={2} id="polecane" class="bg-white">
   {#snippet heading()}{headingText}{/snippet}
 
   <div class="text-gray-600 mb-10 space-y-4">

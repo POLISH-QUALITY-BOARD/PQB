@@ -273,6 +273,87 @@ const jsonLd = defineCollection({
   })
 });
 
+const accreditationList = defineCollection({
+  name: 'AccreditationList',
+  pattern: 'sections/accreditation-list.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    body: s.markdown(),
+    certifications: s.array(
+      s.object({
+        code: s.string(),
+        label: s.string()
+      })
+    )
+  })
+});
+
+const accreditationListTrainers = defineCollection({
+  name: 'AccreditationListTrainers',
+  pattern: 'sections/accreditation-list/trainers.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    emptyMessage: s.string(),
+    activeLabel: s.string(),
+    expiredLabel: s.string(),
+    body: s.markdown(),
+    items: s.array(
+      s.object({
+        photo: s.string(),
+        name: s.string(),
+        dateTo: s.string(),
+        certifications: s.array(s.string()),
+        linkedin: s.string().optional()
+      })
+    )
+  })
+});
+
+const accreditationListProviders = defineCollection({
+  name: 'AccreditationListProviders',
+  pattern: 'sections/accreditation-list/providers.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    emptyMessage: s.string(),
+    activeLabel: s.string(),
+    expiredLabel: s.string(),
+    body: s.markdown(),
+    items: s.array(
+      s.object({
+        name: s.string(),
+        logo: s.string(),
+        certifications: s.array(s.string()),
+        dateTo: s.string(),
+        link: s.string().optional()
+      })
+    )
+  })
+});
+
+const accreditationListMaterials = defineCollection({
+  name: 'AccreditationListMaterials',
+  pattern: 'sections/accreditation-list/materials.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    emptyMessage: s.string(),
+    openLabel: s.string(),
+    body: s.markdown(),
+    items: s.array(
+      s.object({
+        name: s.string(),
+        author: s.string(),
+        authorLinkedin: s.string().optional(),
+        dateTo: s.string(),
+        link: s.string()
+      })
+    )
+  })
+});
+
 export default defineConfig({
   root: 'content',
   collections: {
@@ -285,6 +366,10 @@ export default defineConfig({
     cookieConsent,
     openGraph,
     twitterCard,
-    jsonLd
+    jsonLd,
+    accreditationList,
+    accreditationListTrainers,
+    accreditationListProviders,
+    accreditationListMaterials
   }
 });

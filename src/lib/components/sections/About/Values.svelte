@@ -41,7 +41,7 @@
   ];
 </script>
 
-<Article id="wartosci-wizja-i-misja">
+<Article level={3} id="wartosci-wizja-i-misja">
   {#snippet heading()}Wartości, misja i wizja{/snippet}
 
   {#snippet subheading()}To fundament naszej organizacji – to, co nas definiuje i określa naszą

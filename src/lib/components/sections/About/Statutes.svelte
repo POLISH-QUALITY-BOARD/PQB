@@ -40,7 +40,7 @@
   let activeTab = $state('pl');
 </script>
 
-<Article id="statut" class="mb-12 pb-8 border-b border-gray-100">
+<Article level={3} id="statut" class="mb-12 pb-8 border-b border-gray-100">
   {#snippet heading()}Statut{/snippet}
 
   <Tabs.Root

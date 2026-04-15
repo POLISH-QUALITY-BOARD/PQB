@@ -71,7 +71,7 @@
   };
 </script>
 
-<Section id="dolacz-do-nas" class="bg-gray-50">
+<Section level={2} id="dolacz-do-nas" class="bg-gray-50">
   {#snippet heading()}{headingTitle}{/snippet}
 
   <div class="text-gray-600 mb-10 space-y-4">
@@ -88,7 +88,7 @@
     {/each}
   </div>
 
-  <Article>
+  <Article level={3}>
     {#snippet heading()}{steps.heading}{/snippet}
 
     <div class="relative">

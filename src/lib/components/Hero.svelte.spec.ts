@@ -1,11 +1,8 @@
 import Hero from '$lib/components/Hero.svelte';
 import { faker } from '@faker-js/faker';
-import { createRawSnippet } from 'svelte';
 import { describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page } from 'vitest/browser';
-
-const snippet = (html: string) => createRawSnippet(() => ({ render: () => html }));
 
 describe('Hero.svelte', () => {
   it('renders', async () => {
@@ -18,7 +15,7 @@ describe('Hero.svelte', () => {
           href: faker.internet.url(),
           text: faker.lorem.word()
         },
-        children: snippet(`<p>${faker.lorem.sentence()}</p>`)
+        body: `<p>${faker.lorem.sentence()}</p>`
       }
     });
 

@@ -209,7 +209,7 @@
 </script>
 
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
-<Section id="sylabusy" class="bg-white">
+<Section level={2} id="sylabusy" class="bg-white">
   {#snippet heading()}Sylabusy{/snippet}
 
   <p class="text-gray-600 mb-12">
@@ -253,7 +253,7 @@
                       cert.code
                     ].key === 'name'
                       ? 'text-primary'
-                      : 'text-gray-600'}"
+                      : 'text-primary'}"
                   >
                     Dokument
                     {#if sorts[cert.code].key === 'name'}
@@ -282,7 +282,7 @@
                       cert.code
                     ].key === 'type'
                       ? 'text-primary'
-                      : 'text-gray-600'}"
+                      : 'text-primary'}"
                   >
                     Typ
                     {#if sorts[cert.code].key === 'type'}
@@ -308,7 +308,7 @@
                       cert.code
                     ].key === 'default'
                       ? 'text-primary'
-                      : 'text-gray-600'}"
+                      : 'text-primary'}"
                   >
                     Reset
                   </button>

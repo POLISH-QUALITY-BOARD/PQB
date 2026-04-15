@@ -8,16 +8,19 @@
     class: className,
     heading,
     subheading,
+    level,
     ...restProps
   }: {
     children: Snippet;
     heading: Snippet;
     subheading?: Snippet;
+    level: 2 | 3;
   } & HTMLAttributes<HTMLElement> = $props();
 </script>
 
 <article class={cn('mb-8 pb-6 scroll-mt-25', className)} data-testid="article" {...restProps}>
-  <h3
+  <svelte:element
+    this={`h${level}`}
     class={cn(
       'text-2xl font-semibold leading-tight text-primary mt-0',
       subheading ? 'mb-2' : 'mb-6'
@@ -25,7 +28,7 @@
     data-testid="article-heading"
   >
     {@render heading()}
-  </h3>
+  </svelte:element>
 
   {#if subheading}
     <p class="text-gray-600 mb-10" data-testid="article-subheading">

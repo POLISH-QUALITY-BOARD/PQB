@@ -7,7 +7,7 @@
   let { heading: headingTitle, anchor, body }: Portfolio = $props();
 </script>
 
-<Section id="portfolio-istqb" class="bg-gray-50">
+<Section level={2} id="portfolio-istqb" class="bg-gray-50">
   {#snippet heading()}{headingTitle}{/snippet}
 
   <div class="text-gray-600 mb-10 space-y-4">

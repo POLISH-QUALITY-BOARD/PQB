@@ -65,7 +65,7 @@
   };
 </script>
 
-<Section id="akredytacja" class="bg-gray-50">
+<Section level={2} id="akredytacja" class="bg-gray-50">
   {#snippet heading()}Akredytacja{/snippet}
 
   <p class="text-gray-600 mb-4">
@@ -94,7 +94,7 @@
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     <div>
-      <Article id="akredytacja-dostawcy-szkolen-istqb">
+      <Article level={3} id="akredytacja-dostawcy-szkolen-istqb">
         {#snippet heading()}Akredytacja dostawcy szkoleń ISTQB®{/snippet}
 
         <p class="text-gray-600">
@@ -102,7 +102,7 @@
           wymagania PQB w zakresie możliwości realizacji akredytowanych szkoleń ISTQB®.
         </p>
       </Article>
-      <Article id="akredytacja-materialow-szkoleniowych-istqb">
+      <Article level={3} id="akredytacja-materialow-szkoleniowych-istqb">
         {#snippet heading()}Akredytacja materiałów szkoleniowych ISTQB®{/snippet}
 
         <p class="text-gray-600">
@@ -111,7 +111,7 @@
           jakości kształcenia.
         </p>
       </Article>
-      <Article id="akredytacja-trenerzy-istqb">
+      <Article level={3} id="akredytacja-trenerzy-istqb">
         {#snippet heading()}Akredytacja trenerska ISTQB®{/snippet}
 
         <p class="text-gray-600">
@@ -121,7 +121,7 @@
       </Article>
     </div>
     <div>
-      <Article id="jak-uzyskac-akredytacje">
+      <Article level={3} id="jak-uzyskac-akredytacje">
         {#snippet heading()}Jak uzyskać akredytację{/snippet}
 
         <div class="relative">
