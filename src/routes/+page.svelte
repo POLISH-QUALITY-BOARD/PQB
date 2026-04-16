@@ -5,11 +5,11 @@
   import Join from '$lib/components/sections/Join.svelte';
   import Portfolio from '$lib/components/sections/Portfolio.svelte';
   import Syllabi from '$lib/components/sections/Syllabi.svelte';
-  import { featuredContent, join, portfolio } from '$velite';
+  import { dictionary, featuredContent, join, portfolio, scr } from '$velite';
 </script>
 
 <About />
-<Portfolio {...portfolio} />
+<Portfolio {...portfolio} {dictionary} {scr} />
 <Syllabi />
 <Accreditation />
 <FeaturedContent {...featuredContent} />

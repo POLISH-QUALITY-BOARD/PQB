@@ -137,6 +137,36 @@ const portfolio = defineCollection({
   })
 });
 
+const dictionary = defineCollection({
+  name: 'Dictionary',
+  pattern: 'sections/portfolio/dictionary.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    description: s.string(),
+    link: s.object({
+      href: s.string(),
+      text: s.string()
+    }),
+    body: s.markdown()
+  })
+});
+
+const scr = defineCollection({
+  name: 'Scr',
+  pattern: 'sections/portfolio/scr.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    description: s.string(),
+    link: s.object({
+      href: s.string(),
+      text: s.string()
+    }),
+    body: s.markdown()
+  })
+});
+
 const footer = defineCollection({
   name: 'Footer',
   pattern: 'footer.md',
@@ -281,6 +311,8 @@ export default defineConfig({
     featuredContent,
     join,
     portfolio,
+    dictionary,
+    scr,
     footer,
     cookieConsent,
     openGraph,
