@@ -1,6 +1,8 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import Section from '$lib/components/Section.svelte';
+  import type { Syllabi } from '$velite';
+  import { untrack } from 'svelte';
   import IconArrowDown from '~icons/mdi/arrow-down';
   import IconArrowUp from '~icons/mdi/arrow-up';
   import IconDownload from '~icons/mdi/download';
@@ -8,13 +10,15 @@
   import IconGithub from '~icons/mdi/github';
   import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
+  let { heading: headingText, description, certifications }: Syllabi = $props();
+
   const typeOrder = { syllabus: 0, questions: 1, answers: 2, guide: 3 };
 
-  let sorts = $state({
-    CTFL: { key: 'default', dir: 'asc' },
-    'CTAL-TA': { key: 'default', dir: 'asc' },
-    'CTAL-TM': { key: 'default', dir: 'asc' }
-  });
+  let sorts = $state(
+    untrack(() =>
+      Object.fromEntries(certifications.map((c) => [c.code, { key: 'default', dir: 'asc' }]))
+    )
+  );
 
   function setSort(code, key) {
     const s = sorts[code];
@@ -58,169 +62,17 @@
       pill: 'bg-primary-light text-primary'
     }
   };
-
-  const certifications = [
-    {
-      code: 'CTFL',
-      badge: 'Poziom Podstawowy',
-      title: 'Certyfikowany Tester Poziom Podstawowy v4.0.1',
-      version: 'v4.0.1',
-      documents: [
-        {
-          name: 'Sylabus',
-          lang: 'PL',
-          type: 'syllabus',
-          file: 'fl-4.0.1/FL-4.0.1-PL-sylabus.pdf',
-          github: 'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/tree/main/syllabus-pl'
-        },
-        {
-          name: 'Pytania – zestaw A',
-          lang: 'PL',
-          type: 'questions',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-A-pytania-v1.7.pdf',
-          github:
-            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-A-pytania-v1.7.md'
-        },
-        {
-          name: 'Odpowiedzi – zestaw A',
-          lang: 'PL',
-          type: 'answers',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-A-odpowiedzi-v1.7.pdf',
-          github:
-            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-A-odpowiedzi-v1.7.md'
-        },
-        {
-          name: 'Pytania – zestaw B',
-          lang: 'PL',
-          type: 'questions',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-B-pytania-v1.7.pdf',
-          github:
-            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-B-pytania-v1.7.md'
-        },
-        {
-          name: 'Odpowiedzi – zestaw B',
-          lang: 'PL',
-          type: 'answers',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-B-odpowiedzi-v1.7.pdf',
-          github:
-            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-B-odpowiedzi-v1.7.md'
-        },
-        {
-          name: 'Pytania – zestaw C',
-          lang: 'PL',
-          type: 'questions',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-C-pytania-v1.6.pdf',
-          github:
-            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-C-pytania-v1.6.md'
-        },
-        {
-          name: 'Odpowiedzi – zestaw C',
-          lang: 'PL',
-          type: 'answers',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-C-odpowiedzi-v1.6.pdf',
-          github:
-            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-C-odpowiedzi-v1.6.md'
-        },
-        {
-          name: 'Pytania – zestaw D',
-          lang: 'PL',
-          type: 'questions',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-D-pytania-v1.5.pdf',
-          github:
-            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-D-pytania-v1.5.md'
-        },
-        {
-          name: 'Odpowiedzi – zestaw D',
-          lang: 'PL',
-          type: 'answers',
-          file: 'fl-4.0.1/FL-4.0.1-PL-zestaw-D-odpowiedzi-v1.5.pdf',
-          github:
-            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/FL-4.0.1-PL-zestaw-D-odpowiedzi-v1.5.md'
-        },
-        {
-          name: 'Wytyczne do akredytacji',
-          lang: 'PL',
-          type: 'guide',
-          file: 'fl-4.0.1/FL-4.0.1-PL-wytyczne-do-akredytacji-v0.3.pdf',
-          github:
-            'https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/tree/main/accreditation-guidelines-pl'
-        }
-      ]
-    },
-    {
-      code: 'CTAL-TA',
-      badge: 'Poziom Zaawansowany',
-      title: 'Certyfikowany Tester Poziom Zaawansowany Analityk Testów v4.0',
-      version: 'v4.0',
-      documents: [
-        {
-          name: 'Sylabus',
-          lang: 'PL',
-          type: 'syllabus',
-          file: 'ta-4.0/TA-4.0-PL-sylabus.pdf'
-        },
-        {
-          name: 'Pytania',
-          lang: 'PL',
-          type: 'questions',
-          file: 'ta-4.0/TA-4.0-PL-pytania.pdf'
-        },
-        {
-          name: 'Odpowiedzi',
-          lang: 'PL',
-          type: 'answers',
-          file: 'ta-4.0/TA-4.0-PL-odpowiedzi.pdf'
-        }
-      ]
-    },
-    {
-      code: 'CTAL-TM',
-      badge: 'Poziom Zaawansowany',
-      title: 'Certyfikowany Tester Poziom Zaawansowany Zarządzanie Testami v3.0',
-      version: 'v3.0',
-      documents: [
-        {
-          name: 'Sylabus',
-          lang: 'PL',
-          type: 'syllabus',
-          file: 'tm-3.0/TM-3.0-PL-sylabus.pdf'
-        },
-        {
-          name: 'Pytania',
-          lang: 'PL',
-          type: 'questions',
-          file: 'tm-3.0/TM-3.0-PL-pytania-v1.3.3.pdf'
-        },
-        {
-          name: 'Odpowiedzi',
-          lang: 'PL',
-          type: 'answers',
-          file: 'tm-3.0/TM-3.0-PL-odpowiedzi-v1.3.3.pdf'
-        },
-        {
-          name: 'Wytyczne do akredytacji',
-          lang: 'PL',
-          type: 'guide',
-          file: 'tm-3.0/TM-3.0-PL-wytyczne-do-akredytacji-v1.0.pdf'
-        }
-      ]
-    }
-  ];
 </script>
 
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
 <Section id="sylabusy" class="bg-white">
-  {#snippet heading()}Sylabusy{/snippet}
+  {#snippet heading()}{headingText}{/snippet}
 
-  <p class="text-gray-600 mb-12">
-    Poniżej znajdziesz sylabusy, zestawy pytań i odpowiedzi oraz wytyczne do akredytacji dla
-    poszczególnych certyfikatów ISTQB®.
-  </p>
+  <p class="text-gray-600 mb-12">{description}</p>
 
   <div class="flex flex-col gap-6">
     {#each certifications as cert (cert.code)}
       <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-        <!-- Card header -->
         <div
           class="flex items-center gap-3 px-6 py-4"
           style="background: linear-gradient(135deg, #1a3f7a 0%, #0c1f40 100%);"
@@ -233,7 +85,6 @@
           </div>
         </div>
 
-        <!-- Table -->
         <div class="overflow-x-auto">
           <table class="w-full text-sm min-w-xl">
             <thead>
