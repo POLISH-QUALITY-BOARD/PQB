@@ -6,7 +6,6 @@ description: >-
 certifications:
   - code: CTFL
     title: Certyfikowany Tester Poziom Podstawowy v4.0.1
-    version: v4.0.1
     documents:
       - lang: PL
         type: syllabus
@@ -50,7 +49,6 @@ certifications:
         github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/tree/main/accreditation-guidelines-pl
   - code: CTAL-TA
     title: Certyfikowany Tester Poziom Zaawansowany Analityk Testów v4.0
-    version: v4.0
     documents:
       - lang: PL
         type: syllabus
@@ -63,7 +61,6 @@ certifications:
         file: ta-4.0/TA-4.0-PL-odpowiedzi.pdf
   - code: CTAL-TM
     title: Certyfikowany Tester Poziom Zaawansowany Zarządzanie Testami v3.0
-    version: v3.0
     documents:
       - lang: PL
         type: syllabus

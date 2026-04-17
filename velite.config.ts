@@ -294,7 +294,6 @@ const syllabi = defineCollection({
       s.object({
         code: s.string(),
         title: s.string(),
-        version: s.string(),
         documents: s.array(
           s.object({
             lang: s.string(),
