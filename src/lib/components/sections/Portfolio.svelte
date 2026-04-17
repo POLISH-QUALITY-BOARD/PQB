@@ -2,9 +2,18 @@
   import Section from '$lib/components/Section.svelte';
   import Dictionary from '$lib/components/sections/Portfolio/Dictionary.svelte';
   import Register from '$lib/components/sections/Portfolio/SCR.svelte';
-  import type { Portfolio } from '$velite';
+  import type { Dictionary as DictionaryData, Portfolio, Scr } from '$velite';
 
-  let { heading: headingTitle, anchor, body }: Portfolio = $props();
+  let {
+    heading: headingTitle,
+    anchor,
+    body,
+    dictionary,
+    scr
+  }: Portfolio & {
+    dictionary: DictionaryData;
+    scr: Scr;
+  } = $props();
 </script>
 
 <Section level={2} id="portfolio-istqb" class="bg-gray-50">
@@ -30,7 +39,7 @@
   </a>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-14">
-    <Dictionary />
-    <Register />
+    <Dictionary {...dictionary} />
+    <Register {...scr} />
   </div>
 </Section>
