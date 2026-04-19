@@ -289,7 +289,7 @@ const syllabi = defineCollection({
   single: true,
   schema: s.object({
     heading: s.string(),
-    description: s.string(),
+    body: s.markdown(),
     certifications: s.array(
       s.object({
         code: s.string(),

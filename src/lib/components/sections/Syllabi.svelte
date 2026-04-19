@@ -10,7 +10,7 @@
   import IconGithub from '~icons/mdi/github';
   import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
-  let { heading: headingText, description, certifications }: Syllabi = $props();
+  let { heading: headingText, body, certifications }: Syllabi = $props();
 
   const typeOrder = { syllabus: 0, questions: 1, answers: 2, guide: 3 };
 
@@ -68,7 +68,8 @@
 <Section id="sylabusy" class="bg-white">
   {#snippet heading()}{headingText}{/snippet}
 
-  <p class="text-gray-600 mb-12">{description}</p>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  <div class="text-gray-600 mb-12">{@html body}</div>
 
   <div class="flex flex-col gap-6">
     {#each certifications as cert (cert.code)}

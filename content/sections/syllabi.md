@@ -1,8 +1,5 @@
 ---
 heading: Sylabusy
-description: >-
-  Poniżej znajdziesz sylabusy, zestawy pytań i odpowiedzi oraz wytyczne do akredytacji dla
-  poszczególnych certyfikatów ISTQB®.
 certifications:
   - code: CTFL
     title: Certyfikowany Tester Poziom Podstawowy v4.0.1
@@ -75,3 +72,5 @@ certifications:
         type: guide
         file: tm-3.0/TM-3.0-PL-wytyczne-do-akredytacji-v1.0.pdf
 ---
+
+Poniżej znajdziesz sylabusy, zestawy pytań i odpowiedzi oraz wytyczne do akredytacji dla poszczególnych certyfikatów ISTQB®.
