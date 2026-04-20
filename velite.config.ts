@@ -283,6 +283,30 @@ const twitterCard = defineCollection({
   })
 });
 
+const syllabi = defineCollection({
+  name: 'Syllabi',
+  pattern: 'sections/syllabi.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    body: s.markdown(),
+    certifications: s.array(
+      s.object({
+        code: s.string(),
+        title: s.string(),
+        documents: s.array(
+          s.object({
+            lang: s.string(),
+            type: s.enum(['syllabus', 'questions', 'answers', 'guide']),
+            file: s.string(),
+            github: s.string().optional()
+          })
+        )
+      })
+    )
+  })
+});
+
 const jsonLd = defineCollection({
   name: 'JsonLd',
   pattern: 'json-ld.md',
@@ -313,6 +337,7 @@ export default defineConfig({
     portfolio,
     dictionary,
     scr,
+    syllabi,
     footer,
     cookieConsent,
     openGraph,
