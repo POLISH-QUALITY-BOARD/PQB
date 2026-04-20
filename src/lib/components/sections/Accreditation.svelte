@@ -41,6 +41,11 @@
             label: 'Wniosek o akredytację materiałów szkoleniowych',
             href: 'documents/Szablon-wniosek-o-akredytacje-materialow-v1.0.docx',
             testId: 'download-accreditation-materials'
+          },
+          {
+            label: 'Załącznik - matryca celów nauczania',
+            href: 'documents/Akredytacja-materialow-matryca-celow-nauczania.xlsx',
+            testId: 'download-accreditation-learning-objectives-matrix'
           }
         ]
       }
