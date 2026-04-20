@@ -283,6 +283,15 @@ const twitterCard = defineCollection({
   })
 });
 
+const about = defineCollection({
+  name: 'About',
+  pattern: 'sections/about.md',
+  single: true,
+  schema: s.object({
+    heading: s.string()
+  })
+});
+
 const syllabi = defineCollection({
   name: 'Syllabi',
   pattern: 'sections/syllabi.md',
@@ -332,6 +341,7 @@ export default defineConfig({
   collections: {
     navbar,
     hero,
+    about,
     featuredContent,
     join,
     portfolio,
