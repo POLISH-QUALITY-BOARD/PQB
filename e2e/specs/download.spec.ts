@@ -4,7 +4,6 @@ test('I can download documents', async ({ homePage, baseURL, request }) => {
   const { downloadLink } = homePage.getLocators();
 
   await homePage.goto();
-  await homePage.clickCookieConsentAcceptButton();
 
   const downloadLinks = await downloadLink.all();
 
