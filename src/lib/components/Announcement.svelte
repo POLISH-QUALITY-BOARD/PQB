@@ -1,17 +1,14 @@
 <script lang="ts">
-  import IconOpenInNew from '~icons/mdi/open-in-new';
+  import type { Announcement } from '$velite';
+
+  let { body }: Announcement = $props();
 </script>
 
 <div class="bg-primary" data-testid="announcement">
-  <div class="max-w-270 mx-auto px-6 py-2 text-xs text-white/80 font-medium">
-    <span class="text-white">Rada Krajowa ISTQB®</span> w Polsce —
-    <a
-      href="https://istqb.org/member-boards/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-white/80 hover:text-white"
-      ><span class="underline underline-offset-2">istqb.org</span>
-      <IconOpenInNew aria-hidden="true" class="inline w-3 h-3 mb-0.5" /></a
-    >
+  <div
+    class="max-w-270 mx-auto px-6 py-2 text-xs font-medium text-gray-300 [&_a]:text-gray-300 [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-white [&_strong]:font-medium [&_strong]:text-white"
+  >
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+    {@html body}
   </div>
 </div>

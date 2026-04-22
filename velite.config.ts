@@ -1,4 +1,14 @@
+import rehypeExternalLinks from 'rehype-external-links';
 import { defineCollection, defineConfig, s } from 'velite';
+
+const announcement = defineCollection({
+  name: 'Announcement',
+  pattern: 'announcement.md',
+  single: true,
+  schema: s.object({
+    body: s.markdown()
+  })
+});
 
 const navbar = defineCollection({
   name: 'Navbar',
@@ -364,7 +374,11 @@ const jsonLd = defineCollection({
 
 export default defineConfig({
   root: 'content',
+  markdown: {
+    rehypePlugins: [[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }]]
+  },
   collections: {
+    announcement,
     navbar,
     hero,
     about,
