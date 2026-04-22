@@ -1,85 +1,36 @@
-<script>
-  import imgAdam from '$lib/assets/people/Adam.jpg?enhanced';
-  import imgAnia from '$lib/assets/people/Ania.jpg?enhanced';
-  import imgAsia from '$lib/assets/people/Asia.jpg?enhanced';
-  import imgJan from '$lib/assets/people/Jan.jpg?enhanced';
-  import imgMonika from '$lib/assets/people/Monika.jpg?enhanced';
-  import imgSeba from '$lib/assets/people/Seba.jpg?enhanced';
-  import imgWojtek from '$lib/assets/people/Wojtek.jpg?enhanced';
+<script lang="ts">
   import Article from '$lib/components/Article.svelte';
+  import type { About } from '$velite';
+  import type { Picture } from 'vite-imagetools';
   import IconLinkedin from '~icons/simple-icons/linkedin';
 
-  const board = [
-    {
-      name: 'Sebastian Małyska',
-      role: 'Prezes',
-      img: imgSeba,
-      linkedin: 'https://www.linkedin.com/in/malyska/'
-    },
-    {
-      name: 'Adam Roman',
-      role: 'Wiceprezes',
-      img: imgAdam,
-      linkedin: 'https://www.linkedin.com/in/adam-roman-3799723/'
-    },
-    {
-      name: 'Anna Miazek-Bereźnicka',
-      role: 'Wiceprezes',
-      img: imgAnia,
-      linkedin: 'https://www.linkedin.com/in/annamiazek/'
-    },
-    {
-      name: 'Wojciech Jaszcz',
-      role: 'Wiceprezes',
-      img: imgWojtek,
-      linkedin: 'https://www.linkedin.com/in/wojtek-jaszcz-5111421/'
-    }
-  ];
+  let { board, body }: Pick<About, 'board' | 'body'> = $props();
 
-  const committee = [
-    {
-      name: 'Jan Sabak',
-      role: 'Członek',
-      img: imgJan,
-      linkedin: 'https://www.linkedin.com/in/jsabak/'
-    },
-    {
-      name: 'Joanna Gajewska',
-      role: 'Członek',
-      img: imgAsia,
-      linkedin: 'https://www.linkedin.com/in/joanna-gajewska-829623/'
-    },
-    {
-      name: 'Monika Petri-Starego',
-      role: 'Członek',
-      img: imgMonika,
-      linkedin: 'https://www.linkedin.com/in/monika-petri-starego/'
-    }
-  ];
+  const assets = import.meta.glob<{ default: Picture }>('/src/lib/assets/**/*', {
+    eager: true,
+    query: '?enhanced'
+  });
 </script>
 
 <Article id="sklad-osobowy-zarzadu" class="mb-12 pb-8 border-b border-gray-100">
-  {#snippet heading()}Skład osobowy zarządu{/snippet}
+  {#snippet heading()}{board.heading}{/snippet}
 
-  <p class="mb-4 text-gray-600">
-    Polish Quality Board kierowana jest przez doświadczonych profesjonalistów z branży testowania
-    oprogramowania. Nasz zarząd i członkowie komisji rewizyjnej reprezentują różne obszary sektora
-    IT i pracują w organizacjach od startupów po duże międzynarodowe korporacje.
-  </p>
-  <p class="mb-4 text-gray-600">
-    Każdy z naszych członków wnosi unikalną perspektywę i doświadczenie, co pozwala nam spojrzeć
-    kompleksowo na wszystkie aspekty testowania oprogramowania i zapewniania jakości.
-  </p>
+  <div class="text-gray-600 mb-10 space-y-4">
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+    {@html body}
+  </div>
 
   <div class="mt-8">
     <!-- eslint-disable svelte/no-navigation-without-resolve -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 mb-12">
       <div>
-        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 mb-4">Zarząd</p>
-        {#each board as person (person.name)}
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 mb-4">
+          {board.board.label}
+        </p>
+        {#each board.board.members as person (person.name)}
           <div class="flex items-center gap-4 py-4 border-b border-gray-100 last:border-b-0">
             <enhanced:img
-              src={person.img}
+              src={assets[person.image].default}
               alt={person.name}
               loading="lazy"
               class="w-18 h-18 rounded-full object-cover shrink-0"
@@ -105,12 +56,12 @@
 
       <div>
         <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 mb-4">
-          Komisja Rewizyjna
+          {board.committee.label}
         </p>
-        {#each committee as person (person.name)}
+        {#each board.committee.members as person (person.name)}
           <div class="flex items-center gap-4 py-4 border-b border-gray-100 last:border-b-0">
             <enhanced:img
-              src={person.img}
+              src={assets[person.image].default}
               alt={person.name}
               loading="lazy"
               class="w-18 h-18 rounded-full object-cover shrink-0"
