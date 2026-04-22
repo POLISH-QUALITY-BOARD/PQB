@@ -5,13 +5,13 @@
   import Values from '$lib/components/sections/About/Values.svelte';
   import type { About } from '$velite';
 
-  let { heading: headingText }: About = $props();
+  let { heading: headingText, board, body }: About = $props();
 </script>
 
 <Section id="o-nas" class="bg-white">
   {#snippet heading()}{headingText}{/snippet}
 
-  <Board />
+  <Board {board} {body} />
   <Statutes />
   <Values />
 </Section>

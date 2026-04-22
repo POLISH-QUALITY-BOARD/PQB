@@ -288,7 +288,33 @@ const about = defineCollection({
   pattern: 'sections/about.md',
   single: true,
   schema: s.object({
-    heading: s.string()
+    heading: s.string(),
+    board: s.object({
+      heading: s.string(),
+      board: s.object({
+        label: s.string(),
+        members: s.array(
+          s.object({
+            name: s.string(),
+            role: s.string(),
+            image: s.string(),
+            linkedin: s.string()
+          })
+        )
+      }),
+      committee: s.object({
+        label: s.string(),
+        members: s.array(
+          s.object({
+            name: s.string(),
+            role: s.string(),
+            image: s.string(),
+            linkedin: s.string()
+          })
+        )
+      })
+    }),
+    body: s.markdown()
   })
 });
 
