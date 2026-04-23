@@ -9,7 +9,16 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import OpenGraph from '$lib/components/OpenGraph.svelte';
   import TwitterCard from '$lib/components/TwitterCard.svelte';
-  import { cookieConsent, footer, hero, jsonLd, navbar, openGraph, twitterCard } from '$velite';
+  import {
+    announcement,
+    cookieConsent,
+    footer,
+    hero,
+    jsonLd,
+    navbar,
+    openGraph,
+    twitterCard
+  } from '$velite';
   import '../app.css';
   import { onMount } from 'svelte';
 
@@ -41,7 +50,7 @@
   <TwitterCard {...twitterCard} />
 </svelte:head>
 
-<Announcement />
+<Announcement {...announcement} />
 <Navbar {...navbar} />
 {#if page.url.pathname === '/'}
   <Hero {...hero} />

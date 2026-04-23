@@ -1,4 +1,14 @@
+import rehypeExternalLinks from 'rehype-external-links';
 import { defineCollection, defineConfig, s } from 'velite';
+
+const announcement = defineCollection({
+  name: 'Announcement',
+  pattern: 'announcement.md',
+  single: true,
+  schema: s.object({
+    body: s.markdown()
+  })
+});
 
 const navbar = defineCollection({
   name: 'Navbar',
@@ -283,6 +293,65 @@ const twitterCard = defineCollection({
   })
 });
 
+const about = defineCollection({
+  name: 'About',
+  pattern: 'sections/about.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    board: s.object({
+      heading: s.string(),
+      board: s.object({
+        label: s.string(),
+        members: s.array(
+          s.object({
+            name: s.string(),
+            role: s.string(),
+            image: s.string(),
+            linkedin: s.string()
+          })
+        )
+      }),
+      committee: s.object({
+        label: s.string(),
+        members: s.array(
+          s.object({
+            name: s.string(),
+            role: s.string(),
+            image: s.string(),
+            linkedin: s.string()
+          })
+        )
+      })
+    }),
+    body: s.markdown()
+  })
+});
+
+const syllabi = defineCollection({
+  name: 'Syllabi',
+  pattern: 'sections/syllabi.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    body: s.markdown(),
+    certifications: s.array(
+      s.object({
+        code: s.string(),
+        title: s.string(),
+        documents: s.array(
+          s.object({
+            lang: s.string(),
+            type: s.enum(['syllabus', 'questions', 'answers', 'guide']),
+            file: s.string(),
+            github: s.string().optional()
+          })
+        )
+      })
+    )
+  })
+});
+
 const jsonLd = defineCollection({
   name: 'JsonLd',
   pattern: 'json-ld.md',
@@ -386,14 +455,20 @@ const accreditationListMaterials = defineCollection({
 
 export default defineConfig({
   root: 'content',
+  markdown: {
+    rehypePlugins: [[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }]]
+  },
   collections: {
+    announcement,
     navbar,
     hero,
+    about,
     featuredContent,
     join,
     portfolio,
     dictionary,
     scr,
+    syllabi,
     footer,
     cookieConsent,
     openGraph,

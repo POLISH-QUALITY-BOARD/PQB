@@ -1,6 +1,6 @@
 import { expect, test } from './../test';
 
-test('I can navigate to section', async ({ isMobile, homePage }) => {
+test('I can navigate to section', async ({ isMobile, homePage, baseURL }) => {
   const { navbarMobileNavigationItem, navbarDesktopNavigationItem } = homePage.getLocators();
 
   await homePage.goto();
@@ -9,15 +9,15 @@ test('I can navigate to section', async ({ isMobile, homePage }) => {
     await homePage.clickNavbarHamburgerButton();
   }
 
-  const selector = await (isMobile ? navbarMobileNavigationItem : navbarDesktopNavigationItem)
+  const href = await (isMobile ? navbarMobileNavigationItem : navbarDesktopNavigationItem)
     .first()
-    .getAttribute('href')
-    .then((href) => (href ?? '').split('/'))
-    .then(([, selector]) => selector);
+    .getAttribute('href');
+
+  const { hash } = new URL(href!, baseURL);
 
   await (isMobile
     ? homePage.clickNavbarMobileNavigationItem()
     : homePage.clickNavbarDesktopNavigationItem());
 
-  await expect(homePage.getPage().locator(selector)).toBeInViewport();
+  await expect(homePage.getPage().locator(hash)).toBeInViewport();
 });

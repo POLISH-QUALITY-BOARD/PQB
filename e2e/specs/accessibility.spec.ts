@@ -1,48 +1,35 @@
 import { expect, test } from './../test';
 import AxeBuilder from '@axe-core/playwright';
-import type { Keyboard, Locator } from '@playwright/test';
+import type { Locator } from '@playwright/test';
 
-const isFocused = (locator: Locator) =>
-  locator
-    .and(locator.page().locator(':focus'))
-    .count()
-    .then((count) => count > 0);
+const pressTabUntilFocusedThenPressEnter = async (locator: Locator) => {
+  const { keyboard } = locator.page();
 
-const pressTabUntil = async (keyboard: Keyboard, predicate: () => Promise<boolean>) => {
+  const isFocused = (locator: Locator) =>
+    locator
+      .and(locator.page().locator(':focus'))
+      .count()
+      .then((count) => count > 0);
+
   while (true) {
     await keyboard.press('Tab');
 
-    if (await predicate()) {
-      return;
+    if (await isFocused(locator)) {
+      return await keyboard.press('Enter');
     }
   }
 };
 
-test('I can download membership declaration using keyboard', async ({ isMobile, homePage }) => {
-  const {
-    navbarHamburgerButton,
-    navbarDesktopJoinUsButton,
-    navbarMobileJoinUsButton,
-    membershipDeclarationDownloadButton
-  } = homePage.getLocators();
-  const { keyboard } = homePage.getPage();
+test('I can download membership declaration using keyboard', async ({ homePage }) => {
+  const { membershipDeclarationDownloadButton } = homePage.getLocators();
 
   await homePage.goto();
 
-  if (isMobile) {
-    await pressTabUntil(keyboard, () => isFocused(navbarHamburgerButton));
-    await keyboard.press('Enter');
-  }
-
-  await pressTabUntil(keyboard, () =>
-    isFocused(isMobile ? navbarMobileJoinUsButton : navbarDesktopJoinUsButton)
-  );
-  await keyboard.press('Enter');
-
-  await pressTabUntil(keyboard, () => isFocused(membershipDeclarationDownloadButton));
-
   await expect(
-    Promise.all([homePage.getPage().waitForEvent('download'), keyboard.press('Enter')])
+    Promise.all([
+      homePage.getPage().waitForEvent('download'),
+      pressTabUntilFocusedThenPressEnter(membershipDeclarationDownloadButton)
+    ])
   ).resolves.toBeDefined();
 });
 

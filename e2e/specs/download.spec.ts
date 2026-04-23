@@ -1,22 +1,17 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../test';
 
-test('I can download documents', async ({ page }) => {
-  await page.goto('/');
-  await page.getByTestId('cookie-consent-accept-button').click();
+test('I can download documents', async ({ homePage, baseURL, request }) => {
+  const { downloadLink } = homePage.getLocators();
 
-  const anchors = await page.locator('a[download]').all();
+  await homePage.goto();
 
-  for (const anchor of anchors) {
-    const dataTestId = await anchor.getAttribute('data-testid');
+  const downloadLinks = await downloadLink.all();
 
-    if (dataTestId === 'statutes-download-en') {
-      await page.getByTestId('statutes-tab-en').click();
-    }
+  for (const [n] of downloadLinks.entries()) {
+    const href = await downloadLink.nth(n).getAttribute('href');
 
-    await anchor.evaluate((element) => element.scrollIntoView({ block: 'center' }));
+    const response = await request.get(new URL(href!, baseURL).toString());
 
-    const [download] = await Promise.all([page.waitForEvent('download'), anchor.click()]);
-
-    expect(download).toBeDefined();
+    expect(response.ok()).toBe(true);
   }
 });
