@@ -1,5 +1,5 @@
 ---
-heading: Lista akredytacji
+heading: Rejestr akredytacji
 certifications:
   - code: CTFL
     label: ISTQB® Certified Tester Foundation Level
