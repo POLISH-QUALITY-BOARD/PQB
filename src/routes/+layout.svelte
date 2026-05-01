@@ -1,5 +1,6 @@
 <script lang="ts">
   import { replaceState } from '$app/navigation';
+  import { base } from '$app/paths';
   import { page } from '$app/state';
   import Announcement from '$lib/components/Announcement.svelte';
   import CookieConsent from '$lib/components/CookieConsent.svelte';
@@ -52,7 +53,7 @@
 
 <Announcement {...announcement} />
 <Navbar {...navbar} />
-{#if page.url.pathname === '/'}
+{#if page.url.pathname === base + '/'}
   <Hero {...hero} />
 {/if}
 
