@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { resolve } from '$app/paths';
+  import { base, resolve } from '$app/paths';
   import Article from '$lib/components/Article.svelte';
   import Section from '$lib/components/Section.svelte';
   import IconCheck from '~icons/mdi/check';
@@ -92,7 +92,7 @@
   <p class="text-gray-600 mb-4">
     Procesy akredytacyjne obowiązujące w PQB są opisane w <a
       // eslint-disable-next-line svelte/no-navigation-without-resolve
-      href="documents/Procesy-akredytacyjne-w-PQB-v1.0.pdf"
+      href="{base}/documents/Procesy-akredytacyjne-w-PQB-v1.0.pdf"
       class="underline hover:text-primary">niniejszym dokumencie</a
     >.
   </p>
