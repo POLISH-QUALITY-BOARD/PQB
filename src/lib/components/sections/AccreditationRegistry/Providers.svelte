@@ -3,12 +3,16 @@
   import type { AccreditationRegistry, AccreditationRegistryProviders } from '$velite';
   import { Tooltip } from 'bits-ui';
   import { SvelteSet } from 'svelte/reactivity';
+  import type { Picture } from 'vite-imagetools';
   import IconFilterOffOutline from '~icons/mdi/filter-off-outline';
   import IconOpenInNew from '~icons/mdi/open-in-new';
   import IconShieldCheck from '~icons/mdi/shield-check';
   import IconShieldOff from '~icons/mdi/shield-off';
-  import IconAdidas from '~icons/simple-icons/adidas';
-  import IconNike from '~icons/simple-icons/nike';
+
+  const assets = import.meta.glob<{ default: Picture }>('/src/lib/assets/**/*', {
+    eager: true,
+    query: '?enhanced'
+  });
 
   let {
     heading: title,
@@ -99,13 +103,12 @@
         <div
           class="flex items-center gap-4 p-4 bg-white border-b border-gray-100 last:border-b-0 sm:border-b-0"
         >
-          <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
-            {#if logo === 'adidas'}
-              <IconAdidas aria-hidden="true" width="22" height="22" class="text-gray-700" />
-            {:else}
-              <IconNike aria-hidden="true" width="22" height="22" class="text-gray-700" />
-            {/if}
-          </div>
+          <enhanced:img
+            src={assets[logo].default}
+            alt={name}
+            loading="lazy"
+            class="w-16 h-16 rounded-full object-cover shrink-0"
+          />
           <div class="min-w-0 grow">
             <p class="font-semibold text-primary text-base mb-0 leading-snug">{name}</p>
             <p class="text-xs text-gray-500 mb-0 mt-0.5">

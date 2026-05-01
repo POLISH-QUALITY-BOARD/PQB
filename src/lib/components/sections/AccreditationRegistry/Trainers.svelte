@@ -3,10 +3,16 @@
   import type { AccreditationRegistry, AccreditationRegistryTrainers } from '$velite';
   import { Tooltip } from 'bits-ui';
   import { SvelteSet } from 'svelte/reactivity';
+  import type { Picture } from 'vite-imagetools';
   import IconFilterOffOutline from '~icons/mdi/filter-off-outline';
   import IconShieldCheck from '~icons/mdi/shield-check';
   import IconShieldOff from '~icons/mdi/shield-off';
   import IconLinkedin from '~icons/simple-icons/linkedin';
+
+  const assets = import.meta.glob<{ default: Picture }>('/src/lib/assets/**/*', {
+    eager: true,
+    query: '?enhanced'
+  });
 
   let {
     heading: title,
@@ -97,9 +103,10 @@
         <div
           class="flex items-center gap-4 p-4 bg-white border-b border-gray-100 last:border-b-0 sm:border-b-0"
         >
-          <img
-            src={photo}
+          <enhanced:img
+            src={assets[photo].default}
             alt={name}
+            loading="lazy"
             class="w-16 h-16 rounded-full object-cover object-top shrink-0"
           />
           <div class="min-w-0 grow">
