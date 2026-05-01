@@ -372,9 +372,9 @@ const jsonLd = defineCollection({
   })
 });
 
-const accreditationList = defineCollection({
-  name: 'AccreditationList',
-  pattern: 'sections/accreditation-list.md',
+const accreditationRegistry = defineCollection({
+  name: 'AccreditationRegistry',
+  pattern: 'pages/accreditation-registry.md',
   single: true,
   schema: s.object({
     heading: s.string(),
@@ -388,9 +388,9 @@ const accreditationList = defineCollection({
   })
 });
 
-const accreditationListTrainers = defineCollection({
-  name: 'AccreditationListTrainers',
-  pattern: 'sections/accreditation-list/trainers.md',
+const accreditationRegistryTrainers = defineCollection({
+  name: 'AccreditationRegistryTrainers',
+  pattern: 'pages/accreditation-registry/trainers.md',
   single: true,
   schema: s.object({
     heading: s.string(),
@@ -410,9 +410,9 @@ const accreditationListTrainers = defineCollection({
   })
 });
 
-const accreditationListProviders = defineCollection({
-  name: 'AccreditationListProviders',
-  pattern: 'sections/accreditation-list/providers.md',
+const accreditationRegistryProviders = defineCollection({
+  name: 'AccreditationRegistryProviders',
+  pattern: 'pages/accreditation-registry/providers.md',
   single: true,
   schema: s.object({
     heading: s.string(),
@@ -432,9 +432,9 @@ const accreditationListProviders = defineCollection({
   })
 });
 
-const accreditationListMaterials = defineCollection({
-  name: 'AccreditationListMaterials',
-  pattern: 'sections/accreditation-list/materials.md',
+const accreditationRegistryMaterials = defineCollection({
+  name: 'AccreditationRegistryMaterials',
+  pattern: 'pages/accreditation-registry/materials.md',
   single: true,
   schema: s.object({
     heading: s.string(),
@@ -474,9 +474,9 @@ export default defineConfig({
     openGraph,
     twitterCard,
     jsonLd,
-    accreditationList,
-    accreditationListTrainers,
-    accreditationListProviders,
-    accreditationListMaterials
+    accreditationRegistry,
+    accreditationRegistryTrainers,
+    accreditationRegistryProviders,
+    accreditationRegistryMaterials
   }
 });

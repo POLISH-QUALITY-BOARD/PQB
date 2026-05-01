@@ -1,14 +1,12 @@
 <script lang="ts">
   import Article from '$lib/components/Article.svelte';
-  import type { AccreditationList, AccreditationListProviders } from '$velite';
+  import type { AccreditationRegistry, AccreditationRegistryTrainers } from '$velite';
   import { Tooltip } from 'bits-ui';
   import { SvelteSet } from 'svelte/reactivity';
   import IconFilterOffOutline from '~icons/mdi/filter-off-outline';
-  import IconOpenInNew from '~icons/mdi/open-in-new';
   import IconShieldCheck from '~icons/mdi/shield-check';
   import IconShieldOff from '~icons/mdi/shield-off';
-  import IconAdidas from '~icons/simple-icons/adidas';
-  import IconNike from '~icons/simple-icons/nike';
+  import IconLinkedin from '~icons/simple-icons/linkedin';
 
   let {
     heading: title,
@@ -19,8 +17,8 @@
     items,
     certifications,
     certLabels
-  }: AccreditationListProviders & {
-    certifications: AccreditationList['certifications'];
+  }: AccreditationRegistryTrainers & {
+    certifications: AccreditationRegistry['certifications'];
     certLabels: Record<string, string>;
   } = $props();
 
@@ -91,7 +89,7 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3">
-      {#each filteredSorted as { name, logo, dateTo, certifications: certs, link }, i (i)}
+      {#each filteredSorted as { name, photo, dateTo, certifications: certs, linkedin }, i (i)}
         {#if i > 0 && i % 3 === 0}
           <div class="hidden sm:block col-span-3 h-px bg-gray-100"></div>
         {/if}
@@ -99,13 +97,11 @@
         <div
           class="flex items-center gap-4 p-4 bg-white border-b border-gray-100 last:border-b-0 sm:border-b-0"
         >
-          <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
-            {#if logo === 'adidas'}
-              <IconAdidas aria-hidden="true" width="22" height="22" class="text-gray-700" />
-            {:else}
-              <IconNike aria-hidden="true" width="22" height="22" class="text-gray-700" />
-            {/if}
-          </div>
+          <img
+            src={photo}
+            alt={name}
+            class="w-16 h-16 rounded-full object-cover object-top shrink-0"
+          />
           <div class="min-w-0 grow">
             <p class="font-semibold text-primary text-base mb-0 leading-snug">{name}</p>
             <p class="text-xs text-gray-500 mb-0 mt-0.5">
@@ -144,15 +140,15 @@
               {/each}
             </div>
           </div>
-          {#if link}
+          {#if linkedin}
             <a
-              href={link}
+              href={linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Strona — {name}"
+              aria-label="Profil LinkedIn — {name}"
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <IconOpenInNew aria-hidden="true" width="16" height="16" />
+              <IconLinkedin aria-hidden="true" width="16" height="16" />
             </a>
           {/if}
         </div>

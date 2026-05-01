@@ -1,6 +1,6 @@
 <script lang="ts">
   import Article from '$lib/components/Article.svelte';
-  import type { AccreditationListMaterials } from '$velite';
+  import type { AccreditationRegistryMaterials } from '$velite';
   import IconArrowDown from '~icons/mdi/arrow-down';
   import IconArrowUp from '~icons/mdi/arrow-up';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
@@ -15,7 +15,7 @@
     openLabel,
     body,
     items
-  }: AccreditationListMaterials = $props();
+  }: AccreditationRegistryMaterials = $props();
 
   const formatDate = (date: string) => new Date(date).toLocaleDateString();
 
