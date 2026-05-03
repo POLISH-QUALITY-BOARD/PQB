@@ -29,12 +29,12 @@
         downloads: [
           {
             label: 'Wniosek o akredytację trenera',
-            href: 'documents/Szablon-wniosek-o-akredytacje-trenera-v1.0.docx',
+            href: 'documents/Szablon-wniosek-o-akredytacje-trenera-v1.1.pdf',
             testId: 'download-accreditation-trainer'
           },
           {
             label: 'Wniosek o akredytację dostawcy szkoleń',
-            href: 'documents/Szablon-wniosek-o-akredytacje-dostawcy-szkoleń-v1.0.docx',
+            href: 'documents/Szablon-wniosek-o-akredytacje-dostawcy-szkolen-v1.1.pdf',
             testId: 'download-accreditation-provider'
           },
           {
