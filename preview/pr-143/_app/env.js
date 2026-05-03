@@ -1,1 +1,0 @@
-export const env={"PUBLIC_GA_ID":"G-QBYKT03LP5","PUBLIC_GA_DEBUG_MODE":"true"}
