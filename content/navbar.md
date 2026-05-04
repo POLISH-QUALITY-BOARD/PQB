@@ -1,6 +1,12 @@
 ---
 brand:
   ariaLabel: Strona główna PQB
+  alt: Logo PQB
+navigation:
+  ariaLabel: Nawigacja główna
+hamburgerButton:
+  openLabel: Otwórz nawigację
+  closeLabel: Zamknij nawigację
 navbarItems:
   - href: /#o-nas
     text: O nas
