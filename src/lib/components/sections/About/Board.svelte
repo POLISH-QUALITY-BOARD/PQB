@@ -42,10 +42,10 @@
               <p class="text-sm text-gray-600 mb-0">{person.role}</p>
             </div>
             <a
-              href={person.linkedin}
+              href={person.linkedin.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Profil LinkedIn — ${person.name}`}
+              aria-label={person.linkedin.ariaLabel}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
               <IconLinkedin aria-hidden="true" width="18" height="18" />
@@ -73,10 +73,10 @@
               <p class="text-sm text-gray-600 mb-0">{person.role}</p>
             </div>
             <a
-              href={person.linkedin}
+              href={person.linkedin.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Profil LinkedIn — ${person.name}`}
+              aria-label={person.linkedin.ariaLabel}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
               <IconLinkedin aria-hidden="true" width="18" height="18" />

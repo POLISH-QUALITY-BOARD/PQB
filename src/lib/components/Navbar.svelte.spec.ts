@@ -14,7 +14,15 @@ describe('Navbar.svelte', () => {
     await render(Navbar, {
       props: {
         brand: {
+          ariaLabel: faker.lorem.words(),
+          alt: faker.lorem.words()
+        },
+        navigation: {
           ariaLabel: faker.lorem.words()
+        },
+        hamburgerButton: {
+          openLabel: faker.lorem.words(),
+          closeLabel: faker.lorem.words()
         },
         navbarItems: [
           {
