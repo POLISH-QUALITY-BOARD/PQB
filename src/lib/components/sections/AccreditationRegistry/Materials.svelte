@@ -19,7 +19,7 @@
 
   const formatDate = (date: string) => new Date(date).toLocaleDateString();
 
-  type SortKey = 'default' | 'name' | 'author' | 'dateTo';
+  type SortKey = 'default' | 'name' | 'author' | 'dateFrom';
   let sort = $state<{ key: SortKey; dir: 'asc' | 'desc' }>({ key: 'default', dir: 'asc' });
 
   const setSort = (key: SortKey) => {
@@ -35,8 +35,8 @@
     return [...items].sort((a, b) => {
       let cmp = 0;
       if (sort.key === 'name') cmp = a.name.localeCompare(b.name);
-      if (sort.key === 'author') cmp = a.author.localeCompare(b.author);
-      if (sort.key === 'dateTo') cmp = a.dateTo.localeCompare(b.dateTo);
+      if (sort.key === 'author') cmp = a.author.name.localeCompare(b.author.name);
+      if (sort.key === 'dateFrom') cmp = a.dateFrom.localeCompare(b.dateFrom);
       return sort.dir === 'asc' ? cmp : -cmp;
     });
   });
@@ -102,18 +102,18 @@
                 {/if}
               </button>
             </th>
-            <th scope="col" class="px-4 py-3 w-32" aria-sort={ariaSort('dateTo')}>
+            <th scope="col" class="px-4 py-3 w-32" aria-sort={ariaSort('dateFrom')}>
               <div class="flex justify-center">
                 <button
                   type="button"
-                  onclick={() => setSort('dateTo')}
+                  onclick={() => setSort('dateFrom')}
                   class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sort.key ===
-                  'dateTo'
+                  'dateFrom'
                     ? 'text-primary'
                     : 'text-primary'}"
                 >
                   Data do
-                  {#if sort.key === 'dateTo'}
+                  {#if sort.key === 'dateFrom'}
                     {#if sort.dir === 'asc'}<IconArrowUp
                         aria-hidden="true"
                         width="12"
@@ -140,7 +140,7 @@
           </tr>
         </thead>
         <tbody>
-          {#each sorted as { name, author, authorLinkedin, dateTo, link }, i (i)}
+          {#each sorted as { name, author, dateFrom, link }, i (i)}
             <tr
               class="border-b border-gray-100 last:border-b-0 {i % 2 !== 0
                 ? 'bg-gray-50/50'
@@ -165,13 +165,13 @@
               </td>
               <td class="px-4 py-3.5">
                 <div class="flex items-center gap-1.5">
-                  <span class="font-medium text-gray-700 whitespace-nowrap">{author}</span>
-                  {#if authorLinkedin}
+                  <span class="font-medium text-gray-700 whitespace-nowrap">{author.name}</span>
+                  {#if author.linkedin}
                     <a
-                      href={authorLinkedin}
+                      href={author.linkedin.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Profil LinkedIn — {author}"
+                      aria-label={author.linkedin.ariaLabel}
                       class="text-gray-300 hover:text-primary no-underline"
                     >
                       <IconLinkedin aria-hidden="true" width="12" height="12" />
@@ -182,7 +182,7 @@
               <td class="px-4 py-3.5 text-center">
                 <span
                   class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-primary-light text-primary"
-                  >{formatDate(dateTo)}</span
+                  >{formatDate(dateFrom)}</span
                 >
               </td>
               <td class="px-6 py-3.5 text-center">

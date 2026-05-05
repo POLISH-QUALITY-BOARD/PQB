@@ -372,10 +372,6 @@ const accreditation = defineCollection({
   single: true,
   schema: s.object({
     heading: s.string(),
-    processesDocument: s.object({
-      href: s.string(),
-      text: s.string()
-    }),
     articles: s.array(
       s.object({
         id: s.string(),
@@ -503,9 +499,16 @@ const accreditationRegistryMaterials = defineCollection({
     items: s.array(
       s.object({
         name: s.string(),
-        author: s.string(),
-        authorLinkedin: s.string().optional(),
-        dateTo: s.string(),
+        author: s.object({
+          name: s.string(),
+          linkedin: s
+            .object({
+              href: s.string(),
+              ariaLabel: s.string()
+            })
+            .optional()
+        }),
+        dateFrom: s.string(),
         link: s.string()
       })
     )
