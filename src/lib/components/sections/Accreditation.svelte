@@ -17,10 +17,10 @@
 <Section level={2} id="akredytacja" class="bg-gray-50">
   {#snippet heading()}{headingText}{/snippet}
 
-  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   <div
     class="text-gray-600 mb-12 [&>p]:mb-4 [&>p]:last:mb-0 [&_a]:underline [&_a]:hover:text-primary"
   >
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
     {@html body}
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
