@@ -6,7 +6,7 @@
   import IconAccountPlusOutline from '~icons/mdi/account-plus-outline';
   import IconChevronDown from '~icons/mdi/chevron-down';
 
-  let { brand, navbarItems, joinUsButton }: Navbar = $props();
+  let { brand, navigation, hamburgerButton, navbarItems, joinUsButton }: Navbar = $props();
 
   let menuOpen = $state(false);
   let openGroup = $state<string | null>(null);
@@ -49,11 +49,11 @@
       class="flex items-center gap-3 no-underline shrink-0"
       data-testid="navbar-brand-link"
     >
-      <enhanced:img src="$lib/assets/brand.webp" alt="PQB Logo" class="h-12 w-auto" />
+      <enhanced:img src="$lib/assets/brand.webp" alt={brand.alt} class="h-12 w-auto" />
     </a>
 
     <NavigationMenu.Root
-      aria-label="Nawigacja główna"
+      aria-label={navigation.ariaLabel}
       class="hidden md:flex"
       data-testid="navbar-desktop-navigation"
     >
@@ -128,7 +128,7 @@
     <button
       type="button"
       class="flex md:hidden flex-col bg-transparent border-none cursor-pointer gap-1.5 p-2"
-      aria-label={menuOpen ? 'Zamknij nawigację' : 'Otwórz nawigację'}
+      aria-label={menuOpen ? hamburgerButton.closeLabel : hamburgerButton.openLabel}
       aria-expanded={menuOpen}
       aria-controls="mobile-navigation"
       onclick={handleToggle}
@@ -152,7 +152,7 @@
       class="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-100"
       transition:slide={{ duration: 200 }}
     >
-      <nav aria-label="Nawigacja główna" class="max-w-270 mx-auto px-4 py-2 flex flex-col">
+      <nav aria-label={navigation.ariaLabel} class="max-w-270 mx-auto px-4 py-2 flex flex-col">
         {#each navbarItems as { text, ...item }, index (index)}
           {#if 'children' in item}
             <div>

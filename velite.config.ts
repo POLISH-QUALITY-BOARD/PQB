@@ -16,7 +16,15 @@ const navbar = defineCollection({
   single: true,
   schema: s.object({
     brand: s.object({
+      ariaLabel: s.string(),
+      alt: s.string()
+    }),
+    navigation: s.object({
       ariaLabel: s.string()
+    }),
+    hamburgerButton: s.object({
+      openLabel: s.string(),
+      closeLabel: s.string()
     }),
     navbarItems: s.array(
       s.object({
@@ -308,7 +316,10 @@ const about = defineCollection({
             name: s.string(),
             role: s.string(),
             image: s.string(),
-            linkedin: s.string()
+            linkedin: s.object({
+              href: s.string(),
+              ariaLabel: s.string()
+            })
           })
         )
       }),
@@ -319,7 +330,10 @@ const about = defineCollection({
             name: s.string(),
             role: s.string(),
             image: s.string(),
-            linkedin: s.string()
+            linkedin: s.object({
+              href: s.string(),
+              ariaLabel: s.string()
+            })
           })
         )
       })
@@ -349,6 +363,51 @@ const syllabi = defineCollection({
         )
       })
     )
+  })
+});
+
+const accreditation = defineCollection({
+  name: 'Accreditation',
+  pattern: 'sections/accreditation.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    processesDocument: s.object({
+      href: s.string(),
+      text: s.string()
+    }),
+    articles: s.array(
+      s.object({
+        id: s.string(),
+        heading: s.string(),
+        description: s.string()
+      })
+    ),
+    steps: s.object({
+      heading: s.string(),
+      items: s.array(
+        s.object({
+          title: s.string(),
+          description: s.string(),
+          action: s
+            .object({
+              type: s.enum(['downloads', 'email']),
+              downloads: s
+                .array(
+                  s.object({
+                    label: s.string(),
+                    href: s.string(),
+                    testId: s.string()
+                  })
+                )
+                .optional(),
+              address: s.string().optional()
+            })
+            .optional()
+        })
+      )
+    }),
+    body: s.markdown()
   })
 });
 
@@ -382,6 +441,7 @@ export default defineConfig({
     navbar,
     hero,
     about,
+    accreditation,
     featuredContent,
     join,
     portfolio,
