@@ -15,7 +15,8 @@ export const test = baseTest.extend<{
   homePage: async ({ page }, use) => {
     await use(new HomePage(page));
   },
-  makeAxeBuilder: async (_, use) => {
+  // eslint-disable-next-line no-empty-pattern
+  makeAxeBuilder: async ({}, use) => {
     await use(({ page }: { page: Page }) =>
       new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
     );
