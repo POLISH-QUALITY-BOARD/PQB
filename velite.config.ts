@@ -1,5 +1,28 @@
+import type { Element, Root } from 'hast';
 import rehypeExternalLinks from 'rehype-external-links';
+import { visit } from 'unist-util-visit';
 import { defineCollection, defineConfig, s } from 'velite';
+
+const base = process.env.BASE_PATH ?? '';
+
+const href = () =>
+  s
+    .string()
+    .transform((h) =>
+      /^https?:|^mailto:|^#/.test(h) ? h : base + (h.startsWith('/') ? h : '/' + h)
+    );
+
+const rehypeBasePath = () => (tree: Root) => {
+  visit(tree, 'element', (node: Element) => {
+    if (
+      node.tagName === 'a' &&
+      typeof node.properties?.href === 'string' &&
+      node.properties.href.startsWith('/')
+    ) {
+      node.properties.href = base + node.properties.href;
+    }
+  });
+};
 
 const announcement = defineCollection({
   name: 'Announcement',
@@ -28,12 +51,12 @@ const navbar = defineCollection({
     }),
     navbarItems: s.array(
       s.object({
-        href: s.string(),
+        href: href(),
         text: s.string(),
         children: s
           .array(
             s.object({
-              href: s.string(),
+              href: href(),
               text: s.string()
             })
           )
@@ -41,7 +64,7 @@ const navbar = defineCollection({
       })
     ),
     joinUsButton: s.object({
-      href: s.string(),
+      href: href(),
       text: s.string()
     })
   })
@@ -56,7 +79,7 @@ const hero = defineCollection({
       alt: s.string()
     }),
     learnMoreLink: s.object({
-      href: s.string(),
+      href: href(),
       text: s.string()
     }),
     body: s.markdown()
@@ -76,7 +99,7 @@ const featuredContent = defineCollection({
       label: s.string(),
       links: s.array(
         s.object({
-          href: s.string(),
+          href: href(),
           title: s.string()
         })
       )
@@ -115,7 +138,7 @@ const join = defineCollection({
         heading: s.string(),
         description: s.string(),
         action: s.object({
-          href: s.string(),
+          href: href(),
           text: s.string()
         })
       }),
@@ -123,7 +146,7 @@ const join = defineCollection({
         heading: s.string(),
         description: s.string(),
         action: s.object({
-          href: s.string(),
+          href: href(),
           text: s.string()
         })
       }),
@@ -163,7 +186,7 @@ const dictionary = defineCollection({
     heading: s.string(),
     description: s.string(),
     link: s.object({
-      href: s.string(),
+      href: href(),
       text: s.string()
     }),
     body: s.markdown()
@@ -178,7 +201,7 @@ const scr = defineCollection({
     heading: s.string(),
     description: s.string(),
     link: s.object({
-      href: s.string(),
+      href: href(),
       text: s.string()
     }),
     body: s.markdown()
@@ -198,7 +221,7 @@ const footer = defineCollection({
       label: s.string(),
       links: s.array(
         s.object({
-          href: s.string(),
+          href: href(),
           text: s.string()
         })
       )
@@ -207,7 +230,7 @@ const footer = defineCollection({
       label: s.string(),
       links: s.array(
         s.object({
-          href: s.string(),
+          href: href(),
           text: s.string()
         })
       )
@@ -226,25 +249,25 @@ const footer = defineCollection({
     social: s.object({
       linkedin: s.object({
         ariaLabel: s.string(),
-        href: s.string()
+        href: href()
       }),
       facebook: s.object({
         ariaLabel: s.string(),
-        href: s.string()
+        href: href()
       }),
       github: s.object({
         ariaLabel: s.string(),
-        href: s.string()
+        href: href()
       }),
       discord: s.object({
         ariaLabel: s.string(),
-        href: s.string()
+        href: href()
       })
     }),
     additionalItems: s.array(s.string()),
     copyright: s.string(),
     privacyPolicy: s.object({
-      href: s.string(),
+      href: href(),
       text: s.string()
     }),
     cookieSettings: s.object({
@@ -317,7 +340,7 @@ const about = defineCollection({
             role: s.string(),
             image: s.string(),
             linkedin: s.object({
-              href: s.string(),
+              href: href(),
               ariaLabel: s.string()
             })
           })
@@ -331,7 +354,7 @@ const about = defineCollection({
             role: s.string(),
             image: s.string(),
             linkedin: s.object({
-              href: s.string(),
+              href: href(),
               ariaLabel: s.string()
             })
           })
@@ -392,7 +415,7 @@ const accreditation = defineCollection({
                 .array(
                   s.object({
                     label: s.string(),
-                    href: s.string(),
+                    href: href(),
                     testId: s.string()
                   })
                 )
@@ -514,7 +537,7 @@ const accreditationRegistryMaterials = defineCollection({
           name: s.string(),
           linkedin: s
             .object({
-              href: s.string(),
+              href: href(),
               ariaLabel: s.string()
             })
             .optional()
@@ -528,7 +551,10 @@ const accreditationRegistryMaterials = defineCollection({
 export default defineConfig({
   root: 'content',
   markdown: {
-    rehypePlugins: [[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }]]
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+      rehypeBasePath
+    ]
   },
   collections: {
     announcement,
