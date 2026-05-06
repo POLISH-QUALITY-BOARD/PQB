@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import type { Hero } from '$velite';
   import IconChevronDown from '~icons/mdi/chevron-down';
 
@@ -24,7 +23,7 @@
 
     <!-- eslint-disable svelte/no-navigation-without-resolve -->
     <a
-      href={base + learnMoreLink.href}
+      href={learnMoreLink.href}
       class="mt-24 flex flex-col items-center gap-2 text-white/50 hover:text-white/70 no-underline"
     >
       <span class="learn-more-link uppercase">{learnMoreLink.text}</span>

@@ -380,7 +380,7 @@ const syllabi = defineCollection({
           s.object({
             lang: s.string(),
             type: s.enum(['syllabus', 'questions', 'answers', 'guide']),
-            file: s.string(),
+            file: href(),
             github: s.string().optional()
           })
         )

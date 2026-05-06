@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import Section from '$lib/components/Section.svelte';
   import type { Syllabi } from '$velite';
   import { untrack } from 'svelte';
@@ -183,7 +182,7 @@
                         class="text-accent shrink-0 opacity-70"
                       />
                       <a
-                        href="{base}/documents/syllabi/{doc.file}"
+                        href={doc.file}
                         class="font-mono text-xs text-primary hover:underline no-underline"
                         >{doc.file.split('/').pop()}</a
                       >
@@ -215,7 +214,7 @@
                         </a>
                       {/if}
                       <a
-                        href="{base}/documents/syllabi/{doc.file}"
+                        href={doc.file}
                         download
                         class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                       >
