@@ -87,7 +87,7 @@
                     <li>
                       <!-- eslint-disable svelte/no-navigation-without-resolve -->
                       <a
-                        href={base + href}
+                        {href}
                         data-testid="navbar-desktop-child-navigation-item"
                         class="block px-5 py-3 text-gray-600 text-sm no-underline hover:text-primary hover:bg-gray-50"
                         >{text}</a
@@ -174,7 +174,7 @@
                   {#each item.children as { href, text }, index (index)}
                     <!-- eslint-disable svelte/no-navigation-without-resolve -->
                     <a
-                      href={base + href}
+                      {href}
                       data-testid="navbar-mobile-child-navigation-item"
                       class="text-gray-600 text-sm py-2.5 no-underline hover:text-primary"
                       onclick={handleClose}>{text}</a
