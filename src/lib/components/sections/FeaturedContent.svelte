@@ -83,10 +83,7 @@
               <button
                 type="button"
                 onclick={() => setWpSort('default')}
-                class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {wpSort.key ===
-                'default'
-                  ? 'text-primary'
-                  : 'text-gray-600'}"
+                class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-gray-500 hover:text-primary"
               >
                 Reset
               </button>

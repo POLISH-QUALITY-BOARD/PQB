@@ -155,11 +155,7 @@
                   <button
                     type="button"
                     onclick={() => setSort(cert.code, 'default')}
-                    class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[
-                      cert.code
-                    ].key === 'default'
-                      ? 'text-primary'
-                      : 'text-primary'}"
+                    class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 hover:text-primary text-gray-500"
                   >
                     Reset
                   </button>
