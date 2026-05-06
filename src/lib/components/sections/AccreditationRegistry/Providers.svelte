@@ -163,7 +163,7 @@
               aria-label="Strona — {name}"
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <IconOpenInNew aria-hidden="true" width="16" height="16" />
+              <IconOpenInNew aria-hidden="true" width="18" height="18" />
             </a>
           {/if}
         </div>
