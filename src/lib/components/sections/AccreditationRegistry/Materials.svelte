@@ -111,7 +111,7 @@
               <button
                 type="button"
                 onclick={() => setSort('default')}
-                class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-gray-400 hover:text-primary"
+                class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-gray-500 hover:text-primary"
               >
                 Reset
               </button>
@@ -147,7 +147,7 @@
                       aria-label={author.linkedin.ariaLabel}
                       class="text-gray-300 hover:text-primary no-underline"
                     >
-                      <IconLinkedin aria-hidden="true" width="12" height="12" />
+                      <IconLinkedin aria-hidden="true" width="14" height="14" />
                     </a>
                   {/if}
                 </div>
