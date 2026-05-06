@@ -1,5 +1,8 @@
 ---
 heading: Akredytacja
+processesDocument:
+  href: /documents/Procesy-akredytacyjne-w-PQB-v1.1.pdf
+  text: niniejszym dokumencie
 articles:
   - id: akredytacja-dostawcy-szkolen-istqb
     heading: Akredytacja dostawcy szkoleń ISTQB®
@@ -27,7 +30,7 @@ steps:
         type: downloads
         downloads:
           - label: Cennik akredytacji
-            href: documents/Akredytacje-cennik.pdf
+            href: documents/Akredytacje-cennik-v1.1.pdf
             testId: download-accreditation-pricing
     - title: Pobierz szablon wniosku o akredytację
       description: Wybierz odpowiedni szablon w zależności od rodzaju akredytacji.
