@@ -73,6 +73,6 @@ być prowadzone wyłącznie przez akredytowanych dostawców szkoleń, na bazie a
 szkoleniowych i przez akredytowanych trenerów, _z zastrzeżeniem, że wymóg akredytacji trenerskiej
 obowiązuje od 1 stycznia 2027 roku_.
 
-Procesy akredytacyjne obowiązujące w PQB są opisane w [niniejszym dokumencie](/documents/Procesy-akredytacyjne-w-PQB-v1.0.pdf).
+Procesy akredytacyjne obowiązujące w PQB są opisane w [niniejszym dokumencie](/documents/Procesy-akredytacyjne-w-PQB-v1.1.pdf).
 
 Rejestr akredytacji dostępny jest [tutaj](/rejestr-akredytacji).
