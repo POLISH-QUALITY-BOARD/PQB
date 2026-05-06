@@ -454,13 +454,19 @@ const accreditationRegistryTrainers = defineCollection({
     expiredLabel: s.string(),
     body: s.markdown(),
     items: s.array(
-      s.object({
-        photo: s.string(),
-        name: s.string(),
-        dateTo: s.string(),
-        certifications: s.array(s.string()),
-        linkedin: s.string().optional()
-      })
+      s
+        .object({
+          photo: s.string().optional(),
+          name: s.string(),
+          dateFrom: s.isodate(),
+          dateTo: s.isodate(),
+          certifications: s.array(s.string()),
+          linkedin: s.string().optional()
+        })
+        .transform((item) => ({
+          ...item,
+          dateToLabel: new Date(item.dateTo).toLocaleDateString('pl-PL')
+        }))
     )
   })
 });
@@ -476,13 +482,19 @@ const accreditationRegistryProviders = defineCollection({
     expiredLabel: s.string(),
     body: s.markdown(),
     items: s.array(
-      s.object({
-        name: s.string(),
-        logo: s.string(),
-        certifications: s.array(s.string()),
-        dateTo: s.string(),
-        link: s.string().optional()
-      })
+      s
+        .object({
+          name: s.string(),
+          logo: s.string().optional(),
+          certifications: s.array(s.string()),
+          dateFrom: s.isodate(),
+          dateTo: s.isodate(),
+          link: s.string().optional()
+        })
+        .transform((item) => ({
+          ...item,
+          dateToLabel: new Date(item.dateTo).toLocaleDateString('pl-PL')
+        }))
     )
   })
 });
@@ -494,7 +506,6 @@ const accreditationRegistryMaterials = defineCollection({
   schema: s.object({
     heading: s.string(),
     emptyMessage: s.string(),
-    openLabel: s.string(),
     body: s.markdown(),
     items: s.array(
       s.object({
@@ -508,8 +519,7 @@ const accreditationRegistryMaterials = defineCollection({
             })
             .optional()
         }),
-        dateFrom: s.string(),
-        link: s.string()
+        dateFrom: s.isodate().transform((d) => new Date(d).toLocaleDateString('pl-PL'))
       })
     )
   })

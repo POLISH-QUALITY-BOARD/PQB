@@ -5,19 +5,10 @@
   import IconArrowUp from '~icons/mdi/arrow-up';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
   import IconFilterOffOutline from '~icons/mdi/filter-off-outline';
-  import IconOpenInNew from '~icons/mdi/open-in-new';
   import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
   import IconLinkedin from '~icons/simple-icons/linkedin';
 
-  let {
-    heading: title,
-    emptyMessage,
-    openLabel,
-    body,
-    items
-  }: AccreditationRegistryMaterials = $props();
-
-  const formatDate = (date: string) => new Date(date).toLocaleDateString();
+  let { heading: title, emptyMessage, body, items }: AccreditationRegistryMaterials = $props();
 
   type SortKey = 'default' | 'name' | 'author' | 'dateFrom';
   let sort = $state<{ key: SortKey; dir: 'asc' | 'desc' }>({ key: 'default', dir: 'asc' });
@@ -64,10 +55,7 @@
               <button
                 type="button"
                 onclick={() => setSort('name')}
-                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sort.key ===
-                'name'
-                  ? 'text-primary'
-                  : 'text-primary'}"
+                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
               >
                 Nazwa
                 {#if sort.key === 'name'}
@@ -85,10 +73,7 @@
               <button
                 type="button"
                 onclick={() => setSort('author')}
-                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sort.key ===
-                'author'
-                  ? 'text-primary'
-                  : 'text-primary'}"
+                class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
               >
                 Autor
                 {#if sort.key === 'author'}
@@ -102,17 +87,14 @@
                 {/if}
               </button>
             </th>
-            <th scope="col" class="px-4 py-3 w-32" aria-sort={ariaSort('dateFrom')}>
+            <th scope="col" class="px-4 py-3 w-32 text-center" aria-sort={ariaSort('dateFrom')}>
               <div class="flex justify-center">
                 <button
                   type="button"
                   onclick={() => setSort('dateFrom')}
-                  class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sort.key ===
-                  'dateFrom'
-                    ? 'text-primary'
-                    : 'text-primary'}"
+                  class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
                 >
-                  Data do
+                  Data od
                   {#if sort.key === 'dateFrom'}
                     {#if sort.dir === 'asc'}<IconArrowUp
                         aria-hidden="true"
@@ -125,14 +107,11 @@
                 </button>
               </div>
             </th>
-            <th scope="col" class="w-28 py-3 px-6 text-right" aria-sort="none">
+            <th scope="col" class="w-20 py-3 px-4 text-right" aria-sort="none">
               <button
                 type="button"
                 onclick={() => setSort('default')}
-                class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sort.key ===
-                'default'
-                  ? 'text-primary'
-                  : 'text-primary'}"
+                class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-gray-400 hover:text-primary"
               >
                 Reset
               </button>
@@ -140,7 +119,7 @@
           </tr>
         </thead>
         <tbody>
-          {#each sorted as { name, author, dateFrom, link }, i (i)}
+          {#each sorted as { name, author, dateFrom }, i (i)}
             <tr
               class="border-b border-gray-100 last:border-b-0 {i % 2 !== 0
                 ? 'bg-gray-50/50'
@@ -154,13 +133,7 @@
                     height="15"
                     class="text-accent shrink-0 opacity-70"
                   />
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="font-medium text-primary no-underline hover:underline whitespace-nowrap"
-                    >{name}</a
-                  >
+                  <span class="font-medium text-primary">{name}</span>
                 </div>
               </td>
               <td class="px-4 py-3.5">
@@ -182,21 +155,10 @@
               <td class="px-4 py-3.5 text-center">
                 <span
                   class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-primary-light text-primary"
-                  >{formatDate(dateFrom)}</span
+                  >{dateFrom}</span
                 >
               </td>
-              <td class="px-6 py-3.5 text-center">
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 text-xs font-semibold pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline text-white bg-primary hover:bg-primary-dark"
-                  aria-label="Otwórz link dla {name}"
-                >
-                  <IconOpenInNew aria-hidden="true" width="13" height="13" />
-                  {openLabel}
-                </a>
-              </td>
+              <td></td>
             </tr>
           {/each}
           {#if items.length === 0}

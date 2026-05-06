@@ -4,6 +4,7 @@
   import { Tooltip } from 'bits-ui';
   import { SvelteSet } from 'svelte/reactivity';
   import type { Picture } from 'vite-imagetools';
+  import IconDomain from '~icons/mdi/domain';
   import IconFilterOffOutline from '~icons/mdi/filter-off-outline';
   import IconOpenInNew from '~icons/mdi/open-in-new';
   import IconShieldCheck from '~icons/mdi/shield-check';
@@ -28,9 +29,7 @@
     certLabels: Record<string, string>;
   } = $props();
 
-  const isActive = (dateTo: string) => Date.now() <= new Date(dateTo + 'T23:59:59').getTime();
-
-  const formatDate = (date: string) => new Date(date).toLocaleDateString();
+  const isActive = (dateTo: string) => Date.now() <= new Date(dateTo).getTime();
 
   const allCerts = $derived(certifications.map((c) => c.code));
 
@@ -95,7 +94,7 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3">
-      {#each filteredSorted as { name, logo, dateTo, certifications: certs, link }, i (i)}
+      {#each filteredSorted as { name, logo, dateTo, dateToLabel, certifications: certs, link }, i (i)}
         {#if i > 0 && i % 3 === 0}
           <div class="hidden sm:block col-span-3 h-px bg-gray-100"></div>
         {/if}
@@ -103,17 +102,26 @@
         <div
           class="flex items-center gap-4 p-4 bg-white border-b border-gray-100 last:border-b-0 sm:border-b-0"
         >
-          <enhanced:img
-            src={assets[logo].default}
-            alt={name}
-            loading="lazy"
-            class="w-16 h-16 rounded-full object-cover shrink-0"
-          />
+          {#if logo && assets[logo]}
+            <enhanced:img
+              src={assets[logo].default}
+              alt={name}
+              loading="lazy"
+              class="w-16 h-16 rounded-full object-cover shrink-0"
+            />
+          {:else}
+            <span
+              class="w-16 h-16 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center shrink-0"
+              aria-hidden="true"
+            >
+              <IconDomain width="36" height="36" />
+            </span>
+          {/if}
           <div class="min-w-0 grow">
             <p class="font-semibold text-primary text-base mb-0 leading-snug">{name}</p>
             <p class="text-xs text-gray-500 mb-0 mt-0.5">
               {active ? activeLabel : expiredLabel}
-              {formatDate(dateTo)}
+              {dateToLabel}
             </p>
             <div class="flex items-center gap-1 flex-wrap mt-1.5">
               {#each certs as cert, ci (ci)}

@@ -1,25 +1,28 @@
 ---
 heading: Trenerzy
 emptyMessage: Brak trenerów spełniających kryteria filtrowania.
-activeLabel: Aktywna do
+activeLabel: Akredytacja do
 expiredLabel: Wygasła
 items:
   - name: Adam Roman
     photo: /images/trainers/adam-roman.png
-    dateTo: '2026-04-28'
+    dateFrom: 2026-04-28
+    dateTo: 2027-04-28
     certifications:
       - CTFL v4.0
       - CTAL-TTA v4.0
     linkedin: https://www.linkedin.com/in/adam-roman-3799723/
   - name: Lucjan Stapp
     photo: /images/trainers/lucjan-stapp.png
-    dateTo: '2026-04-28'
+    dateFrom: 2026-04-28
+    dateTo: 2027-04-28
     certifications:
       - CTFL v4.0
       - CT-AcT v1.0
   - name: Paweł Kwasik
     photo: /images/trainers/pawel-kwasik.png
-    dateTo: '2026-04-28'
+    dateFrom: 2026-04-28
+    dateTo: 2027-04-28
     certifications:
       - CTFL v4.0
       - CTAL-TTA v4.0
@@ -27,13 +30,15 @@ items:
     linkedin: https://www.linkedin.com/in/pawelkwasik/
   - name: Jan Sabak
     photo: /images/trainers/jan-sabak.png
-    dateTo: '2026-04-28'
+    dateFrom: 2026-04-28
+    dateTo: 2027-04-28
     certifications:
       - CTAL-TM v3.0
     linkedin: https://www.linkedin.com/in/jsabak/
   - name: Radosław Smilgin
     photo: /images/trainers/radoslaw-smilgin.png
-    dateTo: '2026-04-24'
+    dateFrom: 2026-04-24
+    dateTo: 2027-04-24
     certifications:
       - CTFL v4.0
       - CTFL-AT v1.0
@@ -41,7 +46,8 @@ items:
     linkedin: https://www.linkedin.com/in/smilgin/
   - name: Joanna Kazun
     photo: /images/trainers/joanna-kazun.png
-    dateTo: '2026-04-28'
+    dateFrom: 2026-04-28
+    dateTo: 2027-04-28
     certifications:
       - CTFL v4.0
       - CT-AcT v1.0

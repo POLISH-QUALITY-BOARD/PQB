@@ -6,10 +6,7 @@ test('I can navigate to accreditation registry', async ({ accreditationRegistryP
   expect(response?.status()).toBe(200);
 });
 
-test('Accreditation registry passes accessibility audit', async ({
-  accreditationRegistryPage,
-  makeAxeBuilder
-}) => {
+test('It passes accessibility audit', async ({ accreditationRegistryPage, makeAxeBuilder }) => {
   await accreditationRegistryPage.goto();
 
   const { violations } = await makeAxeBuilder({

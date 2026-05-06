@@ -38,7 +38,7 @@ test('I can download membership declaration using keyboard', async ({ homePage }
   ).resolves.toBeDefined();
 });
 
-test('Home passes accessibility audit', async ({ homePage, makeAxeBuilder }) => {
+test('It passes accessibility audit', async ({ homePage, makeAxeBuilder }) => {
   await homePage.goto();
 
   const { violations } = await makeAxeBuilder({ page: homePage.getPage() }).analyze();
