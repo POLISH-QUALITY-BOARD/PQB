@@ -27,7 +27,6 @@ filters:
     tooltip: ISTQB® Certified Tester Advanced Level – Technical Test Analyst
 items:
   - name: Adam Roman
-    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
@@ -35,14 +34,12 @@ items:
       - ctal-tta
     linkedin: https://www.linkedin.com/in/adam-roman-3799723/
   - name: Lucjan Stapp
-    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
       - ctfl-v4-0
       - ct-act
   - name: Paweł Kwasik
-    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
@@ -51,14 +48,12 @@ items:
       - ctal-ta
     linkedin: https://www.linkedin.com/in/pawelkwasik/
   - name: Jan Sabak
-    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
       - ctal-tm
     linkedin: https://www.linkedin.com/in/jsabak/
   - name: Radosław Smilgin
-    photo:
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
     certifications:
@@ -67,7 +62,6 @@ items:
       - ctal-tta
     linkedin: https://www.linkedin.com/in/smilgin/
   - name: Joanna Kazun
-    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:

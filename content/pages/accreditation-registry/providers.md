@@ -27,13 +27,11 @@ filters:
     tooltip: ISTQB® Certified Tester Advanced Level – Technical Test Analyst v4.0
 items:
   - name: Sages sp. z o.o.
-    logo:
     certifications:
       - ctfl-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
   - name: Joanna Kazun Analysis
-    logo:
     certifications:
       - ctfl-v4-0
       - ct-act-v1-0
@@ -45,7 +43,6 @@ items:
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
   - name: 21CN Radosław Smilgin
-    logo:
     certifications:
       - ctfl-v4-0
       - ctfl-at-v1-0
@@ -53,7 +50,6 @@ items:
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
   - name: INPROGRESS sp. z o.o.
-    logo:
     certifications:
       - ctal-tm-v3-0
       - ctal-tta-v4-0
@@ -61,7 +57,6 @@ items:
     dateTo: 2027-04-24
     link: http://www.inprogress.pl/
   - name: INTest Paweł Kwasik
-    logo:
     certifications:
       - ctfl-v4-0
       - ctal-tta-v4-0
@@ -69,7 +64,6 @@ items:
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
   - name: AmberTeam Testing sp. z o.o.
-    logo:
     certifications:
       - ctfl-v4-0
       - ctal-tta-v4-0
