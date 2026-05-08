@@ -4,73 +4,80 @@ emptyMessage: Brak trenerów spełniających kryteria filtrowania.
 activeLabel: Akredytacja do
 expiredLabel: Wygasła
 filters:
-  - value: CTFL v4.0
-    text: ISTQB® Certified Tester Foundation Level v4.0
-  - value: CTFL-AT v1.0
-    text: ISTQB® Certified Tester Foundation Level – Agile Tester v1.0
-  - value: CT-AcT v1.0
-    text: ISTQB® Certified Tester – Acceptance Testing v1.0
-  - value: CT-AI v1.0
-    text: ISTQB® Certified Tester – AI Testing v1.0
-  - value: CTAL-TA v3.1
-    text: ISTQB® Certified Tester Advanced Level – Test Analyst v3.1
-  - value: CTAL-TM v3.0
-    text: ISTQB® Certified Tester Advanced Level – Test Manager v3.0
-  - value: CTAL-TTA v4.0
-    text: ISTQB® Certified Tester Advanced Level – Technical Test Analyst v4.0
+  - code: ctfl-v4-0
+    text: CTFL v4.0
+    tooltip: ISTQB® Certified Tester Foundation Level v4.0
+  - code: ctfl-at
+    text: CTFL-AT
+    tooltip: ISTQB® Certified Tester Foundation Level – Agile Tester
+  - code: ct-act
+    text: CT-AcT
+    tooltip: ISTQB® Certified Tester – Acceptance Testing
+  - code: ct-ai
+    text: CT-AI
+    tooltip: ISTQB® Certified Tester – AI Testing
+  - code: ctal-ta
+    text: CTAL-TA
+    tooltip: ISTQB® Certified Tester Advanced Level – Test Analyst
+  - code: ctal-tm
+    text: CTAL-TM
+    tooltip: ISTQB® Certified Tester Advanced Level – Test Manager
+  - code: ctal-tta
+    text: CTAL-TTA
+    tooltip: ISTQB® Certified Tester Advanced Level – Technical Test Analyst
 items:
   - name: Adam Roman
-    photo: /images/trainers/adam-roman.png
+    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
-      - CTFL v4.0
-      - CTAL-TTA v4.0
+      - ctfl-v4-0
+      - ctal-tta
     linkedin: https://www.linkedin.com/in/adam-roman-3799723/
   - name: Lucjan Stapp
-    photo: /images/trainers/lucjan-stapp.png
+    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
-      - CTFL v4.0
-      - CT-AcT v1.0
+      - ctfl-v4-0
+      - ct-act
   - name: Paweł Kwasik
-    photo: /images/trainers/pawel-kwasik.png
+    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
-      - CTFL v4.0
-      - CTAL-TTA v4.0
-      - CTAL-TA v3.1
+      - ctfl-v4-0
+      - ctal-tta
+      - ctal-ta
     linkedin: https://www.linkedin.com/in/pawelkwasik/
   - name: Jan Sabak
-    photo: /images/trainers/jan-sabak.png
+    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
-      - CTAL-TM v3.0
+      - ctal-tm
     linkedin: https://www.linkedin.com/in/jsabak/
   - name: Radosław Smilgin
-    photo: /images/trainers/radoslaw-smilgin.png
+    photo:
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
     certifications:
-      - CTFL v4.0
-      - CTFL-AT v1.0
-      - CTAL-TTA v4.0
+      - ctfl-v4-0
+      - ctfl-at
+      - ctal-tta
     linkedin: https://www.linkedin.com/in/smilgin/
   - name: Joanna Kazun
-    photo: /images/trainers/joanna-kazun.png
+    photo:
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
-      - CTFL v4.0
-      - CT-AcT v1.0
-      - CTFL-AT v1.0
-      - CTAL-TTA v4.0
-      - CTAL-TA v3.1
-      - CT-AI v1.0
-      - CTAL-TM v3.0
+      - ctfl-v4-0
+      - ct-act
+      - ctfl-at
+      - ctal-tta
+      - ctal-ta
+      - ct-ai
+      - ctal-tm
     linkedin: https://www.linkedin.com/in/joanna-kazun/
 ---
 

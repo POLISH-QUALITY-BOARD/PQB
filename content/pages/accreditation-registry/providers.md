@@ -4,68 +4,75 @@ emptyMessage: Brak dostawców szkoleń spełniających kryteria filtrowania.
 activeLabel: Akredytacja do
 expiredLabel: Wygasła
 filters:
-  - value: CTFL v4.0
-    text: ISTQB® Certified Tester Foundation Level v4.0
-  - value: CTFL-AT v1.0
-    text: ISTQB® Certified Tester Foundation Level – Agile Tester v1.0
-  - value: CT-AcT v1.0
-    text: ISTQB® Certified Tester – Acceptance Testing v1.0
-  - value: CT-AI v1.0
-    text: ISTQB® Certified Tester – AI Testing v1.0
-  - value: CTAL-TA v3.1
-    text: ISTQB® Certified Tester Advanced Level – Test Analyst v3.1
-  - value: CTAL-TM v3.0
-    text: ISTQB® Certified Tester Advanced Level – Test Manager v3.0
-  - value: CTAL-TTA v4.0
-    text: ISTQB® Certified Tester Advanced Level – Technical Test Analyst v4.0
+  - code: ctfl-v4-0
+    text: CTFL v4.0
+    tooltip: ISTQB® Certified Tester Foundation Level v4.0
+  - code: ctfl-at-v1-0
+    text: CTFL-AT v1.0
+    tooltip: ISTQB® Certified Tester Foundation Level – Agile Tester v1.0
+  - code: ct-act-v1-0
+    text: CT-AcT v1.0
+    tooltip: ISTQB® Certified Tester – Acceptance Testing v1.0
+  - code: ct-ai-v1-0
+    text: CT-AI v1.0
+    tooltip: ISTQB® Certified Tester – AI Testing v1.0
+  - code: ctal-ta-v3-1
+    text: CTAL-TA v3.1
+    tooltip: ISTQB® Certified Tester Advanced Level – Test Analyst v3.1
+  - code: ctal-tm-v3-0
+    text: CTAL-TM v3.0
+    tooltip: ISTQB® Certified Tester Advanced Level – Test Manager v3.0
+  - code: ctal-tta-v4-0
+    text: CTAL-TTA v4.0
+    tooltip: ISTQB® Certified Tester Advanced Level – Technical Test Analyst v4.0
 items:
   - name: Sages sp. z o.o.
-    logo: /images/providers/sages.png
+    logo:
     certifications:
-      - CTFL v4.0
+      - ctfl-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
   - name: Joanna Kazun Analysis
-    logo: /images/providers/joanna-kazun-analysis.png
+    logo:
     certifications:
-      - CTFL v4.0
-      - CT-AcT v1.0
-      - CTFL-AT v1.0
-      - CTAL-TTA v4.0
-      - CTAL-TA v3.1
-      - CT-AI v1.0
-      - CTAL-TM v3.0
+      - ctfl-v4-0
+      - ct-act-v1-0
+      - ctfl-at-v1-0
+      - ctal-tta-v4-0
+      - ctal-ta-v3-1
+      - ct-ai-v1-0
+      - ctal-tm-v3-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
   - name: 21CN Radosław Smilgin
-    logo: /images/providers/21cn-radoslaw-smilgin.png
+    logo:
     certifications:
-      - CTFL v4.0
-      - CTFL-AT v1.0
-      - CTAL-TTA v4.0
+      - ctfl-v4-0
+      - ctfl-at-v1-0
+      - ctal-tta-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
   - name: INPROGRESS sp. z o.o.
-    logo: /images/providers/inprogress.png
+    logo:
     certifications:
-      - CTAL-TM v3.0
-      - CTAL-TTA v4.0
+      - ctal-tm-v3-0
+      - ctal-tta-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
     link: http://www.inprogress.pl/
   - name: INTest Paweł Kwasik
-    logo: /images/providers/intest-pawel-kwasik.png
+    logo:
     certifications:
-      - CTFL v4.0
-      - CTAL-TTA v4.0
-      - CTAL-TA v3.1
+      - ctfl-v4-0
+      - ctal-tta-v4-0
+      - ctal-ta-v3-1
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
   - name: AmberTeam Testing sp. z o.o.
-    logo: /images/providers/amberteam-testing.png
+    logo:
     certifications:
-      - CTFL v4.0
-      - CTAL-TTA v4.0
+      - ctfl-v4-0
+      - ctal-tta-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
 ---

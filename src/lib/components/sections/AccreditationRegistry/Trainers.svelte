@@ -27,9 +27,10 @@
 
   const isActive = (dateTo: string) => Date.now() <= new Date(dateTo).getTime();
 
-  const certLabels = $derived(Object.fromEntries(filters.map(({ value, text }) => [value, text])));
-
-  const allCerts = $derived(filters.map((c) => c.value));
+  const certText = $derived(Object.fromEntries(filters.map(({ code, text }) => [code, text])));
+  const certTooltip = $derived(
+    Object.fromEntries(filters.map(({ code, tooltip }) => [code, tooltip]))
+  );
 
   let certFilter = new SvelteSet<string>();
 
@@ -67,24 +68,20 @@
           Poziom:
         </span>
         <div class="flex items-center gap-1.5 flex-wrap ml-auto">
-          {#each allCerts as cert, i (i)}
-            {@const locked = cert === 'CTFL'}
-            {@const active = locked || certFilter.has(cert)}
+          {#each filters as { code, text }, i (i)}
+            {@const active = certFilter.has(code)}
             <button
               type="button"
-              disabled={locked}
               aria-pressed={active}
               onclick={() => {
-                if (certFilter.has(cert)) certFilter.delete(cert);
-                else certFilter.add(cert);
+                if (certFilter.has(code)) certFilter.delete(code);
+                else certFilter.add(code);
               }}
-              class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold border transition-colors {active
+              class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold border transition-colors cursor-pointer {active
                 ? 'bg-primary text-white border-primary'
-                : 'bg-primary-light text-primary border-transparent hover:border-primary/30'} {locked
-                ? 'cursor-not-allowed'
-                : 'cursor-pointer'}"
+                : 'bg-primary-light text-primary border-transparent hover:border-primary/30'}"
             >
-              {cert}
+              {text}
             </button>
           {/each}
         </div>
@@ -137,7 +134,7 @@
                       {:else}
                         <IconShieldOff aria-hidden="true" width="9" height="9" class="shrink-0" />
                       {/if}
-                      {cert}
+                      {certText[cert] ?? cert}
                     </span>
                   </Tooltip.Trigger>
                   <Tooltip.Portal>
@@ -145,7 +142,7 @@
                       class="z-50 max-w-56 rounded-lg bg-gray-900 px-3 py-2 text-xs text-white shadow-lg transition-opacity duration-150 data-[state=delayed-open]:opacity-100 data-[state=closed]:opacity-0"
                       sideOffset={6}
                     >
-                      {certLabels[cert] ?? cert}
+                      {certTooltip[cert] ?? cert}
                       <Tooltip.Arrow class="fill-gray-900" />
                     </Tooltip.Content>
                   </Tooltip.Portal>

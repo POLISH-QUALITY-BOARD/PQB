@@ -472,8 +472,9 @@ const accreditationRegistryTrainers = defineCollection({
     body: s.markdown(),
     filters: s.array(
       s.object({
-        value: s.string(),
-        text: s.string()
+        code: s.string(),
+        text: s.string(),
+        tooltip: s.string()
       })
     ),
     items: s.array(
@@ -506,8 +507,9 @@ const accreditationRegistryProviders = defineCollection({
     body: s.markdown(),
     filters: s.array(
       s.object({
-        value: s.string(),
-        text: s.string()
+        code: s.string(),
+        text: s.string(),
+        tooltip: s.string()
       })
     ),
     items: s.array(

@@ -10,18 +10,20 @@
 
   let { heading: headingText, openButton, whitepapers, body }: FeaturedContent = $props();
 
-  let wpSort = $state({ key: 'default', dir: 'asc' });
+  let wpSort = $state({ key: null, dir: 'none' });
 
   function setWpSort(key) {
-    if (wpSort.key === key && key !== 'default') {
-      wpSort = { key, dir: wpSort.dir === 'asc' ? 'desc' : 'asc' };
-    } else {
+    if (wpSort.key !== key) {
       wpSort = { key, dir: 'asc' };
+    } else if (wpSort.dir === 'asc') {
+      wpSort = { key, dir: 'desc' };
+    } else {
+      wpSort = { key: null, dir: 'none' };
     }
   }
 
   function sortedWhitepapers() {
-    if (wpSort.key === 'default') return whitepapers.links;
+    if (!wpSort.key || wpSort.dir === 'none') return whitepapers.links;
     return [...whitepapers.links].sort((a, b) => {
       const cmp = a.title.localeCompare(b.title);
       return wpSort.dir === 'asc' ? cmp : -cmp;
@@ -53,7 +55,7 @@
           <tr class="bg-gray-50 border-b border-gray-200">
             <th
               class="text-left px-6 py-3 w-auto"
-              aria-sort={wpSort.key === 'title'
+              aria-sort={wpSort.key === 'title' && wpSort.dir !== 'none'
                 ? wpSort.dir === 'asc'
                   ? 'ascending'
                   : 'descending'
@@ -62,13 +64,10 @@
               <button
                 type="button"
                 onclick={() => setWpSort('title')}
-                class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {wpSort.key ===
-                'title'
-                  ? 'text-primary'
-                  : 'text-gray-600'}"
+                class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
               >
                 Tytuł
-                {#if wpSort.key === 'title'}
+                {#if wpSort.key === 'title' && wpSort.dir !== 'none'}
                   {#if wpSort.dir === 'asc'}
                     <IconArrowUp aria-hidden="true" width="12" height="12" />
                   {:else}
@@ -77,15 +76,6 @@
                 {:else}
                   <IconUnfoldMoreHorizontal aria-hidden="true" width="12" height="12" />
                 {/if}
-              </button>
-            </th>
-            <th class="w-32 py-3 px-6 text-right">
-              <button
-                type="button"
-                onclick={() => setWpSort('default')}
-                class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-gray-500 hover:text-primary"
-              >
-                Reset
               </button>
             </th>
           </tr>
