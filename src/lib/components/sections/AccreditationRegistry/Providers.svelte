@@ -1,6 +1,6 @@
 <script lang="ts">
   import Article from '$lib/components/Article.svelte';
-  import type { AccreditationRegistry, AccreditationRegistryProviders } from '$velite';
+  import type { AccreditationRegistryProviders } from '$velite';
   import { Tooltip } from 'bits-ui';
   import { SvelteSet } from 'svelte/reactivity';
   import type { Picture } from 'vite-imagetools';
@@ -21,17 +21,15 @@
     activeLabel,
     expiredLabel,
     body,
-    items,
-    certifications,
-    certLabels
-  }: AccreditationRegistryProviders & {
-    certifications: AccreditationRegistry['certifications'];
-    certLabels: Record<string, string>;
-  } = $props();
+    filters,
+    items
+  }: AccreditationRegistryProviders = $props();
 
   const isActive = (dateTo: string) => Date.now() <= new Date(dateTo).getTime();
 
-  const allCerts = $derived(certifications.map((c) => c.code));
+  const certLabels = $derived(Object.fromEntries(filters.map(({ value, text }) => [value, text])));
+
+  const allCerts = $derived(filters.map((c) => c.value));
 
   let certFilter = new SvelteSet<string>();
 
@@ -39,7 +37,7 @@
     [...items]
       .filter(
         ({ certifications: certs }) =>
-          certFilter.size === 0 || [...certFilter].every((c) => certs.includes(c))
+          certFilter.size === 0 || [...certFilter].some((c) => certs.includes(c))
       )
       .sort((a, b) => {
         const aCerts = isActive(a.dateTo) ? a.certifications.length : 0;

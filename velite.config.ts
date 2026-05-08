@@ -456,13 +456,7 @@ const accreditationRegistry = defineCollection({
   single: true,
   schema: s.object({
     heading: s.string(),
-    body: s.markdown(),
-    certifications: s.array(
-      s.object({
-        code: s.string(),
-        label: s.string()
-      })
-    )
+    body: s.markdown()
   })
 });
 
@@ -476,6 +470,12 @@ const accreditationRegistryTrainers = defineCollection({
     activeLabel: s.string(),
     expiredLabel: s.string(),
     body: s.markdown(),
+    filters: s.array(
+      s.object({
+        value: s.string(),
+        text: s.string()
+      })
+    ),
     items: s.array(
       s
         .object({
@@ -504,6 +504,12 @@ const accreditationRegistryProviders = defineCollection({
     activeLabel: s.string(),
     expiredLabel: s.string(),
     body: s.markdown(),
+    filters: s.array(
+      s.object({
+        value: s.string(),
+        text: s.string()
+      })
+    ),
     items: s.array(
       s
         .object({

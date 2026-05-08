@@ -10,9 +10,7 @@
     accreditationRegistryTrainers as trainers
   } from '$velite';
 
-  const { body, certifications } = accreditationRegistry;
-
-  const certLabels = Object.fromEntries(certifications.map(({ code, label }) => [code, label]));
+  const { body } = accreditationRegistry;
 </script>
 
 <Section level={1} class="bg-white">
@@ -21,7 +19,7 @@
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   <div class="text-gray-600 mb-14">{@html body}</div>
 
-  <Trainers {...trainers} {certifications} {certLabels} />
-  <Providers {...providers} {certifications} {certLabels} />
+  <Trainers {...trainers} />
+  <Providers {...providers} />
   <Materials {...materials} />
 </Section>

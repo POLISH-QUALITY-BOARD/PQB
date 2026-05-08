@@ -3,6 +3,21 @@ heading: Dostawcy szkoleń
 emptyMessage: Brak dostawców szkoleń spełniających kryteria filtrowania.
 activeLabel: Akredytacja do
 expiredLabel: Wygasła
+filters:
+  - value: CTFL v4.0
+    text: ISTQB® Certified Tester Foundation Level v4.0
+  - value: CTFL-AT v1.0
+    text: ISTQB® Certified Tester Foundation Level – Agile Tester v1.0
+  - value: CT-AcT v1.0
+    text: ISTQB® Certified Tester – Acceptance Testing v1.0
+  - value: CT-AI v1.0
+    text: ISTQB® Certified Tester – AI Testing v1.0
+  - value: CTAL-TA v3.1
+    text: ISTQB® Certified Tester Advanced Level – Test Analyst v3.1
+  - value: CTAL-TM v3.0
+    text: ISTQB® Certified Tester Advanced Level – Test Manager v3.0
+  - value: CTAL-TTA v4.0
+    text: ISTQB® Certified Tester Advanced Level – Technical Test Analyst v4.0
 items:
   - name: Sages sp. z o.o.
     logo: /images/providers/sages.png
