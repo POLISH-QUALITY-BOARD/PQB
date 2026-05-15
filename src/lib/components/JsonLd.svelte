@@ -3,7 +3,7 @@
   import { page } from '$app/state';
   import type { JsonLd } from '$velite';
 
-  let { '@type': type, memberOf, name, sameAs, contactPoint }: JsonLd = $props();
+  let { memberOf, name, sameAs, contactPoint }: JsonLd = $props();
 
   const schema = $derived.by(() => {
     const { href: url } = new URL(resolve('/'), page.url.origin);
@@ -11,13 +11,17 @@
 
     return {
       '@context': 'https://schema.org',
-      '@type': type,
+      '@type': 'NGO',
       memberOf,
       name,
       url,
       logo,
       sameAs,
-      contactPoint
+      contactPoint: contactPoint.map((cp) => ({
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        ...cp
+      }))
     };
   });
 </script>

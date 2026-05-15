@@ -299,7 +299,6 @@ const openGraph = defineCollection({
   pattern: 'open-graph.md',
   single: true,
   schema: s.object({
-    type: s.string(),
     title: s.string(),
     description: s.string(),
     siteName: s.string(),
@@ -315,7 +314,6 @@ const twitterCard = defineCollection({
   pattern: 'twitter-card.md',
   single: true,
   schema: s.object({
-    card: s.string(),
     title: s.string(),
     description: s.string(),
     image: s.object({
@@ -435,15 +433,12 @@ const jsonLd = defineCollection({
   pattern: 'json-ld.md',
   single: true,
   schema: s.object({
-    '@type': s.string(),
     memberOf: s.string(),
     name: s.string(),
     sameAs: s.array(s.string()),
     contactPoint: s.array(
       s.object({
-        '@type': s.string(),
         email: s.string(),
-        contactType: s.string(),
         availableLanguage: s.array(s.string())
       })
     )
