@@ -9,6 +9,8 @@ whitepapers:
       title: 'Black-Box Testing for Practitioners: A Case of the New ISTQB Test Analyst Syllabus'
     - href: 'https://arxiv.org/pdf/2603.14572'
       title: 'ISTQB Certifications Under the Lens: Their Contributions to the Software-Testing Profession; and AI-assisted Synthesis of Practitioners’ Endorsements and Criticisms'
+    - href: '/documents/Model-ISO-25010-PL-v1.0.pdf'
+      title: 'Model jakości wg normy ISO/IEC25010:2023'
 ---
 
 W niniejszej sekcji znajdują się artykuły, raporty i tzw. white papers związane z testowaniem oprogramowania oraz programem certyfikacyjnym ISTQB®.
