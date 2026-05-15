@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import Section from '$lib/components/Section.svelte';
   import type { FeaturedContent } from '$velite';
   import IconArrowDown from '~icons/mdi/arrow-down';
@@ -94,7 +95,8 @@
           </tr>
         </thead>
         <tbody>
-          {#each sortedWhitepapers() as { href, title }, i (i)}
+          {#each sortedWhitepapers() as { href: rawHref, title }, i (i)}
+            {@const href = rawHref.startsWith('http') ? rawHref : base + rawHref}
             <tr
               class="border-b border-gray-100 last:border-b-0 {i % 2 !== 0
                 ? 'bg-gray-50/50'
