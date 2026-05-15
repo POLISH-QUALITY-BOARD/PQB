@@ -1,8 +1,8 @@
-name: Preview
+name: Deploy Preview
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
@@ -10,8 +10,11 @@ permissions:
 
 jobs:
   deploy:
-    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
+    concurrency:
+      group: preview-pr-${{ github.event.number }}
+      cancel-in-progress: false
+
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -32,19 +35,3 @@ jobs:
           folder: build
           target-folder: preview/pr-${{ github.event.number }}
           clean: false
-
-  undeploy:
-    if: github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    concurrency:
-      group: undeploy
-      cancel-in-progress: false
-    steps:
-      - run: mkdir empty-dir
-      - uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: empty-dir
-          target-folder: preview/pr-${{ github.event.number }}
-          clean: true
