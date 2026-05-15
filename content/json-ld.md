@@ -1,5 +1,4 @@
 ---
-'@type': NGO
 memberOf: ISTQB
 name: Polish Quality Board
 sameAs:
@@ -7,9 +6,7 @@ sameAs:
   - https://www.facebook.com/profile.php?id=61584071003505
   - https://github.com/POLISH-QUALITY-BOARD/
 contactPoint:
-  - '@type': ContactPoint
-    email: info@pqb.org.pl
-    contactType: customer support
+  - email: info@pqb.org.pl
     availableLanguage:
       - Polish
       - English

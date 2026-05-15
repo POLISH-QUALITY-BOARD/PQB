@@ -4,7 +4,6 @@
   import type { OpenGraph } from '$velite';
 
   let {
-    type,
     title,
     description,
     siteName,
@@ -19,7 +18,6 @@
     const { href: imageUrl } = new URL(asset('/images/pqb-logo.png'), page.url.origin);
 
     return {
-      type,
       title,
       description,
       siteName,
@@ -35,7 +33,7 @@
   });
 </script>
 
-<meta data-testid="og-type" property="og:type" content={og.type} />
+<meta data-testid="og-type" property="og:type" content="website" />
 <meta data-testid="og-title" property="og:title" content={og.title} />
 <meta data-testid="og-description" property="og:description" content={og.description} />
 <meta data-testid="og-site-name" property="og:site_name" content={og.siteName} />

@@ -31,10 +31,10 @@
     title={anchor.title}
     class="block w-full mb-12"
   >
-    <img
-      src="images/istqb-02-12-26-full-name-portfolio-graphic.svg"
+    <enhanced:img
+      src="$lib/assets/Portfolio-Export-1-1.png"
       alt={anchor.image.alt}
-      class="w-full h-auto block object-contain max-h-96"
+      class="w-full h-auto block object-contain max-h-150"
     />
   </a>
 
