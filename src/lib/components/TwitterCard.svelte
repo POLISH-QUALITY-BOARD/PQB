@@ -3,13 +3,12 @@
   import { page } from '$app/state';
   import type { TwitterCard } from '$velite';
 
-  let { card, title, description, image }: TwitterCard = $props();
+  let { title, description, image }: TwitterCard = $props();
 
   const twitter = $derived.by(() => {
     const { href: imageUrl } = new URL(asset('/images/pqb-logo.png'), page.url.origin);
 
     return {
-      card,
       title,
       description,
       image: {
@@ -20,7 +19,7 @@
   });
 </script>
 
-<meta data-testid="twitter-card" name="twitter:card" content={twitter.card} />
+<meta data-testid="twitter-card" name="twitter:card" content="summary_large_image" />
 <meta data-testid="twitter-title" name="twitter:title" content={twitter.title} />
 <meta data-testid="twitter-description" name="twitter:description" content={twitter.description} />
 <meta data-testid="twitter-image" name="twitter:image" content={twitter.image.url} />
