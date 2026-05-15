@@ -1,0 +1,26 @@
+name: Undeploy Preview
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  undeploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: undeploy
+      cancel-in-progress: false
+
+    steps:
+      - run: mkdir empty-dir
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: empty-dir
+          target-folder: preview/pr-${{ github.event.number }}
+          clean: true

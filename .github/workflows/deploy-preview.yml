@@ -1,16 +1,19 @@
-name: Preview
+name: Deploy Preview
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-  preview:
+  deploy:
     runs-on: ubuntu-latest
+    concurrency:
+      group: preview-pr-${{ github.event.number }}
+      cancel-in-progress: false
 
     steps:
       - uses: actions/checkout@v6
@@ -25,21 +28,10 @@ jobs:
           ORIGIN: ${{ vars.ORIGIN }}
           PUBLIC_GA_DEBUG_MODE: true
           PUBLIC_GA_ID: ${{ vars.GA_ID }}
-      - if: github.event.action != 'closed'
-        uses: JamesIves/github-pages-deploy-action@v4
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: build
           target-folder: preview/pr-${{ github.event.number }}
           clean: false
-      - if: github.event.action == 'closed'
-        run: mkdir empty-dir
-      - if: github.event.action == 'closed'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: empty-dir
-          target-folder: preview/pr-${{ github.event.number }}
-          clean: true
