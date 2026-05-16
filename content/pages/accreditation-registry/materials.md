@@ -65,6 +65,13 @@ items:
         href: https://www.linkedin.com/company/sii-poland/
         ariaLabel: Profil LinkedIn — Sii sp. z o.o.
     dateFrom: 2026-04-29
+  - name: Certified Tester Advanced Level Test Analyst v3.1
+    author:
+      name: AmberTeam Testing sp. z o.o.
+      linkedin:
+        href: https://www.linkedin.com/company/amberteam-testing
+        ariaLabel: Profil LinkedIn — AmberTeam
+    dateFrom: 2026-05-05
 ---
 
 Akredytowane materiały szkoleniowe to podręczniki, przewodniki i zbiory pytań egzaminacyjnych zatwierdzone przez Polish Quality Board jako zgodne z aktualnymi sylabusami ISTQB®. Korzystanie z tych materiałów zwiększa skuteczność przygotowania do egzaminu i gwarantuje aktualność przekazywanej wiedzy.
