@@ -31,6 +31,7 @@ items:
       - ctfl-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
+    link: https://www.sages.pl/
   - name: Joanna Kazun Analysis
     certifications:
       - ctfl-v4-0
@@ -42,6 +43,7 @@ items:
       - ctal-tm-v3-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
+    link: https://jkanalysis.pl/
   - name: 21CN Radosław Smilgin
     certifications:
       - ctfl-v4-0
@@ -49,6 +51,7 @@ items:
       - ctal-tta-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
+    link: https://testerzy.pl/
   - name: INPROGRESS sp. z o.o.
     certifications:
       - ctal-tm-v3-0
@@ -63,12 +66,30 @@ items:
       - ctal-ta-v3-1
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
+    link: https://qa-szkolenia.pl/
   - name: AmberTeam Testing sp. z o.o.
     certifications:
       - ctfl-v4-0
       - ctal-tta-v4-0
+      - ctal-ta-v3-1
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
+    link: https://amberteam.pl/
+  - name: Asseco Data Systems S.A.
+    certifications:
+      - ctfl-v4-0
+      - ctal-tta-v4-0
+      - ctal-ta-v3-1
+      - ctal-tm-v3-0
+    dateFrom: 2026-05-06
+    dateTo: 2027-05-06
+    link: https://academy.asseco.pl
+  - name: Capgemini Polska sp. z o.o.
+    certifications:
+      - ctfl-v4-0
+    dateFrom: 2026-05-08
+    dateTo: 2027-05-08
+    link: https://www.capgemini.com/pl-pl/
 ---
 
 Akredytowani dostawcy szkoleń to firmy i instytucje oferujące kursy przygotowujące do egzaminów ISTQB® w oparciu o oficjalne sylabusy. Akredytacja potwierdza, że program szkolenia, materiały dydaktyczne oraz kadra spełniają wymagania jakościowe określone przez Polish Quality Board.
