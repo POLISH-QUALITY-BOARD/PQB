@@ -480,7 +480,12 @@ const accreditationRegistryTrainers = defineCollection({
           dateFrom: s.isodate(),
           dateTo: s.isodate(),
           certifications: s.array(s.string()),
-          linkedin: s.string().optional()
+          linkedin: s
+            .object({
+              href: href(),
+              ariaLabel: s.string()
+            })
+            .optional()
         })
         .transform((item) => ({
           ...item,
@@ -515,7 +520,12 @@ const accreditationRegistryProviders = defineCollection({
           certifications: s.array(s.string()),
           dateFrom: s.isodate(),
           dateTo: s.isodate(),
-          link: s.string().optional()
+          website: s
+            .object({
+              href: href(),
+              ariaLabel: s.string()
+            })
+            .optional()
         })
         .transform((item) => ({
           ...item,

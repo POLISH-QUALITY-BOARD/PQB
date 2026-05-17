@@ -98,12 +98,14 @@
           class="flex items-center gap-4 p-4 bg-white border-b border-gray-100 last:border-b-0 sm:border-b-0"
         >
           {#if photo && assets[photo]}
-            <enhanced:img
-              src={assets[photo].default}
-              alt={name}
-              loading="lazy"
-              class="w-16 h-16 rounded-full object-cover object-top shrink-0"
-            />
+            <div class="w-16 h-16 rounded-full overflow-hidden shrink-0">
+              <enhanced:img
+                src={assets[photo].default}
+                alt={name}
+                loading="lazy"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
           {:else}
             <span
               class="w-16 h-16 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center shrink-0"
@@ -152,10 +154,10 @@
           </div>
           {#if linkedin}
             <a
-              href={linkedin}
+              href={linkedin.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Profil LinkedIn — {name}"
+              aria-label={linkedin.ariaLabel}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
               <IconLinkedin aria-hidden="true" width="18" height="18" />

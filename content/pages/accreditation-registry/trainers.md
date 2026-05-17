@@ -44,7 +44,9 @@ items:
       - ctal-tm
       - ctel-itp-itpi
       - ctel-itp-atp
-    linkedin: https://www.linkedin.com/in/adam-roman-3799723/
+    linkedin:
+      href: https://www.linkedin.com/in/adam-roman-3799723/
+      ariaLabel: Profil LinkedIn — Adam Roman
   - name: Lucjan Stapp
     photo: /src/lib/assets/trainers/Lucjan_Stapp.png
     dateFrom: 2026-04-28
@@ -55,7 +57,9 @@ items:
       - ctfl-at
       - ctal-tm
       - ctal-ta
-    linkedin: https://www.linkedin.com/in/lucjan-stapp-123456/
+    linkedin:
+      href: https://www.linkedin.com/in/lucjan-stapp-123456/
+      ariaLabel: Profil LinkedIn — Lucjan Stapp
   - name: Wojciech Becla
     photo: /src/lib/assets/trainers/Wojciech_Becla.jpg
     dateFrom: 2026-04-24
@@ -66,7 +70,9 @@ items:
       - ctal-tm
       - ctal-ta
       - ctal-tta
-    linkedin: https://www.linkedin.com/in/becla/
+    linkedin:
+      href: https://www.linkedin.com/in/becla/
+      ariaLabel: Profil LinkedIn — Wojciech Becla
   - name: Lukasz Galuszka
     photo: /src/lib/assets/trainers/Lukasz_Galuszka.jpg
     dateFrom: 2026-04-24
@@ -74,7 +80,9 @@ items:
     certifications:
       - ctfl-v4-0
       - ctfl-at
-    linkedin: https://www.linkedin.com/in/lukaszgaluszka/
+    linkedin:
+      href: https://www.linkedin.com/in/lukaszgaluszka/
+      ariaLabel: Profil LinkedIn — Lukasz Galuszka
   - name: Krzysztof Kolodziejczyk
     photo: /src/lib/assets/trainers/Krzysztof_Kołodziejczyk.jpg
     dateFrom: 2026-04-24
@@ -82,7 +90,9 @@ items:
     certifications:
       - ctfl-v4-0
       - ctfl-at
-    linkedin: https://www.linkedin.com/in/krzysztof-kołodziejczyk-865b19129/
+    linkedin:
+      href: https://www.linkedin.com/in/krzysztof-kołodziejczyk-865b19129/
+      ariaLabel: Profil LinkedIn — Krzysztof Kolodziejczyk
   - name: Michał Sadowski
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
@@ -98,7 +108,9 @@ items:
       - ctfl-at
       - ctal-ta
       - ctal-tm
-    linkedin: https://www.linkedin.com/in/adrian-zawada-64a65419b/
+    linkedin:
+      href: https://www.linkedin.com/in/adrian-zawada-64a65419b/
+      ariaLabel: Profil LinkedIn — Adrian Zawada
   - name: Jan Sabak
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
@@ -109,7 +121,9 @@ items:
       - ctal-ta
       - ctal-tta
       - ct-ai
-    linkedin: https://www.linkedin.com/in/jsabak/
+    linkedin:
+      href: https://www.linkedin.com/in/jsabak/
+      ariaLabel: Profil LinkedIn — Jan Sabak
   - name: Radosław Smilgin
     photo: /src/lib/assets/trainers/Radosław_Smilgin.jpeg
     dateFrom: 2026-04-24
@@ -120,7 +134,9 @@ items:
       - ctal-ta
       - ctal-tm
       - ctal-tta
-    linkedin: https://www.linkedin.com/in/smilgin/
+    linkedin:
+      href: https://www.linkedin.com/in/smilgin/
+      ariaLabel: Profil LinkedIn — Radosław Smilgin
   - name: Joanna Kazun
     photo: /src/lib/assets/trainers/Joanna_Kazun.jpg
     dateFrom: 2026-04-28
@@ -133,7 +149,9 @@ items:
       - ctal-ta
       - ct-ai
       - ctal-tm
-    linkedin: https://www.linkedin.com/in/joanna-kazun/
+    linkedin:
+      href: https://www.linkedin.com/in/joanna-kazun/
+      ariaLabel: Profil LinkedIn — Joanna Kazun
   - name: Rafał Stańczak
     photo: /src/lib/assets/trainers/Rafal_Stanczak.jpg
     dateFrom: 2026-04-24
@@ -143,7 +161,9 @@ items:
       - ctfl-at
       - ctal-tm
       - ctal-ta
-    linkedin: https://www.linkedin.com/in/rafalstanczak/
+    linkedin:
+      href: https://www.linkedin.com/in/rafalstanczak/
+      ariaLabel: Profil LinkedIn — Rafał Stańczak
   - name: Adam Ścierski
     dateFrom: 2026-04-24
     dateTo: 2030-02-27
@@ -152,7 +172,9 @@ items:
       - ctfl-at
       - ctal-ta
       - ctal-tta
-    linkedin: https://www.linkedin.com/in/adamscierski/
+    linkedin:
+      href: https://www.linkedin.com/in/adamscierski/
+      ariaLabel: Profil LinkedIn — Adam Ścierski
 ---
 
 Akredytowani trenerzy to osoby uprawnione do prowadzenia oficjalnych szkoleń przygotowujących do egzaminów ISTQB®. Każdy trener przeszedł weryfikację wiedzy i umiejętności dydaktycznych przez Polish Quality Board i może posiadać uprawnienia do nauczania na jednym lub kilku poziomach certyfikacji.

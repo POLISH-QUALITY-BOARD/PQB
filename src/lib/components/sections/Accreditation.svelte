@@ -18,7 +18,7 @@
   {#snippet heading()}{headingText}{/snippet}
 
   <div
-    class="text-gray-600 mb-12 [&>p]:mb-4 [&>p]:last:mb-0 [&_a]:underline [&_a]:hover:text-primary [&>h3]:text-lg [&>h3]:font-semibold [&>h3]:text-primary [&>h3]:mt-8"
+    class="text-gray-600 mb-12 [&>p]:mb-4 [&>p]:last:mb-0 [&_a]:underline [&_a]:hover:text-primary"
   >
     <!-- eslint-disable-next-line svelte/no-at-html-tags -->
     {@html body}

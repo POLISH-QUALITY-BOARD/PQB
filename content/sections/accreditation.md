@@ -75,4 +75,4 @@ obowiązuje od 1 stycznia 2027 roku_.
 
 Procesy akredytacyjne obowiązujące w PQB są opisane w [niniejszym dokumencie](/documents/Procesy-akredytacyjne-w-PQB-v1.1.pdf).
 
-### Rejestr akredytacji dostępny jest [tutaj](/rejestr-akredytacji).
+**Rejestr akredytacji dostępny jest [tutaj](/rejestr-akredytacji).**

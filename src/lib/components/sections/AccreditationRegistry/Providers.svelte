@@ -89,7 +89,7 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3">
-      {#each filteredSorted as { name, logo, dateTo, dateToLabel, certifications: certs, link }, i (i)}
+      {#each filteredSorted as { name, logo, dateTo, dateToLabel, certifications: certs, website }, i (i)}
         {#if i > 0 && i % 3 === 0}
           <div class="hidden sm:block col-span-3 h-px bg-gray-100"></div>
         {/if}
@@ -150,12 +150,12 @@
               {/each}
             </div>
           </div>
-          {#if link}
+          {#if website}
             <a
-              href={link}
+              href={website.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Strona — {name}"
+              aria-label={website.ariaLabel}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
               <IconOpenInNew aria-hidden="true" width="18" height="18" />

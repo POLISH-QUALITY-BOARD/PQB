@@ -31,7 +31,9 @@ items:
       - ctfl-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
-    link: https://www.sages.pl/
+    website:
+      href: https://www.sages.pl/
+      ariaLabel: Strona — Sages sp. z o.o.
   - name: Joanna Kazun Analysis
     certifications:
       - ctfl-v4-0
@@ -43,7 +45,9 @@ items:
       - ctal-tm-v3-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
-    link: https://jkanalysis.pl/
+    website:
+      href: https://jkanalysis.pl/
+      ariaLabel: Strona — Joanna Kazun Analysis
   - name: 21CN Radosław Smilgin
     certifications:
       - ctfl-v4-0
@@ -51,14 +55,18 @@ items:
       - ctal-tta-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
-    link: https://testerzy.pl/
+    website:
+      href: https://testerzy.pl/
+      ariaLabel: Strona — 21CN Radosław Smilgin
   - name: INPROGRESS sp. z o.o.
     certifications:
       - ctal-tm-v3-0
       - ctal-tta-v4-0
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
-    link: http://www.inprogress.pl/
+    website:
+      href: http://www.inprogress.pl/
+      ariaLabel: Strona — INPROGRESS sp. z o.o.
   - name: INTest Paweł Kwasik
     certifications:
       - ctfl-v4-0
@@ -66,7 +74,9 @@ items:
       - ctal-ta-v3-1
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
-    link: https://qa-szkolenia.pl/
+    website:
+      href: https://qa-szkolenia.pl/
+      ariaLabel: Strona — INTest Paweł Kwasik
   - name: AmberTeam Testing sp. z o.o.
     certifications:
       - ctfl-v4-0
@@ -74,7 +84,9 @@ items:
       - ctal-ta-v3-1
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
-    link: https://amberteam.pl/
+    website:
+      href: https://amberteam.pl/
+      ariaLabel: Strona — AmberTeam Testing sp. z o.o.
   - name: Asseco Data Systems S.A.
     certifications:
       - ctfl-v4-0
@@ -83,13 +95,17 @@ items:
       - ctal-tm-v3-0
     dateFrom: 2026-05-06
     dateTo: 2027-05-06
-    link: https://academy.asseco.pl
+    website:
+      href: https://academy.asseco.pl
+      ariaLabel: Strona — Asseco Data Systems S.A.
   - name: Capgemini Polska sp. z o.o.
     certifications:
       - ctfl-v4-0
     dateFrom: 2026-05-08
     dateTo: 2027-05-08
-    link: https://www.capgemini.com/pl-pl/
+    website:
+      href: https://www.capgemini.com/pl-pl/
+      ariaLabel: Strona — Capgemini Polska sp. z o.o.
 ---
 
 Akredytowani dostawcy szkoleń to firmy i instytucje oferujące kursy przygotowujące do egzaminów ISTQB® w oparciu o oficjalne sylabusy. Akredytacja potwierdza, że program szkolenia, materiały dydaktyczne oraz kadra spełniają wymagania jakościowe określone przez Polish Quality Board.
