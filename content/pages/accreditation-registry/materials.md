@@ -74,4 +74,4 @@ items:
     dateFrom: 2026-05-05
 ---
 
-Akredytowane materiały szkoleniowe to podręczniki, przewodniki i zbiory pytań egzaminacyjnych zatwierdzone przez Polish Quality Board jako zgodne z aktualnymi sylabusami ISTQB®. Korzystanie z tych materiałów zwiększa skuteczność przygotowania do egzaminu i gwarantuje aktualność przekazywanej wiedzy.
+Akredytowane materiały szkoleniowe to właściwie zebrana, zaprojektowana i przygotowana wiedza w różnej formie, często przyjaznej prezentacji wraz z zbiorem przykładowych pytań egzaminacyjnych zatwierdzona przez Polish Quality Board jako zgodna z aktualnymi sylabusami oraz wtycznymi ISTQB®. Korzystanie z tych materiałów zwiększa skuteczność przygotowania do egzaminu i gwarantuje aktualność przekazywanej wiedzy.
