@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import { resetCookieConsent } from '$lib/stores/cookieConsent';
   import type { Footer } from '$velite';
   import IconEmailOutline from '~icons/mdi/email-outline';
@@ -85,7 +84,7 @@
           {#each navigation.links as { href, text }, index (index)}
             <li>
               <!-- eslint-disable svelte/no-navigation-without-resolve -->
-              <a href={base + href} class="text-sm text-gray-600 no-underline hover:text-primary">
+              <a {href} class="text-sm text-gray-600 no-underline hover:text-primary">
                 {text}
               </a>
               <!-- eslint-enable svelte/no-navigation-without-resolve -->
@@ -103,7 +102,7 @@
             <li>
               <!-- eslint-disable svelte/no-navigation-without-resolve -->
               <a
-                href={base + href}
+                {href}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-sm text-gray-600 no-underline inline-flex items-center gap-2 hover:text-primary"

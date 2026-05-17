@@ -7,8 +7,9 @@
     children,
     class: className,
     heading,
+    level,
     ...restProps
-  }: { children: Snippet; heading: Snippet } & HTMLAttributes<HTMLElement> = $props();
+  }: { children: Snippet; heading: Snippet; level: 1 | 2 } & HTMLAttributes<HTMLElement> = $props();
 </script>
 
 <section
@@ -17,12 +18,13 @@
   {...restProps}
 >
   <div class="max-w-270 mx-auto px-6">
-    <h2
+    <svelte:element
+      this={`h${level}`}
       class="text-4xl md:text-5xl font-bold text-primary leading-tight mb-14"
       data-testid="section-heading"
     >
       {@render heading()}
-    </h2>
+    </svelte:element>
 
     <div data-testid="section-body">
       {@render children()}

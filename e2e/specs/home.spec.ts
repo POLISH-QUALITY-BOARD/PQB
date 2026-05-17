@@ -1,5 +1,4 @@
 import { expect, test } from './../test';
-import AxeBuilder from '@axe-core/playwright';
 import type { Locator } from '@playwright/test';
 
 const pressTabUntilFocusedThenPressEnter = async (locator: Locator) => {
@@ -20,6 +19,12 @@ const pressTabUntilFocusedThenPressEnter = async (locator: Locator) => {
   }
 };
 
+test('I can navigate to home', async ({ homePage }) => {
+  const response = await homePage.goto();
+
+  expect(response?.status()).toBe(200);
+});
+
 test('I can download membership declaration using keyboard', async ({ homePage }) => {
   const { membershipDeclarationDownloadButton } = homePage.getLocators();
 
@@ -33,12 +38,10 @@ test('I can download membership declaration using keyboard', async ({ homePage }
   ).resolves.toBeDefined();
 });
 
-test('It passes accessibility audit', async ({ homePage }) => {
+test('It passes accessibility audit', async ({ homePage, makeAxeBuilder }) => {
   await homePage.goto();
 
-  const { violations } = await new AxeBuilder({ page: homePage.getPage() })
-    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-    .analyze();
+  const { violations } = await makeAxeBuilder({ page: homePage.getPage() }).analyze();
 
   expect(violations).toEqual([]);
 });

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import Section from '$lib/components/Section.svelte';
   import type { FeaturedContent } from '$velite';
   import IconArrowDown from '~icons/mdi/arrow-down';
@@ -11,18 +10,20 @@
 
   let { heading: headingText, openButton, whitepapers, body }: FeaturedContent = $props();
 
-  let wpSort = $state({ key: 'default', dir: 'asc' });
+  let wpSort = $state({ key: null, dir: 'none' });
 
   function setWpSort(key) {
-    if (wpSort.key === key && key !== 'default') {
-      wpSort = { key, dir: wpSort.dir === 'asc' ? 'desc' : 'asc' };
-    } else {
+    if (wpSort.key !== key) {
       wpSort = { key, dir: 'asc' };
+    } else if (wpSort.dir === 'asc') {
+      wpSort = { key, dir: 'desc' };
+    } else {
+      wpSort = { key: null, dir: 'none' };
     }
   }
 
   function sortedWhitepapers() {
-    if (wpSort.key === 'default') return whitepapers.links;
+    if (!wpSort.key || wpSort.dir === 'none') return whitepapers.links;
     return [...whitepapers.links].sort((a, b) => {
       const cmp = a.title.localeCompare(b.title);
       return wpSort.dir === 'asc' ? cmp : -cmp;
@@ -30,7 +31,7 @@
   }
 </script>
 
-<Section id="polecane" class="bg-white">
+<Section level={2} id="polecane" class="bg-white">
   {#snippet heading()}{headingText}{/snippet}
 
   <div class="text-gray-600 mb-10 space-y-4">
@@ -54,7 +55,7 @@
           <tr class="bg-gray-50 border-b border-gray-200">
             <th
               class="text-left px-6 py-3 w-auto"
-              aria-sort={wpSort.key === 'title'
+              aria-sort={wpSort.key === 'title' && wpSort.dir !== 'none'
                 ? wpSort.dir === 'asc'
                   ? 'ascending'
                   : 'descending'
@@ -63,13 +64,10 @@
               <button
                 type="button"
                 onclick={() => setWpSort('title')}
-                class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {wpSort.key ===
-                'title'
-                  ? 'text-primary'
-                  : 'text-gray-600'}"
+                class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
               >
                 Tytuł
-                {#if wpSort.key === 'title'}
+                {#if wpSort.key === 'title' && wpSort.dir !== 'none'}
                   {#if wpSort.dir === 'asc'}
                     <IconArrowUp aria-hidden="true" width="12" height="12" />
                   {:else}
@@ -80,23 +78,10 @@
                 {/if}
               </button>
             </th>
-            <th class="w-32 py-3 px-6 text-right">
-              <button
-                type="button"
-                onclick={() => setWpSort('default')}
-                class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {wpSort.key ===
-                'default'
-                  ? 'text-primary'
-                  : 'text-gray-600'}"
-              >
-                Reset
-              </button>
-            </th>
           </tr>
         </thead>
         <tbody>
-          {#each sortedWhitepapers() as { href: rawHref, title }, i (i)}
-            {@const href = rawHref.startsWith('http') ? rawHref : base + rawHref}
+          {#each sortedWhitepapers() as { href, title }, i (i)}
             <tr
               class="border-b border-gray-100 last:border-b-0 {i % 2 !== 0
                 ? 'bg-gray-50/50'

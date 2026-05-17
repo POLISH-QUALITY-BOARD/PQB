@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import type { Hero } from '$velite';
   import IconChevronDown from '~icons/mdi/chevron-down';
 
@@ -22,14 +21,15 @@
       {@html body}
     </h1>
 
+    <!-- eslint-disable svelte/no-navigation-without-resolve -->
     <a
-      // eslint-disable-next-line svelte/no-navigation-without-resolve
-      href={base + learnMoreLink.href}
+      href={learnMoreLink.href}
       class="mt-24 flex flex-col items-center gap-2 text-white/50 hover:text-white/70 no-underline"
     >
       <span class="learn-more-link uppercase">{learnMoreLink.text}</span>
       <IconChevronDown aria-hidden="true" class="w-4 h-4 motion-safe:animate-bounce" />
     </a>
+    <!-- eslint-enable svelte/no-navigation-without-resolve -->
   </div>
 </section>
 

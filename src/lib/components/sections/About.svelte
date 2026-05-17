@@ -8,7 +8,7 @@
   let { heading: headingText, board, body }: About = $props();
 </script>
 
-<Section id="o-nas" class="bg-white">
+<Section level={2} id="o-nas" class="bg-white">
   {#snippet heading()}{headingText}{/snippet}
 
   <Board {board} {body} />

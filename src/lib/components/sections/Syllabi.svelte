@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import Section from '$lib/components/Section.svelte';
   import type { Syllabi } from '$velite';
   import { untrack } from 'svelte';
@@ -16,22 +15,24 @@
 
   let sorts = $state(
     untrack(() =>
-      Object.fromEntries(certifications.map((c) => [c.code, { key: 'default', dir: 'asc' }]))
+      Object.fromEntries(certifications.map((c) => [c.code, { key: null, dir: 'none' }]))
     )
   );
 
   function setSort(code, key) {
     const s = sorts[code];
-    if (s.key === key && key !== 'default') {
-      sorts[code] = { key, dir: s.dir === 'asc' ? 'desc' : 'asc' };
-    } else {
+    if (s.key !== key) {
       sorts[code] = { key, dir: 'asc' };
+    } else if (s.dir === 'asc') {
+      sorts[code] = { key, dir: 'desc' };
+    } else {
+      sorts[code] = { key: null, dir: 'none' };
     }
   }
 
   function sortDocs(code, docs) {
     const { key, dir } = sorts[code];
-    if (key === 'default') return docs;
+    if (!key || dir === 'none') return docs;
     return [...docs].sort((a, b) => {
       let cmp = 0;
       if (key === 'name') cmp = a.file.split('/').pop().localeCompare(b.file.split('/').pop());
@@ -65,7 +66,7 @@
 </script>
 
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
-<Section id="sylabusy" class="bg-white">
+<Section level={2} id="sylabusy" class="bg-white">
   {#snippet heading()}{headingText}{/snippet}
 
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
@@ -92,7 +93,7 @@
               <tr class="bg-gray-50 border-b border-gray-200">
                 <th
                   class="text-left px-6 py-3 w-auto"
-                  aria-sort={sorts[cert.code].key === 'name'
+                  aria-sort={sorts[cert.code].key === 'name' && sorts[cert.code].dir !== 'none'
                     ? sorts[cert.code].dir === 'asc'
                       ? 'ascending'
                       : 'descending'
@@ -101,14 +102,10 @@
                   <button
                     type="button"
                     onclick={() => setSort(cert.code, 'name')}
-                    class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[
-                      cert.code
-                    ].key === 'name'
-                      ? 'text-primary'
-                      : 'text-gray-600'}"
+                    class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
                   >
                     Dokument
-                    {#if sorts[cert.code].key === 'name'}
+                    {#if sorts[cert.code].key === 'name' && sorts[cert.code].dir !== 'none'}
                       {#if sorts[cert.code].dir === 'asc'}
                         <IconArrowUp aria-hidden="true" width="12" height="12" />
                       {:else}
@@ -121,7 +118,7 @@
                 </th>
                 <th
                   class="text-center px-4 py-3 w-36"
-                  aria-sort={sorts[cert.code].key === 'type'
+                  aria-sort={sorts[cert.code].key === 'type' && sorts[cert.code].dir !== 'none'
                     ? sorts[cert.code].dir === 'asc'
                       ? 'ascending'
                       : 'descending'
@@ -130,14 +127,10 @@
                   <button
                     type="button"
                     onclick={() => setSort(cert.code, 'type')}
-                    class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[
-                      cert.code
-                    ].key === 'type'
-                      ? 'text-primary'
-                      : 'text-gray-600'}"
+                    class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
                   >
                     Typ
-                    {#if sorts[cert.code].key === 'type'}
+                    {#if sorts[cert.code].key === 'type' && sorts[cert.code].dir !== 'none'}
                       {#if sorts[cert.code].dir === 'asc'}
                         <IconArrowUp aria-hidden="true" width="12" height="12" />
                       {:else}
@@ -152,19 +145,7 @@
                   class="text-center text-[10px] font-bold uppercase tracking-wider text-gray-600 px-4 py-3 w-20"
                   >Język</th
                 >
-                <th class="w-52 py-3 px-6 text-right">
-                  <button
-                    type="button"
-                    onclick={() => setSort(cert.code, 'default')}
-                    class="text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 {sorts[
-                      cert.code
-                    ].key === 'default'
-                      ? 'text-primary'
-                      : 'text-gray-600'}"
-                  >
-                    Reset
-                  </button>
-                </th>
+                <th class="w-52 py-3 px-6 text-right"></th>
               </tr>
             </thead>
             <tbody>
@@ -183,7 +164,7 @@
                         class="text-accent shrink-0 opacity-70"
                       />
                       <a
-                        href="{base}/documents/syllabi/{doc.file}"
+                        href={doc.file}
                         class="font-mono text-xs text-primary hover:underline no-underline"
                         >{doc.file.split('/').pop()}</a
                       >
@@ -215,7 +196,7 @@
                         </a>
                       {/if}
                       <a
-                        href="{base}/documents/syllabi/{doc.file}"
+                        href={doc.file}
                         download
                         class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                       >

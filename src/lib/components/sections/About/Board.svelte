@@ -12,7 +12,7 @@
   });
 </script>
 
-<Article id="sklad-osobowy-zarzadu" class="mb-12 pb-8 border-b border-gray-100">
+<Article level={3} id="sklad-osobowy-zarzadu" class="mb-12 pb-8 border-b border-gray-100">
   {#snippet heading()}{board.heading}{/snippet}
 
   <div class="text-gray-600 mb-10 space-y-4">

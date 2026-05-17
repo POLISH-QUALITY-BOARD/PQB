@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import Article from '$lib/components/Article.svelte';
   import Section from '$lib/components/Section.svelte';
   import type { Accreditation } from '$velite';
   import IconCheck from '~icons/mdi/check';
   import IconDownload from '~icons/mdi/download';
 
-  let { heading: headingText, body, processesDocument, articles, steps }: Accreditation = $props();
+  let { heading: headingText, body, articles, steps }: Accreditation = $props();
 
   let completed = $state<Record<number, boolean>>({});
 
@@ -15,33 +14,26 @@
   };
 </script>
 
-<Section id="akredytacja" class="bg-gray-50">
+<Section level={2} id="akredytacja" class="bg-gray-50">
   {#snippet heading()}{headingText}{/snippet}
 
-  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  <div class="text-gray-600 mb-4 [&>p]:mb-4 [&>p]:last:mb-0">{@html body}</div>
-  <p class="text-gray-600 mb-12 pb-8">
-    Procesy akredytacyjne obowiązujące w PQB są opisane w
-    <!-- eslint-disable svelte/no-navigation-without-resolve -->
-    <a
-      href={base + processesDocument.href}
-      class="underline hover:text-primary"
-      target="_blank"
-      rel="noopener noreferrer">{processesDocument.text}</a
-    ><!-- eslint-enable svelte/no-navigation-without-resolve -->.
-  </p>
-
+  <div
+    class="text-gray-600 mb-12 [&>p]:mb-4 [&>p]:last:mb-0 [&_a]:underline [&_a]:hover:text-primary"
+  >
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+    {@html body}
+  </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     <div>
       {#each articles as article (article.id)}
-        <Article id={article.id}>
+        <Article level={3} id={article.id}>
           {#snippet heading()}{article.heading}{/snippet}
           <p class="text-gray-600">{article.description}</p>
         </Article>
       {/each}
     </div>
     <div>
-      <Article id="jak-uzyskac-akredytacje">
+      <Article level={3} id="jak-uzyskac-akredytacje">
         {#snippet heading()}{steps.heading}{/snippet}
 
         <div class="relative">

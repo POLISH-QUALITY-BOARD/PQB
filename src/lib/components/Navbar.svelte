@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base, resolve } from '$app/paths';
+  import { resolve } from '$app/paths';
   import type { Navbar } from '$velite';
   import { NavigationMenu } from 'bits-ui';
   import { slide } from 'svelte/transition';
@@ -65,7 +65,7 @@
                 {#snippet child({ props })}
                   <!-- eslint-disable svelte/no-navigation-without-resolve -->
                   <a
-                    href={base + item.href}
+                    href={item.href}
                     {...props}
                     data-testid="navbar-desktop-dropdown-navigation-item"
                     class="group flex items-center gap-1.5 text-gray-600 font-medium px-4 py-2.5 hover:text-primary no-underline cursor-pointer text-base"
@@ -87,7 +87,7 @@
                     <li>
                       <!-- eslint-disable svelte/no-navigation-without-resolve -->
                       <a
-                        href={base + href}
+                        {href}
                         data-testid="navbar-desktop-child-navigation-item"
                         class="block px-5 py-3 text-gray-600 text-sm no-underline hover:text-primary hover:bg-gray-50"
                         >{text}</a
@@ -102,7 +102,7 @@
             <NavigationMenu.Item>
               <!-- eslint-disable svelte/no-navigation-without-resolve -->
               <NavigationMenu.Link
-                href={base + item.href}
+                href={item.href}
                 data-testid="navbar-desktop-navigation-item"
                 class="block text-gray-600 font-medium px-4 py-3 no-underline hover:text-primary"
                 >{text}</NavigationMenu.Link
@@ -114,7 +114,7 @@
         <NavigationMenu.Item class="pl-4">
           <!-- eslint-disable svelte/no-navigation-without-resolve -->
           <NavigationMenu.Link
-            href={base + joinUsButton.href}
+            href={joinUsButton.href}
             data-testid="navbar-desktop-join-us-button"
             class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
           >
@@ -174,7 +174,7 @@
                   {#each item.children as { href, text }, index (index)}
                     <!-- eslint-disable svelte/no-navigation-without-resolve -->
                     <a
-                      href={base + href}
+                      {href}
                       data-testid="navbar-mobile-child-navigation-item"
                       class="text-gray-600 text-sm py-2.5 no-underline hover:text-primary"
                       onclick={handleClose}>{text}</a
@@ -188,7 +188,7 @@
             <div class="h-px bg-gray-100"></div>
             <!-- eslint-disable svelte/no-navigation-without-resolve -->
             <a
-              href={base + item.href}
+              href={item.href}
               data-testid="navbar-mobile-navigation-item"
               class="text-gray-600 text-sm font-medium px-3 py-3 no-underline hover:text-primary"
               onclick={handleClose}>{text}</a
@@ -199,7 +199,7 @@
         <div class="px-3 py-3 pt-2">
           <!-- eslint-disable svelte/no-navigation-without-resolve -->
           <a
-            href={base + joinUsButton.href}
+            href={joinUsButton.href}
             data-testid="navbar-mobile-join-us-button"
             class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
             onclick={handleClose}

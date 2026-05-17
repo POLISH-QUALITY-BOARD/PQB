@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import Article from '$lib/components/Article.svelte';
   import Feature from '$lib/components/Feature.svelte';
   import Section from '$lib/components/Section.svelte';
@@ -71,7 +70,7 @@
   };
 </script>
 
-<Section id="dolacz-do-nas" class="bg-gray-50">
+<Section level={2} id="dolacz-do-nas" class="bg-gray-50">
   {#snippet heading()}{headingTitle}{/snippet}
 
   <div class="text-gray-600 mb-10 space-y-4">
@@ -88,7 +87,7 @@
     {/each}
   </div>
 
-  <Article>
+  <Article level={3}>
     {#snippet heading()}{steps.heading}{/snippet}
 
     <div class="relative">
@@ -125,7 +124,7 @@
               {#if action.type === 'download'}
                 <!-- eslint-disable svelte/no-navigation-without-resolve -->
                 <a
-                  href={base + action.href}
+                  href={action.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-primary hover:bg-primary-dark pl-3.5 pr-5 py-2.5 rounded-xl no-underline"
