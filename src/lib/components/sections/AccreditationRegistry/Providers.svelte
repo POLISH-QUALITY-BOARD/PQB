@@ -40,12 +40,7 @@
         ({ certifications: certs }) =>
           certFilter.size === 0 || [...certFilter].some((c) => certs.includes(c))
       )
-      .sort((a, b) => {
-        const aCerts = isActive(a.dateTo) ? a.certifications.length : 0;
-        const bCerts = isActive(b.dateTo) ? b.certifications.length : 0;
-        if (bCerts !== aCerts) return bCerts - aCerts;
-        return a.name.localeCompare(b.name);
-      })
+      .sort((a, b) => a.name.localeCompare(b.name))
   );
 </script>
 
