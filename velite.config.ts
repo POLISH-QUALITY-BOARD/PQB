@@ -513,24 +513,30 @@ const accreditationRegistryProviders = defineCollection({
       })
     ),
     items: s.array(
-      s
-        .object({
-          name: s.string(),
-          logo: s.string().optional(),
-          certifications: s.array(s.string()),
-          dateFrom: s.isodate(),
-          dateTo: s.isodate(),
-          website: s
+      s.object({
+        name: s.string(),
+        logo: s.string().optional(),
+        certifications: s.array(
+          s
             .object({
-              href: href(),
-              ariaLabel: s.string()
+              code: s.string(),
+              dateFrom: s.isodate(),
+              dateTo: s.isodate().optional()
             })
-            .optional()
-        })
-        .transform((item) => ({
-          ...item,
-          dateToLabel: new Date(item.dateTo).toLocaleDateString('pl-PL')
-        }))
+            .transform((cert) => ({
+              ...cert,
+              dateToLabel: cert.dateTo
+                ? new Date(cert.dateTo).toLocaleDateString('pl-PL')
+                : undefined
+            }))
+        ),
+        website: s
+          .object({
+            href: href(),
+            ariaLabel: s.string()
+          })
+          .optional()
+      })
     )
   })
 });
