@@ -65,7 +65,7 @@ items:
       website:
         href: https://www.capgemini.com/pl-pl/
         ariaLabel: Przejdź na stronę Capgemini Polska sp. z o.o.
-    dateFrom: 2026-04-29
+    dateFrom: 2026-04-28
   - name: Certified Tester Advanced Level Test Analyst v3.1
     author:
       name: AmberTeam Testing sp. z o.o.
