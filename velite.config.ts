@@ -548,6 +548,12 @@ const accreditationRegistryMaterials = defineCollection({
         name: s.string(),
         author: s.object({
           name: s.string(),
+          website: s
+            .object({
+              href: href(),
+              ariaLabel: s.string()
+            })
+            .optional(),
           linkedin: s
             .object({
               href: href(),

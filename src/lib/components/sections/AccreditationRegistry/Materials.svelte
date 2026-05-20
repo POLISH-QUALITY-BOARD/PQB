@@ -5,6 +5,7 @@
   import IconArrowUp from '~icons/mdi/arrow-up';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
   import IconFilterOffOutline from '~icons/mdi/filter-off-outline';
+  import IconOpenInNew from '~icons/mdi/open-in-new';
   import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
   import IconLinkedin from '~icons/simple-icons/linkedin';
 
@@ -137,6 +138,17 @@
               <td class="px-4 py-3.5 w-px whitespace-nowrap">
                 <div class="flex items-center gap-1.5">
                   <span class="font-medium text-gray-700 whitespace-nowrap">{author.name}</span>
+                  {#if author.website}
+                    <a
+                      href={author.website.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={author.website.ariaLabel}
+                      class="text-gray-300 hover:text-primary no-underline"
+                    >
+                      <IconOpenInNew aria-hidden="true" width="14" height="14" />
+                    </a>
+                  {/if}
                   {#if author.linkedin}
                     <a
                       href={author.linkedin.href}
