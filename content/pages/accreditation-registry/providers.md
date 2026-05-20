@@ -28,81 +28,95 @@ filters:
 items:
   - name: Sages sp. z o.o.
     certifications:
-      - ctfl-v4-0
-    dateFrom: 2026-04-24
-    dateTo: 2027-04-24
+      - code: ctfl-v4-0
+        dateFrom: 2026-04-24
     website:
       href: https://www.sages.pl/
       ariaLabel: Przejdź na stronę Sages sp. z o.o.
   - name: Joanna Kazun Analysis
     certifications:
-      - ctfl-v4-0
-      - ct-act-v1-0
-      - ctfl-at-v1-0
-      - ctal-tta-v4-0
-      - ctal-ta-v3-1
-      - ct-ai-v1-0
-      - ctal-tm-v3-0
-    dateFrom: 2026-04-24
-    dateTo: 2027-04-24
+      - code: ctfl-v4-0
+        dateFrom: 2026-04-24
+      - code: ct-act-v1-0
+        dateFrom: 2026-04-24
+      - code: ctfl-at-v1-0
+        dateFrom: 2026-04-24
+      - code: ctal-tta-v4-0
+        dateFrom: 2026-04-24
+      - code: ctal-ta-v3-1
+        dateFrom: 2026-04-24
+        dateTo: 2026-11-02
+      - code: ct-ai-v1-0
+        dateFrom: 2026-04-24
+        dateTo: 2027-10-17
+      - code: ctal-tm-v3-0
+        dateFrom: 2026-04-24
     website:
       href: https://jkanalysis.pl/
       ariaLabel: Przejdź na stronę Joanna Kazun Analysis
   - name: 21CN Radosław Smilgin
     certifications:
-      - ctfl-v4-0
-      - ctfl-at-v1-0
-      - ctal-tta-v4-0
-    dateFrom: 2026-04-24
-    dateTo: 2027-04-24
+      - code: ctfl-v4-0
+        dateFrom: 2026-04-24
+      - code: ctfl-at-v1-0
+        dateFrom: 2026-04-24
+      - code: ctal-tta-v4-0
+        dateFrom: 2026-04-24
     website:
       href: https://testerzy.pl/
       ariaLabel: Przejdź na stronę 21CN Radosław Smilgin
   - name: INPROGRESS sp. z o.o.
     certifications:
-      - ctal-tm-v3-0
-      - ctal-tta-v4-0
-    dateFrom: 2026-04-24
-    dateTo: 2027-04-24
+      - code: ctal-tm-v3-0
+        dateFrom: 2026-04-24
+      - code: ctal-tta-v4-0
+        dateFrom: 2026-04-24
     website:
       href: https://inprogress.pl/
       ariaLabel: Przejdź na stronę INPROGRESS sp. z o.o.
   - name: INTest Paweł Kwasik
     certifications:
-      - ctfl-v4-0
-      - ctal-tta-v4-0
-      - ctal-ta-v3-1
-    dateFrom: 2026-04-24
-    dateTo: 2027-04-24
+      - code: ctfl-v4-0
+        dateFrom: 2026-04-24
+      - code: ctal-tta-v4-0
+        dateFrom: 2026-04-24
+      - code: ctal-ta-v3-1
+        dateFrom: 2026-04-24
+        dateTo: 2026-11-02
     website:
       href: https://qa-szkolenia.pl/
       ariaLabel: Przejdź na stronę INTest Paweł Kwasik
   - name: AmberTeam Testing sp. z o.o.
     certifications:
-      - ctfl-v4-0
-      - ctal-tta-v4-0
-      - ctal-ta-v3-1
-    dateFrom: 2026-04-24
-    dateTo: 2027-04-24
+      - code: ctfl-v4-0
+        dateFrom: 2026-04-24
+      - code: ctal-tta-v4-0
+        dateFrom: 2026-04-24
+      - code: ctal-ta-v3-1
+        dateFrom: 2026-04-24
+        dateTo: 2026-11-02
     website:
       href: https://amberteam.pl/
       ariaLabel: Przejdź na stronę AmberTeam Testing sp. z o.o.
   - name: Asseco Data Systems S.A.
     certifications:
-      - ctfl-v4-0
-      - ctal-tta-v4-0
-      - ctal-ta-v3-1
-      - ctal-tm-v3-0
-    dateFrom: 2026-05-06
-    dateTo: 2027-05-06
+      - code: ctfl-v4-0
+        dateFrom: 2026-05-06
+      - code: ctal-tta-v4-0
+        dateFrom: 2026-05-06
+      - code: ctal-ta-v3-1
+        dateFrom: 2026-05-06
+        dateTo: 2026-11-02
+      - code: ctal-tm-v3-0
+        dateFrom: 2026-05-06
     website:
       href: https://academy.asseco.pl
       ariaLabel: Przejdź na stronę Asseco Data Systems S.A.
   - name: Capgemini Polska sp. z o.o.
     certifications:
-      - ctfl-v4-0
-    dateFrom: 2026-05-08
-    dateTo: 2027-05-08
+      - code: ctfl-v4-0
+        dateFrom: 2026-05-08
+        dateTo: 2026-12-31
     website:
       href: https://www.capgemini.com/pl-pl/
       ariaLabel: Przejdź na stronę Capgemini Polska sp. z o.o.

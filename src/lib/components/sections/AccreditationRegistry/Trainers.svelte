@@ -93,7 +93,7 @@
           class="flex items-center gap-4 p-4 bg-white border-b border-gray-100 last:border-b-0 sm:border-b-0"
         >
           {#if photo && assets[photo]}
-            <div class="w-16 h-16 rounded-full overflow-hidden shrink-0">
+            <div class="w-18 h-18 rounded-full overflow-hidden shrink-0">
               <enhanced:img
                 src={assets[photo].default}
                 alt={name}
@@ -103,7 +103,7 @@
             </div>
           {:else}
             <span
-              class="w-16 h-16 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center shrink-0"
+              class="w-18 h-18 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center shrink-0"
               aria-hidden="true"
             >
               <IconAccount width="40" height="40" />
