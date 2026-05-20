@@ -46,7 +46,7 @@ items:
       - ctel-itp-atp
     linkedin:
       href: https://www.linkedin.com/in/adam-roman-3799723/
-      ariaLabel: Profil LinkedIn — Adam Roman
+      ariaLabel: Przejdź na profil LinkedIn Adama Romana
   - name: Lucjan Stapp
     photo: /src/lib/assets/trainers/Lucjan_Stapp.png
     dateFrom: 2026-04-28
@@ -59,7 +59,7 @@ items:
       - ctal-ta
     linkedin:
       href: https://www.linkedin.com/in/lucjan-stapp-123456/
-      ariaLabel: Profil LinkedIn — Lucjan Stapp
+      ariaLabel: Przejdź na profil LinkedIn Lucjana Stappa
   - name: Wojciech Becla
     photo: /src/lib/assets/trainers/Wojciech_Becla.jpg
     dateFrom: 2026-04-24
@@ -72,7 +72,7 @@ items:
       - ctal-tta
     linkedin:
       href: https://www.linkedin.com/in/becla/
-      ariaLabel: Profil LinkedIn — Wojciech Becla
+      ariaLabel: Przejdź na profil LinkedIn Wojciecha Becli
   - name: Lukasz Galuszka
     photo: /src/lib/assets/trainers/Lukasz_Galuszka.jpg
     dateFrom: 2026-04-24
@@ -82,7 +82,7 @@ items:
       - ctfl-at
     linkedin:
       href: https://www.linkedin.com/in/lukaszgaluszka/
-      ariaLabel: Profil LinkedIn — Lukasz Galuszka
+      ariaLabel: Przejdź na profil LinkedIn Łukasza Galuszki
   - name: Krzysztof Kolodziejczyk
     photo: /src/lib/assets/trainers/Krzysztof_Kołodziejczyk.jpg
     dateFrom: 2026-04-24
@@ -92,7 +92,7 @@ items:
       - ctfl-at
     linkedin:
       href: https://www.linkedin.com/in/krzysztof-kołodziejczyk-865b19129/
-      ariaLabel: Profil LinkedIn — Krzysztof Kolodziejczyk
+      ariaLabel: Przejdź na profil LinkedIn Krzysztofa Kołodziejczyka
   - name: Michał Sadowski
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
@@ -110,7 +110,7 @@ items:
       - ctal-tm
     linkedin:
       href: https://www.linkedin.com/in/adrian-zawada-64a65419b/
-      ariaLabel: Profil LinkedIn — Adrian Zawada
+      ariaLabel: Przejdź na profil LinkedIn Adriana Zawady
   - name: Jan Sabak
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
@@ -123,7 +123,7 @@ items:
       - ct-ai
     linkedin:
       href: https://www.linkedin.com/in/jsabak/
-      ariaLabel: Profil LinkedIn — Jan Sabak
+      ariaLabel: Przejdź na profil LinkedIn Jana Sabaka
   - name: Radosław Smilgin
     photo: /src/lib/assets/trainers/Radosław_Smilgin.jpeg
     dateFrom: 2026-04-24
@@ -136,7 +136,7 @@ items:
       - ctal-tta
     linkedin:
       href: https://www.linkedin.com/in/smilgin/
-      ariaLabel: Profil LinkedIn — Radosław Smilgin
+      ariaLabel: Przejdź na profil LinkedIn Radosława Smilgina
   - name: Joanna Kazun
     photo: /src/lib/assets/trainers/Joanna_Kazun.jpg
     dateFrom: 2026-04-28
@@ -151,7 +151,7 @@ items:
       - ctal-tm
     linkedin:
       href: https://www.linkedin.com/in/joanna-kazun/
-      ariaLabel: Profil LinkedIn — Joanna Kazun
+      ariaLabel: Przejdź na profil LinkedIn Joanny Kazun
   - name: Rafał Stańczak
     photo: /src/lib/assets/trainers/Rafal_Stanczak.jpg
     dateFrom: 2026-04-24
@@ -163,7 +163,7 @@ items:
       - ctal-ta
     linkedin:
       href: https://www.linkedin.com/in/rafalstanczak/
-      ariaLabel: Profil LinkedIn — Rafał Stańczak
+      ariaLabel: Przejdź na profil LinkedIn Rafała Stańczaka
   - name: Adam Ścierski
     dateFrom: 2026-04-24
     dateTo: 2030-02-27
@@ -174,7 +174,7 @@ items:
       - ctal-tta
     linkedin:
       href: https://www.linkedin.com/in/adamscierski/
-      ariaLabel: Profil LinkedIn — Adam Ścierski
+      ariaLabel: Przejdź na profil LinkedIn Adama Ścierskiego
 ---
 
 Akredytowani trenerzy to osoby uprawnione do prowadzenia oficjalnych szkoleń przygotowujących do egzaminów ISTQB®. Każdy trener przeszedł weryfikację wiedzy i umiejętności dydaktycznych przez Polish Quality Board i może posiadać uprawnienia do nauczania na jednym lub kilku poziomach certyfikacji.
