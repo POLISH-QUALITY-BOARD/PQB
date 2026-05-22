@@ -112,6 +112,7 @@ items:
       href: https://www.linkedin.com/in/adrian-zawada-64a65419b/
       ariaLabel: Przejdź na profil LinkedIn Adriana Zawady
   - name: Jan Sabak
+    photo: /src/lib/assets/trainers/Jan_Sabak.jpg
     dateFrom: 2026-04-28
     dateTo: 2027-04-28
     certifications:
@@ -165,6 +166,7 @@ items:
       href: https://www.linkedin.com/in/rafalstanczak/
       ariaLabel: Przejdź na profil LinkedIn Rafała Stańczaka
   - name: Adam Ścierski
+    photo: /src/lib/assets/trainers/Adam_Scierski.jpeg
     dateFrom: 2026-04-24
     dateTo: 2030-02-27
     certifications:
