@@ -365,7 +365,7 @@ const about = defineCollection({
 
 const syllabi = defineCollection({
   name: 'Syllabi',
-  pattern: 'sections/syllabi.md',
+  pattern: 'pages/syllabi.md',
   single: true,
   schema: s.object({
     heading: s.string(),
