@@ -1,1 +1,0 @@
-import{O as e,T as t,a as n,c as r}from"./C3_LrRs0.js";import"./D1hYfEew.js";var i=e(`<svg><path fill="currentColor" d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7z"></path></svg>`);function a(e,a){let o=n(a,[`$$slots`,`$$events`,`$$legacy`]);var s=i();r(s,()=>({viewBox:`0 0 24 24`,width:`1.2em`,height:`1.2em`,...o})),t(e,s)}export{a as t};
