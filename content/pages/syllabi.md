@@ -56,6 +56,21 @@ certifications:
       - lang: PL
         type: answers
         file: /documents/syllabi/ta-4.0/TA-4.0-PL-odpowiedzi.pdf
+  - code: CTAL-TTA
+    title: CTAL-TTA Certyfikowany Tester Poziom Zaawansowany Techniczny Analityk Testów v4.0
+    documents:
+      - lang: PL
+        type: syllabus
+        file: /documents/syllabi/tta-4.0/TTA-4.0-PL-sylabus.pdf
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctal-tta/tree/main/syllabus
+      - lang: PL
+        type: questions
+        file: /documents/syllabi/tta-4.0/TTA-4.0-PL-pytania-v4.2.pdf
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctal-tta/tree/main/sample-exam-questions
+      - lang: PL
+        type: answers
+        file: /documents/syllabi/tta-4.0/TTA-4.0-PL-odpowiedzi-v4.2.pdf
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctal-tta/tree/main/sample-exam-answers
   - code: CTAL-TM
     title: Certyfikowany Tester Poziom Zaawansowany Zarządzanie Testami v3.0
     documents:
