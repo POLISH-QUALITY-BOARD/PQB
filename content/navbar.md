@@ -19,7 +19,7 @@ navbarItems:
         text: Wartości, wizja i misja
   - href: /#portfolio-istqb
     text: Portfolio ISTQB®
-  - href: /#sylabusy
+  - href: /sylabusy
     text: Sylabusy
   - href: /#akredytacja
     text: Akredytacja

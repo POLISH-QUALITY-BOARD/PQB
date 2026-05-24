@@ -8,7 +8,7 @@ navigation:
       text: O nas
     - href: /#portfolio-istqb
       text: Portfolio ISTQB®
-    - href: /#sylabusy
+    - href: /sylabusy
       text: Sylabusy
     - href: /#akredytacja
       text: Akredytacja

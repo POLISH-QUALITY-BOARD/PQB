@@ -1,6 +1,6 @@
 <script lang="ts">
   import Section from '$lib/components/Section.svelte';
-  import type { Syllabi } from '$velite';
+  import { syllabi } from '$velite';
   import { untrack } from 'svelte';
   import IconArrowDown from '~icons/mdi/arrow-down';
   import IconArrowUp from '~icons/mdi/arrow-up';
@@ -9,7 +9,7 @@
   import IconGithub from '~icons/mdi/github';
   import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
-  let { heading: headingText, body, certifications }: Syllabi = $props();
+  const { heading: headingText, body, certifications } = syllabi;
 
   const typeOrder = { syllabus: 0, questions: 1, answers: 2, guide: 3 };
 
@@ -66,7 +66,7 @@
 </script>
 
 <!-- eslint-disable svelte/no-navigation-without-resolve -->
-<Section level={2} id="sylabusy" class="bg-white">
+<Section level={1} class="bg-white">
   {#snippet heading()}{headingText}{/snippet}
 
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
