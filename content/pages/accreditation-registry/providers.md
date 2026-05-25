@@ -67,6 +67,10 @@ items:
       ariaLabel: Przejdź na stronę 21CN Radosław Smilgin
   - name: INPROGRESS sp. z o.o.
     certifications:
+      - code: ctfl-v4-0
+        dateFrom: 2026-04-24
+      - code: ctfl-at-v1-0
+        dateFrom: 2026-04-24
       - code: ctal-tm-v3-0
         dateFrom: 2026-04-24
       - code: ctal-tta-v4-0
@@ -127,9 +131,13 @@ items:
       - code: ctfl-at-v1-0
         dateFrom: 2026-05-22
         dateTo: 2027-11-07
+      - code: ct-act-v1-0
+        dateFrom: 2026-05-22
       - code: ctal-ta-v3-1
         dateFrom: 2026-05-22
         dateTo: 2026-11-13
+      - code: ctal-tta-v4-0
+        dateFrom: 2026-05-22
     website:
       href: https://sii.pl/szkolenia
       ariaLabel: Przejdź na stronę Sii sp. z o.o.
