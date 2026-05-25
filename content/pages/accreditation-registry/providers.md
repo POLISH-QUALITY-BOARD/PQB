@@ -120,6 +120,27 @@ items:
     website:
       href: https://www.capgemini.com/pl-pl/
       ariaLabel: Przejdź na stronę Capgemini Polska sp. z o.o.
+  - name: Sii sp. z o.o.
+    certifications:
+      - code: ctfl-v4-0
+        dateFrom: 2026-05-22
+      - code: ctfl-at-v1-0
+        dateFrom: 2026-05-22
+        dateTo: 2027-11-07
+      - code: ctal-ta-v3-1
+        dateFrom: 2026-05-22
+        dateTo: 2026-11-13
+    website:
+      href: https://sii.pl/szkolenia
+      ariaLabel: Przejdź na stronę Sii sp. z o.o.
+  - name: NobleProg Polska sp. z o.o.
+    certifications:
+      - code: ctfl-v4-0
+        dateFrom: 2026-05-25
+        dateTo: 2026-12-31
+    website:
+      href: https://www.nobleprog.pl/
+      ariaLabel: Przejdź na stronę NobleProg Polska sp. z o.o.
 ---
 
 Akredytowani dostawcy szkoleń to firmy i instytucje oferujące kursy przygotowujące do egzaminów ISTQB® w oparciu o oficjalne sylabusy. Akredytacja potwierdza, że program szkolenia, materiały dydaktyczne oraz kadra spełniają wymagania jakościowe określone przez Polish Quality Board.
