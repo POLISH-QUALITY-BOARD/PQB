@@ -16,6 +16,13 @@ items:
         href: https://www.linkedin.com/in/lucjan-stapp-123456/
         ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
     dateFrom: 2026-04-28
+  - name: Certified Tester Foundation Level Agile Tester v1.0
+    author:
+      name: Lucjan Stapp
+      linkedin:
+        href: https://www.linkedin.com/in/lucjan-stapp-123456/
+        ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
+    dateFrom: 2026-04-28
   - name: Certified Tester Foundation Level v4.0
     author:
       name: Paweł Kwasik
