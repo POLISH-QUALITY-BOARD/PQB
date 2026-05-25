@@ -2,8 +2,21 @@
 import { readFileSync } from 'node:fs';
 
 const SPREADSHEET_ID = '1MNJ0Zke9jcg8VoPsjQQZwEJU8FO9PtCNVmVhfov0u-4';
-const SHEET_NAME = 'DOSTAWCY SZKOLEŃ';
-const PROVIDERS_MD = '/Users/sebam/dev/website/content/pages/accreditation-registry/providers.md';
+
+const SHEET_CONFIGS = {
+  'DOSTAWCY SZKOLEŃ': {
+    path: '/Users/sebam/dev/website/content/pages/accreditation-registry/providers.md',
+    type: 'providers'
+  },
+  MATERIAŁY: {
+    path: '/Users/sebam/dev/website/content/pages/accreditation-registry/materials.md',
+    type: 'materials'
+  },
+  TRENERZY: {
+    path: '/Users/sebam/dev/website/content/pages/accreditation-registry/trainers.md',
+    type: 'trainers'
+  }
+};
 
 const token = process.env.GOOGLE_SHEETS_ACCESS_TOKEN;
 if (!token) {
@@ -13,33 +26,33 @@ if (!token) {
   process.exit(1);
 }
 
-// Map of canonical certification names (lowercased, normalized) -> short code.
-// The matcher does substring matching against normalized cell values, so we
-// can match many variations. See references/certifications-map.md.
+// Certification mapping
 const certMap: Array<{ pattern: RegExp; code: string }> = [
   { pattern: /foundation level\s+v?4\.0/i, code: 'ctfl-v4-0' },
-  { pattern: /(foundation level.{0,3}agile tester|agile tester\s+v?1\.0)/i, code: 'ctfl-at-v1-0' },
-  { pattern: /acceptance testing\s+v?1\.0/i, code: 'ct-act-v1-0' },
-  { pattern: /ai testing\s+v?1\.0/i, code: 'ct-ai-v1-0' },
-  { pattern: /advanced level.{0,3}test analyst\s+v?3\.1/i, code: 'ctal-ta-v3-1' },
-  { pattern: /advanced level.{0,3}(test manager|test management)\s+v?3\.0/i, code: 'ctal-tm-v3-0' },
-  { pattern: /advanced level.{0,3}technical test analyst\s+v?4\.0/i, code: 'ctal-tta-v4-0' }
+  { pattern: /(foundation level.{0,3}agile tester|agile tester\s+v?1\.0)/i, code: 'ctfl-at' },
+  { pattern: /acceptance testing\s+v?1\.0/i, code: 'ct-act' },
+  { pattern: /ai testing\s+v?1\.0/i, code: 'ct-ai' },
+  { pattern: /advanced level.{0,3}test analyst\s+v?3\.1/i, code: 'ctal-ta' },
+  { pattern: /advanced level.{0,3}(test manager|test management)\s+v?3\.0/i, code: 'ctal-tm' },
+  { pattern: /advanced level.{0,3}technical test analyst\s+v?4\.0/i, code: 'ctal-tta' },
+  { pattern: /assessing test processes/i, code: 'ctel-itp-atp' },
+  { pattern: /implementing test process improvement/i, code: 'ctel-itp-itpi' }
 ];
 
-function mapCertification(raw: string): string | null {
-  // Fix common typos of "Certified" seen in the spreadsheet
+function mapCertifications(raw: string): string[] {
+  const codes: string[] = [];
   const normalized = raw.replace(/certifield/gi, 'certified').replace(/certifiel\b/gi, 'certified');
   for (const { pattern, code } of certMap) {
-    if (pattern.test(normalized)) return code;
+    if (pattern.test(normalized) && !codes.includes(code)) {
+      codes.push(code);
+    }
   }
-  return null;
+  return codes;
 }
 
 function parseDate(raw: string): string | null {
   if (!raw) return null;
-  // Skip the boilerplate "no expiry" text
-  if (/syllabus version|remains valid/i.test(raw)) return null;
-  // Parse "24 Apr 2026" format
+  if (/syllabus version|remains valid|valid for/i.test(raw)) return null;
   const match = raw.match(/(\d{1,2})\s+(\w+)\s+(\d{4})/);
   if (!match) return null;
   const months: Record<string, string> = {
@@ -62,21 +75,8 @@ function parseDate(raw: string): string | null {
   return `${match[3]}-${month}-${day}`;
 }
 
-interface SheetCertification {
-  code: string | null;
-  rawMaterial: string;
-  dateFrom: string | null;
-  dateTo: string | null;
-}
-
-interface SheetProvider {
-  name: string;
-  website: string;
-  certifications: SheetCertification[];
-}
-
-async function fetchSheet(): Promise<string[][]> {
-  const range = encodeURIComponent(`'${SHEET_NAME}'!A1:Z1000`);
+async function fetchSheet(sheetName: string): Promise<string[][]> {
+  const range = encodeURIComponent(`'${sheetName}'!A1:Z1000`);
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${range}`;
   const res = await fetch(url, {
     headers: { Authorization: `Bearer ${token}` }
@@ -89,62 +89,69 @@ async function fetchSheet(): Promise<string[][]> {
   return json.values || [];
 }
 
-function parseSheet(rows: string[][]): Map<string, SheetProvider> {
-  const providers = new Map<string, SheetProvider>();
-  // Skip header row
+// PROVIDERS sheet parser
+function parseProvidersSheet(rows: string[][]): Set<string> {
+  const providers = new Set<string>();
   for (let i = 1; i < rows.length; i++) {
     const row = rows[i];
-    const name = (row[1] || '').trim(); // B
-    const website = (row[3] || '').trim(); // D
-    const material = (row[8] || '').trim(); // I
-    const dateFrom = parseDate(row[12] || ''); // M
-    const dateTo = parseDate(row[13] || ''); // N
-
+    const name = (row[1] || '').trim();
+    const material = (row[8] || '').trim();
     if (!name || !material) continue;
-
-    if (!providers.has(name)) {
-      providers.set(name, { name, website, certifications: [] });
-    }
-    const provider = providers.get(name)!;
-    if (!provider.website && website) provider.website = website;
-
-    // The spreadsheet sometimes packs multiple certifications into one cell,
-    // separated by ';' — split and emit one entry per certification.
-    const materials = material.split(/\s*;\s*/).filter(Boolean);
-    for (const m of materials) {
-      provider.certifications.push({
-        code: mapCertification(m),
-        rawMaterial: m,
-        dateFrom,
-        dateTo
-      });
-    }
+    providers.add(name);
   }
   return providers;
 }
 
-interface MdCertification {
-  code: string;
-  dateFrom: string;
-  dateTo?: string;
-}
-
-interface MdProvider {
-  name: string;
-  certifications: MdCertification[];
-  website: string;
-}
-
-function parseProvidersMd(): Map<string, MdProvider> {
-  const content = readFileSync(PROVIDERS_MD, 'utf-8');
-  const yamlMatch = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!yamlMatch) throw new Error('Could not extract YAML frontmatter from providers.md');
-
-  const providers = new Map<string, MdProvider>();
-  const lines = yamlMatch[1].split('\n');
+function parseMdProviders(content: string): Set<string> {
+  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) return new Set();
+  const names = new Set<string>();
+  const lines = match[1].split('\n');
   let inItems = false;
-  let current: MdProvider | null = null;
-  let currentCert: Partial<MdCertification> | null = null;
+  for (const line of lines) {
+    if (line.startsWith('items:')) {
+      inItems = true;
+      continue;
+    }
+    if (!inItems) continue;
+    const nameMatch = line.match(/^ {2}- name:\s*(.+)$/);
+    if (nameMatch) {
+      names.add(nameMatch[1].trim());
+    }
+  }
+  return names;
+}
+
+// MATERIALS sheet parser
+interface SheetMaterial {
+  id: string;
+  name: string;
+  author: string;
+  dateFrom: string | null;
+}
+
+function parseMaterialsSheet(rows: string[][]): SheetMaterial[] {
+  const materials: SheetMaterial[] = [];
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    const author = (row[1] || '').trim();
+    const syllabus = (row[8] || '').trim();
+    const accId = (row[13] || '').trim();
+    const dateFrom = parseDate(row[14] || '');
+
+    if (!author || !syllabus || !accId) continue;
+    materials.push({ id: accId, name: syllabus, author, dateFrom });
+  }
+  return materials;
+}
+
+function parseMdMaterials(content: string): SheetMaterial[] {
+  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) return [];
+  const materials: SheetMaterial[] = [];
+  const lines = match[1].split('\n');
+  let inItems = false;
+  let current: Partial<SheetMaterial> | null = null;
 
   for (const line of lines) {
     if (line.startsWith('items:')) {
@@ -152,189 +159,244 @@ function parseProvidersMd(): Map<string, MdProvider> {
       continue;
     }
     if (!inItems) continue;
-
     const nameMatch = line.match(/^ {2}- name:\s*(.+)$/);
     if (nameMatch) {
-      if (current) {
-        if (currentCert && currentCert.code) {
-          current.certifications.push(currentCert as MdCertification);
-        }
-        providers.set(current.name, current);
-      }
-      current = { name: nameMatch[1].trim(), certifications: [], website: '' };
-      currentCert = null;
+      current = { name: nameMatch[1].trim() };
       continue;
     }
     if (!current) continue;
-
-    const codeMatch = line.match(/^ {6}- code:\s*(.+)$/);
-    if (codeMatch) {
-      if (currentCert && currentCert.code) {
-        current.certifications.push(currentCert as MdCertification);
-      }
-      currentCert = { code: codeMatch[1].trim() };
+    const authorMatch = line.match(/^ {6}name:\s*(.+)$/);
+    if (authorMatch) {
+      current.author = authorMatch[1].trim();
       continue;
     }
-    const dateFromMatch = line.match(/^ {8}dateFrom:\s*(.+)$/);
-    if (dateFromMatch && currentCert) {
-      currentCert.dateFrom = dateFromMatch[1].trim();
-      continue;
-    }
-    const dateToMatch = line.match(/^ {8}dateTo:\s*(.+)$/);
-    if (dateToMatch && currentCert) {
-      currentCert.dateTo = dateToMatch[1].trim();
-      continue;
-    }
-    const hrefMatch = line.match(/^ {6}href:\s*(.+)$/);
-    if (hrefMatch) {
-      current.website = hrefMatch[1].trim();
-      continue;
+    const dateMatch = line.match(/^ {4}dateFrom:\s*(.+)$/);
+    if (dateMatch && current) {
+      current.dateFrom = dateMatch[1].trim();
+      materials.push(current as SheetMaterial);
+      current = null;
     }
   }
-  if (current) {
-    if (currentCert && currentCert.code)
-      current.certifications.push(currentCert as MdCertification);
-    providers.set(current.name, current);
-  }
-  return providers;
+  return materials;
 }
 
-function renderYamlBlock(provider: SheetProvider): string {
-  // Deduplicate certifications by code, keeping the earliest dateFrom and latest dateTo
-  const byCode = new Map<string, { code: string; dateFrom: string; dateTo?: string }>();
-  for (const cert of provider.certifications) {
-    if (!cert.code || !cert.dateFrom) continue;
-    const existing = byCode.get(cert.code);
-    if (!existing) {
-      byCode.set(cert.code, {
-        code: cert.code,
-        dateFrom: cert.dateFrom,
-        ...(cert.dateTo ? { dateTo: cert.dateTo } : {})
-      });
-    } else if (cert.dateFrom < existing.dateFrom) {
-      existing.dateFrom = cert.dateFrom;
+// TRAINERS sheet parser
+interface SheetTrainer {
+  name: string;
+  certifications: string[];
+  dateFrom: string | null;
+  dateTo: string | null;
+}
+
+function parseTrainersSheet(rows: string[][]): Map<string, SheetTrainer> {
+  const trainersMap = new Map<string, SheetTrainer>();
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    const name = (row[1] || '').trim();
+    const certificates = (row[8] || '').trim();
+    const accId = (row[9] || '').trim();
+    const dateFrom = parseDate(row[10] || '');
+    const dateTo = parseDate(row[11] || '');
+
+    if (!name || !accId) continue;
+
+    const certs = mapCertifications(certificates);
+    if (!trainersMap.has(name)) {
+      trainersMap.set(name, { name, certifications: [], dateFrom, dateTo });
+    }
+    const trainer = trainersMap.get(name)!;
+    for (const cert of certs) {
+      if (!trainer.certifications.includes(cert)) {
+        trainer.certifications.push(cert);
+      }
+    }
+    if (dateFrom && (!trainer.dateFrom || dateFrom < trainer.dateFrom)) {
+      trainer.dateFrom = dateFrom;
+    }
+    if (dateTo && (!trainer.dateTo || dateTo > trainer.dateTo)) {
+      trainer.dateTo = dateTo;
     }
   }
+  return trainersMap;
+}
 
-  let yaml = `  - name: ${provider.name}\n`;
-  yaml += `    certifications:\n`;
-  for (const cert of byCode.values()) {
-    yaml += `      - code: ${cert.code}\n`;
-    yaml += `        dateFrom: ${cert.dateFrom}\n`;
-    if (cert.dateTo) yaml += `        dateTo: ${cert.dateTo}\n`;
+function parseMdTrainers(content: string): Map<string, SheetTrainer> {
+  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) return new Map();
+  const trainers = new Map<string, SheetTrainer>();
+  const lines = match[1].split('\n');
+  let inItems = false;
+  let current: Partial<SheetTrainer> | null = null;
+
+  for (const line of lines) {
+    if (line.startsWith('items:')) {
+      inItems = true;
+      continue;
+    }
+    if (!inItems) continue;
+    const nameMatch = line.match(/^ {2}- name:\s*(.+)$/);
+    if (nameMatch) {
+      if (current && current.name) {
+        trainers.set(current.name, current as SheetTrainer);
+      }
+      current = { name: nameMatch[1].trim(), certifications: [], accId: '' };
+      continue;
+    }
+    if (!current) continue;
+    const dateMatch = line.match(/^ {4}dateFrom:\s*(.+)$/);
+    if (dateMatch) {
+      current.dateFrom = dateMatch[1].trim();
+    }
+    const certMatch = line.match(/^ {6}- ([\w-]+)$/);
+    if (certMatch && current.certifications) {
+      current.certifications.push(certMatch[1]);
+    }
   }
-  yaml += `    website:\n`;
-  yaml += `      href: ${provider.website}\n`;
-  yaml += `      ariaLabel: Przejdź na stronę ${provider.name}\n`;
-  return yaml;
+  if (current && current.name) {
+    trainers.set(current.name, current as SheetTrainer);
+  }
+  return trainers;
+}
+
+function parseExistingMd(filePath: string): string | null {
+  try {
+    return readFileSync(filePath, 'utf-8');
+  } catch {
+    return null;
+  }
 }
 
 async function main() {
-  const verbose = process.argv.includes('--verbose');
-  console.log('🔄 Syncing providers from Google Sheets...\n');
+  console.log('🔄 Syncing data from Google Sheets...\n');
 
-  const rows = await fetchSheet();
-  console.log(`📥 Fetched ${rows.length} rows from "${SHEET_NAME}"`);
+  const sheets: Record<string, string[][]> = {};
+  for (const [sheetName] of Object.entries(SHEET_CONFIGS)) {
+    const rows = await fetchSheet(sheetName);
+    sheets[sheetName] = rows;
+    console.log(`📥 Fetched ${rows.length} rows from "${sheetName}"`);
+  }
 
-  const sheetProviders = parseSheet(rows);
-  console.log(`📊 Parsed ${sheetProviders.size} unique providers from sheet\n`);
-
-  const mdProviders = parseProvidersMd();
-  console.log(`📄 Loaded ${mdProviders.size} providers from providers.md\n`);
-
-  const sheetNames = new Set(sheetProviders.keys());
-  const mdNames = new Set(mdProviders.keys());
-
-  const onlyInSheet = [...sheetNames].filter((n) => !mdNames.has(n));
-  const onlyInMd = [...mdNames].filter((n) => !sheetNames.has(n));
-
-  console.log('═'.repeat(80));
-  console.log('📋 DIFF REPORT');
+  console.log('\n' + '═'.repeat(80));
+  console.log('📊 PROVIDERS SYNC');
   console.log('═'.repeat(80));
 
-  if (onlyInSheet.length === 0 && onlyInMd.length === 0) {
-    console.log('\n✅ Provider lists match exactly.\n');
+  const providersRows = sheets['DOSTAWCY SZKOLEŃ'];
+  const sheetProviders = parseProvidersSheet(providersRows);
+  console.log(`\n✅ Found ${sheetProviders.size} providers in sheet`);
+
+  const providersPath = SHEET_CONFIGS['DOSTAWCY SZKOLEŃ'].path;
+  const providersContent = parseExistingMd(providersPath);
+  const mdProviders = providersContent ? parseMdProviders(providersContent) : new Set();
+  console.log(`✅ Found ${mdProviders.size} providers in providers.md`);
+
+  if (sheetProviders.size === mdProviders.size) {
+    console.log('✅ Providers list is synchronized');
+  } else {
+    console.log(`⚠️  Mismatch: sheet has ${sheetProviders.size}, md has ${mdProviders.size}`);
   }
 
-  if (onlyInSheet.length > 0) {
-    console.log(`\n⚠️  In Google Sheets but NOT in providers.md (${onlyInSheet.length}):`);
-    for (const name of onlyInSheet) {
-      const p = sheetProviders.get(name)!;
-      const unmapped = p.certifications.filter((c) => !c.code);
-      console.log(`\n   - ${name}`);
-      console.log(`     Website: ${p.website || '(none)'}`);
-      console.log(`     Certifications: ${p.certifications.length} (${unmapped.length} unmapped)`);
-      if (unmapped.length > 0) {
-        for (const u of unmapped) {
-          console.log(`       ⚠️  Unmapped: "${u.rawMaterial}"`);
-        }
-      }
-    }
+  console.log('\n' + '═'.repeat(80));
+  console.log('📚 MATERIALS SYNC');
+  console.log('═'.repeat(80));
 
-    console.log('\n📝 YAML blocks to paste into providers.md (before closing ---):\n');
-    console.log('```yaml');
-    for (const name of onlyInSheet) {
-      console.log(renderYamlBlock(sheetProviders.get(name)!));
-    }
-    console.log('```\n');
-  }
+  const materialsRows = sheets['MATERIAŁY'];
+  const sheetMaterials = parseMaterialsSheet(materialsRows);
+  console.log(`\n✅ Found ${sheetMaterials.length} materials in sheet`);
 
-  if (onlyInMd.length > 0) {
-    console.log(`\n⚠️  In providers.md but NOT in Google Sheets (${onlyInMd.length}):`);
-    for (const name of onlyInMd) {
-      console.log(`   - ${name}`);
-    }
-    console.log('\n   ℹ️  Do NOT auto-remove these. Ask the user first.\n');
-  }
+  const materialsPath = SHEET_CONFIGS['MATERIAŁY'].path;
+  const materialsContent = parseExistingMd(materialsPath);
+  if (!materialsContent) {
+    console.log('⚠️  materials.md not found');
+  } else {
+    const mdMaterials = parseMdMaterials(materialsContent);
+    console.log(`✅ Found ${mdMaterials.length} materials in materials.md`);
 
-  // Per-provider cert comparison for providers in both
-  const inBoth = [...sheetNames].filter((n) => mdNames.has(n));
-  const certMismatches: string[] = [];
-  for (const name of inBoth) {
-    const sheet = sheetProviders.get(name)!;
-    const md = mdProviders.get(name)!;
-    const sheetCodes = new Set(sheet.certifications.map((c) => c.code).filter(Boolean));
-    const mdCodes = new Set(md.certifications.map((c) => c.code));
-    const missingInMd = [...sheetCodes].filter((c) => !mdCodes.has(c!));
-    const missingInSheet = [...mdCodes].filter((c) => !sheetCodes.has(c));
-    if (missingInMd.length > 0 || missingInSheet.length > 0) {
-      certMismatches.push(name);
-      console.log(`\n🔸 ${name}:`);
-      if (missingInMd.length > 0) {
-        console.log(`   Missing in providers.md: ${missingInMd.join(', ')}`);
-        console.log(`   Suggested YAML additions:`);
-        const earliestByCode = new Map<string, { dateFrom: string; dateTo?: string }>();
-        for (const c of sheet.certifications) {
-          if (!c.code || !missingInMd.includes(c.code) || !c.dateFrom) continue;
-          const existing = earliestByCode.get(c.code);
-          if (!existing || c.dateFrom < existing.dateFrom) {
-            earliestByCode.set(c.code, {
-              dateFrom: c.dateFrom,
-              ...(c.dateTo ? { dateTo: c.dateTo } : {})
-            });
-          }
-        }
-        for (const [code, dates] of earliestByCode) {
-          console.log(`      - code: ${code}`);
-          console.log(`        dateFrom: ${dates.dateFrom}`);
-          if (dates.dateTo) console.log(`        dateTo: ${dates.dateTo}`);
-        }
+    const sheetNames = sheetMaterials.map((m) => `${m.author}-${m.name}`);
+    const mdNames = mdMaterials.map((m) => `${m.author}-${m.name}`);
+    const sheetSet = new Set(sheetNames);
+    const mdSet = new Set(mdNames);
+
+    const missing = sheetNames.filter((n) => !mdSet.has(n));
+    const stale = mdNames.filter((n) => !sheetSet.has(n));
+
+    if (missing.length > 0 || stale.length > 0) {
+      if (missing.length > 0) {
+        console.log(`\n⚠️  Missing in materials.md (${missing.length}):`);
+        missing.forEach((m) => console.log(`    - ${m}`));
       }
-      if (missingInSheet.length > 0)
-        console.log(`   Missing in sheet:      ${missingInSheet.join(', ')}`);
-      if (verbose) {
-        console.log('   Sheet raw materials:');
-        for (const c of sheet.certifications) {
-          console.log(`     - "${c.rawMaterial}" → ${c.code || '(unmapped)'}`);
-        }
+      if (stale.length > 0) {
+        console.log(`\n⚠️  Stale in materials.md (${stale.length}):`);
+        stale.forEach((m) => console.log(`    - ${m}`));
       }
+    } else {
+      console.log('✅ Materials list is synchronized');
     }
   }
 
   console.log('\n' + '═'.repeat(80));
-  console.log(
-    `Summary: ${onlyInSheet.length} to add, ${onlyInMd.length} stale, ${certMismatches.length} cert mismatches`
-  );
+  console.log('👨‍🏫 TRAINERS SYNC');
+  console.log('═'.repeat(80));
+
+  const trainersRows = sheets['TRENERZY'];
+  const sheetTrainersMap = parseTrainersSheet(trainersRows);
+  console.log(`\n✅ Found ${sheetTrainersMap.size} trainers in sheet`);
+
+  const trainersPath = SHEET_CONFIGS['TRENERZY'].path;
+  const trainersContent = parseExistingMd(trainersPath);
+  if (!trainersContent) {
+    console.log('⚠️  trainers.md not found');
+  } else {
+    const mdTrainersMap = parseMdTrainers(trainersContent);
+    console.log(`✅ Found ${mdTrainersMap.size} trainers in trainers.md`);
+
+    const sheetNames = new Set(sheetTrainersMap.keys());
+    const mdNames = new Set(mdTrainersMap.keys());
+
+    const missing = Array.from(sheetNames).filter((n) => !mdNames.has(n));
+    const stale = Array.from(mdNames).filter((n) => !sheetNames.has(n));
+
+    if (missing.length > 0 || stale.length > 0) {
+      if (missing.length > 0) {
+        console.log(`\n⚠️  Missing in trainers.md (${missing.length}):`);
+        missing.forEach((m) => console.log(`    - ${m}`));
+      }
+      if (stale.length > 0) {
+        console.log(`\n⚠️  Stale in trainers.md (${stale.length}):`);
+        stale.forEach((m) => console.log(`    - ${m}`));
+      }
+    } else {
+      console.log('✅ Trainers list is synchronized');
+    }
+
+    // Check certification mismatches
+    let certMismatches = 0;
+    for (const [name, sheetTrainer] of sheetTrainersMap) {
+      const mdTrainer = mdTrainersMap.get(name);
+      if (!mdTrainer) continue;
+
+      const sheetSet = new Set(sheetTrainer.certifications);
+      const mdSet = new Set(mdTrainer.certifications);
+      const missingInMd = Array.from(sheetSet).filter((c) => !mdSet.has(c));
+      const missingInSheet = Array.from(mdSet).filter((c) => !sheetSet.has(c));
+
+      if (missingInMd.length > 0 || missingInSheet.length > 0) {
+        certMismatches++;
+        console.log(`\n🔸 ${name}:`);
+        if (missingInMd.length > 0) {
+          console.log(`    Missing in trainers.md: ${missingInMd.join(', ')}`);
+        }
+        if (missingInSheet.length > 0) {
+          console.log(`    Missing in sheet: ${missingInSheet.join(', ')}`);
+        }
+      }
+    }
+    if (certMismatches === 0 && missing.length === 0 && stale.length === 0) {
+      console.log('✅ All trainers and certifications are synchronized');
+    }
+  }
+
+  console.log('\n' + '═'.repeat(80));
+  console.log(`✅ Sync report complete`);
   console.log('═'.repeat(80));
 }
 

@@ -1,23 +1,32 @@
 ---
 name: sync-providers-from-sheets
-description: Synchronize the PQB accreditation registry between the Google Sheets "Dostawy szkoleń" spreadsheet and the providers.md file. Use this skill whenever the user wants to check, compare, sync, or update providers, training providers (dostawcy szkoleń), the accreditation registry (rejestr akredytacji), or providers.md against the master Google Sheets registry. Trigger phrases include "compare providers", "sync providers.md", "check accreditation registry", "update dostawców", "porównaj dostawców", "zaktualizuj providers", or any mention of the spreadsheet ID 1MNJ0Zke9jcg8VoPsjQQZwEJU8FO9PtCNVmVhfov0u-4. Also trigger when the user references the Polish ISTQB accreditation data or asks to check if providers.md is up to date with the master spreadsheet.
+description: Synchronize PQB accreditation registry data between Google Sheets and local markdown files. Supports 3 sheets - "DOSTAWCY SZKOLEŃ" (providers.md), "MATERIAŁY" (materials.md), and "TRENERZY" (trainers.md). Use this skill whenever the user wants to check, compare, sync, or update any accreditation data. Trigger phrases include "sync providers", "check materials", "update trainers", "compare accreditation registry", "porównaj dostawców", "zaktualizuj materiały", or any mention of the spreadsheet ID 1MNJ0Zke9jcg8VoPsjQQZwEJU8FO9PtCNVmVhfov0u-4. Also trigger when comparing data from multiple sheets or checking synchronization status.
 ---
 
-# Sync Providers from Google Sheets
+# Sync PQB Accreditation Registry
 
 ## What this skill does
 
-Synchronizes provider data between the Google Sheets master registry ("Dostawy szkoleń") and the local `providers.md` file in the PQB website project. The Google Sheets is the source of truth — `providers.md` should always reflect its content.
+Synchronizes accreditation registry data between the Google Sheets master registry and three local markdown files:
+
+- **DOSTAWCY SZKOLEŃ** → `providers.md` (training provider organizations)
+- **MATERIAŁY** → `materials.md` (accredited training materials/courses)
+- **TRENERZY** → `trainers.md` (individual trainers with certifications)
+
+The Google Sheets is the source of truth — all markdown files should reflect its content.
 
 ## Why this skill exists
 
-The PQB website displays a list of accredited training providers on the `/rejestr-akredytacji` page. The data source is a Google Sheet maintained by the PQB team, and `providers.md` must be manually kept in sync. This skill automates the comparison and update process to prevent drift.
+The PQB website displays accreditation data across three pages: `/rejestr-akredytacji` (providers), materials, and trainers. The data sources are Google Sheets maintained by the PQB team, and the markdown files must be kept in sync. This skill automates comparison and reporting to prevent drift.
 
 ## Configuration
 
 - **Spreadsheet ID:** `1MNJ0Zke9jcg8VoPsjQQZwEJU8FO9PtCNVmVhfov0u-4`
-- **Sheet name:** `DOSTAWCY SZKOLEŃ`
-- **Target file:** `/Users/sebam/dev/website/content/pages/accreditation-registry/providers.md`
+- **Sheets:**
+  - `DOSTAWCY SZKOLEŃ` → `providers.md` (training provider organizations)
+  - `MATERIAŁY` → `materials.md` (training materials and courses)
+  - `TRENERZY` → `trainers.md` (individual trainers)
+- **Target directory:** `/Users/sebam/dev/website/content/pages/accreditation-registry/`
 - **Auth:** Requires `GOOGLE_SHEETS_ACCESS_TOKEN` environment variable
 - **Access token source:** https://developers.google.com/oauthplayground/ — select scope `https://www.googleapis.com/auth/spreadsheets`
 
@@ -37,40 +46,67 @@ If empty, ask the user for a fresh access token. Tokens expire after ~1 hour, so
 
 ### Step 2: Run the sync script
 
-The bundled script `scripts/sync.ts` handles fetching, parsing, comparing, and reporting. Run it:
+The bundled script `scripts/sync.ts` handles fetching all 3 sheets, parsing, comparing, and reporting. Run it:
 
 ```bash
 cd /Users/sebam/dev/website
 GOOGLE_SHEETS_ACCESS_TOKEN="<token>" npx tsx .claude/skills/sync-providers-from-sheets/scripts/sync.ts
 ```
 
-The script outputs:
+The script outputs a comprehensive diff report for all 3 data types:
 
-- All providers found in the spreadsheet with their normalized certifications
-- A diff report: providers only in the sheet, providers only in providers.md, and certification mismatches
-- Suggested YAML blocks for any missing providers, ready to copy into `providers.md`
+**Providers (DOSTAWCY SZKOLEŃ):**
 
-### Step 3: Review the diff with the user
+- Providers found in each source
+- List of new providers to add or stale entries to remove
+- Certification mismatches
 
-Before changing any files, show the user:
+**Materials (MATERIAŁY):**
 
-- How many providers are in each source
-- Which providers are missing from `providers.md`
-- Which certifications differ (e.g., the sheet has a newer expiry date)
+- Accredited training materials and courses
+- Missing entries (should be added to materials.md)
+- Stale entries (should be removed from materials.md)
 
-Ask the user to confirm the additions/changes. They may want to skip some providers (e.g., ones still pending review).
+**Trainers (TRENERZY):**
 
-### Step 4: Update providers.md
+- Individual trainer records (with consolidated certifications)
+- Name mismatches (e.g., character encoding issues)
+- Certification discrepancies per trainer
 
-Use the `Edit` tool to add the missing providers to `providers.md`. They go inside the `items:` array, before the closing `---`. Match the existing indentation (two spaces).
+### Step 3: Review the diffs with the user
 
-For each new provider, the YAML block must follow this exact structure:
+Before changing any files, discuss findings for all 3 sheets:
+
+**Providers:**
+
+- Count of providers in sheet vs. providers.md
+- New providers to add, stale entries to remove
+- Certification updates (new certs, updated dates)
+
+**Materials:**
+
+- Count of materials in sheet vs. materials.md
+- New courses to add, stale entries to remove
+- Author/provider changes
+
+**Trainers:**
+
+- Count of trainers in sheet vs. trainers.md
+- New trainers to add, renamed trainers (character encoding), stale entries
+- Certification updates per trainer
+
+Ask the user to confirm additions/changes for all 3 files. They may want to defer certain updates (e.g., trainers still pending approval).
+
+### Step 4: Update markdown files
+
+Update all three files based on the diff report:
+
+**Providers (providers.md):**
+Use the `Edit` tool to add missing providers to the `items:` array (before closing `---`).
 
 ```yaml
 - name: <Provider Name>
   certifications:
-    - code: <cert-code>
-      dateFrom: YYYY-MM-DD
     - code: <cert-code>
       dateFrom: YYYY-MM-DD
       dateTo: YYYY-MM-DD # only if applicable
@@ -79,7 +115,35 @@ For each new provider, the YAML block must follow this exact structure:
     ariaLabel: Przejdź na stronę <Provider Name>
 ```
 
-The certification code mapping is in `references/certifications-map.md` — consult it when the script reports an "unmapped" cert (the spreadsheet has typos sometimes, like "Certifield" instead of "Certified").
+**Materials (materials.md):**
+Add missing course entries to the `items:` array.
+
+```yaml
+- name: <Syllabus/Course Name>
+  author:
+    name: <Author/Provider Name>
+    linkedin: # or website: if applicable
+      href: <https URL>
+      ariaLabel: Przejdź na...
+  dateFrom: YYYY-MM-DD
+  dateTo: YYYY-MM-DD # only if applicable
+```
+
+**Trainers (trainers.md):**
+Add missing trainers to the `items:` array. Fix character encoding issues if found.
+
+```yaml
+- name: <Trainer Name>
+  dateFrom: YYYY-MM-DD
+  dateTo: YYYY-MM-DD
+  certifications:
+    - <cert-code>
+  linkedin: # or other contact info
+    href: <https URL>
+    ariaLabel: Przejdź na profil LinkedIn...
+```
+
+The certification code mapping is in `references/certifications-map.md` — consult it for unmapped certs (the spreadsheet sometimes has typos like "Certifield" instead of "Certified").
 
 ### Step 5: Verify
 
@@ -108,19 +172,21 @@ Then ask the user if they want to push and open a PR.
 
 ## Certification code mapping
 
-The spreadsheet uses long human-readable names; `providers.md` uses short codes. The full mapping is in `references/certifications-map.md`. Common ones:
+Used in both **trainers.md** and **providers.md**, the full mapping is in `references/certifications-map.md`. Codes:
 
-| Spreadsheet (column I)                                        | Code            |
-| ------------------------------------------------------------- | --------------- |
-| Certified Tester Foundation Level v4.0                        | `ctfl-v4-0`     |
-| Certified Tester Foundation Level – Agile Tester v1.0         | `ctfl-at-v1-0`  |
-| Certified Tester – Acceptance Testing v1.0                    | `ct-act-v1-0`   |
-| Certified Tester – AI Testing v1.0                            | `ct-ai-v1-0`    |
-| Certified Tester Advanced Level – Test Analyst v3.1           | `ctal-ta-v3-1`  |
-| Certified Tester Advanced Level – Test Manager v3.0           | `ctal-tm-v3-0`  |
-| Certified Tester Advanced Level – Technical Test Analyst v4.0 | `ctal-tta-v4-0` |
+| Spreadsheet certification name                                      | Code            |
+| ------------------------------------------------------------------- | --------------- |
+| Certified Tester Foundation Level v4.0                              | `ctfl-v4-0`     |
+| Certified Tester Foundation Level – Agile Tester v1.0               | `ctfl-at`       |
+| Certified Tester – Acceptance Testing v1.0                          | `ct-act`        |
+| Certified Tester – AI Testing v1.0                                  | `ct-ai`         |
+| Certified Tester Advanced Level – Test Analyst v3.1                 | `ctal-ta`       |
+| Certified Tester Advanced Level – Test Manager v3.0                 | `ctal-tm`       |
+| Certified Tester Advanced Level – Technical Test Analyst v4.0       | `ctal-tta`      |
+| Certified Tester Expert Level Assessing Test Processes              | `ctel-itp-atp`  |
+| Certified Tester Expert Level Implementing Test Process Improvement | `ctel-itp-itpi` |
 
-The script handles common variations (with/without em-dash, "Test Management" vs "Test Manager"). It also tolerates the typo "Certifield" → "Certified".
+The script handles variations (em-dash vs hyphen, "Test Management" vs "Test Manager") and tolerates the typo "Certifield" → "Certified".
 
 ## Date handling
 
@@ -130,7 +196,7 @@ The `dateTo` column sometimes contains the boilerplate text "This certificate re
 
 ## Important columns in the spreadsheet
 
-The script reads these columns from `DOSTAWCY SZKOLEŃ`:
+### DOSTAWCY SZKOLEŃ (providers)
 
 - **B:** Nazwa firmy (provider name)
 - **D:** Strona www (website)
@@ -139,6 +205,27 @@ The script reads these columns from `DOSTAWCY SZKOLEŃ`:
 - **N:** Data wygaśnięcia akredytacji (dateTo)
 
 A single provider appears on multiple rows — one row per certification. The script groups them by provider name.
+
+### MATERIAŁY (training materials)
+
+- **B:** Imię nazwisko / Podmiot (author/provider name)
+- **D:** Strona www/profilowa (website)
+- **I:** Sylabus (certification/course name)
+- **N:** Nr akredytacji (accreditation ID)
+- **O:** Data uzyskania akredytacji (dateFrom)
+- **P:** Data wygaśnięcia akredytacji (dateTo)
+
+Each row is a unique material entry with its author.
+
+### TRENERZY (trainers)
+
+- **B:** Imię i nazwisko (trainer name)
+- **I:** Certyfikaty (comma/semicolon-separated certifications)
+- **J:** Nr akredytacji (accreditation ID)
+- **K:** Data uzyskania akredytacji (dateFrom)
+- **L:** Data wygaśnięcia akredytacji (dateTo)
+
+A single trainer may appear on multiple rows — one row per accreditation record. The script consolidates them by trainer name, merging all certifications.
 
 ## Edge cases
 
