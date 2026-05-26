@@ -11,6 +11,20 @@ items:
     dateFrom: 2026-04-28
   - name: Certified Tester Foundation Level v4.0
     author:
+      name: Capgemini Polska sp. z o.o.
+      website:
+        href: https://www.capgemini.com/pl-pl/
+        ariaLabel: Przejdź na stronę Capgemini Polska sp. z o.o.
+    dateFrom: 2026-04-28
+  - name: Certified Tester Foundation Level v4.0
+    author:
+      name: INPROGRESS sp. z o.o.
+      website:
+        href: https://inprogress.pl/
+        ariaLabel: Przejdź na stronę INPROGRESS sp. z o.o.
+    dateFrom: 2026-04-29
+  - name: Certified Tester Foundation Level v4.0
+    author:
       name: Lucjan Stapp
       linkedin:
         href: https://www.linkedin.com/in/lucjan-stapp-123456/
@@ -25,24 +39,17 @@ items:
     dateFrom: 2026-04-28
   - name: Certified Tester Foundation Level v4.0
     author:
-      name: INPROGRESS sp. z o.o.
-      website:
-        href: https://inprogress.pl/
-        ariaLabel: Przejdź na stronę INPROGRESS sp. z o.o.
-    dateFrom: 2026-04-29
-  - name: Certified Tester Foundation Level v4.0
-    author:
       name: Sii sp. z o.o.
       website:
         href: https://sii.pl/szkolenia
         ariaLabel: Przejdź na stronę Sii sp. z o.o.
     dateFrom: 2026-04-29
-  - name: Certified Tester Foundation Level v4.0
+  - name: Certified Tester Foundation Level Agile Tester v1.0
     author:
-      name: Capgemini Polska sp. z o.o.
-      website:
-        href: https://www.capgemini.com/pl-pl/
-        ariaLabel: Przejdź na stronę Capgemini Polska sp. z o.o.
+      name: Lucjan Stapp
+      linkedin:
+        href: https://www.linkedin.com/in/lucjan-stapp-123456/
+        ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
     dateFrom: 2026-04-28
   - name: Certified Tester Foundation Level Agile Tester v1.0
     author:
@@ -51,6 +58,13 @@ items:
         href: https://inprogress.pl/
         ariaLabel: Przejdź na stronę INPROGRESS sp. z o.o.
     dateFrom: 2026-04-29
+  - name: Certified Tester Acceptance Testing v1.0
+    author:
+      name: Lucjan Stapp
+      linkedin:
+        href: https://www.linkedin.com/in/lucjan-stapp-123456/
+        ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
+    dateFrom: 2026-04-28
   - name: Certified Tester Advanced Level Test Analyst v3.1
     author:
       name: AmberTeam Testing sp. z o.o.
@@ -71,13 +85,6 @@ items:
       linkedin:
         href: https://www.linkedin.com/in/jsabak/
         ariaLabel: Przejdź na profil LinkedIn Jana Sabaka
-    dateFrom: 2026-04-28
-  - name: Certified Tester Acceptance Testing v1.0
-    author:
-      name: Lucjan Stapp
-      linkedin:
-        href: https://www.linkedin.com/in/lucjan-stapp-123456/
-        ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
     dateFrom: 2026-04-28
 ---
 

@@ -73,7 +73,7 @@ items:
     linkedin:
       href: https://www.linkedin.com/in/becla/
       ariaLabel: Przejdź na profil LinkedIn Wojciecha Becli
-  - name: Lukasz Galuszka
+  - name: Łukasz Gałuszka
     photo: /src/lib/assets/trainers/Lukasz_Galuszka.jpg
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
@@ -82,8 +82,8 @@ items:
       - ctfl-at
     linkedin:
       href: https://www.linkedin.com/in/lukaszgaluszka/
-      ariaLabel: Przejdź na profil LinkedIn Łukasza Galuszki
-  - name: Krzysztof Kolodziejczyk
+      ariaLabel: Przejdź na profil LinkedIn Łukasza Gałuszki
+  - name: Krzysztof Kołodziejczyk
     photo: /src/lib/assets/trainers/Krzysztof_Kołodziejczyk.jpg
     dateFrom: 2026-04-24
     dateTo: 2027-04-24
