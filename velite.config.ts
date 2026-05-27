@@ -200,9 +200,48 @@ const scr = defineCollection({
   schema: s.object({
     heading: s.string(),
     description: s.string(),
-    link: s.object({
+    registryLink: s.object({
       href: href(),
       text: s.string()
+    }),
+    addToRegistryLink: s
+      .object({
+        href: href(),
+        text: s.string()
+      })
+      .optional(),
+    body: s.markdown()
+  })
+});
+
+const scrPage = defineCollection({
+  name: 'ScrPage',
+  pattern: 'pages/scr.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    steps: s.object({
+      heading: s.string(),
+      items: s.array(
+        s.object({
+          title: s.string(),
+          description: s.markdown(),
+          action: s
+            .object({
+              type: s.enum(['downloads', 'email']),
+              downloads: s
+                .array(
+                  s.object({
+                    label: s.string(),
+                    href: href()
+                  })
+                )
+                .optional(),
+              address: s.string().optional()
+            })
+            .optional()
+        })
+      )
     }),
     body: s.markdown()
   })
@@ -413,8 +452,7 @@ const accreditation = defineCollection({
                 .array(
                   s.object({
                     label: s.string(),
-                    href: href(),
-                    testId: s.string()
+                    href: href()
                   })
                 )
                 .optional(),
@@ -592,6 +630,7 @@ export default defineConfig({
     portfolio,
     dictionary,
     scr,
+    scrPage,
     syllabi,
     footer,
     cookieConsent,

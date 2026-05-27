@@ -21,6 +21,8 @@ navbarItems:
     text: Portfolio ISTQB®
   - href: /sylabusy
     text: Sylabusy
+  - href: /scr
+    text: SCR
   - href: /#akredytacja
     text: Akredytacja
   - href: /#polecane

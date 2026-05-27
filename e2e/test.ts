@@ -1,5 +1,6 @@
 import { AccreditationRegistryPage } from './pages/AccreditationRegistryPage';
 import { HomePage } from './pages/HomePage';
+import { ScrPage } from './pages/ScrPage';
 import { SyllabiPage } from './pages/SyllabiPage';
 import AxeBuilder from '@axe-core/playwright';
 import type { Page } from '@playwright/test';
@@ -8,6 +9,7 @@ import { test as baseTest } from '@playwright/test';
 export const test = baseTest.extend<{
   accreditationRegistryPage: AccreditationRegistryPage;
   homePage: HomePage;
+  scrPage: ScrPage;
   syllabiPage: SyllabiPage;
   makeAxeBuilder: ({ page }: { page: Page }) => AxeBuilder;
 }>({
@@ -16,6 +18,9 @@ export const test = baseTest.extend<{
   },
   homePage: async ({ page }, use) => {
     await use(new HomePage(page));
+  },
+  scrPage: async ({ page }, use) => {
+    await use(new ScrPage(page));
   },
   syllabiPage: async ({ page }, use) => {
     await use(new SyllabiPage(page));
