@@ -31,7 +31,6 @@ steps:
         downloads:
           - label: Cennik akredytacji
             href: documents/Akredytacje-cennik-v1.1.pdf
-            testId: download-accreditation-pricing
     - title: Pobierz szablon wniosku o akredytację
       description: Wybierz odpowiedni szablon w zależności od rodzaju akredytacji.
       action:
@@ -39,16 +38,12 @@ steps:
         downloads:
           - label: Wniosek o akredytację trenera
             href: documents/Szablon-wniosek-o-akredytacje-trenera-v1.1.pdf
-            testId: download-accreditation-trainer
           - label: Wniosek o akredytację dostawcy szkoleń
             href: documents/Szablon-wniosek-o-akredytacje-dostawcy-szkolen-v1.1.pdf
-            testId: download-accreditation-provider
           - label: Wniosek o akredytację materiałów szkoleniowych
             href: documents/Szablon-wniosek-o-akredytacje-materialow-v1.0.docx
-            testId: download-accreditation-materials
           - label: Załącznik - matryca celów nauczania
             href: documents/Akredytacja-materialow-matryca-celow-nauczania.xlsx
-            testId: download-accreditation-learning-objectives-matrix
     - title: Wykonaj przelew i wyślij wniosek
       description: >-
         Wypełniony i podpisany wniosek oraz potwierdzenie przelewu na konto 05 1240 4533 1111 0011

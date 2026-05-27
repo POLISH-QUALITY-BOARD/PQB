@@ -69,14 +69,13 @@
                   </p>
                   {#if action?.type === 'downloads'}
                     <div class="flex flex-col gap-3">
-                      {#each action.downloads ?? [] as { label, href, testId } (testId)}
+                      {#each action.downloads ?? [] as { label, href } (href)}
                         <!-- eslint-disable svelte/no-navigation-without-resolve -->
                         <a
                           {href}
                           target="_blank"
                           rel="noopener noreferrer"
                           class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark no-underline hover:underline"
-                          data-testid={testId}
                           download
                           onclick={() => complete(i)}
                         >

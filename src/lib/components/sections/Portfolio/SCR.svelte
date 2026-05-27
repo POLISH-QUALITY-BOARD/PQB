@@ -1,9 +1,10 @@
 <script lang="ts">
   import type { Scr } from '$velite';
+  import IconAccountPlus from '~icons/mdi/account-plus';
   import IconCertificateOutline from '~icons/mdi/certificate-outline';
   import IconOpenInNew from '~icons/mdi/open-in-new';
 
-  let { heading, description, link, body }: Scr = $props();
+  let { heading, description, registryLink, addToRegistryLink, body }: Scr = $props();
 </script>
 
 <div>
@@ -17,13 +18,24 @@
     {@html body}
   </div>
   <!-- eslint-disable svelte/no-navigation-without-resolve -->
-  <a
-    href={link.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="self-start inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark no-underline hover:underline"
-  >
-    <IconOpenInNew aria-hidden="true" width="15" height="15" />
-    {link.text}
-  </a>
+  <div class="flex flex-wrap items-center gap-4">
+    <a
+      href={registryLink.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="self-start inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark no-underline hover:underline"
+    >
+      <IconOpenInNew aria-hidden="true" width="15" height="15" />
+      {registryLink.text}
+    </a>
+    {#if addToRegistryLink}
+      <a
+        href={addToRegistryLink.href}
+        class="self-start inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark no-underline hover:underline"
+      >
+        <IconAccountPlus aria-hidden="true" width="15" height="15" />
+        {addToRegistryLink.text}
+      </a>
+    {/if}
+  </div>
 </div>
