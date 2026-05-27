@@ -13,7 +13,7 @@ steps:
     - title: Wypełnij i podpisz
       description: >
         Wypełnij je i podpisz. Możesz użyć podpisu kwalifikowanego, a jeśli go nie posiadasz —
-        skorzystaj z bezpłatnego podpisu zaufanego dostępnego na portalu gov.pl.
+        skorzystaj z bezpłatnego podpisu zaufanego dostępnego na [portalu gov.pl](https://www.gov.pl/web/gov/podpisz-dokument-elektronicznie-wykorzystaj-podpis-zaufany).
     - title: Wyślij dokumenty
       description: >
         Wyślij podpisane oświadczenie wraz ze skanem lub zdjęciem certyfikatu na adres

@@ -225,7 +225,7 @@ const scrPage = defineCollection({
       items: s.array(
         s.object({
           title: s.string(),
-          description: s.string(),
+          description: s.markdown(),
           action: s
             .object({
               type: s.enum(['downloads', 'email']),

@@ -42,8 +42,12 @@
           </div>
           <div class="pt-1.5">
             <p class="text-base font-semibold text-primary mb-1">{title}</p>
-            <p class="text-sm text-gray-600" class:mb-5={action?.type === 'downloads'}>
-              {description}
+            <div
+              class="text-sm text-gray-600 [&>p]:inline [&_a]:font-semibold [&_a]:text-primary [&_a]:underline"
+              class:mb-5={action?.type === 'downloads'}
+            >
+              <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+              {@html description}
               {#if action?.type === 'email'}
                 <a
                   href="mailto:{action.address}"
@@ -51,7 +55,7 @@
                   onclick={() => complete(i)}>{action.address}</a
                 >
               {/if}
-            </p>
+            </div>
             {#if action?.type === 'downloads'}
               <div class="flex flex-col gap-3">
                 {#each action.downloads ?? [] as { label, href } (href)}
