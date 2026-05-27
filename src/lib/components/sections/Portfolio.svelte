@@ -32,7 +32,7 @@
     class="block w-full mb-12"
   >
     <enhanced:img
-      src="$lib/assets/Portfolio-Export-1-1.png"
+      src="$lib/assets/Portfolio-Export-1.png"
       alt={anchor.image.alt}
       class="w-full h-auto block object-contain max-h-150"
     />
