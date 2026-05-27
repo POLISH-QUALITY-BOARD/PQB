@@ -7,6 +7,7 @@ export default defineConfig({
   webServer: {
     command: `npm run build && npm run preview -- --port ${PORT}`,
     port: PORT,
+    timeout: 90 * 1000,
     reuseExistingServer: !process.env.CI
   },
   reporter: [
