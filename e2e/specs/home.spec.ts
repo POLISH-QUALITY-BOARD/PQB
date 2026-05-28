@@ -25,6 +25,44 @@ test('I can navigate to home', async ({ homePage }) => {
   expect(response?.status()).toBe(200);
 });
 
+test('I can navigate to section', async ({ isMobile, homePage, baseURL }) => {
+  const { navbarMobileNavigationItem, navbarDesktopNavigationItem } = homePage.getLocators();
+
+  await homePage.goto();
+
+  if (isMobile) {
+    await homePage.clickNavbarHamburgerButton();
+  }
+
+  const href = await (isMobile ? navbarMobileNavigationItem : navbarDesktopNavigationItem)
+    .first()
+    .getAttribute('href');
+
+  const { hash } = new URL(href!, baseURL);
+
+  await (isMobile
+    ? homePage.clickNavbarMobileNavigationItem()
+    : homePage.clickNavbarDesktopNavigationItem());
+
+  await expect(homePage.getPage().locator(hash)).toBeInViewport();
+});
+
+test('I can download documents', async ({ homePage, baseURL, request }) => {
+  const { downloadLink } = homePage.getLocators();
+
+  await homePage.goto();
+
+  const downloadLinks = await downloadLink.all();
+
+  for (const [n] of downloadLinks.entries()) {
+    const href = await downloadLink.nth(n).getAttribute('href');
+
+    const response = await request.get(new URL(href!, baseURL).toString());
+
+    expect(response.ok()).toBe(true);
+  }
+});
+
 test('I can download membership declaration using keyboard', async ({ homePage }) => {
   const { membershipDeclarationDownloadButton } = homePage.getLocators();
 
