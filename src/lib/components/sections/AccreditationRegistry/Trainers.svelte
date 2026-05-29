@@ -25,7 +25,8 @@
     items
   }: AccreditationRegistryTrainers = $props();
 
-  const isActive = (dateTo: string) => Date.now() <= new Date(dateTo).getTime();
+  const isActive = (dateTo: string | undefined) =>
+    dateTo === undefined || Date.now() <= new Date(dateTo).getTime();
 
   const certText = $derived(Object.fromEntries(filters.map(({ code, text }) => [code, text])));
   const certTooltip = $derived(
@@ -38,7 +39,8 @@
     [...items]
       .filter(
         ({ certifications: certs }) =>
-          certFilter.size === 0 || [...certFilter].some((c) => certs.includes(c))
+          certFilter.size === 0 ||
+          [...certFilter].some((c) => certs.some((cert) => cert.code === c))
       )
       .sort((a, b) => a.name.localeCompare(b.name))
   );
@@ -84,11 +86,10 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3">
-      {#each filteredSorted as { name, photo, dateTo, dateToLabel, certifications: certs, linkedin }, i (i)}
+      {#each filteredSorted as { name, photo, certifications: certs, linkedin }, i (i)}
         {#if i > 0 && i % 3 === 0}
           <div class="hidden sm:block col-span-3 h-px bg-gray-100"></div>
         {/if}
-        {@const active = isActive(dateTo)}
         <div
           class="flex items-center gap-4 p-4 bg-white border-b border-gray-100 last:border-b-0 sm:border-b-0"
         >
@@ -111,12 +112,9 @@
           {/if}
           <div class="min-w-0 grow">
             <p class="font-semibold text-primary text-base mb-0 leading-snug">{name}</p>
-            <p class="text-xs text-gray-500 mb-0 mt-0.5">
-              {active ? activeLabel : expiredLabel}
-              {dateToLabel}
-            </p>
             <div class="flex items-center gap-1 flex-wrap mt-1.5">
               {#each certs as cert, ci (ci)}
+                {@const active = isActive(cert.dateTo)}
                 <Tooltip.Root>
                   <Tooltip.Trigger
                     class="p-0 m-0 bg-transparent border-none inline-flex items-center"
@@ -131,7 +129,7 @@
                       {:else}
                         <IconShieldOff aria-hidden="true" width="9" height="9" class="shrink-0" />
                       {/if}
-                      {certText[cert] ?? cert}
+                      {certText[cert.code] ?? cert.code}
                     </span>
                   </Tooltip.Trigger>
                   <Tooltip.Portal>
@@ -139,8 +137,14 @@
                       class="z-50 max-w-56 rounded-lg bg-gray-900 px-3 py-2 text-xs text-white shadow-lg transition-opacity duration-150 data-[state=delayed-open]:opacity-100 data-[state=closed]:opacity-0"
                       sideOffset={6}
                     >
-                      {certTooltip[cert] ?? cert}
-                      <Tooltip.Arrow class="fill-gray-900" />
+                      <p class="mb-0">{certTooltip[cert.code] ?? cert.code}</p>
+                      {#if cert.dateToLabel}
+                        <p class="text-gray-400 mt-0.5 mb-0">
+                          {active ? activeLabel : expiredLabel}
+                          {cert.dateToLabel}
+                        </p>
+                      {/if}
+                      <Tooltip.Arrow class="text-gray-900" />
                     </Tooltip.Content>
                   </Tooltip.Portal>
                 </Tooltip.Root>

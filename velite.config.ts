@@ -511,24 +511,30 @@ const accreditationRegistryTrainers = defineCollection({
       })
     ),
     items: s.array(
-      s
-        .object({
-          photo: s.string().optional(),
-          name: s.string(),
-          dateFrom: s.isodate(),
-          dateTo: s.isodate(),
-          certifications: s.array(s.string()),
-          linkedin: s
+      s.object({
+        photo: s.string().optional(),
+        name: s.string(),
+        certifications: s.array(
+          s
             .object({
-              href: href(),
-              ariaLabel: s.string()
+              code: s.string(),
+              dateFrom: s.isodate(),
+              dateTo: s.isodate().optional()
             })
-            .optional()
-        })
-        .transform((item) => ({
-          ...item,
-          dateToLabel: new Date(item.dateTo).toLocaleDateString('pl-PL')
-        }))
+            .transform((cert) => ({
+              ...cert,
+              dateToLabel: cert.dateTo
+                ? new Date(cert.dateTo).toLocaleDateString('pl-PL')
+                : undefined
+            }))
+        ),
+        linkedin: s
+          .object({
+            href: href(),
+            ariaLabel: s.string()
+          })
+          .optional()
+      })
     )
   })
 });
