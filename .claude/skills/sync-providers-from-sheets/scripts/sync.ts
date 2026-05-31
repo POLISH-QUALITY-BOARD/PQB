@@ -1,21 +1,17 @@
 #!/usr/bin/env -S npx tsx
 import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const SPREADSHEET_ID = '1MNJ0Zke9jcg8VoPsjQQZwEJU8FO9PtCNVmVhfov0u-4';
 
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../../../');
+const registry = (file: string) => resolve(root, `content/pages/accreditation-registry/${file}`);
+
 const SHEET_CONFIGS = {
-  'DOSTAWCY SZKOLEŃ': {
-    path: '/Users/sebam/dev/website/content/pages/accreditation-registry/providers.md',
-    type: 'providers'
-  },
-  MATERIAŁY: {
-    path: '/Users/sebam/dev/website/content/pages/accreditation-registry/materials.md',
-    type: 'materials'
-  },
-  TRENERZY: {
-    path: '/Users/sebam/dev/website/content/pages/accreditation-registry/trainers.md',
-    type: 'trainers'
-  }
+  'DOSTAWCY SZKOLEŃ': { path: registry('providers.md'), type: 'providers' },
+  MATERIAŁY: { path: registry('materials.md'), type: 'materials' },
+  TRENERZY: { path: registry('trainers.md'), type: 'trainers' }
 };
 
 const token = process.env.GOOGLE_SHEETS_ACCESS_TOKEN;
@@ -26,17 +22,24 @@ if (!token) {
   process.exit(1);
 }
 
-// Certification mapping
+// Certification mapping — more specific patterns first to avoid false matches
 const certMap: Array<{ pattern: RegExp; code: string }> = [
-  { pattern: /foundation level\s+v?4\.0/i, code: 'ctfl-v4-0' },
-  { pattern: /(foundation level.{0,3}agile tester|agile tester\s+v?1\.0)/i, code: 'ctfl-at' },
-  { pattern: /acceptance testing\s+v?1\.0/i, code: 'ct-act' },
-  { pattern: /ai testing\s+v?1\.0/i, code: 'ct-ai' },
-  { pattern: /advanced level.{0,3}test analyst\s+v?3\.1/i, code: 'ctal-ta' },
-  { pattern: /advanced level.{0,3}(test manager|test management)\s+v?3\.0/i, code: 'ctal-tm' },
-  { pattern: /advanced level.{0,3}technical test analyst\s+v?4\.0/i, code: 'ctal-tta' },
-  { pattern: /assessing test processes/i, code: 'ctel-itp-atp' },
-  { pattern: /implementing test process improvement/i, code: 'ctel-itp-itpi' }
+  { pattern: /foundation level\s+v?4\.0|\bCTFL\b(?!.{0,5}(AT|agile))/i, code: 'ctfl-v4-0' },
+  {
+    pattern: /(foundation level.{0,3}agile tester|agile tester|\bCTFL.{0,3}AT\b)/i,
+    code: 'ctfl-at'
+  },
+  { pattern: /(acceptance testing|\bCT.{0,3}AcT\b)/i, code: 'ct-act' },
+  { pattern: /(testing with generative ai|\bCT.{0,3}GenAI\b)/i, code: 'ct-genai' },
+  { pattern: /(ai testing|\bCT.{0,3}AI\b)/i, code: 'ct-ai' },
+  { pattern: /(performance testing|\bCT.{0,3}PT\b)/i, code: 'ct-pt' },
+  { pattern: /(test automation strategy|\bCT.{0,3}TAS\b)/i, code: 'ct-tas' },
+  { pattern: /(test automation engineer|\bCT.{0,3}TAE\b)/i, code: 'ct-tae' },
+  { pattern: /(\btechnical test analyst\b|\bCTAL.{0,3}TTA\b)/i, code: 'ctal-tta' },
+  { pattern: /(\btest (manager|management)\b|\bCTAL.{0,3}TM\b)/i, code: 'ctal-tm' },
+  { pattern: /((?<!technical )test analyst|\bCTAL.{0,3}TA\b)/i, code: 'ctal-ta' },
+  { pattern: /(assessing test process(es)?|\bCTEL.{0,5}ATP\b)/i, code: 'ctel-itp-atp' },
+  { pattern: /(implementing test process improvement|\bCTEL.{0,5}ITPI\b)/i, code: 'ctel-itp-itpi' }
 ];
 
 function mapCertifications(raw: string): string[] {
@@ -181,11 +184,15 @@ function parseMdMaterials(content: string): SheetMaterial[] {
 }
 
 // TRAINERS sheet parser
-interface SheetTrainer {
-  name: string;
-  certifications: string[];
+interface SheetTrainerCert {
+  code: string;
   dateFrom: string | null;
   dateTo: string | null;
+}
+
+interface SheetTrainer {
+  name: string;
+  certifications: SheetTrainerCert[];
 }
 
 function parseTrainersSheet(rows: string[][]): Map<string, SheetTrainer> {
@@ -200,21 +207,15 @@ function parseTrainersSheet(rows: string[][]): Map<string, SheetTrainer> {
 
     if (!name || !accId) continue;
 
-    const certs = mapCertifications(certificates);
     if (!trainersMap.has(name)) {
-      trainersMap.set(name, { name, certifications: [], dateFrom, dateTo });
+      trainersMap.set(name, { name, certifications: [] });
     }
     const trainer = trainersMap.get(name)!;
-    for (const cert of certs) {
-      if (!trainer.certifications.includes(cert)) {
-        trainer.certifications.push(cert);
+    const codes = mapCertifications(certificates);
+    for (const code of codes) {
+      if (!trainer.certifications.some((c) => c.code === code)) {
+        trainer.certifications.push({ code, dateFrom, dateTo });
       }
-    }
-    if (dateFrom && (!trainer.dateFrom || dateFrom < trainer.dateFrom)) {
-      trainer.dateFrom = dateFrom;
-    }
-    if (dateTo && (!trainer.dateTo || dateTo > trainer.dateTo)) {
-      trainer.dateTo = dateTo;
     }
   }
   return trainersMap;
@@ -226,7 +227,8 @@ function parseMdTrainers(content: string): Map<string, SheetTrainer> {
   const trainers = new Map<string, SheetTrainer>();
   const lines = match[1].split('\n');
   let inItems = false;
-  let current: Partial<SheetTrainer> | null = null;
+  let current: SheetTrainer | null = null;
+  let currentCert: Partial<SheetTrainerCert> | null = null;
 
   for (const line of lines) {
     if (line.startsWith('items:')) {
@@ -234,27 +236,40 @@ function parseMdTrainers(content: string): Map<string, SheetTrainer> {
       continue;
     }
     if (!inItems) continue;
+
     const nameMatch = line.match(/^ {2}- name:\s*(.+)$/);
     if (nameMatch) {
-      if (current && current.name) {
-        trainers.set(current.name, current as SheetTrainer);
+      if (currentCert?.code && current) {
+        current.certifications.push(currentCert as SheetTrainerCert);
+        currentCert = null;
       }
-      current = { name: nameMatch[1].trim(), certifications: [], accId: '' };
+      if (current) trainers.set(current.name, current);
+      current = { name: nameMatch[1].trim(), certifications: [] };
       continue;
     }
     if (!current) continue;
-    const dateMatch = line.match(/^ {4}dateFrom:\s*(.+)$/);
-    if (dateMatch) {
-      current.dateFrom = dateMatch[1].trim();
+
+    const certCodeMatch = line.match(/^ {6}- code:\s*(.+)$/);
+    if (certCodeMatch) {
+      if (currentCert?.code) current.certifications.push(currentCert as SheetTrainerCert);
+      currentCert = { code: certCodeMatch[1].trim(), dateFrom: null, dateTo: null };
+      continue;
     }
-    const certMatch = line.match(/^ {6}- ([\w-]+)$/);
-    if (certMatch && current.certifications) {
-      current.certifications.push(certMatch[1]);
+    if (currentCert) {
+      const dateFromMatch = line.match(/^ {8}dateFrom:\s*(.+)$/);
+      if (dateFromMatch) {
+        currentCert.dateFrom = dateFromMatch[1].trim();
+        continue;
+      }
+      const dateToMatch = line.match(/^ {8}dateTo:\s*(.+)$/);
+      if (dateToMatch) {
+        currentCert.dateTo = dateToMatch[1].trim();
+        continue;
+      }
     }
   }
-  if (current && current.name) {
-    trainers.set(current.name, current as SheetTrainer);
-  }
+  if (currentCert?.code && current) current.certifications.push(currentCert as SheetTrainerCert);
+  if (current) trainers.set(current.name, current);
   return trainers;
 }
 
@@ -374,8 +389,8 @@ async function main() {
       const mdTrainer = mdTrainersMap.get(name);
       if (!mdTrainer) continue;
 
-      const sheetSet = new Set(sheetTrainer.certifications);
-      const mdSet = new Set(mdTrainer.certifications);
+      const sheetSet = new Set(sheetTrainer.certifications.map((c) => c.code));
+      const mdSet = new Set(mdTrainer.certifications.map((c) => c.code));
       const missingInMd = Array.from(sheetSet).filter((c) => !mdSet.has(c));
       const missingInSheet = Array.from(mdSet).filter((c) => !sheetSet.has(c));
 
