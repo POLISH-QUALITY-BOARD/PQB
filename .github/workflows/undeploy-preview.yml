@@ -16,7 +16,7 @@ jobs:
       cancel-in-progress: false
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - run: mkdir empty-dir
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
