@@ -2,10 +2,17 @@
   import Article from '$lib/components/Article.svelte';
   import Section from '$lib/components/Section.svelte';
   import type { Accreditation } from '$velite';
+  import IconArrowRight from '~icons/mdi/arrow-right';
   import IconCheck from '~icons/mdi/check';
   import IconDownload from '~icons/mdi/download';
 
-  let { heading: headingText, body, articles, steps }: Accreditation = $props();
+  let {
+    heading: headingText,
+    body,
+    articles,
+    steps,
+    accreditationRegistryCta
+  }: Accreditation = $props();
 
   let completed = $state<Record<number, boolean>>({});
 
@@ -18,11 +25,33 @@
   {#snippet heading()}{headingText}{/snippet}
 
   <div
-    class="text-gray-600 mb-12 [&>p]:mb-4 [&>p]:last:mb-0 [&_a]:underline [&_a]:hover:text-primary"
+    class="text-gray-600 mb-8 [&>p]:mb-4 [&>p]:last:mb-0 [&_a]:underline [&_a]:hover:text-primary"
   >
     <!-- eslint-disable-next-line svelte/no-at-html-tags -->
     {@html body}
   </div>
+
+  <div class="-mx-6 mb-12 bg-gray-200 md:rounded-2xl">
+    <div
+      class="mx-auto flex max-w-270 flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between md:gap-8 md:px-10 md:py-8"
+    >
+      <div>
+        <p class="text-base font-semibold text-gray-900">{accreditationRegistryCta.heading}</p>
+        <p class="mt-1 text-sm text-gray-600">{accreditationRegistryCta.description}</p>
+      </div>
+      <!-- eslint-disable svelte/no-navigation-without-resolve -->
+      <a
+        href={accreditationRegistryCta.button.href}
+        class="flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-lg bg-linear-to-br from-accent to-accent-dark px-5 py-3 text-sm font-semibold text-white no-underline hover:from-accent-dark hover:to-accent-dark md:min-h-0 md:w-fit md:justify-start md:pl-3.5 md:pr-5 md:py-2"
+        aria-label={accreditationRegistryCta.button.ariaLabel}
+      >
+        <IconArrowRight aria-hidden="true" width="16" height="16" />
+        {accreditationRegistryCta.button.text}
+      </a>
+      <!-- eslint-enable svelte/no-navigation-without-resolve -->
+    </div>
+  </div>
+
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     <div>
       {#each articles as article (article.id)}
