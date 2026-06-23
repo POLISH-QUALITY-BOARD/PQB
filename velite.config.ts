@@ -462,6 +462,15 @@ const accreditation = defineCollection({
         })
       )
     }),
+    accreditationRegistryCta: s.object({
+      heading: s.string(),
+      description: s.string(),
+      button: s.object({
+        text: s.string(),
+        ariaLabel: s.string(),
+        href: href()
+      })
+    }),
     body: s.markdown()
   })
 });

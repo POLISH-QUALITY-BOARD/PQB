@@ -3,6 +3,13 @@ heading: Akredytacja
 processesDocument:
   href: /documents/Procesy-akredytacyjne-w-PQB-v1.1.pdf
   text: niniejszym dokumencie
+accreditationRegistryCta:
+  heading: Rejestr akredytacji PQB
+  description: Sprawdź akredytowanych dostawców szkoleń, trenerów i materiały szkoleniowe ISTQB®.
+  button:
+    text: Przejdź do rejestru akredytacji
+    ariaLabel: Przejdź do rejestru akredytacji PQB
+    href: /rejestr-akredytacji
 articles:
   - id: akredytacja-dostawcy-szkolen-istqb
     heading: Akredytacja dostawcy szkoleń ISTQB®
@@ -69,5 +76,3 @@ szkoleniowych i przez akredytowanych trenerów, _z zastrzeżeniem, że wymóg ak
 obowiązuje od 1 stycznia 2027 roku_.
 
 Procesy akredytacyjne obowiązujące w PQB są opisane w [niniejszym dokumencie](/documents/Procesy-akredytacyjne-w-PQB-v1.1.pdf).
-
-**Rejestr akredytacji dostępny jest [tutaj](/rejestr-akredytacji).**
