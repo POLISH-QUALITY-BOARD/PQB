@@ -83,12 +83,12 @@ Displays board member cards with:
 - LinkedIn profile link
 
 **Board Members:**
-| Name | Position | LinkedIn |
-|------|----------|----------|
-| Sebastian Małyska | Prezes (President) | [Profile](https://www.linkedin.com/in/malyska/) |
-| Adam Roman | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/adam-roman-3799723/) |
-| Anna Miazek-Bereźnicka | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/annamiazek/) |
-| Wojciech Jaszcz | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/wojtek-jaszcz-5111421/) |
+| Name                   | Position                    | LinkedIn                                                        |
+| ---------------------- | --------------------------- | --------------------------------------------------------------- |
+| Sebastian Małyska      | Prezes (President)          | [Profile](https://www.linkedin.com/in/malyska/)                 |
+| Adam Roman             | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/adam-roman-3799723/)      |
+| Anna Miazek-Bereźnicka | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/annamiazek/)              |
+| Wojciech Jaszcz        | Wiceprezes (Vice President) | [Profile](https://www.linkedin.com/in/wojtek-jaszcz-5111421/)   |
 
 **Statut** (Constitution)
 
