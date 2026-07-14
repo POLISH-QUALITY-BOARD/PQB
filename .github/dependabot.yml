@@ -13,6 +13,13 @@ updates:
       all-dependencies:
         patterns:
           - '*'
+    ignore:
+      # @sveltejs/kit only accepts typescript ^5.3.3 || ^6.0.0
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
+      # @trivago/prettier-plugin-sort-imports only accepts prettier-plugin-svelte 3.x
+      - dependency-name: 'prettier-plugin-svelte'
+        update-types: ['version-update:semver-major']
   - package-ecosystem: github-actions
     directory: /
     schedule:
