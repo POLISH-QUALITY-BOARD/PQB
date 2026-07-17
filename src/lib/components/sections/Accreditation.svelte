@@ -21,7 +21,7 @@
   };
 </script>
 
-<Section level={2} id="akredytacja" class="bg-gray-50">
+<Section level={2} id="akredytacja" class="bg-white">
   {#snippet heading()}{headingText}{/snippet}
 
   <div

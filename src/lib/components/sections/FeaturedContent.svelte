@@ -31,7 +31,7 @@
   }
 </script>
 
-<Section level={2} id="polecane" class="bg-white">
+<Section level={2} id="polecane" class="bg-gray-50">
   {#snippet heading()}{headingText}{/snippet}
 
   <div class="text-gray-600 mb-10 space-y-4">
@@ -52,7 +52,7 @@
     <div class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
-          <tr class="bg-gray-50 border-b border-gray-200">
+          <tr class="bg-white border-b border-gray-200">
             <th
               class="text-left px-6 py-3 w-auto"
               aria-sort={wpSort.key === 'title' && wpSort.dir !== 'none'
