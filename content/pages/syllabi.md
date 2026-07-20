@@ -7,43 +7,43 @@ certifications:
       - lang: PL
         type: syllabus
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-sylabus.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/tree/main/syllabus
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/tree/main/syllabus-pl
       - lang: PL
         type: questions
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-A-pytania-v1.7.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam/FL-4.0.1-PL-zestaw-A-pytania-v1.7.md
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/sample-exam-pl-a/questions-a-pl.md
       - lang: PL
         type: answers
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-A-odpowiedzi-v1.7.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam/FL-4.0.1-PL-zestaw-A-odpowiedzi-v1.7.md
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/sample-exam-pl-a/questions-a-pl.md
       - lang: PL
         type: questions
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-B-pytania-v1.7.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam/FL-4.0.1-PL-zestaw-B-pytania-v1.7.md
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/sample-exam-pl-b/questions-b-pl.md
       - lang: PL
         type: answers
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-B-odpowiedzi-v1.7.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam/FL-4.0.1-PL-zestaw-B-odpowiedzi-v1.7.md
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/sample-exam-pl-b/questions-b-pl.md
       - lang: PL
         type: questions
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-C-pytania-v1.6.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam/FL-4.0.1-PL-zestaw-C-pytania-v1.6.md
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/sample-exam-pl-c/questions-c-pl.md
       - lang: PL
         type: answers
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-C-odpowiedzi-v1.6.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam/FL-4.0.1-PL-zestaw-C-odpowiedzi-v1.6.md
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/sample-exam-pl-c/questions-c-pl.md
       - lang: PL
         type: questions
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-D-pytania-v1.5.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam/FL-4.0.1-PL-zestaw-D-pytania-v1.5.md
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/sample-exam-pl-d/questions-d-pl.md
       - lang: PL
         type: answers
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-D-odpowiedzi-v1.5.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam/FL-4.0.1-PL-zestaw-D-odpowiedzi-v1.5.md
+        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/sample-exam-pl/sample-exam-pl-d/questions-d-pl.md
       - lang: PL
         type: guide
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-wytyczne-do-akredytacji-v0.3.pdf
-        github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/tree/main/accreditation-guidelines-pl
+        github: 
   - code: CTAL-TA
     title: Certyfikowany Tester Poziom Zaawansowany Analityk Testów v4.0
     documents:
