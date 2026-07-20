@@ -45,7 +45,7 @@ certifications:
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-wytyczne-do-akredytacji-v0.3.pdf
       - lang: PL
         type: guide
-        file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-sylabus.pdf
+        file: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/releases/download/prerelease-latest/ISTQB-CTFL-Nota.wydania-VERSION-PL.pdf
         github: https://github.com/POLISH-QUALITY-BOARD/istqb-ctfl/blob/main/release-notes-pl/release-notes.md
   - code: CTAL-TA
     title: Certyfikowany Tester Poziom Zaawansowany Analityk Testów v4.0
