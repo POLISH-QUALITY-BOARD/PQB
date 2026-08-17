@@ -9,9 +9,16 @@
   import IconGithub from '~icons/mdi/github';
   import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
-  const { heading: headingText, body, certifications } = syllabi;
+  const {
+    heading: headingText,
+    body,
+    certifications,
+    column,
+    type: typeLabel,
+    downloadButton
+  } = syllabi;
 
-  const typeOrder = { syllabus: 0, questions: 1, answers: 2, guide: 3 };
+  const typeOrder = { syllabus: 0, questions: 1, answers: 2, accreditation: 3 };
 
   let sorts = $state(
     untrack(() =>
@@ -43,22 +50,18 @@
 
   const typeStyles = {
     syllabus: {
-      label: 'Sylabus',
       icon: 'mdi:book-open-variant',
       pill: 'bg-primary-light text-primary'
     },
     questions: {
-      label: 'Pytania',
       icon: 'mdi:help-circle-outline',
       pill: 'bg-primary-light text-primary'
     },
     answers: {
-      label: 'Odpowiedzi',
       icon: 'mdi:check-circle-outline',
       pill: 'bg-primary-light text-primary'
     },
-    guide: {
-      label: 'Akredytacja',
+    accreditation: {
       icon: 'mdi:certificate-outline',
       pill: 'bg-primary-light text-primary'
     }
@@ -82,9 +85,20 @@
           <div class="inline-flex items-center bg-white/10 rounded-lg px-2.5 py-1 shrink-0">
             <span class="text-xs font-bold text-white tracking-wide">{cert.code}</span>
           </div>
-          <div>
+          <div class="flex-1">
             <span class="text-sm font-semibold text-white mb-0">{cert.title}</span>
           </div>
+          {#if cert.github}
+            <a
+              href={cert.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-white/10 hover:bg-white/20 pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline shrink-0"
+            >
+              <IconGithub aria-hidden="true" width="13" height="13" />
+              GitHub
+            </a>
+          {/if}
         </div>
 
         <div class="overflow-x-auto">
@@ -104,7 +118,7 @@
                     onclick={() => setSort(cert.code, 'name')}
                     class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
                   >
-                    Dokument
+                    {column.document}
                     {#if sorts[cert.code].key === 'name' && sorts[cert.code].dir !== 'none'}
                       {#if sorts[cert.code].dir === 'asc'}
                         <IconArrowUp aria-hidden="true" width="12" height="12" />
@@ -129,7 +143,7 @@
                     onclick={() => setSort(cert.code, 'type')}
                     class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
                   >
-                    Typ
+                    {column.type}
                     {#if sorts[cert.code].key === 'type' && sorts[cert.code].dir !== 'none'}
                       {#if sorts[cert.code].dir === 'asc'}
                         <IconArrowUp aria-hidden="true" width="12" height="12" />
@@ -143,7 +157,7 @@
                 </th>
                 <th
                   class="text-center text-[10px] font-bold uppercase tracking-wider text-gray-600 px-4 py-3 w-20"
-                  >Język</th
+                  >{column.language}</th
                 >
                 <th class="w-52 py-3 px-6 text-right"></th>
               </tr>
@@ -176,7 +190,7 @@
                         doc.type
                       ].pill}"
                     >
-                      {typeStyles[doc.type].label}
+                      {typeLabel[doc.type]}
                     </span>
                   </td>
                   <td class="px-4 py-3.5 text-center">
@@ -184,24 +198,13 @@
                   </td>
                   <td class="px-6 py-3.5 text-right">
                     <div class="inline-flex items-center gap-2">
-                      {#if doc.github}
-                        <a
-                          href={doc.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
-                        >
-                          <IconGithub aria-hidden="true" width="13" height="13" />
-                          Kontrybuuj
-                        </a>
-                      {/if}
                       <a
                         href={doc.file}
                         download
                         class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary-dark pl-2.5 pr-3.5 py-1.5 rounded-lg no-underline"
                       >
                         <IconDownload aria-hidden="true" width="13" height="13" />
-                        Pobierz
+                        {downloadButton.text}
                       </a>
                     </div>
                   </td>

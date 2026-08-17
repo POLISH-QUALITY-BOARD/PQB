@@ -409,16 +409,30 @@ const syllabi = defineCollection({
   schema: s.object({
     heading: s.string(),
     body: s.markdown(),
+    column: s.object({
+      document: s.string(),
+      type: s.string(),
+      language: s.string()
+    }),
+    type: s.object({
+      syllabus: s.string(),
+      questions: s.string(),
+      answers: s.string(),
+      accreditation: s.string()
+    }),
+    downloadButton: s.object({
+      text: s.string()
+    }),
     certifications: s.array(
       s.object({
         code: s.string(),
         title: s.string(),
+        github: s.string().optional(),
         documents: s.array(
           s.object({
             lang: s.string(),
-            type: s.enum(['syllabus', 'questions', 'answers', 'guide']),
-            file: href(),
-            github: s.string().optional()
+            type: s.enum(['syllabus', 'questions', 'answers', 'accreditation']),
+            file: href()
           })
         )
       })
