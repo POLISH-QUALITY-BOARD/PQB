@@ -16,6 +16,9 @@ filters:
   - code: ct-ai
     text: CT-AI
     tooltip: ISTQB® Certified Tester – AI Testing
+  - code: ctal-at
+    text: CTAL-AT
+    tooltip: ISTQB® Certified Tester Advanced Level – Agile Tester
   - code: ctal-ta
     text: CTAL-TA
     tooltip: ISTQB® Certified Tester Advanced Level – Test Analyst
@@ -258,6 +261,9 @@ items:
         dateTo: 2030-10-18
       - code: ctal-ta
         dateFrom: 2026-04-24
+        dateTo: 2030-10-18
+      - code: ctal-at
+        dateFrom: 2026-08-20
         dateTo: 2030-10-18
     linkedin:
       href: https://www.linkedin.com/in/rafalstanczak/

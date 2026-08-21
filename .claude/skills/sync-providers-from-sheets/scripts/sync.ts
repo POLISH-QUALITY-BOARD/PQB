@@ -26,6 +26,10 @@ if (!token) {
 const certMap: Array<{ pattern: RegExp; code: string }> = [
   { pattern: /foundation level\s+v?4\.0|\bCTFL\b(?!.{0,5}(AT|agile))/i, code: 'ctfl-v4-0' },
   {
+    pattern: /(advanced level.{0,3}agile tester|\bCTAL.{0,3}AT\b)/i,
+    code: 'ctal-at'
+  },
+  {
     pattern: /(foundation level.{0,3}agile tester|agile tester|\bCTFL.{0,3}AT\b)/i,
     code: 'ctfl-at'
   },
