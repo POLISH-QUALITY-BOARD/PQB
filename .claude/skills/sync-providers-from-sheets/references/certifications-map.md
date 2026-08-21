@@ -12,6 +12,7 @@ These codes appear in the `filters:` section at the top of `providers.md`:
 | `ctfl-at-v1-0`  | Certified Tester Foundation Level – Agile Tester v1.0         | ISTQB® Certified Tester Foundation Level – Agile Tester v1.0         |
 | `ct-act-v1-0`   | Certified Tester – Acceptance Testing v1.0                    | ISTQB® Certified Tester – Acceptance Testing v1.0                    |
 | `ct-ai-v1-0`    | Certified Tester – AI Testing v1.0                            | ISTQB® Certified Tester – AI Testing v1.0                            |
+| `ctal-at`       | Certified Tester Advanced Level – Agile Tester                | ISTQB® Certified Tester Advanced Level – Agile Tester                |
 | `ctal-ta-v3-1`  | Certified Tester Advanced Level – Test Analyst v3.1           | ISTQB® Certified Tester Advanced Level – Test Analyst v3.1           |
 | `ctal-tm-v3-0`  | Certified Tester Advanced Level – Test Manager v3.0           | ISTQB® Certified Tester Advanced Level – Test Manager v3.0           |
 | `ctal-tta-v4-0` | Certified Tester Advanced Level – Technical Test Analyst v4.0 | ISTQB® Certified Tester Advanced Level – Technical Test Analyst v4.0 |
@@ -26,6 +27,10 @@ The spreadsheet is edited by humans, so the same certification name appears in m
 - ✅ `Certified Tester Foundation Level Agile Tester v1.0` (no dash)
 - ⚠️ `Certifield Tester Foundation Level Agile Tester v1.0` (typo: "Certifield")
 - ⚠️ `Certifiel Tester ...` (another observed typo of "Certified")
+
+### CTAL-AT (Advanced Level Agile Tester) vs CTFL-AT (Foundation Level Agile Tester)
+
+These are distinct certifications and must not be conflated. Both contain the substring "Agile Tester", so the matcher must check for "Advanced Level" first (→ `ctal-at`) before falling back to the generic "Agile Tester" match (→ `ctfl-at`). A past bug matched "Certified Tester Advanced Level Agile Tester" against the `ctfl-at` pattern and the entry was silently dropped as a duplicate because the trainer already had `ctfl-at` from a different row.
 
 ### Multiple certifications in one cell
 

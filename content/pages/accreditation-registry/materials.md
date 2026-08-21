@@ -2,6 +2,13 @@
 heading: Materiały szkoleniowe
 emptyMessage: Brak akredytowanych materiałów szkoleniowych.
 items:
+  - name: Certified Tester Advanced Level Test Analyst v4.0
+    author:
+      name: Adam Roman
+      linkedin:
+        href: https://www.linkedin.com/in/adam-roman-3799723/
+        ariaLabel: Przejdź na profil LinkedIn Adama Romana
+    dateFrom: 2026-07-28
   - name: Certified Tester Foundation Level v4.0
     author:
       name: Adam Roman
