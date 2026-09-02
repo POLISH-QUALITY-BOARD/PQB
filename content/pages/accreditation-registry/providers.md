@@ -21,10 +21,11 @@ filters:
     tooltip: ISTQB® Certified Tester Advanced Level – Test Analyst v3.1
   - code: ctal-tm-v3-0
     text: CTAL-TM v3.0
-    tooltip: ISTQB® Certified Tester Advanced Level – Test Manager v3.0
+    tooltip: ISTQB® Certified Tester Advanced Level - Test Management v3.0
   - code: ctal-tta-v4-0
     text: CTAL-TTA v4.0
     tooltip: ISTQB® Certified Tester Advanced Level – Technical Test Analyst v4.0
+
 items:
   - name: Sages sp. z o.o.
     certifications:
@@ -99,6 +100,8 @@ items:
       - code: ctal-ta-v3-1
         dateFrom: 2026-04-24
         dateTo: 2026-11-02
+      - code: ctal-tm-v3-0
+        dateFrom: 2026-06-08
     website:
       href: https://amberteam.pl/
       ariaLabel: Przejdź na stronę AmberTeam Testing sp. z o.o.
