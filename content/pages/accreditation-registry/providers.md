@@ -152,6 +152,15 @@ items:
     website:
       href: https://www.nobleprog.pl/
       ariaLabel: Przejdź na stronę NobleProg Polska sp. z o.o.
+  - name: Comarch S.A.
+    certifications:
+      - code: ctfl-v4-0
+        dateFrom: 2026-09-08
+      - code: ctal-tm-v3-0
+        dateFrom: 2026-09-08
+    website:
+      href: https://www.comarch.pl/
+      ariaLabel: Przejdź na stronę Comarch S.A.
 ---
 
 Akredytowani dostawcy szkoleń to firmy i instytucje oferujące kursy przygotowujące do egzaminów ISTQB® w oparciu o oficjalne sylabusy. Akredytacja potwierdza, że program szkolenia, materiały dydaktyczne oraz kadra spełniają wymagania jakościowe określone przez Polish Quality Board.
