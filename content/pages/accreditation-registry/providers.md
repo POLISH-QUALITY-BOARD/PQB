@@ -102,6 +102,9 @@ items:
         dateTo: 2026-11-02
       - code: ctal-tm-v3-0
         dateFrom: 2026-06-08
+      - code: ct-ai-v1-0
+        dateFrom: 2026-09-14
+        dateTo: 2027-10-17
     website:
       href: https://amberteam.pl/
       ariaLabel: Przejdź na stronę AmberTeam Testing sp. z o.o.
