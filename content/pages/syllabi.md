@@ -89,6 +89,18 @@ certifications:
       - lang: PL
         type: accreditation
         file: /documents/syllabi/tm-3.0/TM-3.0-PL-wytyczne-do-akredytacji-v1.0.pdf
+  - code: CTAL-AT
+    title: Certyfikowany Tester Poziom Zaawansowany Tester Zwinny v2.0
+    documents:
+      - lang: PL
+        type: syllabus
+        file: /documents/syllabi/at-2.0/AT-2.0-PL-sylabus.pdf
+      - lang: PL
+        type: questions
+        file: /documents/syllabi/at-2.0/AT-2.0-PL-pytania.pdf
+      - lang: PL
+        type: answers
+        file: /documents/syllabi/at-2.0/AT-2.0-PL-odpowiedzi.pdf
 ---
 
 Poniżej znajdziesz sylabusy, zestawy pytań i odpowiedzi oraz wytyczne do akredytacji dla poszczególnych certyfikatów ISTQB®.
