@@ -17,10 +17,10 @@ cookieConsentStore.subscribe((value) => {
 
   if (value === null) {
     localStorage.removeItem(STORAGE_KEY);
-    window.gtag('consent', 'update', { analytics_storage: DENIED });
+    window.gtag?.('consent', 'update', { analytics_storage: DENIED });
   } else if (value === GRANTED || value === DENIED) {
     localStorage.setItem(STORAGE_KEY, value);
-    window.gtag('consent', 'update', { analytics_storage: value });
+    window.gtag?.('consent', 'update', { analytics_storage: value });
   }
 });
 
