@@ -26,8 +26,7 @@ jobs:
         env:
           BASE_PATH: /preview/pr-${{ github.event.number }}
           ORIGIN: ${{ vars.ORIGIN }}
-          PUBLIC_GA_DEBUG_MODE: true
-          PUBLIC_GA_ID: ${{ vars.GA_ID }}
+          PUBLIC_GTM_CONTAINER_ID: ${{ vars.GTM_CONTAINER_ID }}
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
