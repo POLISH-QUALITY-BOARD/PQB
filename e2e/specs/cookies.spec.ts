@@ -11,32 +11,33 @@ const getConsentCommands = (page: Page) =>
 test('It denies analytics consent by default', async ({ homePage }) => {
   await homePage.goto();
 
-  expect(await getConsentCommands(homePage.getPage())).toContainEqual([
-    'consent',
-    'default',
-    { analytics_storage: 'denied', wait_for_update: 500 }
-  ]);
+  await expect
+    .poll(() => getConsentCommands(homePage.getPage()))
+    .toContainEqual(['consent', 'default', { analytics_storage: 'denied', wait_for_update: 500 }]);
 });
 
 test('It grants analytics consent after accepting cookies', async ({ homePage }) => {
   await homePage.goto();
   await homePage.clickCookieConsentAcceptButton();
 
-  expect(await getConsentCommands(homePage.getPage())).toContainEqual([
-    'consent',
-    'update',
-    { analytics_storage: 'granted' }
-  ]);
+  await expect
+    .poll(() => getConsentCommands(homePage.getPage()))
+    .toContainEqual(['consent', 'update', { analytics_storage: 'granted' }]);
 });
 
 test('It keeps analytics consent denied after denying cookies', async ({ homePage }) => {
   await homePage.goto();
   await homePage.clickCookieConsentDenyButton();
 
-  const commands = await getConsentCommands(homePage.getPage());
+  await expect
+    .poll(() => getConsentCommands(homePage.getPage()))
+    .toContainEqual(['consent', 'update', { analytics_storage: 'denied' }]);
 
-  expect(commands).toContainEqual(['consent', 'update', { analytics_storage: 'denied' }]);
-  expect(commands).not.toContainEqual(['consent', 'update', { analytics_storage: 'granted' }]);
+  expect(await getConsentCommands(homePage.getPage())).not.toContainEqual([
+    'consent',
+    'update',
+    { analytics_storage: 'granted' }
+  ]);
 });
 
 test('I can accept cookies', async ({ homePage }) => {
