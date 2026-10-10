@@ -15,9 +15,23 @@
       content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
     />
 
+    <!-- Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      // Domyślnie odmawiamy zgody do czasu wyboru przez użytkownika
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
+    </script>
+
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
+        if (!i) return;
         w[l] = w[l] || [];
         w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
         var f = d.getElementsByTagName(s)[0],
@@ -30,13 +44,13 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <link href="/preview/pr-230/_app/immutable/entry/start.Bmu7Z1wk.js" rel="modulepreload">
-		<link href="/preview/pr-230/_app/immutable/chunks/s7yKCrJr.js" rel="modulepreload">
+    <link href="/preview/pr-230/_app/immutable/entry/start.B72iFJ8B.js" rel="modulepreload">
+		<link href="/preview/pr-230/_app/immutable/chunks/CF6EkALI.js" rel="modulepreload">
 		<link href="/preview/pr-230/_app/immutable/chunks/Bv_PDbK_.js" rel="modulepreload">
-		<link href="/preview/pr-230/_app/immutable/entry/app.DV13N4Wt.js" rel="modulepreload">
+		<link href="/preview/pr-230/_app/immutable/entry/app.7EDeRW16.js" rel="modulepreload">
 		<link href="/preview/pr-230/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="/preview/pr-230/_app/immutable/nodes/0.DTfZ0swv.js" rel="modulepreload">
-		<link href="/preview/pr-230/_app/immutable/chunks/DWckl7S7.js" rel="modulepreload">
+		<link href="/preview/pr-230/_app/immutable/nodes/0.vHGPjrVC.js" rel="modulepreload">
+		<link href="/preview/pr-230/_app/immutable/chunks/DBSZOx8u.js" rel="modulepreload">
 		<link href="/preview/pr-230/_app/immutable/chunks/CGQCobIw.js" rel="modulepreload">
 		<link href="/preview/pr-230/_app/immutable/chunks/B0xf1F0F.js" rel="modulepreload">
 		<link href="/preview/pr-230/_app/immutable/chunks/CvJY79ww.js" rel="modulepreload">
@@ -68,7 +82,7 @@ wspierającą rozwój specjalistów ds. jakości oprogramowania w Polsce.</p><!-
 			
 			<script>
 				{
-					__sveltekit_10iu1qv = {
+					__sveltekit_suqon3 = {
 						base: "/preview/pr-230",
 						assets: "/preview/pr-230"
 					};
@@ -76,8 +90,8 @@ wspierającą rozwój specjalistów ds. jakości oprogramowania w Polsce.</p><!-
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/preview/pr-230/_app/immutable/entry/start.Bmu7Z1wk.js"),
-						import("/preview/pr-230/_app/immutable/entry/app.DV13N4Wt.js")
+						import("/preview/pr-230/_app/immutable/entry/start.B72iFJ8B.js"),
+						import("/preview/pr-230/_app/immutable/entry/app.7EDeRW16.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],
