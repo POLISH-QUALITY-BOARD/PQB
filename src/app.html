@@ -24,6 +24,11 @@
       // Domyślnie odmawiamy zgody do czasu wyboru przez użytkownika
       gtag('consent', 'default', {
         analytics_storage: 'denied',
+        // Zgody reklamowe są wyłączone na stałe, bo strona nie prowadzi działań reklamowych.
+        // Po ich uruchomieniu trzeba dodać wybór w banerze cookies i aktualizować te wartości.
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
         wait_for_update: 500
       });
     </script>
