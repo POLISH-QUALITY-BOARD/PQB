@@ -51,7 +51,7 @@ items:
         dateFrom: 2026-04-24
         dateTo: 2027-10-17
       - code: ctal-tm-v3-0
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-28
     website:
       href: https://jkanalysis.pl/
       ariaLabel: Przejdź na stronę Joanna Kazun Analysis
@@ -98,7 +98,7 @@ items:
       - code: ctal-tta-v4-0
         dateFrom: 2026-04-24
       - code: ctal-ta-v3-1
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-30
         dateTo: 2026-11-02
       - code: ctal-tm-v3-0
         dateFrom: 2026-06-08
