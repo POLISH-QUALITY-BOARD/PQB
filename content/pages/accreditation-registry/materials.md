@@ -95,10 +95,14 @@ items:
     dateFrom: 2026-04-28
   - name: Certified Tester Advanced Level Agile Tester v2.0
     author:
-      name: Adam Roman, Lucjan Stapp
-      linkedin:
-        href: https://www.linkedin.com/in/adam-roman-3799723/
-        ariaLabel: Przejdź na profil LinkedIn Adama Romana
+      - name: Adam Roman
+        linkedin:
+          href: https://www.linkedin.com/in/adam-roman-3799723/
+          ariaLabel: Przejdź na profil LinkedIn Adama Romana
+      - name: Lucjan Stapp
+        linkedin:
+          href: https://www.linkedin.com/in/lucjan-stapp-123456/
+          ariaLabel: Przejdź na profil LinkedIn Lucjana Stappa
     dateFrom: 2026-10-11
 ---
 

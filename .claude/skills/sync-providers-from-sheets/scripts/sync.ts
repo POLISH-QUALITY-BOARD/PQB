@@ -172,9 +172,11 @@ function parseMdMaterials(content: string): SheetMaterial[] {
       continue;
     }
     if (!current) continue;
-    const authorMatch = line.match(/^ {6}name:\s*(.+)$/);
+    // author is either a single object or a list of objects (co-authored materials)
+    const authorMatch = line.match(/^ {6}(?:- )?name:\s*(.+)$/);
     if (authorMatch) {
-      current.author = authorMatch[1].trim();
+      const author = authorMatch[1].trim();
+      current.author = current.author ? `${current.author}, ${author}` : author;
       continue;
     }
     const dateMatch = line.match(/^ {4}dateFrom:\s*(.+)$/);

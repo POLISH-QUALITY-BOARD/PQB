@@ -129,6 +129,22 @@ Add missing course entries to the `items:` array.
   dateTo: YYYY-MM-DD # only if applicable
 ```
 
+When the sheet lists several authors in one row (e.g. `Adam Roman, Lucjan Stapp`), make `author` a list with one entry per person, each with its own link:
+
+```yaml
+- name: <Syllabus/Course Name>
+  author:
+    - name: <First Author>
+      linkedin:
+        href: <https URL>
+        ariaLabel: Przejdź na...
+    - name: <Second Author>
+      linkedin:
+        href: <https URL>
+        ariaLabel: Przejdź na...
+  dateFrom: YYYY-MM-DD
+```
+
 **Trainers (trainers.md):**
 Add missing trainers to the `items:` array. Fix character encoding issues if found.
 
