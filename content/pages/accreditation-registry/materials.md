@@ -34,7 +34,7 @@ items:
     author:
       name: Lucjan Stapp
       linkedin:
-        href: https://www.linkedin.com/in/lucjan-stapp-123456/
+        href: https://www.linkedin.com/in/lucjan-stapp-85648110/
         ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
     dateFrom: 2026-04-28
   - name: Certified Tester Foundation Level v4.0
@@ -55,7 +55,7 @@ items:
     author:
       name: Lucjan Stapp
       linkedin:
-        href: https://www.linkedin.com/in/lucjan-stapp-123456/
+        href: https://www.linkedin.com/in/lucjan-stapp-85648110/
         ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
     dateFrom: 2026-05-25
   - name: Certified Tester Foundation Level Agile Tester v1.0
@@ -69,7 +69,7 @@ items:
     author:
       name: Lucjan Stapp
       linkedin:
-        href: https://www.linkedin.com/in/lucjan-stapp-123456/
+        href: https://www.linkedin.com/in/lucjan-stapp-85648110/
         ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
     dateFrom: 2026-04-28
   - name: Certified Tester Advanced Level Test Analyst v3.1
@@ -101,7 +101,7 @@ items:
           ariaLabel: Przejdź na profil LinkedIn Adama Romana
       - name: Lucjan Stapp
         linkedin:
-          href: https://www.linkedin.com/in/lucjan-stapp-123456/
+          href: https://www.linkedin.com/in/lucjan-stapp-85648110/
           ariaLabel: Przejdź na profil LinkedIn Lucjana Stappa
     dateFrom: 2026-10-11
 ---

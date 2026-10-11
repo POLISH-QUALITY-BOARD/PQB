@@ -93,7 +93,7 @@ items:
         dateFrom: 2026-04-24
         dateTo: 2030-03-13
     linkedin:
-      href: https://www.linkedin.com/in/lucjan-stapp-123456/
+      href: https://www.linkedin.com/in/lucjan-stapp-85648110/
       ariaLabel: Przejdź na profil LinkedIn Lucjana Stappa
   - name: Wojciech Becla
     photo: /src/lib/assets/trainers/Wojciech_Becla.jpg
