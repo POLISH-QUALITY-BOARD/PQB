@@ -25,12 +25,15 @@
     }
   };
 
+  const authorNames = ({ author }: (typeof items)[number]) =>
+    author.map(({ name }) => name).join(', ');
+
   const sorted = $derived.by(() => {
     if (!sort.key || sort.dir === 'none') return items;
     return [...items].sort((a, b) => {
       let cmp = 0;
       if (sort.key === 'name') cmp = a.name.localeCompare(b.name);
-      if (sort.key === 'author') cmp = a.author.name.localeCompare(b.author.name);
+      if (sort.key === 'author') cmp = authorNames(a).localeCompare(authorNames(b));
       if (sort.key === 'dateFrom') cmp = a.dateFrom.localeCompare(b.dateFrom);
       return sort.dir === 'asc' ? cmp : -cmp;
     });
@@ -136,30 +139,34 @@
                 </div>
               </td>
               <td class="px-4 py-3.5 w-px whitespace-nowrap">
-                <div class="flex items-center gap-1.5">
-                  <span class="font-medium text-gray-700 whitespace-nowrap">{author.name}</span>
-                  {#if author.website}
-                    <a
-                      href={author.website.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={author.website.ariaLabel}
-                      class="text-gray-300 hover:text-primary no-underline"
-                    >
-                      <IconOpenInNew aria-hidden="true" width="14" height="14" />
-                    </a>
-                  {/if}
-                  {#if author.linkedin}
-                    <a
-                      href={author.linkedin.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={author.linkedin.ariaLabel}
-                      class="text-gray-300 hover:text-primary no-underline"
-                    >
-                      <IconLinkedin aria-hidden="true" width="14" height="14" />
-                    </a>
-                  {/if}
+                <div class="flex flex-col gap-1">
+                  {#each author as { name: authorName, website, linkedin } (authorName)}
+                    <div class="flex items-center gap-1.5">
+                      <span class="font-medium text-gray-700 whitespace-nowrap">{authorName}</span>
+                      {#if website}
+                        <a
+                          href={website.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={website.ariaLabel}
+                          class="text-gray-300 hover:text-primary no-underline"
+                        >
+                          <IconOpenInNew aria-hidden="true" width="14" height="14" />
+                        </a>
+                      {/if}
+                      {#if linkedin}
+                        <a
+                          href={linkedin.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={linkedin.ariaLabel}
+                          class="text-gray-300 hover:text-primary no-underline"
+                        >
+                          <IconLinkedin aria-hidden="true" width="14" height="14" />
+                        </a>
+                      {/if}
+                    </div>
+                  {/each}
                 </div>
               </td>
               <td class="px-4 py-3.5 text-center">

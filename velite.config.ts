@@ -608,6 +608,22 @@ const accreditationRegistryProviders = defineCollection({
   })
 });
 
+const materialAuthor = s.object({
+  name: s.string(),
+  website: s
+    .object({
+      href: href(),
+      ariaLabel: s.string()
+    })
+    .optional(),
+  linkedin: s
+    .object({
+      href: href(),
+      ariaLabel: s.string()
+    })
+    .optional()
+});
+
 const accreditationRegistryMaterials = defineCollection({
   name: 'AccreditationRegistryMaterials',
   pattern: 'pages/accreditation-registry/materials.md',
@@ -619,21 +635,9 @@ const accreditationRegistryMaterials = defineCollection({
     items: s.array(
       s.object({
         name: s.string(),
-        author: s.object({
-          name: s.string(),
-          website: s
-            .object({
-              href: href(),
-              ariaLabel: s.string()
-            })
-            .optional(),
-          linkedin: s
-            .object({
-              href: href(),
-              ariaLabel: s.string()
-            })
-            .optional()
-        }),
+        author: s
+          .union([materialAuthor, s.array(materialAuthor).min(1)])
+          .transform((author) => (Array.isArray(author) ? author : [author])),
         dateFrom: s.isodate().transform((d) => new Date(d).toLocaleDateString('pl-PL'))
       })
     )

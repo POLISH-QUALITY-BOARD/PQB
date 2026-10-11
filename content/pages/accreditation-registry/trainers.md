@@ -51,25 +51,25 @@ items:
     photo: /src/lib/assets/trainers/Adama_Roman.jpg
     certifications:
       - code: ctfl-v4-0
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-09-18
       - code: ctfl-at
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-09-18
       - code: ctal-tta
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-09-18
       - code: ctal-tm
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-09-18
       - code: ctal-ta
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-09-18
       - code: ctel-itp-atp
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-09-18
       - code: ctel-itp-itpi
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-09-18
     linkedin:
       href: https://www.linkedin.com/in/adam-roman-3799723/
@@ -78,22 +78,22 @@ items:
     photo: /src/lib/assets/trainers/Lucjan_Stapp.png
     certifications:
       - code: ctfl-v4-0
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-03-13
       - code: ctfl-at
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-03-13
       - code: ct-act
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-03-13
       - code: ctal-tm
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-03-13
       - code: ctal-ta
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-03-13
     linkedin:
-      href: https://www.linkedin.com/in/lucjan-stapp-123456/
+      href: https://www.linkedin.com/in/lucjan-stapp-85648110/
       ariaLabel: Przejdź na profil LinkedIn Lucjana Stappa
   - name: Wojciech Becla
     photo: /src/lib/assets/trainers/Wojciech_Becla.jpg
@@ -155,10 +155,10 @@ items:
         dateFrom: 2026-04-24
         dateTo: 2032-08-27
       - code: ctal-tm
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-28
         dateTo: 2032-08-27
       - code: ctal-ta
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-28
         dateTo: 2032-08-27
     linkedin:
       href: https://www.linkedin.com/in/adrian-zawada-64a65419b/
@@ -167,34 +167,34 @@ items:
     photo: /src/lib/assets/trainers/Jan_Sabak.jpg
     certifications:
       - code: ctfl-v4-0
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-07-08
       - code: ctfl-at
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-07-08
       - code: ctal-tta
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-07-08
       - code: ctal-tm
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-07-08
       - code: ctal-ta
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2030-07-08
       - code: ct-ai
-        dateFrom: 2026-04-28
+        dateFrom: 2026-05-05
         dateTo: 2030-07-08
       - code: ct-pt
-        dateFrom: 2026-04-28
+        dateFrom: 2026-05-05
         dateTo: 2030-07-08
       - code: ct-tas
-        dateFrom: 2026-04-28
+        dateFrom: 2026-05-05
         dateTo: 2030-07-08
       - code: ct-tae
-        dateFrom: 2026-04-28
+        dateFrom: 2026-05-05
         dateTo: 2030-07-08
       - code: ct-genai
-        dateFrom: 2026-04-28
+        dateFrom: 2026-05-05
         dateTo: 2030-07-08
     linkedin:
       href: https://www.linkedin.com/in/jsabak/
@@ -203,19 +203,19 @@ items:
     photo: /src/lib/assets/trainers/Radosław_Smilgin.jpeg
     certifications:
       - code: ctfl-v4-0
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-29
         dateTo: 2032-10-17
       - code: ctfl-at
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-29
         dateTo: 2032-10-17
       - code: ctal-tta
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-29
         dateTo: 2032-10-17
       - code: ctal-tm
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-29
         dateTo: 2032-10-17
       - code: ctal-ta
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-29
         dateTo: 2032-10-17
     linkedin:
       href: https://www.linkedin.com/in/smilgin/
@@ -224,25 +224,25 @@ items:
     photo: /src/lib/assets/trainers/Joanna_Kazun.jpg
     certifications:
       - code: ctfl-v4-0
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2032-09-14
       - code: ctfl-at
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2032-09-14
       - code: ct-act
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2032-09-14
       - code: ctal-tta
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-29
         dateTo: 2032-09-14
       - code: ctal-tm
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2032-09-14
       - code: ctal-ta
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-24
         dateTo: 2032-09-14
       - code: ct-ai
-        dateFrom: 2026-04-28
+        dateFrom: 2026-04-29
         dateTo: 2032-09-14
     linkedin:
       href: https://www.linkedin.com/in/joanna-kazun/
@@ -257,10 +257,10 @@ items:
         dateFrom: 2026-04-24
         dateTo: 2030-10-18
       - code: ctal-tm
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-28
         dateTo: 2030-10-18
       - code: ctal-ta
-        dateFrom: 2026-04-24
+        dateFrom: 2026-04-28
         dateTo: 2030-10-18
       - code: ctal-at
         dateFrom: 2026-08-20
