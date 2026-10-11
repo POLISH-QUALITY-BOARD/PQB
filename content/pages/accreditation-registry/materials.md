@@ -57,7 +57,7 @@ items:
       linkedin:
         href: https://www.linkedin.com/in/lucjan-stapp-123456/
         ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
-    dateFrom: 2026-04-28
+    dateFrom: 2026-05-25
   - name: Certified Tester Foundation Level Agile Tester v1.0
     author:
       name: INPROGRESS sp. z o.o.
@@ -93,6 +93,13 @@ items:
         href: https://www.linkedin.com/in/jsabak/
         ariaLabel: Przejdź na profil LinkedIn Jana Sabaka
     dateFrom: 2026-04-28
+  - name: Certified Tester Advanced Level Agile Tester v2.0
+    author:
+      name: Adam Roman, Lucjan Stapp
+      linkedin:
+        href: https://www.linkedin.com/in/adam-roman-3799723/
+        ariaLabel: Przejdź na profil LinkedIn Adama Romana
+    dateFrom: 2026-10-11
 ---
 
 Akredytowane materiały szkoleniowe to właściwie zebrana, zaprojektowana i przygotowana wiedza w różnej formie, często przyjaznej prezentacji wraz z zbiorem przykładowych pytań egzaminacyjnych zatwierdzona przez Polish Quality Board jako zgodna z aktualnymi sylabusami oraz wtycznymi ISTQB®. Korzystanie z tych materiałów zwiększa skuteczność przygotowania do egzaminu i gwarantuje aktualność przekazywanej wiedzy.
