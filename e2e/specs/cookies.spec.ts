@@ -8,12 +8,22 @@ const getConsentCommands = (page: Page) =>
       .filter(([command]) => command === 'consent')
   );
 
-test('It denies analytics consent by default', async ({ homePage }) => {
+test('It denies analytics and ad consent by default', async ({ homePage }) => {
   await homePage.goto();
 
   await expect
     .poll(() => getConsentCommands(homePage.getPage()))
-    .toContainEqual(['consent', 'default', { analytics_storage: 'denied', wait_for_update: 500 }]);
+    .toContainEqual([
+      'consent',
+      'default',
+      {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+      }
+    ]);
 });
 
 test('It grants analytics consent after accepting cookies', async ({ homePage }) => {
