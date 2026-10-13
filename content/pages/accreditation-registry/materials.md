@@ -8,6 +8,8 @@ items:
       linkedin:
         href: https://www.linkedin.com/in/adam-roman-3799723/
         ariaLabel: Przejdź na profil LinkedIn Adama Romana
+    languages:
+      - Polish
     dateFrom: 2026-07-28
   - name: Certified Tester Foundation Level v4.0
     author:
@@ -15,6 +17,8 @@ items:
       linkedin:
         href: https://www.linkedin.com/in/adam-roman-3799723/
         ariaLabel: Przejdź na profil LinkedIn Adama Romana
+    languages:
+      - Polish
     dateFrom: 2026-04-28
   - name: Certified Tester Foundation Level v4.0
     author:
@@ -22,6 +26,8 @@ items:
       website:
         href: https://www.capgemini.com/pl-pl/
         ariaLabel: Przejdź na stronę Capgemini Polska sp. z o.o.
+    languages:
+      - Polish
     dateFrom: 2026-04-28
   - name: Certified Tester Foundation Level v4.0
     author:
@@ -29,6 +35,8 @@ items:
       website:
         href: https://inprogress.pl/
         ariaLabel: Przejdź na stronę INPROGRESS sp. z o.o.
+    languages:
+      - Polish
     dateFrom: 2026-04-29
   - name: Certified Tester Foundation Level v4.0
     author:
@@ -36,6 +44,8 @@ items:
       linkedin:
         href: https://www.linkedin.com/in/lucjan-stapp-85648110/
         ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
+    languages:
+      - Polish
     dateFrom: 2026-04-28
   - name: Certified Tester Foundation Level v4.0
     author:
@@ -43,6 +53,8 @@ items:
       website:
         href: https://qa-szkolenia.pl/
         ariaLabel: Przejdź na stronę Paweł Kwasik
+    languages:
+      - Polish
     dateFrom: 2026-04-28
   - name: Certified Tester Foundation Level v4.0
     author:
@@ -50,6 +62,8 @@ items:
       website:
         href: https://sii.pl/szkolenia
         ariaLabel: Przejdź na stronę Sii sp. z o.o.
+    languages:
+      - Polish
     dateFrom: 2026-04-29
   - name: Certified Tester Foundation Level Agile Tester v1.0
     author:
@@ -58,12 +72,16 @@ items:
         href: https://www.linkedin.com/in/lucjan-stapp-85648110/
         ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
     dateFrom: 2026-05-25
+    languages:
+      - Polish
   - name: Certified Tester Foundation Level Agile Tester v1.0
     author:
       name: INPROGRESS sp. z o.o.
       website:
         href: https://inprogress.pl/
         ariaLabel: Przejdź na stronę INPROGRESS sp. z o.o.
+    languages:
+      - Polish
     dateFrom: 2026-04-29
   - name: Certified Tester Acceptance Testing v1.0
     author:
@@ -71,6 +89,8 @@ items:
       linkedin:
         href: https://www.linkedin.com/in/lucjan-stapp-85648110/
         ariaLabel: Przejdź na profil LinkedIn Lucjan Stapp
+    languages:
+      - Polish
     dateFrom: 2026-04-28
   - name: Certified Tester Advanced Level Test Analyst v3.1
     author:
@@ -78,6 +98,8 @@ items:
       website:
         href: https://amberteam.pl/
         ariaLabel: Przejdź na stronę AmberTeam Testing sp. z o.o.
+    languages:
+      - Polish
     dateFrom: 2026-05-05
   - name: Certified Tester Advanced Level Technical Test Analyst v4.0
     author:
@@ -85,6 +107,8 @@ items:
       linkedin:
         href: https://www.linkedin.com/in/adam-roman-3799723/
         ariaLabel: Przejdź na profil LinkedIn Adama Romana
+    languages:
+      - Polish
     dateFrom: 2026-04-28
   - name: Certified Tester Advanced Level Test Management v3.0
     author:
@@ -92,6 +116,8 @@ items:
       linkedin:
         href: https://www.linkedin.com/in/jsabak/
         ariaLabel: Przejdź na profil LinkedIn Jana Sabaka
+    languages:
+      - Polish
     dateFrom: 2026-04-28
   - name: Certified Tester Advanced Level Agile Tester v2.0
     author:
@@ -103,6 +129,8 @@ items:
         linkedin:
           href: https://www.linkedin.com/in/lucjan-stapp-85648110/
           ariaLabel: Przejdź na profil LinkedIn Lucjana Stappa
+    languages:
+      - Polish
     dateFrom: 2026-10-11
 ---
 

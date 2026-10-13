@@ -11,7 +11,7 @@
 
   let { heading: title, emptyMessage, body, items }: AccreditationRegistryMaterials = $props();
 
-  type SortKey = 'name' | 'author' | 'dateFrom';
+  type SortKey = 'name' | 'author' | 'languages' | 'dateFrom';
   type SortDir = 'asc' | 'desc' | 'none';
   let sort = $state<{ key: SortKey | null; dir: SortDir }>({ key: null, dir: 'none' });
 
@@ -34,6 +34,9 @@
       let cmp = 0;
       if (sort.key === 'name') cmp = a.name.localeCompare(b.name);
       if (sort.key === 'author') cmp = authorNames(a).localeCompare(authorNames(b));
+      if (sort.key === 'languages') {
+        cmp = a.languages.join(', ').localeCompare(b.languages.join(', '));
+      }
       if (sort.key === 'dateFrom') cmp = a.dateFrom.localeCompare(b.dateFrom);
       return sort.dir === 'asc' ? cmp : -cmp;
     });
@@ -98,6 +101,28 @@
                 {/if}
               </button>
             </th>
+            <th
+              scope="col"
+              class="text-center px-4 py-3 w-px whitespace-nowrap"
+              aria-sort={ariaSort('languages')}
+            >
+              <button
+                type="button"
+                onclick={() => setSort('languages')}
+                class="inline-flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer bg-transparent border-none p-0 text-primary"
+              >
+                Języki
+                {#if sort.key === 'languages' && sort.dir !== 'none'}
+                  {#if sort.dir === 'asc'}<IconArrowUp
+                      aria-hidden="true"
+                      width="12"
+                      height="12"
+                    />{:else}<IconArrowDown aria-hidden="true" width="12" height="12" />{/if}
+                {:else}
+                  <IconUnfoldMoreHorizontal aria-hidden="true" width="12" height="12" />
+                {/if}
+              </button>
+            </th>
             <th scope="col" class="px-4 py-3 w-32 text-center" aria-sort={ariaSort('dateFrom')}>
               <div class="flex justify-center">
                 <button
@@ -121,7 +146,7 @@
           </tr>
         </thead>
         <tbody>
-          {#each sorted as { name, author, dateFrom }, i (i)}
+          {#each sorted as { name, author, languages, dateFrom }, i (i)}
             <tr
               class="border-b border-gray-100 last:border-b-0 {i % 2 !== 0
                 ? 'bg-gray-50/50'
@@ -169,6 +194,17 @@
                   {/each}
                 </div>
               </td>
+              <td class="px-4 py-3.5 w-px whitespace-nowrap">
+                <div class="flex flex-wrap items-center justify-center gap-1.5">
+                  {#each languages as language (language)}
+                    <span
+                      class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-primary-light text-primary"
+                    >
+                      {language}
+                    </span>
+                  {/each}
+                </div>
+              </td>
               <td class="px-4 py-3.5 text-center">
                 <span
                   class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-primary-light text-primary"
@@ -179,7 +215,7 @@
           {/each}
           {#if items.length === 0}
             <tr>
-              <td colspan="3" class="px-6 py-4 text-center">
+              <td colspan="4" class="px-6 py-4 text-center">
                 <div class="inline-flex items-center gap-2 text-sm text-gray-600">
                   <IconFilterOffOutline
                     aria-hidden="true"

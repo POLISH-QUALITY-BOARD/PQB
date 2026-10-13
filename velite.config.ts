@@ -635,6 +635,7 @@ const accreditationRegistryMaterials = defineCollection({
     items: s.array(
       s.object({
         name: s.string(),
+        languages: s.array(s.string()),
         author: s
           .union([materialAuthor, s.array(materialAuthor).min(1)])
           .transform((author) => (Array.isArray(author) ? author : [author])),
