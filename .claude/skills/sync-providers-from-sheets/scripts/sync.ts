@@ -131,10 +131,21 @@ function parseMdProviders(content: string): Set<string> {
 
 // MATERIALS sheet parser
 interface SheetMaterial {
-  id: string;
+  id?: string;
   name: string;
   author: string;
   dateFrom: string | null;
+  languages: string[];
+}
+
+function parseLanguages(raw: string): string[] {
+  return raw
+    .trim()
+    .replace(/^\[/, '')
+    .replace(/\]$/, '')
+    .split(/[,;\n]/)
+    .map((language) => language.trim().replace(/^(['"])(.*)\1$/, '$2'))
+    .filter(Boolean);
 }
 
 function parseMaterialsSheet(rows: string[][]): SheetMaterial[] {
@@ -143,11 +154,12 @@ function parseMaterialsSheet(rows: string[][]): SheetMaterial[] {
     const row = rows[i];
     const author = (row[1] || '').trim();
     const syllabus = (row[8] || '').trim();
+    const languages = parseLanguages(row[9] || '');
     const accId = (row[13] || '').trim();
     const dateFrom = parseDate(row[14] || '');
 
     if (!author || !syllabus || !accId) continue;
-    materials.push({ id: accId, name: syllabus, author, dateFrom });
+    materials.push({ id: accId, name: syllabus, author, dateFrom, languages });
   }
   return materials;
 }
@@ -158,7 +170,8 @@ function parseMdMaterials(content: string): SheetMaterial[] {
   const materials: SheetMaterial[] = [];
   const lines = match[1].split('\n');
   let inItems = false;
-  let current: Partial<SheetMaterial> | null = null;
+  let current: SheetMaterial | null = null;
+  let collectingLanguages = false;
 
   for (const line of lines) {
     if (line.startsWith('items:')) {
@@ -168,12 +181,35 @@ function parseMdMaterials(content: string): SheetMaterial[] {
     if (!inItems) continue;
     const nameMatch = line.match(/^ {2}- name:\s*(.+)$/);
     if (nameMatch) {
-      current = { name: nameMatch[1].trim() };
+      if (current) materials.push(current);
+      current = {
+        name: nameMatch[1].trim(),
+        author: '',
+        dateFrom: null,
+        languages: []
+      };
+      collectingLanguages = false;
       continue;
     }
     if (!current) continue;
     // author is either a single object or a list of objects (co-authored materials)
     const authorMatch = line.match(/^ {6}(?:- )?name:\s*(.+)$/);
+
+    const languagesMatch = line.match(/^ {4}languages:\s*(.*)$/);
+    if (languagesMatch) {
+      current.languages = parseLanguages(languagesMatch[1]);
+      collectingLanguages = languagesMatch[1].trim() === '';
+      continue;
+    }
+    if (collectingLanguages) {
+      const languageMatch = line.match(/^ {6}-\s*(.+)$/);
+      if (languageMatch) {
+        current.languages.push(...parseLanguages(languageMatch[1]));
+        continue;
+      }
+      if (line.trim()) collectingLanguages = false;
+    }
+
     if (authorMatch) {
       const author = authorMatch[1].trim();
       current.author = current.author ? `${current.author}, ${author}` : author;
@@ -182,10 +218,9 @@ function parseMdMaterials(content: string): SheetMaterial[] {
     const dateMatch = line.match(/^ {4}dateFrom:\s*(.+)$/);
     if (dateMatch && current) {
       current.dateFrom = dateMatch[1].trim();
-      materials.push(current as SheetMaterial);
-      current = null;
     }
   }
+  if (current) materials.push(current);
   return materials;
 }
 
@@ -349,8 +384,36 @@ async function main() {
         console.log(`\n⚠️  Stale in materials.md (${stale.length}):`);
         stale.forEach((m) => console.log(`    - ${m}`));
       }
-    } else {
-      console.log('✅ Materials list is synchronized');
+    }
+
+    let languageMismatches = 0;
+    for (const sheetMaterial of sheetMaterials) {
+      const mdMaterial = mdMaterials.find(
+        (material) =>
+          material.author === sheetMaterial.author && material.name === sheetMaterial.name
+      );
+      if (!mdMaterial) continue;
+
+      const sheetLanguages = [
+        ...new Set(sheetMaterial.languages.map((language) => language.toLowerCase()))
+      ]
+        .sort()
+        .join(',');
+      const mdLanguages = [
+        ...new Set(mdMaterial.languages.map((language) => language.toLowerCase()))
+      ]
+        .sort()
+        .join(',');
+      if (sheetLanguages === mdLanguages) continue;
+
+      languageMismatches++;
+      console.log(`\n⚠️  Language mismatch for ${sheetMaterial.author} — ${sheetMaterial.name}:`);
+      console.log(`    Sheet: ${sheetMaterial.languages.join(', ') || '(empty)'}`);
+      console.log(`    materials.md: ${mdMaterial.languages.join(', ') || '(empty)'}`);
+    }
+
+    if (missing.length === 0 && stale.length === 0 && languageMismatches === 0) {
+      console.log('✅ Materials list and languages are synchronized');
     }
   }
 

@@ -227,11 +227,12 @@ A single provider appears on multiple rows — one row per certification. The sc
 - **B:** Imię nazwisko / Podmiot (author/provider name)
 - **D:** Strona www/profilowa (website)
 - **I:** Sylabus (certification/course name)
+- **J:** Język materiałów (one or more comma/semicolon-separated languages)
 - **N:** Nr akredytacji (accreditation ID)
 - **O:** Data uzyskania akredytacji (dateFrom)
 - **P:** Data wygaśnięcia akredytacji (dateTo)
 
-Each row is a unique material entry with its author.
+Each row is a unique material entry with its author. Languages are stored in `materials.md` as a `languages` array and checked by the sync report.
 
 ### TRENERZY (trainers)
 
