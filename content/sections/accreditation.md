@@ -46,11 +46,17 @@ steps:
           - label: Wniosek o akredytację trenera
             href: documents/Szablon-wniosek-o-akredytacje-trenera-v1.1.pdf
           - label: Wniosek o akredytację dostawcy szkoleń
-            href: documents/Szablon-wniosek-o-akredytacje-dostawcy-szkolen-v1.1.pdf
+            href: documents/Szablon-wniosek-o-akredytacje-dostawcy-szkolen-v1.3.pdf
           - label: Wniosek o akredytację materiałów szkoleniowych
             href: documents/Szablon-wniosek-o-akredytacje-materialow-v1.0.docx
           - label: Załącznik - matryca celów nauczania
             href: documents/Akredytacja-materialow-matryca-celow-nauczania.xlsx
+    - title: Wyślij prośbę o wystawienie faktury proforma
+      description: >-
+        Wyślij prośbę na adres e-mail:
+      action:
+        type: email
+        address: akredytacja@pqb.org.pl
     - title: Wykonaj przelew i wyślij wniosek
       description: >-
         Wypełniony i podpisany wniosek oraz potwierdzenie przelewu na konto 05 1240 4533 1111 0011
