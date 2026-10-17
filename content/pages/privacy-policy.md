@@ -367,7 +367,7 @@ Sklep jest prowadzony przez PQB; w sprawach danych osobowych stosuje się tę po
 
 ## Załącznik – krótkie klauzule do formularzy
 
-Te teksty umieszczamy w miejscu zbierania danych. Każdy odsyła do pełnego modułu, więc przy zmianie (np. nowego dostawcy) poprawiamy tylko politykę. Adres polityki: [pqb.org.pl/polityka-prywatnosci](https://pqb.org.pl/polityka-prywatnosci).
+Te teksty umieszczamy w miejscu zbierania danych. Każdy odsyła do pełnego modułu, więc przy zmianie (np. nowego dostawcy) poprawiamy tylko politykę. Adres polityki: [pqb.org.pl/polityka-prywatnosci](/polityka-prywatnosci).
 
 **Formularz zgłoszenia na egzamin**
 

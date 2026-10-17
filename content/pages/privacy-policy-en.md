@@ -25,19 +25,19 @@ We reply without undue delay and no later than one month after receiving your me
 
 The policy consists of a common part (section 3), which applies to everyone, and modules describing specific situations. Find the module that applies to you – each covers the same points: purpose and legal basis, scope of data, source of data, recipients, retention period and whether providing the data is required.
 
-| Module | Applies to |
-| --- | --- |
-| A | Candidates taking examinations (on-site, online and remote) |
-| B | People who pay for PQB services or receive invoices from us |
-| C | PQB members and membership applicants |
-| D | Contractors, collaborators, authors, translators and company representatives |
-| E | Training providers and trainers in the accreditation process |
-| F | Employees and job applicants |
-| G | Event participants and speakers (call for papers) |
-| H | Newsletter subscribers |
-| I | People who contact us by e-mail or through social media |
-| J | Users of the pqb.org.pl website |
-| K | Customers of the voucher shop shop.pqb.org.pl |
+| Module | Applies to                                                                   |
+| ------ | ---------------------------------------------------------------------------- |
+| A      | Candidates taking examinations (on-site, online and remote)                  |
+| B      | People who pay for PQB services or receive invoices from us                  |
+| C      | PQB members and membership applicants                                        |
+| D      | Contractors, collaborators, authors, translators and company representatives |
+| E      | Training providers and trainers in the accreditation process                 |
+| F      | Employees and job applicants                                                 |
+| G      | Event participants and speakers (call for papers)                            |
+| H      | Newsletter subscribers                                                       |
+| I      | People who contact us by e-mail or through social media                      |
+| J      | Users of the pqb.org.pl website                                              |
+| K      | Customers of the voucher shop shop.pqb.org.pl                                |
 
 Where we collect data (e.g. the exam registration form, the membership declaration), we show a short notice referring to the relevant module (annex).
 
@@ -92,20 +92,20 @@ We update the policy when our processes, providers or the law change. The curren
 
 We process your data to conduct the exam, give you your result and – if you pass – issue your certificate and confirm it in the future. Below is the full list of data we collect.
 
-| Data | When | Purpose and legal basis | Who has access | Retention |
-| --- | --- | --- | --- | --- |
-| Full name, e-mail address | Exam registration | Organising the exam, providing the result, issuing the certificate – Art. 6(1)(b) GDPR | PQB; GASQ (examination system) | See “Retention period” below |
-| Nationality | Registration | Preparing aggregate exam statistics for ISTQB® – Art. 6(1)(f) GDPR | PQB; GASQ | As above |
-| Telephone number (optional) | Registration | Organisational contact – Art. 6(1)(b) GDPR | PQB; GASQ | As above |
-| Training provider, trainer (optional) | Registration | Quality oversight of accredited training and statistics – Art. 6(1)(f) GDPR | PQB | As above |
-| Exam voucher code | Registration | Confirming payment for the exam – Art. 6(1)(b) GDPR | PQB; GASQ | As above |
-| Login, IP address, device and browser information, session data | Log-in and exam | Security of the system and of the exam – Art. 6(1)(b) and (f) GDPR | GASQ | As above |
-| Answers and exam result | Exam | Marking the exam, certification – Art. 6(1)(b) GDPR; settlement of licence fees for exams held – Art. 6(1)(c) GDPR | PQB; GASQ | As above |
-| Identity document – on-site exam | Before the exam | Checking that the name matches the registration – Art. 6(1)(b) GDPR | Exam invigilator | Shown only – we do not copy or record any data from the document |
-| Photo (copy) of identity document, camera and microphone video and audio recording, screen capture – remote exam | Log-in and exam | Confirming that the right person logs in to the exam and supervising the exam – Art. 6(1)(b) GDPR | GASQ, ExamUnit and the remote proctor; PQB only when investigating irregularities | Deleted automatically 14 days after the exam |
-| Technical support requests | When you contact support | Solving the problem – Art. 6(1)(b) GDPR | PQB; GASQ | As above |
-| Full name, certificate name, number and date | After passing the exam | Entry in the public ISTQB® Successful Candidate Register – Art. 6(1)(f) GDPR | ISTQB® and anyone who checks the register | Until you object |
-| Invoice data | Purchase of an exam or voucher | Billing – module B (shop purchase – module K) | See module B | See module B |
+| Data                                                                                                             | When                           | Purpose and legal basis                                                                                            | Who has access                                                                    | Retention                                                        |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Full name, e-mail address                                                                                        | Exam registration              | Organising the exam, providing the result, issuing the certificate – Art. 6(1)(b) GDPR                             | PQB; GASQ (examination system)                                                    | See “Retention period” below                                     |
+| Nationality                                                                                                      | Registration                   | Preparing aggregate exam statistics for ISTQB® – Art. 6(1)(f) GDPR                                                 | PQB; GASQ                                                                         | As above                                                         |
+| Telephone number (optional)                                                                                      | Registration                   | Organisational contact – Art. 6(1)(b) GDPR                                                                         | PQB; GASQ                                                                         | As above                                                         |
+| Training provider, trainer (optional)                                                                            | Registration                   | Quality oversight of accredited training and statistics – Art. 6(1)(f) GDPR                                        | PQB                                                                               | As above                                                         |
+| Exam voucher code                                                                                                | Registration                   | Confirming payment for the exam – Art. 6(1)(b) GDPR                                                                | PQB; GASQ                                                                         | As above                                                         |
+| Login, IP address, device and browser information, session data                                                  | Log-in and exam                | Security of the system and of the exam – Art. 6(1)(b) and (f) GDPR                                                 | GASQ                                                                              | As above                                                         |
+| Answers and exam result                                                                                          | Exam                           | Marking the exam, certification – Art. 6(1)(b) GDPR; settlement of licence fees for exams held – Art. 6(1)(c) GDPR | PQB; GASQ                                                                         | As above                                                         |
+| Identity document – on-site exam                                                                                 | Before the exam                | Checking that the name matches the registration – Art. 6(1)(b) GDPR                                                | Exam invigilator                                                                  | Shown only – we do not copy or record any data from the document |
+| Photo (copy) of identity document, camera and microphone video and audio recording, screen capture – remote exam | Log-in and exam                | Confirming that the right person logs in to the exam and supervising the exam – Art. 6(1)(b) GDPR                  | GASQ, ExamUnit and the remote proctor; PQB only when investigating irregularities | Deleted automatically 14 days after the exam                     |
+| Technical support requests                                                                                       | When you contact support       | Solving the problem – Art. 6(1)(b) GDPR                                                                            | PQB; GASQ                                                                         | As above                                                         |
+| Full name, certificate name, number and date                                                                     | After passing the exam         | Entry in the public ISTQB® Successful Candidate Register – Art. 6(1)(f) GDPR                                       | ISTQB® and anyone who checks the register                                         | Until you object                                                 |
+| Invoice data                                                                                                     | Purchase of an exam or voucher | Billing – module B (shop purchase – module K)                                                                      | See module B                                                                      | See module B                                                     |
 
 We do not collect your PESEL number, date of birth or home address.
 
@@ -304,12 +304,12 @@ Subscription must be confirmed by clicking a link in an e-mail (double opt-in). 
 
 **Social media and community.** When you follow our profiles, comment, send a message, join our Discord server or submit changes to our repositories, we process your user name, public profile data and the content of the interaction. We do this to run PQB’s profiles and community and to reply to messages – Art. 6(1)(f) GDPR.
 
-| Service | PQB profile | Service operator |
-| --- | --- | --- |
-| LinkedIn | Polish Quality Board | LinkedIn Ireland Unlimited Company |
-| Facebook | [Polish Quality Board](https://www.facebook.com/people/Polish-Quality-Board-pqborgpl/61584071003505/) | Meta Platforms Ireland Limited |
-| GitHub | [POLISH-QUALITY-BOARD](https://github.com/POLISH-QUALITY-BOARD/) | GitHub, Inc. |
-| Discord | [“Polish Quality Board” server](https://discord.com/invite/dAPN73QDJ5) | Discord Inc. |
+| Service  | PQB profile                                                                                           | Service operator                   |
+| -------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| LinkedIn | Polish Quality Board                                                                                  | LinkedIn Ireland Unlimited Company |
+| Facebook | [Polish Quality Board](https://www.facebook.com/people/Polish-Quality-Board-pqborgpl/61584071003505/) | Meta Platforms Ireland Limited     |
+| GitHub   | [POLISH-QUALITY-BOARD](https://github.com/POLISH-QUALITY-BOARD/)                                      | GitHub, Inc.                       |
+| Discord  | [“Polish Quality Board” server](https://discord.com/invite/dAPN73QDJ5)                                | Discord Inc.                       |
 
 The operators also process your data on their own account, in accordance with their privacy policies. For page statistics on LinkedIn and Facebook, PQB is a joint controller with the service operator (Art. 26 GDPR) – we see only aggregate data on reach and audience. We process messages and interactions while they are visible on the service or while you are a member of the community; moderators of the Discord server may remove content that breaks its rules.
 
@@ -323,11 +323,11 @@ The operators also process your data on their own account, in accordance with th
 
 **Cookies used on the website.**
 
-| Name | Provider | Purpose | Duration | Consent required |
-| --- | --- | --- | --- | --- |
-| `cookie-consent` | PQB | Remembering your choice in the banner (value “granted” or “denied”) | 12 months | No (strictly necessary) |
-| `_ga` | Google | Distinguishing users in statistics | 2 years | Yes |
-| `_ga_<ID>` | Google | Keeping session state in statistics | 2 years | Yes |
+| Name             | Provider | Purpose                                                             | Duration  | Consent required        |
+| ---------------- | -------- | ------------------------------------------------------------------- | --------- | ----------------------- |
+| `cookie-consent` | PQB      | Remembering your choice in the banner (value “granted” or “denied”) | 12 months | No (strictly necessary) |
+| `_ga`            | Google   | Distinguishing users in statistics                                  | 2 years   | Yes                     |
+| `_ga_<ID>`       | Google   | Keeping session state in statistics                                 | 2 years   | Yes                     |
 
 You can also delete or block cookies in your browser settings.
 
@@ -365,7 +365,7 @@ The shop is run by PQB; this policy applies to personal data processed in it.
 
 ## Annex – short notices for forms
 
-We place these texts where data is collected. Each refers to the full module, so when something changes (e.g. a new provider), we update only the policy. Policy address: [pqb.org.pl/polityka-prywatnosci](https://pqb.org.pl/polityka-prywatnosci).
+We place these texts where data is collected. Each refers to the full module, so when something changes (e.g. a new provider), we update only the policy. Policy address: [pqb.org.pl/polityka-prywatnosci](/polityka-prywatnosci).
 
 **Exam registration form**
 
@@ -395,7 +395,6 @@ We place these texts where data is collected. Each refers to the full module, so
 
 ## Change history
 
-| Version | Date | Change |
-| --- | --- | --- |
+| Version     | Date       | Change                                     |
+| ----------- | ---------- | ------------------------------------------ |
 | 1.0 (draft) | 17.10.2026 | First version: common part and modules A–K |
-
