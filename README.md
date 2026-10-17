@@ -16,16 +16,26 @@ Polish Quality Board provides:
 
 ```text
 PQB/
+├── content/                    # Site content (Markdown + frontmatter, built by Velite)
+│   ├── pages/                  # Content of subpages
+│   │   ├── privacy-policy.md   # Privacy policy (Polish)
+│   │   └── privacy-policy-en.md # Privacy policy (English)
+│   └── sections/               # Content of one-pager sections
 ├── src/
 │   ├── app.html                # HTML shell (SvelteKit entry point)
 │   ├── app.css                 # Global styles
 │   ├── app.d.ts                # Global TypeScript declarations
 │   ├── lib/components/
-│   │   └── sections/           # One-pager sections
+│   │   └── sections/           # One-pager sections and page sections
 │   └── routes/
 │       ├── +layout.svelte      # Root layout (wraps all pages)
 │       ├── +layout.ts          # Layout load function
-│       └── +page.svelte        # Main (and only) page
+│       ├── +page.svelte        # Main page (one-pager)
+│       ├── polityka-prywatnosci/ # Privacy policy (Polish)
+│       ├── privacy-policy/     # Privacy policy (English)
+│       ├── rejestr-akredytacji/ # Accreditation registry
+│       ├── scr/                # SCR
+│       └── sylabusy/           # Syllabi
 ├── static/
 │   ├── CNAME                   # Custom domain for GitHub Pages (pqb.org.pl)
 │   ├── robots.txt
@@ -33,7 +43,8 @@ PQB/
 │   ├── documents/
 │   └── images/
 │       └── people/
-└── tests/
+├── velite.config.ts            # Content collections schema
+└── e2e/                        # Playwright end-to-end tests
 ```
 
 ## Website Content
@@ -160,7 +171,16 @@ Contact information:
 #### 6. Footer
 
 - Copyright notice for Polish Quality Board (2025)
-- Privacy policy link
+- Privacy policy link (`/polityka-prywatnosci`)
+
+### Privacy Policy (Polityka prywatności)
+
+Available in two language versions, each with a link to the other one:
+
+- Polish: `/polityka-prywatnosci`, content in `content/pages/privacy-policy.md`
+- English: `/privacy-policy`, content in `content/pages/privacy-policy-en.md`
+
+The text is written in Markdown below the frontmatter. Start sections with `##` (the page title comes from the `heading` field). Link to pages of this site with a path (e.g. `/polityka-prywatnosci`), not a full `https://pqb.org.pl/...` URL, otherwise the PR preview build fails.
 
 ## Technology Stack
 
@@ -270,4 +290,4 @@ See LICENSE file for details
 
 ---
 
-**Last Updated:** March 14, 2026
+**Last Updated:** October 18, 2026
