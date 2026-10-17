@@ -516,6 +516,16 @@ const accreditationRegistry = defineCollection({
   })
 });
 
+const privacyPolicy = defineCollection({
+  name: 'PrivacyPolicy',
+  pattern: 'pages/privacy-policy.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    body: s.markdown()
+  })
+});
+
 const accreditationRegistryTrainers = defineCollection({
   name: 'AccreditationRegistryTrainers',
   pattern: 'pages/accreditation-registry/trainers.md',
@@ -674,6 +684,7 @@ export default defineConfig({
     accreditationRegistry,
     accreditationRegistryTrainers,
     accreditationRegistryProviders,
-    accreditationRegistryMaterials
+    accreditationRegistryMaterials,
+    privacyPolicy
   }
 });
