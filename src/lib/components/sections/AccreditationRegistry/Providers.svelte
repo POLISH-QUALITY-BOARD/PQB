@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Article from '$lib/components/Article.svelte';
+  import Article from '#lib/components/Article.svelte';
   import type { AccreditationRegistryProviders } from '$velite';
   import { Tooltip } from 'bits-ui';
   import { SvelteSet } from 'svelte/reactivity';

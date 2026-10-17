@@ -1,4 +1,4 @@
-import OpenGraph from '$lib/components/OpenGraph.svelte';
+import OpenGraph from '#lib/components/OpenGraph.svelte';
 import { faker } from '@faker-js/faker';
 import { describe, expect, it, vi } from 'vitest';
 import { render } from 'vitest-browser-svelte';

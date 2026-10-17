@@ -10,7 +10,7 @@
     class="hero-body max-w-270 mx-auto px-6 text-center flex flex-col items-center justify-center"
   >
     <enhanced:img
-      src="$lib/assets/logo.webp"
+      src="#lib/assets/logo.webp"
       alt={logo.alt}
       class="mx-auto mb-6 h-32 sm:h-40 md:h-52 w-auto"
       fetchpriority="high"

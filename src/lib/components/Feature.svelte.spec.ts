@@ -1,4 +1,4 @@
-import Feature from '$lib/components/Feature.svelte';
+import Feature from '#lib/components/Feature.svelte';
 import { faker } from '@faker-js/faker';
 import { createRawSnippet } from 'svelte';
 import { describe, expect, it } from 'vitest';

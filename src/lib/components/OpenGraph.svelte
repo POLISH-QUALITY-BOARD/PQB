@@ -15,7 +15,7 @@
 
   const og = $derived.by(() => {
     const { href: url } = new URL(resolve('/'), page.url.origin);
-    const { href: imageUrl } = new URL(asset('/images/pqb-logo.png'), page.url.origin);
+    const { href: imageUrl } = new URL(asset('images/pqb-logo.png'), page.url.origin);
 
     return {
       title,

@@ -1,5 +1,5 @@
-import svelteConfig from './svelte.config.js';
-import { includeIgnoreFile } from '@eslint/compat';
+import svelteConfiimport { loadConfig } from '@sveltejs/load-config';
+const svelteConfig = (await loadConfig('./', { traverse: false }))?.config;gnoreFile } from '@eslint/compat';
 import js from '@eslint/js';
 import prettier from 'eslint-config-prettier';
 import svelte from 'eslint-plugin-svelte';

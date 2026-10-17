@@ -1,8 +1,10 @@
+import adapter from '@sveltejs/adapter-static';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { playwright } from '@vitest/browser-playwright';
 import Icons from 'unplugin-icons/vite';
+import { fileURLToPath } from 'url';
 import { type Plugin, defineConfig } from 'vitest/config';
 
 const velite = (): Plugin => ({
@@ -27,13 +29,32 @@ const velite = (): Plugin => ({
   }
 });
 
+const base = process.env.BASE_PATH;
+const origin = process.env.ORIGIN;
+
 export default defineConfig({
-  plugins: [tailwindcss(), enhancedImages(), sveltekit(), Icons({ compiler: 'svelte' }), velite()],
-  server: {
-    fs: {
-      allow: ['.velite']
+  plugins: [
+    tailwindcss(),
+    enhancedImages(),
+    sveltekit({
+      compilerOptions: {
+        // Force runes mode for the project, except for libraries.
+        // Can be removed in Svelte 6.
+        runes: ({ filename }) =>
+          filename.split(/[/\\]/).includes('node_modules') ? undefined : true
+      },
+      adapter: adapter({ pages: 'build', assets: 'build' }),
+      paths: { ...(base && ({ base } as { base: `/${string}` })), relative: false, origin }
+    }),
+    Icons({ compiler: 'svelte' }),
+    velite()
+  ],
+  resolve: {
+    alias: {
+      $velite: fileURLToPath(new URL('./.velite', import.meta.url))
     }
   },
+  server: { fs: { allow: ['.velite'] } },
   test: {
     expect: { requireAssertions: true },
     clearMocks: true,
@@ -56,7 +77,6 @@ export default defineConfig({
     },
     projects: [
       {
-        extends: './vite.config.ts',
         test: {
           name: 'client',
           browser: {
@@ -69,7 +89,6 @@ export default defineConfig({
         }
       },
       {
-        extends: './vite.config.ts',
         test: {
           name: 'server',
           environment: 'node',

@@ -1,4 +1,4 @@
-import TwitterCard from '$lib/components/TwitterCard.svelte';
+import TwitterCard from '#lib/components/TwitterCard.svelte';
 import { faker } from '@faker-js/faker';
 import { describe, expect, it, vi } from 'vitest';
 import { render } from 'vitest-browser-svelte';

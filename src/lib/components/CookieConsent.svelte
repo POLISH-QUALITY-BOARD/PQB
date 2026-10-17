@@ -4,7 +4,7 @@
     cookieConsentGranted,
     denyCookieConsent,
     grantCookieConsent
-  } from '$lib/stores/cookieConsent';
+  } from '#lib/stores/cookieConsent.js';
   import type { CookieConsent } from '$velite';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';

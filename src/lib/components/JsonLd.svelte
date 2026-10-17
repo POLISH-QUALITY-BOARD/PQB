@@ -7,7 +7,7 @@
 
   const schema = $derived.by(() => {
     const { href: url } = new URL(resolve('/'), page.url.origin);
-    const { href: logo } = new URL(asset('/images/pqb-logo.png'), page.url.origin);
+    const { href: logo } = new URL(asset('images/pqb-logo.png'), page.url.origin);
 
     return {
       '@context': 'https://schema.org',
