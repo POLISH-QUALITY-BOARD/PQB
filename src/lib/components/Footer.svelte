@@ -172,8 +172,6 @@
           <a
             // eslint-disable-next-line svelte/no-navigation-without-resolve
             href={privacyPolicy.href}
-            target="_blank"
-            rel="noopener noreferrer"
             class="text-gray-600 no-underline hover:text-primary"
           >
             {privacyPolicy.text}

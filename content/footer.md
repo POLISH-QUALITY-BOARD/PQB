@@ -50,7 +50,7 @@ additionalItems:
   - 'NIP: 5543040791'
   - 'REGON: 543007740'
 privacyPolicy:
-  href: https://docs.github.com/en/site-policy/privacy-policies
+  href: /polityka-prywatnosci
   text: Polityka prywatności
 cookieSettings:
   text: Ustawienia cookies
