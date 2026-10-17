@@ -516,14 +516,28 @@ const accreditationRegistry = defineCollection({
   })
 });
 
+const privacyPolicySchema = s.object({
+  heading: s.string(),
+  languageSwitch: s.object({
+    href: href(),
+    text: s.string(),
+    lang: s.string()
+  }),
+  body: s.markdown()
+});
+
 const privacyPolicy = defineCollection({
   name: 'PrivacyPolicy',
   pattern: 'pages/privacy-policy.md',
   single: true,
-  schema: s.object({
-    heading: s.string(),
-    body: s.markdown()
-  })
+  schema: privacyPolicySchema
+});
+
+const privacyPolicyEn = defineCollection({
+  name: 'PrivacyPolicyEn',
+  pattern: 'pages/privacy-policy-en.md',
+  single: true,
+  schema: privacyPolicySchema
 });
 
 const accreditationRegistryTrainers = defineCollection({
@@ -685,6 +699,7 @@ export default defineConfig({
     accreditationRegistryTrainers,
     accreditationRegistryProviders,
     accreditationRegistryMaterials,
-    privacyPolicy
+    privacyPolicy,
+    privacyPolicyEn
   }
 });
