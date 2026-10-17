@@ -8,7 +8,7 @@ languageSwitch:
 
 # Privacy Policy of Stowarzyszenie Polish Quality Board
 
-Version 1.0 (draft) of 17 October 2026. In the event of any discrepancy between the language versions, the Polish version prevails.
+Version 1.0 of 17 October 2026. In the event of any discrepancy between the language versions, the Polish version prevails.
 
 ## 1. Controller and contact
 
@@ -395,6 +395,6 @@ We place these texts where data is collected. Each refers to the full module, so
 
 ## Change history
 
-| Version     | Date       | Change                                     |
-| ----------- | ---------- | ------------------------------------------ |
-| 1.0 (draft) | 17.10.2026 | First version: common part and modules A–K |
+| Version | Date       | Change                                     |
+| ------- | ---------- | ------------------------------------------ |
+| 1.0     | 17.10.2026 | First version: common part and modules A–K |

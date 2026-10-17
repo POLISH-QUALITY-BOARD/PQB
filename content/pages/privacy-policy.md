@@ -8,9 +8,7 @@ languageSwitch:
 
 # Polityka prywatności Stowarzyszenia Polish Quality Board
 
-Oct 17, 2026 · @Seba
-
-Wersja 1.0 (projekt) z 17.10.2026. W razie rozbieżności między wersjami językowymi rozstrzyga wersja polska.
+Wersja 1.0 z 17.10.2026. W razie rozbieżności między wersjami językowymi rozstrzyga wersja polska.
 
 ## 1. Administrator danych i kontakt
 
@@ -397,6 +395,6 @@ Te teksty umieszczamy w miejscu zbierania danych. Każdy odsyła do pełnego mod
 
 ## Historia zmian
 
-| Wersja        | Data       | Zmiana                                      |
-| ------------- | ---------- | ------------------------------------------- |
-| 1.0 (projekt) | 17.10.2026 | Pierwsza wersja: część wspólna i moduły A–K |
+| Wersja | Data       | Zmiana                                      |
+| ------ | ---------- | ------------------------------------------- |
+| 1.0    | 17.10.2026 | Pierwsza wersja: część wspólna i moduły A–K |
