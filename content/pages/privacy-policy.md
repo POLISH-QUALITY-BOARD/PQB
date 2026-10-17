@@ -39,7 +39,7 @@ Polityka składa się z części wspólnej (rozdział 3), która dotyczy wszystk
 | J     | Użytkowników strony pqb.org.pl                                                  |
 | K     | Klientów sklepu z voucherami shop.pqb.org.pl                                    |
 
-W miejscu zbierania danych (np. formularz zgłoszenia na egzamin, deklaracja członkowska) pokazujemy krótką klauzulę z odesłaniem do właściwego modułu (załącznik).
+W miejscu zbierania danych (np. formularz zgłoszenia na egzamin, deklaracja członkowska) pokazujemy krótką klauzulę z odesłaniem do właściwego modułu.
 
 ## 3. Zasady wspólne dla wszystkich modułów
 
@@ -362,36 +362,6 @@ Sklep nie przekazuje GASQ Twoich danych. Pobiera z systemu GASQ wyłącznie kod 
 **Czy musisz podać dane.** Tak – bez imienia, nazwiska i adresu e-mail nie możemy zrealizować zamówienia ani wysłać vouchera.
 
 Sklep jest prowadzony przez PQB; w sprawach danych osobowych stosuje się tę politykę.
-
-## Załącznik – krótkie klauzule do formularzy
-
-Te teksty umieszczamy w miejscu zbierania danych. Każdy odsyła do pełnego modułu, więc przy zmianie (np. nowego dostawcy) poprawiamy tylko politykę. Adres polityki: [pqb.org.pl/polityka-prywatnosci](/polityka-prywatnosci).
-
-**Formularz zgłoszenia na egzamin**
-
-> Administratorem Twoich danych jest Stowarzyszenie Polish Quality Board w Niemczu. Przetwarzamy je, aby przeprowadzić egzamin, przekazać wynik i wydać certyfikat. Po zdaniu egzaminu wpisujemy Twoje dane do publicznego rejestru ISTQB® SCR, chyba że w ciągu 7 dni od otrzymania wyniku wniesiesz sprzeciw na info@pqb.org.pl. Egzamin odbywa się w systemie GASQ Service GmbH, który przetwarza dane na nasze polecenie. Przy egzaminie zdalnym weryfikujemy Twoją tożsamość i nagrywamy przebieg egzaminu; nagrania są usuwane po 14 dniach. Szczegóły i Twoje prawa: Polityka prywatności PQB (pqb.org.pl/polityka-prywatnosci), moduł A.
->
-> ☐ Potwierdzam, że zapoznałem(-am) się z informacją o przetwarzaniu danych.
-
-**Wiadomość z wynikiem egzaminu (zdany)**
-
-> Twoje dane zostaną wpisane do publicznego rejestru ISTQB® Successful Candidate Register (scr.istqb.org), aby pracodawcy mogli potwierdzić Twój certyfikat. Jeśli nie chcesz wpisu, odpowiedz na tę wiadomość lub napisz na info@pqb.org.pl do **\[data = 7 dni od wysłania\]**.
-
-**Deklaracja członkowska**
-
-> Administratorem Twoich danych jest Stowarzyszenie Polish Quality Board w Niemczu. Przetwarzamy je, aby rozpatrzyć deklarację i prowadzić Twoje członkostwo zgodnie ze statutem. Szczegóły i Twoje prawa: Polityka prywatności PQB (pqb.org.pl/polityka-prywatnosci), moduł C.
-
-**Zapis na newsletter**
-
-> ☐ Chcę otrzymywać newsletter Stowarzyszenia Polish Quality Board na podany adres e-mail. Mogę wypisać się w każdej chwili. Szczegóły: Polityka prywatności PQB (pqb.org.pl/polityka-prywatnosci), moduł H.
-
-**Rejestracja na wydarzenie i zgłoszenie CFP**
-
-> Administratorem Twoich danych jest Stowarzyszenie Polish Quality Board w Niemczu. Przetwarzamy je, aby obsłużyć Twoją rejestrację lub zgłoszenie. Podczas wydarzenia wykonujemy zdjęcia i nagrania, które publikujemy w celu relacji z wydarzenia. Szczegóły i Twoje prawa: Polityka prywatności PQB (pqb.org.pl/polityka-prywatnosci), moduł G.
-
-**Klauzula do umów i wniosków akredytacyjnych**
-
-> Administratorem danych osób podanych w umowie (wniosku) jest Stowarzyszenie Polish Quality Board w Niemczu. Zasady przetwarzania danych i prawa osób, których dane dotyczą, opisuje Polityka prywatności PQB (pqb.org.pl/polityka-prywatnosci), moduł D (umowy) i E (akredytacja). Strona umowy zobowiązuje się przekazać tę informację osobom, które wskazała jako reprezentantów lub osoby kontaktowe.
 
 ## Historia zmian
 

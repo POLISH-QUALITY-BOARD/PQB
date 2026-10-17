@@ -39,7 +39,7 @@ The policy consists of a common part (section 3), which applies to everyone, and
 | J      | Users of the pqb.org.pl website                                              |
 | K      | Customers of the voucher shop shop.pqb.org.pl                                |
 
-Where we collect data (e.g. the exam registration form, the membership declaration), we show a short notice referring to the relevant module (annex).
+Where we collect data (e.g. the exam registration form, the membership declaration), we show a short notice referring to the relevant module.
 
 ## 3. Rules common to all modules
 
@@ -362,36 +362,6 @@ The shop does not pass your data to GASQ. It only retrieves the voucher code fro
 **Is providing data required?** Yes – without your name and e-mail address we cannot fulfil the order or send the voucher.
 
 The shop is run by PQB; this policy applies to personal data processed in it.
-
-## Annex – short notices for forms
-
-We place these texts where data is collected. Each refers to the full module, so when something changes (e.g. a new provider), we update only the policy. Policy address: [pqb.org.pl/polityka-prywatnosci](/polityka-prywatnosci).
-
-**Exam registration form**
-
-> Your data is controlled by Stowarzyszenie Polish Quality Board, Niemcz, Poland. We process it to conduct the exam, give you your result and issue your certificate. After you pass, we enter your data in the public ISTQB® SCR register, unless you object by writing to info@pqb.org.pl within 7 days of receiving your result. The exam takes place in the system of GASQ Service GmbH, which processes data on our instructions. In a remote exam we verify your identity and record the exam; recordings are deleted after 14 days. Details and your rights: PQB Privacy Policy (pqb.org.pl/polityka-prywatnosci), module A.
->
-> ☐ I confirm that I have read the information on data processing.
-
-**Exam result message (passed)**
-
-> Your data will be entered in the public ISTQB® Successful Candidate Register (scr.istqb.org) so that employers can verify your certificate. If you do not want to be listed, reply to this message or write to info@pqb.org.pl by **\[date = 7 days after sending\]**.
-
-**Membership declaration**
-
-> Your data is controlled by Stowarzyszenie Polish Quality Board, Niemcz, Poland. We process it to consider your declaration and administer your membership in accordance with the statute. Details and your rights: PQB Privacy Policy (pqb.org.pl/polityka-prywatnosci), module C.
-
-**Newsletter sign-up**
-
-> ☐ I want to receive the newsletter of Stowarzyszenie Polish Quality Board at the e-mail address provided. I can unsubscribe at any time. Details: PQB Privacy Policy (pqb.org.pl/polityka-prywatnosci), module H.
-
-**Event registration and CFP submission**
-
-> Your data is controlled by Stowarzyszenie Polish Quality Board, Niemcz, Poland. We process it to handle your registration or submission. During the event we take photos and recordings, which we publish to report on the event. Details and your rights: PQB Privacy Policy (pqb.org.pl/polityka-prywatnosci), module G.
-
-**Notice for contracts and accreditation applications**
-
-> The controller of the data of the persons named in the contract (application) is Stowarzyszenie Polish Quality Board, Niemcz, Poland. The rules of data processing and the rights of data subjects are described in the PQB Privacy Policy (pqb.org.pl/polityka-prywatnosci), module D (contracts) and E (accreditation). The contracting party undertakes to pass this information on to the persons it has named as representatives or contact persons.
 
 ## Change history
 
