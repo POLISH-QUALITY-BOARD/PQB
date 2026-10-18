@@ -23,6 +23,8 @@ documents:
       text: Statut PQB (PL)
     - href: /documents/Statut_PQB_en-US.pdf
       text: Statutes of PQB (EN)
+    - href: /documents/exam/PQB.Egzaminy.zdalne-Przewodnik.dla.kandydata.PL.pdf
+      text: Egzaminy zdalne – przewodnik dla kandydata (PL)
 contact:
   label: Kontakt
   email:
