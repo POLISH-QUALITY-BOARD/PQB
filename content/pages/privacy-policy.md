@@ -68,7 +68,7 @@ Każdy odbiorca otrzymuje wyłącznie dane potrzebne do jego zadania. Konkretnyc
 We wszystkich modułach dane mogą dodatkowo trafić do:
 
 - Google Ireland Limited (Google Workspace) – dostawca poczty e-mail i przechowywania dokumentów PQB, jako podmiot przetwarzający na podstawie umowy powierzenia (art. 28 RODO); dane mogą być przekazywane do Google LLC w USA na zasadach z punktu 3.4,
-- organy publiczne i inne podmioty uprawnione z mocy prawa (np. sądy, organy ścigania, urzędy skarbowe) – wyłącznie na ich żądanie i w zakresie przewidzianym przepisami.
+- organów publicznych i innych podmiotów uprawnionych z mocy prawa (np. sądy, organy ścigania, urzędy skarbowe) – wyłącznie na ich żądanie i w zakresie przewidzianym przepisami.
 
 Wewnątrz PQB dostęp do danych mają tylko upoważnione osoby (członkowie Zarządu i osoby, którym powierzono konkretne zadania), zobowiązane do zachowania poufności.
 
