@@ -85,7 +85,7 @@ import{o as e}from"../chunks/Bv_PDbK_.js";import"../chunks/xihTtKlq.js";import{t
 <p>We wszystkich modułach dane mogą dodatkowo trafić do:</p>
 <ul>
 <li>Google Ireland Limited (Google Workspace) – dostawca poczty e-mail i przechowywania dokumentów PQB, jako podmiot przetwarzający na podstawie umowy powierzenia (art. 28 RODO); dane mogą być przekazywane do Google LLC w USA na zasadach z punktu 3.4,</li>
-<li>organy publiczne i inne podmioty uprawnione z mocy prawa (np. sądy, organy ścigania, urzędy skarbowe) – wyłącznie na ich żądanie i w zakresie przewidzianym przepisami.</li>
+<li>organów publicznych i innych podmiotów uprawnionych z mocy prawa (np. sądy, organy ścigania, urzędy skarbowe) – wyłącznie na ich żądanie i w zakresie przewidzianym przepisami.</li>
 </ul>
 <p>Wewnątrz PQB dostęp do danych mają tylko upoważnione osoby (członkowie Zarządu i osoby, którym powierzono konkretne zadania), zobowiązane do zachowania poufności.</p>
 <h3>3.4 Przekazywanie danych poza Europejski Obszar Gospodarczy</h3>
