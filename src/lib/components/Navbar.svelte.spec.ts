@@ -1,4 +1,4 @@
-import Navbar from '$lib/components/Navbar.svelte';
+import Navbar from '#lib/components/Navbar.svelte';
 import { faker } from '@faker-js/faker';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-svelte';

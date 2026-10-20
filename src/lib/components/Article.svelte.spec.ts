@@ -1,4 +1,4 @@
-import Article from '$lib/components/Article.svelte';
+import Article from '#lib/components/Article.svelte';
 import { faker } from '@faker-js/faker';
 import { createRawSnippet } from 'svelte';
 import { describe, expect, it } from 'vitest';

@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { replaceState } from '$app/navigation';
-  import { base } from '$app/paths';
+  import Announcement from '#lib/components/Announcement.svelte';
+  import CookieConsent from '#lib/components/CookieConsent.svelte';
+  import Footer from '#lib/components/Footer.svelte';
+  import Hero from '#lib/components/Hero.svelte';
+  import JsonLd from '#lib/components/JsonLd.svelte';
+  import Navbar from '#lib/components/Navbar.svelte';
+  import OpenGraph from '#lib/components/OpenGraph.svelte';
+  import TwitterCard from '#lib/components/TwitterCard.svelte';
+  import { goto } from '$app/navigation';
+  import { resolve } from '$app/paths';
   import { page } from '$app/state';
-  import Announcement from '$lib/components/Announcement.svelte';
-  import CookieConsent from '$lib/components/CookieConsent.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import Hero from '$lib/components/Hero.svelte';
-  import JsonLd from '$lib/components/JsonLd.svelte';
-  import Navbar from '$lib/components/Navbar.svelte';
-  import OpenGraph from '$lib/components/OpenGraph.svelte';
-  import TwitterCard from '$lib/components/TwitterCard.svelte';
   import {
     announcement,
     cookieConsent,
@@ -22,6 +22,7 @@
   } from '$velite';
   import '../app.css';
   import { onMount } from 'svelte';
+  import { SvelteURL } from 'svelte/reactivity';
 
   let { children, data } = $props();
 
@@ -30,9 +31,10 @@
       (entries) => {
         for (const { isIntersecting, target } of entries) {
           if (isIntersecting) {
-            page.url.hash = target.id;
+            const url = new SvelteURL(page.url.href);
+            url.hash = target.id;
             // eslint-disable-next-line svelte/no-navigation-without-resolve
-            replaceState(page.url, page.state);
+            goto(url, { shallow: true, replace: true, state: page.state });
           }
         }
       },
@@ -53,7 +55,7 @@
 
 <Announcement {...announcement} />
 <Navbar {...navbar} />
-{#if page.url.pathname === base + '/'}
+{#if page.url.pathname === resolve('/').slice(1)}
   <Hero {...hero} />
 {/if}
 

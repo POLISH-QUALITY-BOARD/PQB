@@ -6,7 +6,7 @@
   let { title, description, image }: TwitterCard = $props();
 
   const twitter = $derived.by(() => {
-    const { href: imageUrl } = new URL(asset('/images/pqb-logo.png'), page.url.origin);
+    const { href: imageUrl } = new URL(asset('images/pqb-logo.png'), page.url.origin);
 
     return {
       title,

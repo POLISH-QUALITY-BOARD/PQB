@@ -1,4 +1,4 @@
-import Announcement from '$lib/components/Announcement.svelte';
+import Announcement from '#lib/components/Announcement.svelte';
 import { faker } from '@faker-js/faker';
 import { describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-svelte';

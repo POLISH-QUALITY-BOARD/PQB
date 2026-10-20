@@ -1,4 +1,4 @@
-import JsonLd from '$lib/components/JsonLd.svelte';
+import JsonLd from '#lib/components/JsonLd.svelte';
 import { faker } from '@faker-js/faker';
 import { describe, expect, it, vi } from 'vitest';
 import { render } from 'vitest-browser-svelte';

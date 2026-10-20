@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Section from '$lib/components/Section.svelte';
+  import Section from '#lib/components/Section.svelte';
   import type { PrivacyPolicy } from '$velite';
   import IconTranslate from '~icons/mdi/translate';
 

@@ -1,5 +1,5 @@
-import Footer from '$lib/components/Footer.svelte';
-import { resetCookieConsent } from '$lib/stores/cookieConsent';
+import Footer from '#lib/components/Footer.svelte';
+import { resetCookieConsent } from '#lib/stores/cookieConsent.js';
 import { faker } from '@faker-js/faker';
 import { createRawSnippet } from 'svelte';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -10,7 +10,7 @@ vi.hoisted(() => {
   Object.assign(globalThis, { gtag: vi.fn() });
 });
 
-vi.mock('$lib/stores/cookieConsent', () => ({
+vi.mock('#lib/stores/cookieConsent.js', () => ({
   resetCookieConsent: vi.fn()
 }));
 
