@@ -1,4 +1,4 @@
-import Hero from '$lib/components/Hero.svelte';
+import Hero from '#lib/components/Hero.svelte';
 import { faker } from '@faker-js/faker';
 import { describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-svelte';

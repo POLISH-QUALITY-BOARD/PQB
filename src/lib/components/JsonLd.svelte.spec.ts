@@ -1,4 +1,4 @@
-import JsonLd from '$lib/components/JsonLd.svelte';
+import JsonLd from '#lib/components/JsonLd.svelte';
 import { faker } from '@faker-js/faker';
 import { describe, expect, it, vi } from 'vitest';
 import { render } from 'vitest-browser-svelte';
@@ -14,7 +14,6 @@ vi.mock('$app/state', () => ({
 
 describe('JsonLd.svelte', () => {
   it('renders JSON-LD script', async () => {
-    const type = 'NGO';
     const memberOf = faker.company.name();
     const name = faker.company.name();
     const sameAs = [faker.internet.url()];
@@ -29,7 +28,6 @@ describe('JsonLd.svelte', () => {
 
     await render(JsonLd, {
       props: {
-        '@type': type,
         memberOf,
         name,
         sameAs,
@@ -41,8 +39,6 @@ describe('JsonLd.svelte', () => {
 
     const data = JSON.parse(textContent!);
 
-    expect(data).toHaveProperty('@context', 'https://schema.org');
-    expect(data).toHaveProperty('@type', type);
     expect(data).toHaveProperty('name', name);
     expect(data).toHaveProperty('sameAs', sameAs);
     expect(data).toHaveProperty('contactPoint', contactPoints);

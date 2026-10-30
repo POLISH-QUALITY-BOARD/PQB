@@ -1,9 +1,9 @@
-import CookieConsent from '$lib/components/CookieConsent.svelte';
+import CookieConsent from '#lib/components/CookieConsent.svelte';
 import {
   cookieConsentDenied,
   cookieConsentGranted,
   resetCookieConsent
-} from '$lib/stores/cookieConsent';
+} from '#lib/stores/cookieConsent.js';
 import { faker } from '@faker-js/faker';
 import { createRawSnippet } from 'svelte';
 import { get } from 'svelte/store';

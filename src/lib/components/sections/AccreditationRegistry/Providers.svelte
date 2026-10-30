@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Article from '$lib/components/Article.svelte';
-  import type { AccreditationRegistryProviders } from '$velite';
+  import Article from '#lib/components/Article.svelte';
+  import type { AccreditationRegistryProviders } from '#velite';
   import { Tooltip } from 'bits-ui';
   import { SvelteSet } from 'svelte/reactivity';
   import type { Picture } from 'vite-imagetools';

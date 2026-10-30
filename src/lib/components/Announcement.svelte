@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Announcement } from '$velite';
+  import type { Announcement } from '#velite';
 
   let { body }: Announcement = $props();
 </script>

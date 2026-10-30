@@ -1,6 +1,6 @@
 <script>
-  import Article from '$lib/components/Article.svelte';
-  import Feature from '$lib/components/Feature.svelte';
+  import Article from '#lib/components/Article.svelte';
+  import Feature from '#lib/components/Feature.svelte';
   import { Tabs } from 'bits-ui';
   import { fly } from 'svelte/transition';
   import IconDownload from '~icons/mdi/download';

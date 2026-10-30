@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Article from '$lib/components/Article.svelte';
-  import Feature from '$lib/components/Feature.svelte';
-  import Section from '$lib/components/Section.svelte';
-  import type { Join } from '$velite';
+  import Article from '#lib/components/Article.svelte';
+  import Feature from '#lib/components/Feature.svelte';
+  import Section from '#lib/components/Section.svelte';
+  import type { Join } from '#velite';
   import IconAccountGroupOutline from '~icons/mdi/account-group-outline';
   import IconCertificateOutline from '~icons/mdi/certificate-outline';
   import IconCheck from '~icons/mdi/check';

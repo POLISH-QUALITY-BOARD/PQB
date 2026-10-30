@@ -1,6 +1,6 @@
 <script lang="ts">
+  import type { Navbar } from '#velite';
   import { resolve } from '$app/paths';
-  import type { Navbar } from '$velite';
   import { NavigationMenu } from 'bits-ui';
   import { slide } from 'svelte/transition';
   import IconAccountPlusOutline from '~icons/mdi/account-plus-outline';
@@ -49,7 +49,7 @@
       class="flex items-center gap-3 no-underline shrink-0"
       data-testid="navbar-brand-link"
     >
-      <enhanced:img src="$lib/assets/brand.webp" alt={brand.alt} class="h-12 w-auto" />
+      <enhanced:img src="#lib/assets/brand.webp" alt={brand.alt} class="h-12 w-auto" />
     </a>
 
     <NavigationMenu.Root

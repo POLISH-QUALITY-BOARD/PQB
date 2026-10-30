@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Dictionary } from '$velite';
+  import type { Dictionary } from '#velite';
   import IconBookOpenVariant from '~icons/mdi/book-open-variant';
   import IconOpenInNew from '~icons/mdi/open-in-new';
 

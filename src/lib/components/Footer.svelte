@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { resetCookieConsent } from '$lib/stores/cookieConsent';
-  import type { Footer } from '$velite';
+  import { resetCookieConsent } from '#lib/stores/cookieConsent.js';
+  import type { Footer } from '#velite';
   import IconEmailOutline from '~icons/mdi/email-outline';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
   import IconMapMarkerOutline from '~icons/mdi/map-marker-outline';
@@ -28,7 +28,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
       <div class="lg:col-span-1">
         <div class="mb-5">
-          <enhanced:img src="$lib/assets/brand.webp" alt={brand.alt} class="h-12 w-auto" />
+          <enhanced:img src="#lib/assets/brand.webp" alt={brand.alt} class="h-12 w-auto" />
         </div>
         <div class="text-sm text-gray-600 leading-relaxed mb-6">
           <!-- eslint-disable-next-line svelte/no-at-html-tags -->

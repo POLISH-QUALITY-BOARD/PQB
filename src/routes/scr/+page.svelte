@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Section from '$lib/components/Section.svelte';
-  import { scrPage } from '$velite';
+  import Section from '#lib/components/Section.svelte';
+  import { scrPage } from '#velite';
   import IconCheck from '~icons/mdi/check';
   import IconDownload from '~icons/mdi/download';
 

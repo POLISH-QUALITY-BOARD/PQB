@@ -1,4 +1,4 @@
-import Section from '$lib/components/Section.svelte';
+import Section from '#lib/components/Section.svelte';
 import { faker } from '@faker-js/faker';
 import { createRawSnippet } from 'svelte';
 import { describe, expect, it } from 'vitest';
