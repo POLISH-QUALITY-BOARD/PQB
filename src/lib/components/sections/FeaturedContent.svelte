@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Section from '$lib/components/Section.svelte';
-  import type { FeaturedContent } from '$velite';
+  import Section from '#lib/components/Section.svelte';
+  import type { FeaturedContent } from '#velite';
   import IconArrowDown from '~icons/mdi/arrow-down';
   import IconArrowUp from '~icons/mdi/arrow-up';
   import IconFileDocumentOutline from '~icons/mdi/file-document-outline';

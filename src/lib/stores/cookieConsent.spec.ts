@@ -4,11 +4,11 @@ import {
   denyCookieConsent,
   grantCookieConsent,
   resetCookieConsent
-} from '$lib/stores/cookieConsent';
+} from '#lib/stores/cookieConsent.js';
 import { get } from 'svelte/store';
 import { describe, expect, it, vi } from 'vitest';
 
-vi.mock('$app/environment', () => ({ browser: true }));
+vi.mock('$app/env', () => ({ browser: true }));
 
 vi.hoisted(() => {
   Object.assign(globalThis, {
@@ -24,9 +24,9 @@ vi.hoisted(() => {
 
 describe('cookieConsent', () => {
   it('does not sync on server', async () => {
-    vi.resetModules().doMock('$app/environment', () => ({ browser: false }));
+    vi.resetModules().doMock('$app/env', () => ({ browser: false }));
 
-    const { cookieConsentGranted } = await import('$lib/stores/cookieConsent');
+    const { cookieConsentGranted } = await import('#lib/stores/cookieConsent.js');
 
     expect(get(cookieConsentGranted)).toBe(false);
     expect(localStorage.getItem).not.toHaveBeenCalled();

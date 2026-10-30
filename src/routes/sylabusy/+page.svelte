@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Section from '$lib/components/Section.svelte';
-  import { syllabi } from '$velite';
+  import Section from '#lib/components/Section.svelte';
+  import { syllabi } from '#velite';
   import { untrack } from 'svelte';
   import IconArrowDown from '~icons/mdi/arrow-down';
   import IconArrowUp from '~icons/mdi/arrow-up';

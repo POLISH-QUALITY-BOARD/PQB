@@ -1,6 +1,6 @@
 <script>
-  import Article from '$lib/components/Article.svelte';
-  import Feature from '$lib/components/Feature.svelte';
+  import Article from '#lib/components/Article.svelte';
+  import Feature from '#lib/components/Feature.svelte';
   import IconAccountMultipleOutline from '~icons/mdi/account-multiple-outline';
   import IconEyeOutline from '~icons/mdi/eye-outline';
   import IconFlagOutline from '~icons/mdi/flag-outline';

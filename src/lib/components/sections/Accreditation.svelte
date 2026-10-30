@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Article from '$lib/components/Article.svelte';
-  import Section from '$lib/components/Section.svelte';
-  import type { Accreditation } from '$velite';
+  import Article from '#lib/components/Article.svelte';
+  import Section from '#lib/components/Section.svelte';
+  import type { Accreditation } from '#velite';
   import IconArrowRight from '~icons/mdi/arrow-right';
   import IconCheck from '~icons/mdi/check';
   import IconDownload from '~icons/mdi/download';

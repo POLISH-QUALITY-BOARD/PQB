@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Article from '$lib/components/Article.svelte';
-  import type { About } from '$velite';
+  import Article from '#lib/components/Article.svelte';
+  import type { About } from '#velite';
   import type { Picture } from 'vite-imagetools';
   import IconLinkedin from '~icons/simple-icons/linkedin';
 

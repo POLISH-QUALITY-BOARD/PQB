@@ -4,8 +4,8 @@
     cookieConsentGranted,
     denyCookieConsent,
     grantCookieConsent
-  } from '$lib/stores/cookieConsent';
-  import type { CookieConsent } from '$velite';
+  } from '#lib/stores/cookieConsent.js';
+  import type { CookieConsent } from '#velite';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import IconCookieOutline from '~icons/mdi/cookie-outline';

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Scr } from '$velite';
+  import type { Scr } from '#velite';
   import IconAccountPlus from '~icons/mdi/account-plus';
   import IconCertificateOutline from '~icons/mdi/certificate-outline';
   import IconOpenInNew from '~icons/mdi/open-in-new';
