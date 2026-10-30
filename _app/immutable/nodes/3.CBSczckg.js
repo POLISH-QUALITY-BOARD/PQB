@@ -1,4 +1,4 @@
-import{o as e}from"../chunks/Bv_PDbK_.js";import"../chunks/xihTtKlq.js";import{t}from"../chunks/BUc5f2iN.js";var n={heading:`Polityka prywatności`,languageSwitch:{href:`/privacy-policy`,text:`English version`,lang:`en`},body:`<h1>Polityka prywatności Stowarzyszenia Polish Quality Board</h1>
+import{r as e}from"../chunks/BNY9Rdgo.js";import{t}from"../chunks/DZoRR3XV.js";var n={heading:`Polityka prywatności`,languageSwitch:{href:`/privacy-policy`,text:`English version`,lang:`en`},body:`<h1>Polityka prywatności Stowarzyszenia Polish Quality Board</h1>
 <p>Wersja 1.0 z 17.10.2026. W razie rozbieżności między wersjami językowymi rozstrzyga wersja polska.</p>
 <h2>1. Administrator danych i kontakt</h2>
 <p>Administratorem Twoich danych osobowych w rozumieniu art. 4 pkt 7 RODO (rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679) jest <strong>Stowarzyszenie Polish Quality Board</strong> z siedzibą w Niemczu, ul. ks. H. Mrossy 4c/14, 86-032 Niemcz, KRS 0001200368, NIP 5543040791, REGON 543007740 (dalej: „PQB”).</p>

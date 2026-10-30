@@ -1,4 +1,4 @@
-import{o as e}from"../chunks/Bv_PDbK_.js";import"../chunks/xihTtKlq.js";import{t}from"../chunks/BUc5f2iN.js";var n={heading:`Privacy Policy`,languageSwitch:{href:`/polityka-prywatnosci`,text:`Wersja polska`,lang:`pl`},body:`<h1>Privacy Policy of Stowarzyszenie Polish Quality Board</h1>
+import{r as e}from"../chunks/BNY9Rdgo.js";import{t}from"../chunks/DZoRR3XV.js";var n={heading:`Privacy Policy`,languageSwitch:{href:`/polityka-prywatnosci`,text:`Wersja polska`,lang:`pl`},body:`<h1>Privacy Policy of Stowarzyszenie Polish Quality Board</h1>
 <p>Version 1.0 of 17 October 2026. In the event of any discrepancy between the language versions, the Polish version prevails.</p>
 <h2>1. Controller and contact</h2>
 <p>The controller of your personal data within the meaning of Art. 4(7) GDPR (Regulation (EU) 2016/679 of the European Parliament and of the Council) is <strong>Stowarzyszenie Polish Quality Board</strong>, an association with its registered office in Niemcz, ul. ks. H. Mrossy 4c/14, 86-032 Niemcz, Poland, KRS 0001200368, NIP (tax ID) 5543040791, REGON 543007740 (“PQB”).</p>
