@@ -33,6 +33,7 @@
           if (isIntersecting) {
             const url = new SvelteURL(page.url.href);
             url.hash = target.id;
+            // eslint-disable-next-line svelte/no-navigation-without-resolve
             goto(url.href, { shallow: true, replace: true, state: page.state });
           }
         }
