@@ -122,7 +122,7 @@
                     <span
                       class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wide cursor-help {active
                         ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                        : 'bg-gray-100 text-gray-400 border border-gray-200'}"
+                        : 'bg-gray-100 text-gray-600 border border-gray-200'}"
                     >
                       {#if active}
                         <IconShieldCheck aria-hidden="true" width="9" height="9" class="shrink-0" />
