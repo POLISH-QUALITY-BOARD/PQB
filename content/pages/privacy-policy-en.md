@@ -8,7 +8,7 @@ languageSwitch:
 
 # Privacy Policy of Stowarzyszenie Polish Quality Board
 
-Version 1.0 of 17 October 2026. In the event of any discrepancy between the language versions, the Polish version prevails.
+Version 1.1 of 7 November 2026. In the event of any discrepancy between the language versions, the Polish version prevails.
 
 ## 1. Controller and contact
 
@@ -67,7 +67,7 @@ Each recipient receives only the data needed for its task. Specific recipients a
 
 In all modules, data may also be disclosed to:
 
-- Google Ireland Limited (Google Workspace) – provider of PQB’s e-mail and document storage, acting as a processor under a data processing agreement (Art. 28 GDPR); data may be transferred to Google LLC in the USA on the terms set out in section 3.4,
+- Google Ireland Limited (Google Workspace and Google Cloud) – provider of PQB’s e-mail, document storage and the cloud infrastructure on which PQB’s applications run (e.g. the partner portal); the applications and their logs are stored in the Warsaw region. Google acts as a processor under a data processing agreement (Art. 28 GDPR); data may be transferred to Google LLC in the USA on the terms set out in section 3.4,
 - public authorities and other bodies entitled by law (e.g. courts, law enforcement, tax offices) – only at their request and to the extent provided by law.
 
 Within PQB, only authorised persons (Board members and people entrusted with specific tasks) have access to data, and they are bound by confidentiality.
@@ -121,7 +121,7 @@ The accounting office and the bank have no access to examination data.
 
 **Entry in the SCR.** After you pass the exam, we enter your data in the register at [scr.istqb.org](https://scr.istqb.org) so that employers and others can verify your certificate. If you do not want to be listed, write to <info@pqb.org.pl> within 7 days of receiving your result – we will then not enter your data. You may also object later; we will then remove the entry or have it removed.
 
-**Source of data.** You provide the data yourself on the registration form. If a training provider or your employer registered you, we received your name, e-mail address and training information from them (Art. 14 GDPR).
+**Source of data.** You provide the data yourself on the registration form. If a PQB partner – a training provider, an exam centre or your employer – registered you, including via the partner portal, we received your name, e-mail address, citizenship and information about the training or the date of the exam session from them (Art. 14 GDPR). In the portal, the partner can only access the data it entered itself.
 
 **Retention period.**
 
@@ -190,11 +190,13 @@ This module covers people who enter into civil-law contracts with PQB (mandate c
 
 - Person entering into a contract: full name, address, e-mail address, telephone number, bank account number; for contracts on which PQB withholds tax or pays social security contributions – also PESEL number, tax office and data required by ZUS (Social Insurance Institution); for sole traders – NIP.
 - Company representative or contact person: full name, position or role, e-mail address, telephone number.
+- Partner portal users: additionally, the e-mail address of the account used to sign in to the portal, IP address, and the date and time of portal use.
 
 **Purposes and legal bases.**
 
 - Concluding and performing a contract with an individual – Art. 6(1)(b) GDPR.
 - Contact with representatives of companies and organisations when concluding and performing contracts – Art. 6(1)(f) GDPR.
+- Providing the partner portal and keeping it secure – Art. 6(1)(f) GDPR (performance of the agreement with the partner).
 - Tax, social security and copyright law obligations – Art. 6(1)(c) GDPR.
 - Attributing authorship and documenting rights to works (questions, translations, materials) – Art. 6(1)(f) GDPR.
 
@@ -202,7 +204,7 @@ This module covers people who enter into civil-law contracts with PQB (mandate c
 
 **Source of data.** From you or from the company or organisation you represent or that named you as a contact person (Art. 14 GDPR).
 
-**Retention period.** For the term of the contract and then for the period required by tax law (module B) and the limitation period for claims (section 3.5). If the contract concerns a transfer of copyright or a licence – until those rights expire.
+**Retention period.** For the term of the contract and then for the period required by tax law (module B) and the limitation period for claims (section 3.5). If the contract concerns a transfer of copyright or a licence – until those rights expire. Partner portal logs – 30 days.
 
 **Is providing data required?** Yes – without it we cannot conclude or perform the contract.
 
@@ -365,6 +367,7 @@ The shop is run by PQB; this policy applies to personal data processed in it.
 
 ## Change history
 
-| Version | Date       | Change                                     |
-| ------- | ---------- | ------------------------------------------ |
-| 1.0     | 17.10.2026 | First version: common part and modules A–K |
+| Version | Date       | Change                                                                                                                   |
+| ------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 1.0     | 17.10.2026 | First version: common part and modules A–K                                                                               |
+| 1.1     | 07.11.2026 | Google Cloud in section 3.3; source of data in module A (partner portal, exam centres); partner portal users in module D |
