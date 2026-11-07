@@ -1,5 +1,5 @@
 import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";var n={heading:`Privacy Policy`,languageSwitch:{href:`/polityka-prywatnosci`,text:`Wersja polska`,lang:`pl`},body:`<h1>Privacy Policy of Stowarzyszenie Polish Quality Board</h1>
-<p>Version 1.0 of 17 October 2026. In the event of any discrepancy between the language versions, the Polish version prevails.</p>
+<p>Version 1.1 of 7 November 2026. In the event of any discrepancy between the language versions, the Polish version prevails.</p>
 <h2>1. Controller and contact</h2>
 <p>The controller of your personal data within the meaning of Art. 4(7) GDPR (Regulation (EU) 2016/679 of the European Parliament and of the Council) is <strong>Stowarzyszenie Polish Quality Board</strong>, an association with its registered office in Niemcz, ul. ks. H. Mrossy 4c/14, 86-032 Niemcz, Poland, KRS 0001200368, NIP (tax ID) 5543040791, REGON 543007740 (“PQB”).</p>
 <p>PQB has not appointed a data protection officer. For data protection matters, contact us:</p>
@@ -84,7 +84,7 @@ import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";v
 <p>Each recipient receives only the data needed for its task. Specific recipients are listed in each module. For example, the accounting office and the bank see only billing data (module B) – they have no access to exam results or recordings.</p>
 <p>In all modules, data may also be disclosed to:</p>
 <ul>
-<li>Google Ireland Limited (Google Workspace) – provider of PQB’s e-mail and document storage, acting as a processor under a data processing agreement (Art. 28 GDPR); data may be transferred to Google LLC in the USA on the terms set out in section 3.4,</li>
+<li>Google Ireland Limited (Google Workspace and Google Cloud) – provider of PQB’s e-mail, document storage and the cloud infrastructure on which PQB’s applications run (e.g. the partner portal); the applications and their logs are stored in the Warsaw region. Google acts as a processor under a data processing agreement (Art. 28 GDPR); data may be transferred to Google LLC in the USA on the terms set out in section 3.4,</li>
 <li>public authorities and other bodies entitled by law (e.g. courts, law enforcement, tax offices) – only at their request and to the extent provided by law.</li>
 </ul>
 <p>Within PQB, only authorised persons (Board members and people entrusted with specific tasks) have access to data, and they are bound by confidentiality.</p>
@@ -205,7 +205,7 @@ import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";v
 </ul>
 <p>The accounting office and the bank have no access to examination data.</p>
 <p><strong>Entry in the SCR.</strong> After you pass the exam, we enter your data in the register at <a href="https://scr.istqb.org" rel="noopener noreferrer" target="_blank">scr.istqb.org</a> so that employers and others can verify your certificate. If you do not want to be listed, write to <a href="mailto:info@pqb.org.pl">info@pqb.org.pl</a> within 7 days of receiving your result – we will then not enter your data. You may also object later; we will then remove the entry or have it removed.</p>
-<p><strong>Source of data.</strong> You provide the data yourself on the registration form. If a training provider or your employer registered you, we received your name, e-mail address and training information from them (Art. 14 GDPR).</p>
+<p><strong>Source of data.</strong> You provide the data yourself on the registration form. If a PQB partner – a training provider, an exam centre or your employer – registered you, including via the partner portal, we received your name, e-mail address, citizenship and information about the training or the date of the exam session from them (Art. 14 GDPR). In the portal, the partner can only access the data it entered itself.</p>
 <p><strong>Retention period.</strong></p>
 <ul>
 <li>Passed exam: for as long as the certificate is valid; after it expires we delete the data within 6 months. ISTQB® certificates are generally issued without an expiry date – in that case we keep the data for as long as needed to confirm the authenticity of the certificate and to reissue it (Art. 6(1)(f) GDPR).</li>
@@ -258,17 +258,19 @@ import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";v
 <ul>
 <li>Person entering into a contract: full name, address, e-mail address, telephone number, bank account number; for contracts on which PQB withholds tax or pays social security contributions – also PESEL number, tax office and data required by ZUS (Social Insurance Institution); for sole traders – NIP.</li>
 <li>Company representative or contact person: full name, position or role, e-mail address, telephone number.</li>
+<li>Partner portal users: additionally, the e-mail address of the account used to sign in to the portal, IP address, and the date and time of portal use.</li>
 </ul>
 <p><strong>Purposes and legal bases.</strong></p>
 <ul>
 <li>Concluding and performing a contract with an individual – Art. 6(1)(b) GDPR.</li>
 <li>Contact with representatives of companies and organisations when concluding and performing contracts – Art. 6(1)(f) GDPR.</li>
+<li>Providing the partner portal and keeping it secure – Art. 6(1)(f) GDPR (performance of the agreement with the partner).</li>
 <li>Tax, social security and copyright law obligations – Art. 6(1)(c) GDPR.</li>
 <li>Attributing authorship and documenting rights to works (questions, translations, materials) – Art. 6(1)(f) GDPR.</li>
 </ul>
 <p><strong>Recipients.</strong> Recipients from module B (remuneration and invoices). The Social Insurance Institution (ZUS) and tax offices – to the extent required by law. Partner organisations with which PQB runs joint projects (e.g. a joint exam question pool) and ISTQB® – the name of the author or translator and information about the work, where the agreement with the partner requires it.</p>
 <p><strong>Source of data.</strong> From you or from the company or organisation you represent or that named you as a contact person (Art. 14 GDPR).</p>
-<p><strong>Retention period.</strong> For the term of the contract and then for the period required by tax law (module B) and the limitation period for claims (section 3.5). If the contract concerns a transfer of copyright or a licence – until those rights expire.</p>
+<p><strong>Retention period.</strong> For the term of the contract and then for the period required by tax law (module B) and the limitation period for claims (section 3.5). If the contract concerns a transfer of copyright or a licence – until those rights expire. Partner portal logs – 30 days.</p>
 <p><strong>Is providing data required?</strong> Yes – without it we cannot conclude or perform the contract.</p>
 <h2>Module E – Accreditation of training providers and trainers</h2>
 <p>PQB accredits training providers (ATPs) and trainers in accordance with ISTQB® rules. Applications are accepted at <a href="mailto:akredytacja@pqb.org.pl">akredytacja@pqb.org.pl</a>.</p>
@@ -455,4 +457,9 @@ import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";v
 
 
 
-<table><thead><tr><th>Version</th><th>Date</th><th>Change</th></tr></thead><tbody><tr><td>1.0</td><td>17.10.2026</td><td>First version: common part and modules A–K</td></tr></tbody></table>`};function r(r){t(r,e(()=>n,{lang:`en`}))}export{r as component};
+
+
+
+
+
+<table><thead><tr><th>Version</th><th>Date</th><th>Change</th></tr></thead><tbody><tr><td>1.0</td><td>17.10.2026</td><td>First version: common part and modules A–K</td></tr><tr><td>1.1</td><td>07.11.2026</td><td>Google Cloud in section 3.3; source of data in module A (partner portal, exam centres); partner portal users in module D</td></tr></tbody></table>`};function r(r){t(r,e(()=>n,{lang:`en`}))}export{r as component};

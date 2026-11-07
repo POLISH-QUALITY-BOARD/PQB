@@ -1,5 +1,5 @@
 import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";var n={heading:`Polityka prywatności`,languageSwitch:{href:`/privacy-policy`,text:`English version`,lang:`en`},body:`<h1>Polityka prywatności Stowarzyszenia Polish Quality Board</h1>
-<p>Wersja 1.0 z 17.10.2026. W razie rozbieżności między wersjami językowymi rozstrzyga wersja polska.</p>
+<p>Wersja 1.1 z 07.11.2026. W razie rozbieżności między wersjami językowymi rozstrzyga wersja polska.</p>
 <h2>1. Administrator danych i kontakt</h2>
 <p>Administratorem Twoich danych osobowych w rozumieniu art. 4 pkt 7 RODO (rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679) jest <strong>Stowarzyszenie Polish Quality Board</strong> z siedzibą w Niemczu, ul. ks. H. Mrossy 4c/14, 86-032 Niemcz, KRS 0001200368, NIP 5543040791, REGON 543007740 (dalej: „PQB”).</p>
 <p>PQB nie wyznaczyło inspektora ochrony danych. W sprawach ochrony danych osobowych kontaktuj się z nami:</p>
@@ -84,7 +84,7 @@ import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";v
 <p>Każdy odbiorca otrzymuje wyłącznie dane potrzebne do jego zadania. Konkretnych odbiorców wskazujemy w każdym module. Na przykład biuro rachunkowe i bank widzą tylko dane rozliczeniowe (moduł B) – nie mają dostępu do wyników egzaminów ani nagrań.</p>
 <p>We wszystkich modułach dane mogą dodatkowo trafić do:</p>
 <ul>
-<li>Google Ireland Limited (Google Workspace) – dostawca poczty e-mail i przechowywania dokumentów PQB, jako podmiot przetwarzający na podstawie umowy powierzenia (art. 28 RODO); dane mogą być przekazywane do Google LLC w USA na zasadach z punktu 3.4,</li>
+<li>Google Ireland Limited (Google Workspace i Google Cloud) – dostawca poczty e-mail, przechowywania dokumentów oraz infrastruktury chmurowej, na której działają aplikacje PQB (np. portal partnerów); aplikacje i ich logi przechowujemy w regionie Warszawa. Google działa jako podmiot przetwarzający na podstawie umowy powierzenia (art. 28 RODO); dane mogą być przekazywane do Google LLC w USA na zasadach z punktu 3.4,</li>
 <li>organów publicznych i innych podmiotów uprawnionych z mocy prawa (np. sądy, organy ścigania, urzędy skarbowe) – wyłącznie na ich żądanie i w zakresie przewidzianym przepisami.</li>
 </ul>
 <p>Wewnątrz PQB dostęp do danych mają tylko upoważnione osoby (członkowie Zarządu i osoby, którym powierzono konkretne zadania), zobowiązane do zachowania poufności.</p>
@@ -205,7 +205,7 @@ import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";v
 </ul>
 <p>Biuro rachunkowe i bank nie mają dostępu do danych egzaminacyjnych.</p>
 <p><strong>Wpis do rejestru SCR.</strong> Po zdaniu egzaminu wpisujemy Twoje dane do rejestru <a href="https://scr.istqb.org" rel="noopener noreferrer" target="_blank">scr.istqb.org</a>, aby pracodawcy i inne osoby mogli potwierdzić Twój certyfikat. Jeśli nie chcesz wpisu, napisz na <a href="mailto:info@pqb.org.pl">info@pqb.org.pl</a> w ciągu 7 dni od otrzymania wyniku – wtedy nie wpiszemy Twoich danych. Sprzeciw możesz wnieść także później; usuniemy wtedy wpis lub zlecimy jego usunięcie.</p>
-<p><strong>Źródło danych.</strong> Dane podajesz sam w formularzu zgłoszeniowym. Jeżeli zgłosił Cię dostawca szkolenia lub pracodawca, otrzymaliśmy od niego Twoje imię i nazwisko, adres e-mail oraz informację o szkoleniu (art. 14 RODO).</p>
+<p><strong>Źródło danych.</strong> Dane podajesz sam w formularzu zgłoszeniowym. Jeżeli zgłosił Cię partner PQB – dostawca szkolenia, centrum egzaminacyjne lub pracodawca – w tym przez portal partnerów, otrzymaliśmy od niego Twoje imię i nazwisko, adres e-mail, obywatelstwo oraz informację o szkoleniu lub terminie sesji egzaminacyjnej (art. 14 RODO). Partner ma dostęp w portalu wyłącznie do danych, które sam wprowadził.</p>
 <p><strong>Okres przechowywania.</strong></p>
 <ul>
 <li>Zdany egzamin: przez okres ważności certyfikatu; po jego wygaśnięciu usuwamy dane w ciągu 6 miesięcy. Certyfikaty ISTQB® są co do zasady bezterminowe – wtedy przechowujemy dane tak długo, jak jest to potrzebne do potwierdzania autentyczności certyfikatu i jego ponownego wydania (art. 6 ust. 1 lit. f RODO).</li>
@@ -258,17 +258,19 @@ import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";v
 <ul>
 <li>Osoba zawierająca umowę: imię i nazwisko, adres, adres e-mail, numer telefonu, numer rachunku bankowego; przy umowach, od których PQB odprowadza podatek lub składki – także PESEL, urząd skarbowy i dane wymagane przez ZUS; przy działalności gospodarczej – NIP.</li>
 <li>Osoba reprezentująca firmę lub osoba kontaktowa: imię i nazwisko, stanowisko lub funkcja, adres e-mail, numer telefonu.</li>
+<li>Użytkownicy portalu partnerów: dodatkowo adres e-mail konta, którym logują się do portalu, adres IP oraz data i godzina korzystania z portalu.</li>
 </ul>
 <p><strong>Cele i podstawy prawne.</strong></p>
 <ul>
 <li>Zawarcie i wykonanie umowy z osobą fizyczną – art. 6 ust. 1 lit. b RODO.</li>
 <li>Kontakt z przedstawicielami firm i organizacji przy zawieraniu i wykonywaniu umów – art. 6 ust. 1 lit. f RODO.</li>
+<li>Udostępnienie portalu partnerów i zapewnienie jego bezpieczeństwa – art. 6 ust. 1 lit. f RODO (wykonanie umowy z partnerem).</li>
 <li>Obowiązki podatkowe, ubezpieczeniowe i wynikające z prawa autorskiego – art. 6 ust. 1 lit. c RODO.</li>
 <li>Oznaczanie autorstwa i dokumentowanie praw do utworów (pytań, tłumaczeń, materiałów) – art. 6 ust. 1 lit. f RODO.</li>
 </ul>
 <p><strong>Odbiorcy.</strong> Odbiorcy z modułu B (wynagrodzenia i faktury). Zakład Ubezpieczeń Społecznych i urzędy skarbowe – w zakresie wymaganym przepisami. Partnerskie organizacje, z którymi PQB prowadzi wspólne projekty (np. wspólną pulę pytań egzaminacyjnych) i ISTQB® – imię i nazwisko autora lub tłumacza oraz informacja o utworze, jeśli wymaga tego umowa z partnerem.</p>
 <p><strong>Źródło danych.</strong> Od Ciebie albo od firmy lub organizacji, którą reprezentujesz lub która wskazała Cię jako osobę kontaktową (art. 14 RODO).</p>
-<p><strong>Okres przechowywania.</strong> Przez czas trwania umowy, a następnie przez okres wymagany przepisami podatkowymi (moduł B) i okres przedawnienia roszczeń (punkt 3.5). Jeżeli umowa dotyczy przeniesienia praw autorskich lub udzielenia licencji – do wygaśnięcia tych praw.</p>
+<p><strong>Okres przechowywania.</strong> Przez czas trwania umowy, a następnie przez okres wymagany przepisami podatkowymi (moduł B) i okres przedawnienia roszczeń (punkt 3.5). Jeżeli umowa dotyczy przeniesienia praw autorskich lub udzielenia licencji – do wygaśnięcia tych praw. Logi portalu partnerów – 30 dni.</p>
 <p><strong>Czy musisz podać dane.</strong> Tak – bez nich nie możemy zawrzeć ani wykonać umowy.</p>
 <h2>Moduł E – Akredytacja dostawców szkoleń i trenerów</h2>
 <p>PQB akredytuje dostawców szkoleń (ATP) i trenerów zgodnie z zasadami ISTQB®. Wnioski przyjmujemy pod adresem <a href="mailto:akredytacja@pqb.org.pl">akredytacja@pqb.org.pl</a>.</p>
@@ -455,4 +457,9 @@ import{r as e}from"../chunks/B0orv7Jf.js";import{t}from"../chunks/CK8pi8Z3.js";v
 
 
 
-<table><thead><tr><th>Wersja</th><th>Data</th><th>Zmiana</th></tr></thead><tbody><tr><td>1.0</td><td>17.10.2026</td><td>Pierwsza wersja: część wspólna i moduły A–K</td></tr></tbody></table>`};function r(r){t(r,e(()=>n,{lang:`pl`}))}export{r as component};
+
+
+
+
+
+<table><thead><tr><th>Wersja</th><th>Data</th><th>Zmiana</th></tr></thead><tbody><tr><td>1.0</td><td>17.10.2026</td><td>Pierwsza wersja: część wspólna i moduły A–K</td></tr><tr><td>1.1</td><td>07.11.2026</td><td>Google Cloud w punkcie 3.3; źródło danych w module A (portal partnerów, centra egzaminacyjne); użytkownicy portalu partnerów w module D</td></tr></tbody></table>`};function r(r){t(r,e(()=>n,{lang:`pl`}))}export{r as component};
