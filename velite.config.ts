@@ -247,6 +247,18 @@ const scrPage = defineCollection({
   })
 });
 
+const wbtPoland2026Page = defineCollection({
+  name: 'WbtPoland2026Page',
+  pattern: 'pages/wbt-poland-2026.md',
+  single: true,
+  schema: s.object({
+    heading: s.string(),
+    videoId: s.string(),
+    videoTitle: s.string(),
+    body: s.markdown()
+  })
+});
+
 const footer = defineCollection({
   name: 'Footer',
   pattern: 'footer.md',
@@ -689,6 +701,7 @@ export default defineConfig({
     dictionary,
     scr,
     scrPage,
+    wbtPoland2026Page,
     syllabi,
     footer,
     cookieConsent,
