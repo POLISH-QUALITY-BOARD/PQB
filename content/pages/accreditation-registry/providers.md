@@ -46,7 +46,7 @@ items:
         dateFrom: 2026-04-24
       - code: ctal-ta-v3-1
         dateFrom: 2026-04-24
-        dateTo: 2026-11-02
+        dateTo: 2026-11-13
       - code: ct-ai-v1-0
         dateFrom: 2026-04-24
         dateTo: 2027-10-17
@@ -87,7 +87,7 @@ items:
         dateFrom: 2026-04-24
       - code: ctal-ta-v3-1
         dateFrom: 2026-04-24
-        dateTo: 2026-11-02
+        dateTo: 2026-11-13
     website:
       href: https://qa-szkolenia.pl/
       ariaLabel: Przejdź na stronę INTest Paweł Kwasik
@@ -99,7 +99,7 @@ items:
         dateFrom: 2026-04-24
       - code: ctal-ta-v3-1
         dateFrom: 2026-04-30
-        dateTo: 2026-11-02
+        dateTo: 2026-11-13
       - code: ctal-tm-v3-0
         dateFrom: 2026-06-08
       - code: ct-ai-v1-0
@@ -116,7 +116,7 @@ items:
         dateFrom: 2026-05-06
       - code: ctal-ta-v3-1
         dateFrom: 2026-05-06
-        dateTo: 2026-11-02
+        dateTo: 2026-11-13
       - code: ctal-tm-v3-0
         dateFrom: 2026-05-06
     website:
