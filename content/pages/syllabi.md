@@ -27,7 +27,7 @@ certifications:
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-A-odpowiedzi-v1.7.pdf
       - lang: PL
         type: questions
-        file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-B-pytania-v1.7.pdf
+        file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-B-pytania-v1.7.1.pdf
       - lang: PL
         type: answers
         file: /documents/syllabi/fl-4.0.1/FL-4.0.1-PL-zestaw-B-odpowiedzi-v1.7.pdf
