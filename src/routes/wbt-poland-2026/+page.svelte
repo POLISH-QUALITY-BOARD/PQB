@@ -16,10 +16,9 @@
   <div class="aspect-video w-full overflow-hidden rounded-lg">
     <iframe
       class="w-full h-full"
-      src="https://www.youtube-nocookie.com/embed/{wbtPoland2026Page.videoId}"
+      src="https://streamyard.com/watch/{wbtPoland2026Page.videoId}?embed=true"
       title={wbtPoland2026Page.videoTitle}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
+      frameborder="0"
       allowfullscreen
       loading="lazy"
     ></iframe>
