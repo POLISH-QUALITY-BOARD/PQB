@@ -37,9 +37,9 @@ describe.skip('Navbar.svelte', () => {
             ]
           }
         ],
-        joinUsButton: {
-          href: faker.internet.url(),
-          text: faker.lorem.word()
+        shopButton: {
+          href: 'https://shop.pqb.org.pl',
+          text: 'Sklep'
         }
       }
     });

@@ -63,7 +63,7 @@ const navbar = defineCollection({
           .optional()
       })
     ),
-    joinUsButton: s.object({
+    shopButton: s.object({
       href: href(),
       text: s.string()
     })
