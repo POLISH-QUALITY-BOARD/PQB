@@ -244,6 +244,9 @@ items:
       - code: ct-ai
         dateFrom: 2026-04-29
         dateTo: 2032-09-14
+      - code: ct-genai
+        dateFrom: 2026-11-18
+        dateTo: 2032-09-14
     linkedin:
       href: https://www.linkedin.com/in/joanna-kazun/
       ariaLabel: Przejdź na profil LinkedIn Joanny Kazun
