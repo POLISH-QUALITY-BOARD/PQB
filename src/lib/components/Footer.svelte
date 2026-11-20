@@ -1,13 +1,15 @@
 <script lang="ts">
+  import LinkedIn from '#lib/components/icons/LinkedIn.svelte';
   import { resetCookieConsent } from '#lib/stores/cookieConsent.js';
   import type { Footer } from '#velite';
-  import IconEmailOutline from '~icons/mdi/email-outline';
-  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
-  import IconMapMarkerOutline from '~icons/mdi/map-marker-outline';
-  import IconDiscord from '~icons/simple-icons/discord';
-  import IconFacebook from '~icons/simple-icons/facebook';
-  import IconGithub from '~icons/simple-icons/github';
-  import IconLinkedin from '~icons/simple-icons/linkedin';
+  import {
+    MessageCircle as IconDiscord,
+    Mail as IconEmailOutline,
+    ThumbsUp as IconFacebook,
+    FileText as IconFileDocumentOutline,
+    CodeXml as IconGithub,
+    MapPin as IconMapMarkerOutline
+  } from '@lucide/svelte';
 
   let {
     brand,
@@ -43,7 +45,7 @@
             aria-label={social.linkedin.ariaLabel}
             class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"
           >
-            <IconLinkedin width="16" height="16" />
+            <LinkedIn aria-hidden="true" width="16" height="16" />
           </a>
           <a
             href={social.facebook.href}

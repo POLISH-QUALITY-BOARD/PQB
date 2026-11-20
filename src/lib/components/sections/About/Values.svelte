@@ -1,13 +1,15 @@
 <script>
   import Article from '#lib/components/Article.svelte';
   import Feature from '#lib/components/Feature.svelte';
-  import IconAccountMultipleOutline from '~icons/mdi/account-multiple-outline';
-  import IconEyeOutline from '~icons/mdi/eye-outline';
-  import IconFlagOutline from '~icons/mdi/flag-outline';
-  import IconHandHeartOutline from '~icons/mdi/hand-heart-outline';
-  import IconLightningBoltOutline from '~icons/mdi/lightning-bolt-outline';
-  import IconScaleBalance from '~icons/mdi/scale-balance';
-  import IconTelescope from '~icons/mdi/telescope';
+  import {
+    UsersRound as IconAccountMultipleOutline,
+    Eye as IconEyeOutline,
+    Flag as IconFlagOutline,
+    HandHeart as IconHandHeartOutline,
+    Zap as IconLightningBoltOutline,
+    Scale as IconScaleBalance,
+    Telescope as IconTelescope
+  } from '@lucide/svelte';
 
   const values = [
     {

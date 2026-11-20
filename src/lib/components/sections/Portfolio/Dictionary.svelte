@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { Dictionary } from '#velite';
-  import IconBookOpenVariant from '~icons/mdi/book-open-variant';
-  import IconOpenInNew from '~icons/mdi/open-in-new';
+  import { BookOpen as IconBookOpenVariant, ExternalLink as IconOpenInNew } from '@lucide/svelte';
 
   let { heading, description, link, body }: Dictionary = $props();
 </script>

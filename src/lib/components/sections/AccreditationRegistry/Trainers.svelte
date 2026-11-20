@@ -1,14 +1,16 @@
 <script lang="ts">
   import Article from '#lib/components/Article.svelte';
+  import LinkedIn from '#lib/components/icons/LinkedIn.svelte';
   import type { AccreditationRegistryTrainers } from '#velite';
+  import {
+    UserRound as IconAccount,
+    SearchX as IconFilterOffOutline,
+    ShieldCheck as IconShieldCheck,
+    ShieldOff as IconShieldOff
+  } from '@lucide/svelte';
   import { Tooltip } from 'bits-ui';
   import { SvelteSet } from 'svelte/reactivity';
   import type { Picture } from 'vite-imagetools';
-  import IconAccount from '~icons/mdi/account';
-  import IconFilterOffOutline from '~icons/mdi/filter-off-outline';
-  import IconShieldCheck from '~icons/mdi/shield-check';
-  import IconShieldOff from '~icons/mdi/shield-off';
-  import IconLinkedin from '~icons/simple-icons/linkedin';
 
   const assets = import.meta.glob<{ default: Picture }>('/src/lib/assets/**/*', {
     eager: true,
@@ -159,7 +161,7 @@
               aria-label={linkedin.ariaLabel}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <IconLinkedin aria-hidden="true" width="18" height="18" />
+              <LinkedIn aria-hidden="true" width="18" height="18" />
             </a>
           {/if}
         </div>

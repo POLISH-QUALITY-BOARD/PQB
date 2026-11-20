@@ -3,7 +3,6 @@ import { enhancedImages } from '@sveltejs/enhanced-img';
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { playwright } from '@vitest/browser-playwright';
-import Icons from 'unplugin-icons/vite';
 import { type Plugin, defineConfig } from 'vitest/config';
 
 const velite = (): Plugin => ({
@@ -51,7 +50,6 @@ export default defineConfig({
       adapter: adapter({ pages: 'build', assets: 'build' }),
       paths: { ...(base && { base }), relative: false, ...(origin && { origin }) }
     }),
-    Icons({ compiler: 'svelte' }),
     velite()
   ],
   server: { fs: { allow: ['.velite'] } },

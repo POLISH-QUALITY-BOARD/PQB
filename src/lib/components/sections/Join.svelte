@@ -3,12 +3,14 @@
   import Feature from '#lib/components/Feature.svelte';
   import Section from '#lib/components/Section.svelte';
   import type { Join } from '#velite';
-  import IconAccountGroupOutline from '~icons/mdi/account-group-outline';
-  import IconCertificateOutline from '~icons/mdi/certificate-outline';
-  import IconCheck from '~icons/mdi/check';
-  import IconDownload from '~icons/mdi/download';
-  import IconHandshakeOutline from '~icons/mdi/handshake-outline';
-  import IconTrendingUp from '~icons/mdi/trending-up';
+  import {
+    UsersRound as IconAccountGroupOutline,
+    BadgeCheck as IconCertificateOutline,
+    Check as IconCheck,
+    Download as IconDownload,
+    Handshake as IconHandshakeOutline,
+    TrendingUp as IconTrendingUp
+  } from '@lucide/svelte';
 
   let { heading: headingTitle, benefits, steps, body }: Join = $props();
 

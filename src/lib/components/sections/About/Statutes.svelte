@@ -1,10 +1,9 @@
 <script>
   import Article from '#lib/components/Article.svelte';
   import Feature from '#lib/components/Feature.svelte';
+  import { Download as IconDownload, FileText as IconFileDocumentOutline } from '@lucide/svelte';
   import { Tabs } from 'bits-ui';
   import { fly } from 'svelte/transition';
-  import IconDownload from '~icons/mdi/download';
-  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
 
   const tabs = [
     {

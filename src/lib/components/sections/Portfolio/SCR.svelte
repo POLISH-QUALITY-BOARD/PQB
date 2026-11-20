@@ -1,8 +1,10 @@
 <script lang="ts">
   import type { Scr } from '#velite';
-  import IconAccountPlus from '~icons/mdi/account-plus';
-  import IconCertificateOutline from '~icons/mdi/certificate-outline';
-  import IconOpenInNew from '~icons/mdi/open-in-new';
+  import {
+    UserRoundPlus as IconAccountPlus,
+    BadgeCheck as IconCertificateOutline,
+    ExternalLink as IconOpenInNew
+  } from '@lucide/svelte';
 
   let { heading, description, registryLink, addToRegistryLink, body }: Scr = $props();
 </script>

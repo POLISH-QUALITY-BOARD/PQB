@@ -1,12 +1,14 @@
 <script lang="ts">
   import Section from '#lib/components/Section.svelte';
   import type { FeaturedContent } from '#velite';
-  import IconArrowDown from '~icons/mdi/arrow-down';
-  import IconArrowUp from '~icons/mdi/arrow-up';
-  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
-  import IconNewspaperVariantOutline from '~icons/mdi/newspaper-variant-outline';
-  import IconOpenInNew from '~icons/mdi/open-in-new';
-  import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
+  import {
+    ArrowDown as IconArrowDown,
+    ArrowUp as IconArrowUp,
+    FileText as IconFileDocumentOutline,
+    Newspaper as IconNewspaperVariantOutline,
+    ExternalLink as IconOpenInNew,
+    ChevronsUpDown as IconUnfoldMoreHorizontal
+  } from '@lucide/svelte';
 
   let { heading: headingText, openButton, whitepapers, body }: FeaturedContent = $props();
 

@@ -1,8 +1,8 @@
 <script lang="ts">
   import Article from '#lib/components/Article.svelte';
+  import LinkedIn from '#lib/components/icons/LinkedIn.svelte';
   import type { About } from '#velite';
   import type { Picture } from 'vite-imagetools';
-  import IconLinkedin from '~icons/simple-icons/linkedin';
 
   let { board, body }: Pick<About, 'board' | 'body'> = $props();
 
@@ -48,7 +48,7 @@
               aria-label={person.linkedin.ariaLabel}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <IconLinkedin aria-hidden="true" width="18" height="18" />
+              <LinkedIn aria-hidden="true" width="18" height="18" />
             </a>
           </div>
         {/each}
@@ -79,7 +79,7 @@
               aria-label={person.linkedin.ariaLabel}
               class="shrink-0 text-gray-300 hover:text-primary no-underline"
             >
-              <IconLinkedin aria-hidden="true" width="18" height="18" />
+              <LinkedIn aria-hidden="true" width="18" height="18" />
             </a>
           </div>
         {/each}

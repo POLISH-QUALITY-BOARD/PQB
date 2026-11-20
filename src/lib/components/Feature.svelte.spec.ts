@@ -1,10 +1,10 @@
 import Feature from '#lib/components/Feature.svelte';
 import { faker } from '@faker-js/faker';
+import { Star as IconStar } from '@lucide/svelte';
 import { createRawSnippet } from 'svelte';
 import { describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page } from 'vitest/browser';
-import IconStar from '~icons/mdi/star';
 
 const snippet = (html: string) => createRawSnippet(() => ({ render: () => html }));
 

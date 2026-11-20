@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Hero } from '#velite';
-  import IconChevronDown from '~icons/mdi/chevron-down';
+  import { ChevronDown as IconChevronDown } from '@lucide/svelte';
 
   let { logo, learnMoreLink, body }: Hero = $props();
 </script>

@@ -1,13 +1,15 @@
 <script lang="ts">
   import Section from '#lib/components/Section.svelte';
   import { syllabi } from '#velite';
+  import {
+    ArrowDown as IconArrowDown,
+    ArrowUp as IconArrowUp,
+    Download as IconDownload,
+    FileText as IconFileDocumentOutline,
+    CodeXml as IconGithub,
+    ChevronsUpDown as IconUnfoldMoreHorizontal
+  } from '@lucide/svelte';
   import { untrack } from 'svelte';
-  import IconArrowDown from '~icons/mdi/arrow-down';
-  import IconArrowUp from '~icons/mdi/arrow-up';
-  import IconDownload from '~icons/mdi/download';
-  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
-  import IconGithub from '~icons/mdi/github';
-  import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
 
   const {
     heading: headingText,
@@ -50,19 +52,15 @@
 
   const typeStyles = {
     syllabus: {
-      icon: 'mdi:book-open-variant',
       pill: 'bg-primary-light text-primary'
     },
     questions: {
-      icon: 'mdi:help-circle-outline',
       pill: 'bg-primary-light text-primary'
     },
     answers: {
-      icon: 'mdi:check-circle-outline',
       pill: 'bg-primary-light text-primary'
     },
     accreditation: {
-      icon: 'mdi:certificate-outline',
       pill: 'bg-primary-light text-primary'
     }
   };
