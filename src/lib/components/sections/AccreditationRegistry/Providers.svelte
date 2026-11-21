@@ -1,14 +1,16 @@
 <script lang="ts">
   import Article from '#lib/components/Article.svelte';
   import type { AccreditationRegistryProviders } from '#velite';
+  import {
+    Building as IconDomain,
+    SearchX as IconFilterOffOutline,
+    ExternalLink as IconOpenInNew,
+    ShieldCheck as IconShieldCheck,
+    ShieldOff as IconShieldOff
+  } from '@lucide/svelte';
   import { Tooltip } from 'bits-ui';
   import { SvelteSet } from 'svelte/reactivity';
   import type { Picture } from 'vite-imagetools';
-  import IconDomain from '~icons/mdi/domain';
-  import IconFilterOffOutline from '~icons/mdi/filter-off-outline';
-  import IconOpenInNew from '~icons/mdi/open-in-new';
-  import IconShieldCheck from '~icons/mdi/shield-check';
-  import IconShieldOff from '~icons/mdi/shield-off';
 
   const assets = import.meta.glob<{ default: Picture }>('/src/lib/assets/**/*', {
     eager: true,

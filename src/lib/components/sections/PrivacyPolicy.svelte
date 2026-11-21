@@ -1,7 +1,7 @@
 <script lang="ts">
   import Section from '#lib/components/Section.svelte';
   import type { PrivacyPolicy } from '#velite';
-  import IconTranslate from '~icons/mdi/translate';
+  import { Languages as IconTranslate } from '@lucide/svelte';
 
   let {
     heading: headingText,

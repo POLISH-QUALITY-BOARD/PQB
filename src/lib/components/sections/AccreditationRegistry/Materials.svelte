@@ -1,13 +1,15 @@
 <script lang="ts">
   import Article from '#lib/components/Article.svelte';
+  import LinkedIn from '#lib/components/icons/LinkedIn.svelte';
   import type { AccreditationRegistryMaterials } from '#velite';
-  import IconArrowDown from '~icons/mdi/arrow-down';
-  import IconArrowUp from '~icons/mdi/arrow-up';
-  import IconFileDocumentOutline from '~icons/mdi/file-document-outline';
-  import IconFilterOffOutline from '~icons/mdi/filter-off-outline';
-  import IconOpenInNew from '~icons/mdi/open-in-new';
-  import IconUnfoldMoreHorizontal from '~icons/mdi/unfold-more-horizontal';
-  import IconLinkedin from '~icons/simple-icons/linkedin';
+  import {
+    ArrowDown as IconArrowDown,
+    ArrowUp as IconArrowUp,
+    FileText as IconFileDocumentOutline,
+    SearchX as IconFilterOffOutline,
+    ExternalLink as IconOpenInNew,
+    ChevronsUpDown as IconUnfoldMoreHorizontal
+  } from '@lucide/svelte';
 
   let { heading: title, emptyMessage, body, items }: AccreditationRegistryMaterials = $props();
 
@@ -187,7 +189,7 @@
                           aria-label={linkedin.ariaLabel}
                           class="text-gray-300 hover:text-primary no-underline"
                         >
-                          <IconLinkedin aria-hidden="true" width="14" height="14" />
+                          <LinkedIn aria-hidden="true" width="14" height="14" />
                         </a>
                       {/if}
                     </div>

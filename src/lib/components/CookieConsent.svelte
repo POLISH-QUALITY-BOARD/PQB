@@ -6,9 +6,9 @@
     grantCookieConsent
   } from '#lib/stores/cookieConsent.js';
   import type { CookieConsent } from '#velite';
+  import { Cookie } from '@lucide/svelte';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
-  import IconCookieOutline from '~icons/mdi/cookie-outline';
 
   let { ariaLabel, acceptButton, denyButton, body }: CookieConsent = $props();
 
@@ -34,7 +34,7 @@
       data-testid="cookie-consent"
     >
       <div class="flex items-center gap-3 flex-1">
-        <IconCookieOutline width="22" height="22" class="shrink-0" aria-hidden="true" />
+        <Cookie width="22" height="22" class="shrink-0" aria-hidden="true" />
         <p id="cookie-desc" class="text-sm leading-relaxed text-white/75">
           <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html body}

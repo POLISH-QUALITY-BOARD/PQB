@@ -1,10 +1,12 @@
 <script lang="ts">
   import type { Navbar } from '#velite';
   import { resolve } from '$app/paths';
+  import {
+    UserRoundPlus as IconAccountPlusOutline,
+    ChevronDown as IconChevronDown
+  } from '@lucide/svelte';
   import { NavigationMenu } from 'bits-ui';
   import { slide } from 'svelte/transition';
-  import IconAccountPlusOutline from '~icons/mdi/account-plus-outline';
-  import IconChevronDown from '~icons/mdi/chevron-down';
 
   let { brand, navigation, hamburgerButton, navbarItems, joinUsButton }: Navbar = $props();
 

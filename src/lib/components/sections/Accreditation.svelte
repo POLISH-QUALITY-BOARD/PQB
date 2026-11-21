@@ -2,9 +2,11 @@
   import Article from '#lib/components/Article.svelte';
   import Section from '#lib/components/Section.svelte';
   import type { Accreditation } from '#velite';
-  import IconArrowRight from '~icons/mdi/arrow-right';
-  import IconCheck from '~icons/mdi/check';
-  import IconDownload from '~icons/mdi/download';
+  import {
+    ArrowRight as IconArrowRight,
+    Check as IconCheck,
+    Download as IconDownload
+  } from '@lucide/svelte';
 
   let {
     heading: headingText,

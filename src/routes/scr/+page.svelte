@@ -1,8 +1,7 @@
 <script lang="ts">
   import Section from '#lib/components/Section.svelte';
   import { scrPage } from '#velite';
-  import IconCheck from '~icons/mdi/check';
-  import IconDownload from '~icons/mdi/download';
+  import { Check as IconCheck, Download as IconDownload } from '@lucide/svelte';
 
   const { heading: headingText, steps, body } = scrPage;
 
