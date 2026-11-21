@@ -27,7 +27,9 @@ navbarItems:
     text: Akredytacja
   - href: /#polecane
     text: Polecane
-joinUsButton:
-  href: /#dolacz-do-nas
-  text: Dołącz do nas
+  - href: /#dolacz-do-nas
+    text: Dołącz do nas
+shopButton:
+  href: https://shop.pqb.org.pl
+  text: Sklep
 ---

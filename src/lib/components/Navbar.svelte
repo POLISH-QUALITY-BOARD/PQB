@@ -3,10 +3,10 @@
   import { resolve } from '$app/paths';
   import { NavigationMenu } from 'bits-ui';
   import { slide } from 'svelte/transition';
-  import IconAccountPlusOutline from '~icons/mdi/account-plus-outline';
+  import IconCartOutline from '~icons/mdi/cart-outline';
   import IconChevronDown from '~icons/mdi/chevron-down';
 
-  let { brand, navigation, hamburgerButton, navbarItems, joinUsButton }: Navbar = $props();
+  let { brand, navigation, hamburgerButton, navbarItems, shopButton }: Navbar = $props();
 
   let menuOpen = $state(false);
   let openGroup = $state<string | null>(null);
@@ -28,11 +28,6 @@
     }
   };
 </script>
-
-{#snippet joinUsButtonContent(text: string)}
-  <IconAccountPlusOutline aria-hidden="true" width="16" height="16" />
-  {text}
-{/snippet}
 
 <svelte:window onclick={handleOutsideClick} onkeydown={handleKeydown} />
 <svelte:body class:overflow-hidden={menuOpen} />
@@ -114,11 +109,14 @@
         <NavigationMenu.Item class="pl-4">
           <!-- eslint-disable svelte/no-navigation-without-resolve -->
           <NavigationMenu.Link
-            href={joinUsButton.href}
-            data-testid="navbar-desktop-join-us-button"
+            href={shopButton.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="navbar-desktop-shop-button"
             class="inline-flex items-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-2 rounded-lg no-underline"
           >
-            {@render joinUsButtonContent(joinUsButton.text)}
+            <IconCartOutline aria-hidden="true" width="16" height="16" />
+            {shopButton.text}
           </NavigationMenu.Link>
           <!-- eslint-enable svelte/no-navigation-without-resolve -->
         </NavigationMenu.Item>
@@ -199,12 +197,15 @@
         <div class="px-3 py-3 pt-2">
           <!-- eslint-disable svelte/no-navigation-without-resolve -->
           <a
-            href={joinUsButton.href}
-            data-testid="navbar-mobile-join-us-button"
+            href={shopButton.href}
+            target="_blank"
+            rel="noopener"
+            data-testid="navbar-mobile-shop-button"
             class="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-linear-to-br from-accent to-accent-dark hover:from-accent-dark hover:to-accent-dark pl-3.5 pr-5 py-3 rounded-lg no-underline w-full"
             onclick={handleClose}
           >
-            {@render joinUsButtonContent(joinUsButton.text)}
+            <IconCartOutline aria-hidden="true" width="16" height="16" />
+            {shopButton.text}
           </a>
           <!-- eslint-enable svelte/no-navigation-without-resolve -->
         </div>
