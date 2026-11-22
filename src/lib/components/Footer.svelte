@@ -1,13 +1,13 @@
 <script lang="ts">
+  import IconDiscord from '#lib/components/icons/Discord.svelte';
+  import IconFacebook from '#lib/components/icons/Facebook.svelte';
+  import IconGithub from '#lib/components/icons/GitHub.svelte';
   import LinkedIn from '#lib/components/icons/LinkedIn.svelte';
   import { resetCookieConsent } from '#lib/stores/cookieConsent.js';
   import type { Footer } from '#velite';
   import {
-    MessageCircle as IconDiscord,
     Mail as IconEmailOutline,
-    ThumbsUp as IconFacebook,
     FileText as IconFileDocumentOutline,
-    CodeXml as IconGithub,
     MapPin as IconMapMarkerOutline
   } from '@lucide/svelte';
 
@@ -43,7 +43,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.linkedin.ariaLabel}
-            class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"
+            class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 hover:text-white"
           >
             <LinkedIn aria-hidden="true" width="16" height="16" />
           </a>
@@ -52,7 +52,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.facebook.ariaLabel}
-            class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"
+            class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 hover:text-white"
           >
             <IconFacebook width="16" height="16" />
           </a>
@@ -61,7 +61,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.github.ariaLabel}
-            class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"
+            class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 hover:text-white"
           >
             <IconGithub width="16" height="16" />
           </a>
@@ -70,9 +70,9 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.discord.ariaLabel}
-            class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white"
+            class="w-9 h-9 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 hover:text-white"
           >
-            <IconDiscord width="16" height="16" />
+            <IconDiscord width="21" height="16" />
           </a>
           <!-- eslint-enable svelte/no-navigation-without-resolve -->
         </div>
