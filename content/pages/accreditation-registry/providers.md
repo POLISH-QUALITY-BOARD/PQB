@@ -19,6 +19,9 @@ filters:
   - code: ctal-ta-v3-1
     text: CTAL-TA v3.1
     tooltip: ISTQB® Certified Tester Advanced Level – Test Analyst v3.1
+  - code: ctal-ta-v4.0
+    text: CTAL-TA v4.0
+    tooltip: ISTQB® Certified Tester Advanced Level – Test Analyst v4.0
   - code: ctal-tm-v3-0
     text: CTAL-TM v3.0
     tooltip: ISTQB® Certified Tester Advanced Level - Test Management v3.0
