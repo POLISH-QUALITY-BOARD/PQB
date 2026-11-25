@@ -63,6 +63,8 @@ items:
         dateFrom: 2026-04-24
       - code: ctal-tta-v4-0
         dateFrom: 2026-04-24
+      - code: ctal-ta-v4.0
+        dateFrom: 2026-11-23
     website:
       href: https://testerzy.pl/
       ariaLabel: Przejdź na stronę 21CN Radosław Smilgin

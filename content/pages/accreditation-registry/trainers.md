@@ -19,9 +19,12 @@ filters:
   - code: ctal-at
     text: CTAL-AT
     tooltip: ISTQB® Certified Tester Advanced Level – Agile Tester
-  - code: ctal-ta
-    text: CTAL-TA
-    tooltip: ISTQB® Certified Tester Advanced Level – Test Analyst
+  - code: ctal-ta-v3.1
+    text: CTAL-TA v3.1
+    tooltip: ISTQB® Certified Tester Advanced Level – Test Analyst v3.1
+  - code: ctal-ta-v4.0
+    text: CTAL-TA v4.0
+    tooltip: ISTQB® Certified Tester Advanced Level – Test Analyst v4.0
   - code: ctal-tm
     text: CTAL-TM
     tooltip: ISTQB® Certified Tester Advanced Level – Test Manager
@@ -62,7 +65,7 @@ items:
       - code: ctal-tm
         dateFrom: 2026-04-24
         dateTo: 2030-09-18
-      - code: ctal-ta
+      - code: ctal-ta-v3.1
         dateFrom: 2026-04-24
         dateTo: 2030-09-18
       - code: ctel-itp-atp
@@ -89,7 +92,7 @@ items:
       - code: ctal-tm
         dateFrom: 2026-04-24
         dateTo: 2030-03-13
-      - code: ctal-ta
+      - code: ctal-ta-v3.1
         dateFrom: 2026-04-24
         dateTo: 2030-03-13
     linkedin:
@@ -107,7 +110,7 @@ items:
       - code: ctal-tm
         dateFrom: 2026-04-24
         dateTo: 2030-04-13
-      - code: ctal-ta
+      - code: ctal-ta-v3.1
         dateFrom: 2026-04-24
         dateTo: 2030-04-13
     linkedin:
@@ -157,7 +160,7 @@ items:
       - code: ctal-tm
         dateFrom: 2026-04-28
         dateTo: 2032-08-27
-      - code: ctal-ta
+      - code: ctal-ta-v3.1
         dateFrom: 2026-04-28
         dateTo: 2032-08-27
     linkedin:
@@ -178,7 +181,7 @@ items:
       - code: ctal-tm
         dateFrom: 2026-04-24
         dateTo: 2030-07-08
-      - code: ctal-ta
+      - code: ctal-ta-v3.1
         dateFrom: 2026-04-24
         dateTo: 2030-07-08
       - code: ct-ai
@@ -214,7 +217,7 @@ items:
       - code: ctal-tm
         dateFrom: 2026-04-29
         dateTo: 2032-10-17
-      - code: ctal-ta
+      - code: ctal-ta-v3.1
         dateFrom: 2026-04-29
         dateTo: 2032-10-17
     linkedin:
@@ -238,7 +241,7 @@ items:
       - code: ctal-tm
         dateFrom: 2026-04-24
         dateTo: 2032-09-14
-      - code: ctal-ta
+      - code: ctal-ta-v3.1
         dateFrom: 2026-04-24
         dateTo: 2032-09-14
       - code: ct-ai
@@ -262,7 +265,7 @@ items:
       - code: ctal-tm
         dateFrom: 2026-04-28
         dateTo: 2030-10-18
-      - code: ctal-ta
+      - code: ctal-ta-v3.1
         dateFrom: 2026-04-28
         dateTo: 2030-10-18
       - code: ctal-at
